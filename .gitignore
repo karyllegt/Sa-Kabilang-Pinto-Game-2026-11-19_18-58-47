@@ -112,3 +112,14 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# ---- Sa Kabilang Pinto additions ----
+# Android signing keys must never be committed
+*.keystore
+*.jks
+# Android build output / symbols
+*.symbols.zip
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
