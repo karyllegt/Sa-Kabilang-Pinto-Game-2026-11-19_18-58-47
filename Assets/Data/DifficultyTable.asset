@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfaac4be342d524ca8dcb2b564c0c51, type: 3}
+  m_Name: DifficultyTable
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Core.DifficultyTable
+  modes:
+  - id: 0
+    displayName: Story
+    vitality: 6
+    lives: -1
+    speedMult: 0.8
+    chaseFrames: 300
+    floodMult: 0.7
+    bossHp: 8
+    hazardMult: 0.6
+    enemyMult: 0.6
+  - id: 1
+    displayName: Standard
+    vitality: 4
+    lives: 5
+    speedMult: 1
+    chaseFrames: 240
+    floodMult: 1
+    bossHp: 12
+    hazardMult: 1
+    enemyMult: 1
+  - id: 2
+    displayName: Nightmare
+    vitality: 3
+    lives: 3
+    speedMult: 1.25
+    chaseFrames: 180
+    floodMult: 1.4
+    bossHp: 16
+    hazardMult: 1.4
+    enemyMult: 1.4
+  - id: 3
+    displayName: Endless Nightmare
+    vitality: 4
+    lives: 3
+    speedMult: 1.15
+    chaseFrames: 200
+    floodMult: 1.2
+    bossHp: 12
+    hazardMult: 1.3
+    enemyMult: 1.3

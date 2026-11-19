@@ -48,6 +48,7 @@ public static class SkpProjectSetup
         CreatePixelBoxPrefab();
         var touch = CreateTouchControlsPrefab(font);
         BuildScenes(font, touch);
+        SkpTestRoomBuilder.Build();
         AssetDatabase.SaveAssets();
         foreach (var o in AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset"))
             AssetDatabase.SaveAssetIfDirty(o);
@@ -98,6 +99,7 @@ public static class SkpProjectSetup
         EnsureFolder("Assets/Data");
         CreateIfMissing<PlayerTuning>("Assets/Data/PlayerTuning.asset");
         CreateIfMissing<DifficultyCurve>("Assets/Data/DifficultyCurve.asset");
+        CreateIfMissing<DifficultyTable>("Assets/Data/DifficultyTable.asset");
     }
 
     // ---------------------------------------------------------------- UI assets
@@ -243,7 +245,7 @@ public static class SkpProjectSetup
         EditorSceneManager.SaveScene(scene, $"{ScenesDir}/{name}.unity");
     }
 
-    static void CreatePixelCamera()
+    public static Camera CreatePixelCamera()
     {
         var go = new GameObject("Main Camera");
         go.tag = "MainCamera";
@@ -260,6 +262,7 @@ public static class SkpProjectSetup
         ppc.refResolutionY = 270;
         ppc.gridSnapping = PixelPerfectCamera.GridSnapping.UpscaleRenderTexture;
         ppc.cropFrame = PixelPerfectCamera.CropFrame.None;
+        return cam;
     }
 
     // ---------------------------------------------------------------- helpers
@@ -304,13 +307,13 @@ public static class SkpProjectSetup
         rt.offsetMin = rt.offsetMax = Vector2.zero;
     }
 
-    static void CreateIfMissing<T>(string path) where T : ScriptableObject
+    public static void CreateIfMissing<T>(string path) where T : ScriptableObject
     {
         if (AssetDatabase.LoadAssetAtPath<T>(path) != null) return;
         AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<T>(), path);
     }
 
-    static void EnsureFolder(string path)
+    public static void EnsureFolder(string path)
     {
         if (AssetDatabase.IsValidFolder(path)) return;
         var parent = Path.GetDirectoryName(path).Replace('\\', '/');

@@ -98,3 +98,22 @@ Running log of choices, defaults and open questions. Newest section at the botto
 | M1-15 | TMP Essentials | `AssetPackage.Package.Import` finishes asynchronously, too late for the setup script, so the TMP Essential Resources were unpacked directly from the installed ugui package (same files and GUIDs) into `Assets/TextMesh Pro/`. |
 | M1-16 | Tests folder | The repo already had a lowercase `tests/` (prototype verifier). Windows treats `Tests/` and `tests/` as one folder, so the spec's `Tests/MANUAL_QA.md`, `Tests/Screenshots/` and `Tests/Results/` live in git as `tests/...`. Test result XML (`tests/Results/`) is regenerated each run and not committed. |
 | M1-13 | Debug overlay | Development builds only (`Debug.isDebugBuild`), uGUI + TMP, refreshed 4 times a second. Later milestones add lines through `DebugOverlay.ExtraLines`. |
+
+---
+
+## 2026-11-20 · M2 Player feel
+
+| # | Topic | Decision |
+| --- | --- | --- |
+| M2-1 | Simulation | `PlayerSim` is a plain C# class that ports the prototype's `stepGame()` player code line by line (same order: timers, buffer/coyote, dash, ward, run/friction, gravity, jump, jump cut, move x, move y and land, lanterns, hazards). Unity units, y up. No Rigidbody, no MonoBehaviour, so tests step it exactly. |
+| M2-2 | Fixed 60 Hz | `PlayerController` runs the sim on its own accumulator clock (`FixedTickClock`, max 8 ticks per frame) and latches button presses between ticks (`PlayerInputLatch`), so presses are never lost at 144 fps nor repeated at 30 fps. Project Settings > Time is **not** changed. Drawing interpolates between ticks and snaps to the 16 px grid. Time.timeScale = 0 stops the clock (pause). |
+| M2-3 | Units | `PlayerTuning` is per second and in units (1 unit = 16 px): per-frame x 60 / 16, per-frame² x 3600 / 16. Durations are seconds rounded to whole ticks. Friction and the overspeed decay stay "per 60 Hz tick", because that is how the prototype applies them. The M1 tuning asset (old per-frame values under the same field names) was deleted and regenerated so no stale value survives. |
+| M2-4 | Jump height | Measured from the prototype's own step: full-hold apex **62.5 px = 3.906 tiles** on tick 16, landing on tick 34; a 1-tick tap reaches 19.3 px; a 6-tick hold 42.025 px. So a 4-tile ledge (64 px) is **not** reachable with one jump. Keep this in mind for M7: double-jump climbs of 4 tiles are valid "needs double jump" obstacles. |
+| M2-5 | Coyote and buffer | Prototype behaviour kept exactly: a jump pressed 1 to 5 ticks after leaving a ledge works (the 6-tick counter is decremented on the first airborne tick); a press up to 5 ticks before landing fires on the tick after landing. |
+| M2-6 | Dash | 11 ticks at 20.25 u/s = 59.4 px, 20 flame, cooldown 34 ticks, untouchable for 10 hazard checks (the counter is already decremented when hazards are checked on its last tick), as in the prototype. |
+| M2-7 | Damage | `PlayerSim.CanBeHurt()` is the only immunity check (alive, not invulnerable, not dashing, not veiled). Every damage source calls `TryHurt(amount, fromX)`, which calls it first. Knockback 9 u/s away from the source (backwards if no source), 12 u/s against gravity. Invulnerable 85 ticks (110 on Story). |
+| M2-8 | Death and lives | Death waits 75 ticks, then respawns at the last lantern with full vitality, at least 60 flame and 100 ticks of invulnerability. Lives per the table (Story infinite, Standard 5, Nightmare 3, Endless 3); dying with 0 lives left ends the run (`OutOfLives`), as in the prototype. |
+| M2-9 | Difficulty table | `DifficultyTable` asset holds the prototype's full row per mode (vitality, lives, speed, chase frames, flood, boss hp, hazard and enemy multipliers). The player reads the save's `diff` key; unknown keys fall back to Standard. |
+| M2-10 | One-way ledges | Every ledge is one-way, as in the prototype (land from above, pass from below; nothing blocks sideways). Inverted gravity lands on undersides; the code path exists, dimensions arrive in M3. |
+| M2-11 | Test room | `Assets/Scenes/Dev/TestRoom.unity` (not in the build list): floor, ledges with tops at 1, 2, 3, 4 and 7 tiles, a spike strip, three lanterns (placeholder flame sprite until the lantern art in M4). Player prefab `Assets/Prefabs/Player/Player.prefab` uses `spr_pl_girl/boy_0..3` (idle, run, run, air). |
+| M2-12 | Ward visual | The ward pulse logic and event exist; its ring graphic is deferred to M8 (juice), since no ring sprite exists yet. |

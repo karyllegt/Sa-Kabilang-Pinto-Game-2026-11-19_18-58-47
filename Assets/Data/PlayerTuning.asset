@@ -12,31 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b23b876c1784c14ca71fc7d33dce331, type: 3}
   m_Name: PlayerTuning
   m_EditorClassIdentifier: Skp.Runtime::Skp.Player.PlayerTuning
-  size: {x: 10, y: 14}
-  maxRunSpeed: 1.95
-  groundAccel: 0.6
-  airAccel: 0.38
-  groundFriction: 0.72
-  airFriction: 0.92
-  gravity: 0.42
-  terminalFall: 6.6
-  jumpImpulse: 7.3
-  jumpCut: 0.45
-  coyoteFrames: 6
-  jumpBufferFrames: 7
-  dashFrames: 11
-  dashSpeed: 5.4
-  dashCooldownFrames: 34
+  hitbox: {x: 0.625, y: 0.875}
+  runSpeed: 7.3125
+  groundAccel: 135
+  airAccel: 85.5
+  groundFrictionPerTick: 0.72
+  airFrictionPerTick: 0.92
+  overspeedDecayPerTick: 0.9
+  stopSpeed: 0.1875
+  gravity: 94.5
+  terminalFall: 24.75
+  jumpSpeed: 27.375
+  jumpCutFactor: 0.45
+  coyoteTime: 0.1
+  jumpBufferTime: 0.11666667
+  dashDuration: 0.18333334
+  dashSpeed: 20.25
+  dashCooldown: 0.56666666
   dashFlameCost: 20
-  wardFrames: 24
-  wardRadius: 46
-  wardCooldownFrames: 72
-  knockbackY: -3.2
-  knockbackX: 2.4
-  invulnerableFrames: 85
-  invulnerableFramesStory: 110
+  wardDuration: 0.4
+  wardRadius: 2.875
+  wardCooldown: 1.2
+  knockbackUp: 12
+  knockbackSide: 9
+  invulnerableTime: 1.4166666
+  invulnerableTimeStory: 1.8333334
+  deathDelay: 1.25
+  respawnInvulnerableTime: 1.6666666
+  respawnMinFlame: 60
   flameMax: 100
   flamePerFragment: 5
   flameCap: 160
-  flameRegenFrames: 90
+  flameRegenInterval: 1.5
   lanternFlame: 30
+  lanternReachX: 0.875
+  lanternReachY: 0.375
+  landingTolerance: 0.03125

@@ -160,9 +160,51 @@ namespace Skp.Tests
         {
             var t = AssetDatabase.LoadAssetAtPath<Skp.Player.PlayerTuning>("Assets/Data/PlayerTuning.asset");
             Assert.IsNotNull(t);
-            Assert.AreEqual(7.3f, t.jumpImpulse, 1e-4f);
-            Assert.AreEqual(0.42f, t.gravity, 1e-4f);
+            // per second and in units: 7.3 px/frame -> 27.375 u/s, 0.42 px/frame^2 -> 94.5 u/s^2
+            Assert.AreEqual(7.3f * 60f / 16f, t.jumpSpeed, 1e-4f);
+            Assert.AreEqual(0.42f * 3600f / 16f, t.gravity, 1e-4f);
+            Assert.AreEqual(1.95f * 60f / 16f, t.runSpeed, 1e-4f);
+            Assert.AreEqual(6, Skp.Player.PlayerTuning.Ticks(t.coyoteTime));
+            Assert.AreEqual(7, Skp.Player.PlayerTuning.Ticks(t.jumpBufferTime));
+            Assert.AreEqual(11, Skp.Player.PlayerTuning.Ticks(t.dashDuration));
+            Assert.AreEqual(34, Skp.Player.PlayerTuning.Ticks(t.dashCooldown));
+            Assert.AreEqual(85, Skp.Player.PlayerTuning.Ticks(t.invulnerableTime));
+            Assert.IsNotNull(AssetDatabase.LoadAssetAtPath<DifficultyTable>("Assets/Data/DifficultyTable.asset"));
             Assert.IsNotNull(AssetDatabase.LoadAssetAtPath<Skp.Levels.DifficultyCurve>("Assets/Data/DifficultyCurve.asset"));
+        }
+
+        [Test]
+        public void PlayerPrefab_HasBothCharactersFourFrames()
+        {
+            var p = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Player/Player.prefab");
+            Assert.IsNotNull(p);
+            var pc = p.GetComponent<Skp.Player.PlayerController>();
+            Assert.IsNotNull(pc.tuning);
+            Assert.IsNotNull(pc.difficulties);
+            var v = p.GetComponentInChildren<Skp.Player.PlayerView>();
+            Assert.AreEqual(4, v.girl.Length);
+            Assert.AreEqual(4, v.boy.Length);
+            Assert.IsTrue(v.girl.All(s => s != null) && v.boy.All(s => s != null));
+        }
+
+        [Test]
+        public void TestRoom_HasLedgesAt1To4Tiles_SpikesAndLanterns()
+        {
+            var scene = EditorSceneManager.OpenScene("Assets/Scenes/Dev/TestRoom.unity", OpenSceneMode.Additive);
+            try
+            {
+                var roots = scene.GetRootGameObjects();
+                var world = roots.SelectMany(g => g.GetComponentsInChildren<Skp.Levels.LevelWorldAuthoring>()).Single().Build();
+                foreach (var h in new[] { 1f, 2f, 3f, 4f })
+                    Assert.IsTrue(world.Ledges.Any(l => Mathf.Approximately(l.yMax, h)), "ledge top at " + h + " tiles");
+                Assert.GreaterOrEqual(world.Hazards.Count, 1);
+                Assert.GreaterOrEqual(world.Lanterns.Count, 2);
+                var pc = roots.SelectMany(g => g.GetComponentsInChildren<Skp.Player.PlayerController>()).Single();
+                Assert.IsNotNull(pc.worldSource);
+                Assert.IsNotNull(pc.cameraFollow);
+                CollectionAssert.DoesNotContain(EditorBuildSettings.scenes.Select(s => s.path).ToArray(), "Assets/Scenes/Dev/TestRoom.unity", "dev scene stays out of the build");
+            }
+            finally { EditorSceneManager.CloseScene(scene, true); }
         }
 
         [Test]

@@ -11,6 +11,16 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | F1 / gamepad Select toggles the debug overlay (development build only) | [ ] | [ ] | n/a | |
 | Pixel art is sharp (no blur, no shimmer) at 1280x720 and 2400x1080 | [ ] | | | |
 | Screen stays landscape when the phone is rotated | n/a | n/a | [ ] | |
+| **M2 player feel (open Assets/Scenes/Dev/TestRoom.unity, press Play)** | | | | |
+| Run feels like the prototype: quick start, short slide on release | [ ] | [ ] | n/a | |
+| Jump reaches the 1, 2, 3 tile ledges from the floor; 4 tiles needs the step before it | [ ] | [ ] | n/a | |
+| Short tap gives a small hop, holding gives the full jump | [ ] | [ ] | n/a | |
+| Jump just after walking off a ledge still works (coyote) | [ ] | [ ] | n/a | |
+| Jump pressed just before landing fires on landing (buffer) | [ ] | [ ] | n/a | |
+| Dash (Q/Shift, LB) bursts about 3.7 tiles and costs flame; spikes do not hurt mid-dash | [ ] | [ ] | n/a | |
+| Spikes knock back, sprite blinks while invulnerable | [ ] | [ ] | n/a | |
+| Touching the far lanterns lights them; dying respawns at the last one | [ ] | [ ] | n/a | |
+| Camera follows smoothly and never shows outside the room | [ ] | [ ] | n/a | |
 | **Spec section C (fill in from M5 onward)** | | | | |
 | Menu navigation | [ ] | [ ] | [ ] | |
 | Tap/confirm completes the typewriter line, then advances | [ ] | [ ] | [ ] | |
