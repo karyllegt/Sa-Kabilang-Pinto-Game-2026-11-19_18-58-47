@@ -1,0 +1,106 @@
+{
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "name": "boots with a corrupt save",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "all 9 levels x 3 difficulties x (no skills, all skills) build and simulate 120 frames; endless too",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "New Journey opens character select",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "character choice opens difficulty select",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "difficulty opens level map with Lola first-meeting dialog",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Lola dialog finishes and is remembered (metLola saved)",
+      "ok": true,
+      "detail": "{\"ui\":null,\"met\":true}"
+    },
+    {
+      "name": "ENTER on map shows the before-stage dialog",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "before-stage dialog starts gameplay",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "picking up the level 1 letter grants Double Jump and shows dialogs",
+      "ok": true,
+      "detail": "{\"ui\":\"clueCard\",\"sk\":\"[\\\"dj\\\"]\"}"
+    },
+    {
+      "name": "double jump fires once in mid-air and not a third time",
+      "ok": true,
+      "detail": "{\"a\":1,\"vy\":-6.7,\"after\":-2.826}"
+    },
+    {
+      "name": "veil blocks damage; bolt fires and costs 8 flame",
+      "ok": true,
+      "detail": "{\"imm\":true,\"bolts\":1,\"flame\":42}"
+    },
+    {
+      "name": "completing a level shows the Level Clear box",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "next level unlocked",
+      "ok": true,
+      "detail": "unlocked=2"
+    },
+    {
+      "name": "MAP button returns to the level map",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "map cannot select a locked node",
+      "ok": true,
+      "detail": "{\"sel\":1}"
+    },
+    {
+      "name": "pause button opens pause screen and freezes game",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "resume returns to play",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "finishing level 9 shows the ending and saves cleared",
+      "ok": true,
+      "detail": "{\"ui\":\"ending\",\"cleared\":true}"
+    },
+    {
+      "name": "every veil spike field is crossable under the veil; every thorn wall burns with the bolt",
+      "ok": true,
+      "detail": "{\"gT\":35,\"gO\":35,\"tT\":2,\"tO\":2}"
+    },
+    {
+      "name": "no JavaScript errors during the whole run",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}
