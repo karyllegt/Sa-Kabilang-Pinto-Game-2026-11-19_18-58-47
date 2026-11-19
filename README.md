@@ -39,3 +39,5 @@ The game is only done when all of this is true and shown with evidence: it build
 
 ## Status
 See `DECISIONS.md` and git log. Milestones M1 to M10 are in `prompts/`.
+
+- **M1 Foundation: done (2026-11-20).** Assets imported, Input System actions (keyboard, gamepad, touch), SaveService, Boot/Title/Map/Level flow with a wipe hook, pixel-perfect camera, data-asset shells, debug overlay. 29 EditMode + 2 PlayMode tests pass. Re-run the generated setup with **Sa Kabilang Pinto > Setup > Run M1 Setup** (or `-executeMethod SkpProjectSetup.RunAll`).
