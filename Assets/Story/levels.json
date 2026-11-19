@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Sample Level 1",
+    "intro": "SAMPLE intro text for level 1. Ronn Lester will replace this.",
+    "clue": "SAMPLE clue text for level 1.",
+    "ending": ""
+  },
+  {
+    "id": "2",
+    "name": "Sample Level 2",
+    "intro": "SAMPLE intro text for level 2. Ronn Lester will replace this.",
+    "clue": "SAMPLE clue text for level 2.",
+    "ending": ""
+  }
+]
