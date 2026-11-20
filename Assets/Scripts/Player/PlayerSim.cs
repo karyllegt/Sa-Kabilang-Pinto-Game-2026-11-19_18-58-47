@@ -1,5 +1,6 @@
 using System;
 using Skp.Core;
+using Skp.Dimensions;
 using UnityEngine;
 
 namespace Skp.Player
@@ -30,8 +31,14 @@ namespace Skp.Player
         public Rect Hitbox => new Rect(Position, Size);
         public int Facing = 1;
         public bool Grounded;
+        /// <summary>The dimension Tala is in. Only objects whose mask contains it are solid, harmful or usable.</summary>
+        public Dim Dimension { get; private set; } = Dim.Ordinary;
         /// <summary>1 = gravity down (Ordinary, Spirit); -1 = gravity up (Inverted).</summary>
-        public int GravitySign = 1;
+        public int GravitySign => DimensionRules.GravitySign(Dimension);
+        /// <summary>The Anino shadow that follows Tala's path in the Spirit dimension.</summary>
+        public readonly ShadowChaser Shadow;
+        /// <summary>Index into World.Doors of the usable door Tala stands at, or -1.</summary>
+        public int NearDoor = -1;
 
         // -------- timers, in ticks
         public int Coyote, JumpBuffer, DashTicks, DashCooldown, WardTicks, WardCooldown, Invulnerable, VeilTicks;
@@ -60,6 +67,11 @@ namespace Skp.Player
         public event Action Jumped, Dashed, Landed, Died, Respawned, OutOfLives;
         public event Action<Vector2, float> Warded;
         public event Action<int> Hurt, LanternLit;
+        public event Action<Dim> DimensionChanged;
+        public event Action<Door> DoorUsed;
+        /// <summary>Interact at the exit door; the level decides whether it is locked (M4).</summary>
+        public event Action<Door> ExitRequested;
+        public event Action ShadowStunned;
 
         public PlayerSim(PlayerTuning tuning, DifficultyMode difficulty, PlayerWorld world)
         {
@@ -71,6 +83,7 @@ namespace Skp.Player
             Lives = InfiniteLives ? 0 : difficulty.lives;
             MaxFlame = Flame = tuning.flameMax;
             Checkpoint = 0;
+            Shadow = new ShadowChaser(difficulty.chaseFrames);
             if (world.Lanterns.Count > 0) PlaceAtLantern(0);
         }
 
@@ -111,12 +124,52 @@ namespace Skp.Player
             PlaceAtLantern(Checkpoint);
             Velocity = Vector2.zero;
             Coyote = JumpBuffer = DashTicks = DashCooldown = WardTicks = WardCooldown = VeilTicks = 0;
-            AirJumps = 0; JumpCut = false; Anim = 0; Facing = 1; GravitySign = 1;
+            AirJumps = 0; JumpCut = false; Anim = 0; Facing = 1;
+            // No dimension state survives death: back to the Waking World, no trail, no stun.
+            SetDimension(Dim.Ordinary);
+            Shadow.Clear();
+            Shadow.ClearStun();
+            NearDoor = -1;
             Invulnerable = PlayerTuning.Ticks(Tuning.respawnInvulnerableTime);
             Vitality = MaxVitality;
             Flame = Mathf.Max(Flame, Tuning.respawnMinFlame);
             Life = PlayerLife.Playing;
             Respawned?.Invoke();
+        }
+
+        /// <summary>Switches dimension; the shadow forgets its trail (prototype setDim).</summary>
+        public void SetDimension(Dim d)
+        {
+            if (d == Dimension) return;
+            Dimension = d;
+            Shadow.Clear();
+            DimensionChanged?.Invoke(d);
+        }
+
+        /// <summary>Shadow lag in ticks (difficulty chase frames, shortened per level by the DifficultyCurve).</summary>
+        public void SetChaseDelay(int ticks) => Shadow.SetDelay(ticks);
+
+        /// <summary>Stun the shadow (ward 190 ticks, Liwanag Bolt 140 ticks).</summary>
+        public bool StunShadow(int ticks)
+        {
+            if (Dimension != Dim.Spirit || !Shadow.Stun(ticks)) return false;
+            ShadowStunned?.Invoke();
+            return true;
+        }
+
+        public Rect ShadowRect => new Rect(Shadow.Current.Position, Size);
+
+        public void UseDoor(Door d)
+        {
+            if (d.Kind == DoorKind.Exit) { ExitRequested?.Invoke(d); return; }
+            Shadow.Clear();
+            if (d.To.HasValue)
+            {
+                Position = new Vector2(d.To.Value.x - Size.x * 0.5f, d.To.Value.y);
+                Velocity = Vector2.zero;
+            }
+            SetDimension(d.Target);
+            DoorUsed?.Invoke(d);
         }
 
         void PlaceAtLantern(int i)
@@ -150,6 +203,7 @@ namespace Skp.Player
             if (DashCooldown > 0) DashCooldown--;
             if (WardCooldown > 0) WardCooldown--;
             if (WardTicks > 0) WardTicks--;
+            Shadow.TickStun();
             int regen = Mathf.Max(1, PlayerTuning.Ticks(t.flameRegenInterval));
             if (Tick % regen == 0 && Flame < MaxFlame) Flame = Mathf.Min(MaxFlame, Flame + 1);
 
@@ -174,6 +228,8 @@ namespace Skp.Player
                 WardTicks = PlayerTuning.Ticks(t.wardDuration);
                 WardCooldown = PlayerTuning.Ticks(t.wardCooldown);
                 Warded?.Invoke(Center, t.wardRadius);
+                if (Dimension == Dim.Spirit && Shadow.Active && (ShadowRect.center - Center).sqrMagnitude < t.shadowWardReach * t.shadowWardReach)
+                    StunShadow(PlayerTuning.Ticks(t.shadowWardStun));
             }
 
             if (DashTicks > 0)
@@ -228,8 +284,10 @@ namespace Skp.Player
             Position.y += Velocity.y * Dt;
             Grounded = false;
             float tol = t.landingTolerance;
-            foreach (var l in World.Ledges)
+            foreach (var ml in World.Ledges)
             {
+                if (!DimensionRules.Active(ml.Mask, Dimension)) continue;
+                var l = ml.Rect;
                 if (Position.x + Size.x <= l.xMin || Position.x >= l.xMax) continue;
                 if (gs > 0)
                 {
@@ -248,24 +306,47 @@ namespace Skp.Player
                 Anim += Mathf.Abs(Velocity.x) * Dt * PlayerTuning.PxPerUnit * 0.11f;
             else if (!Grounded) Anim = 0;
 
+            // the Anino shadow replays the path in the Spirit dimension
+            if (Dimension == Dim.Spirit)
+            {
+                Shadow.Record(Position, Facing, Anim);
+                if (Shadow.CanHurt && Hitbox.Overlaps(ShadowRect)) TryHurt(1, ShadowRect.center.x);
+            }
+
             // lanterns (checkpoints)
             for (int k = 0; k < World.Lanterns.Count; k++)
             {
                 var l = World.Lanterns[k];
-                if (Mathf.Abs(Center.x - l.x) < t.lanternReachX && Mathf.Abs(Position.y - l.y) < t.lanternReachY && gs > 0 && k > Checkpoint)
+                if (Dimension == Dim.Inverted || Mathf.Abs(Center.x - l.x) >= t.lanternReachX || Mathf.Abs(Position.y - l.y) >= t.lanternReachY) continue;
+                if (k > Checkpoint)
                 {
                     Checkpoint = k;
                     Vitality = Mathf.Min(MaxVitality, Vitality + 1);
                     Flame = Mathf.Min(MaxFlame, Flame + t.lanternFlame);
                     LanternLit?.Invoke(k);
                 }
+                // a lantern always brings Tala back to the Waking World
+                SetDimension(Dim.Ordinary);
             }
+
+            // doors: usable when touching (4 px margin) and in this dimension
+            NearDoor = -1;
+            const float m4 = 4f / 16f;
+            var reach = new Rect(Position.x - m4, Position.y - m4, Size.x + 2 * m4, Size.y + 2 * m4);
+            for (int k = 0; k < World.Doors.Count; k++)
+            {
+                var d = World.Doors[k];
+                if (DimensionRules.Active(d.Mask, Dimension) && reach.Overlaps(d.Rect)) { NearDoor = k; break; }
+            }
+            if (NearDoor >= 0 && input.InteractPressed) UseDoor(World.Doors[NearDoor]);
 
             // hazards (1 px inset, as in the prototype)
             const float inset = 1f / 16f;
             var hb = Hitbox;
-            foreach (var h in World.Hazards)
+            foreach (var mh in World.Hazards)
             {
+                if (!DimensionRules.Active(mh.Mask, Dimension)) continue;
+                var h = mh.Rect;
                 var r = new Rect(h.x + inset, h.y + inset, h.width - 2 * inset, h.height - 2 * inset);
                 if (hb.Overlaps(r)) TryHurt(1, h.center.x);
             }

@@ -11,6 +11,9 @@ public static class SkpScreenshots
 {
     public const string Dir = "tests/Screenshots";
 
+    [MenuItem("Sa Kabilang Pinto/Screenshots/All")]
+    public static void All() { TestRoom(); DimensionRoom(); }
+
     [MenuItem("Sa Kabilang Pinto/Screenshots/Test Room")]
     public static void TestRoom()
     {
@@ -38,12 +41,36 @@ public static class SkpScreenshots
         Capture(cam, 960, 540, "m2_testroom_spawn.png");
     }
 
+    [MenuItem("Sa Kabilang Pinto/Screenshots/Dimension Room")]
+    public static void DimensionRoom()
+    {
+        EditorSceneManager.OpenScene(SkpTestRoomBuilder.DimensionRoomPath, OpenSceneMode.Single);
+        var cam = Camera.main;
+        var world = Object.FindAnyObjectByType<LevelWorldAuthoring>();
+        var director = Object.FindAnyObjectByType<Skp.Dimensions.DimensionDirector>();
+        var ppc = cam.GetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>();
+        if (ppc != null) ppc.enabled = false;
+        cam.transform.position = new Vector3(world.bounds.center.x, world.bounds.center.y, -10);
+        cam.orthographicSize = world.bounds.height / 2f;
+        // the tint follows the camera; stretch it over the whole framed room
+        if (director.screenTint != null) director.screenTint.transform.localScale = new Vector3(120, 60, 1);
+        foreach (var d in new[] { Skp.Dimensions.Dim.Ordinary, Skp.Dimensions.Dim.Spirit, Skp.Dimensions.Dim.Inverted })
+        {
+            director.Refresh();
+            if (director.screenTint != null && director.screenTint.sprite == null)
+                director.screenTint.sprite = Skp.Dimensions.DimensionDirector.WhiteSprite();
+            director.Apply(d, force: true);
+            Capture(cam, 1600, 1040, $"m3_dimension_room_{d.ToString().ToLowerInvariant()}.png");
+        }
+    }
+
     public static void Capture(Camera cam, int w, int h, string file)
     {
         Directory.CreateDirectory(Dir);
         var rt = new RenderTexture(w, h, 24);
         var prev = cam.targetTexture;
         cam.targetTexture = rt;
+        cam.Render(); // warm-up: the first render after a scene opens in batch mode comes out dark
         cam.Render();
         RenderTexture.active = rt;
         var tex = new Texture2D(w, h, TextureFormat.RGB24, false);

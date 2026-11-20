@@ -1,3 +1,4 @@
+using Skp.Dimensions;
 using UnityEngine;
 
 namespace Skp.Levels
@@ -8,6 +9,8 @@ namespace Skp.Levels
         public enum Kind { Ledge, Hazard }
 
         public Kind kind;
+        [Tooltip("Dimensions this exists in (solid or harmful only there).")]
+        public Dim mask = Dim.All;
         [Tooltip("Size in world units (1 unit = 1 tile = 16 px).")]
         public Vector2 size = new Vector2(3, 1);
 

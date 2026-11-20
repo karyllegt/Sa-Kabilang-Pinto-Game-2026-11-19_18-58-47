@@ -196,7 +196,7 @@ namespace Skp.Tests
                 var roots = scene.GetRootGameObjects();
                 var world = roots.SelectMany(g => g.GetComponentsInChildren<Skp.Levels.LevelWorldAuthoring>()).Single().Build();
                 foreach (var h in new[] { 1f, 2f, 3f, 4f })
-                    Assert.IsTrue(world.Ledges.Any(l => Mathf.Approximately(l.yMax, h)), "ledge top at " + h + " tiles");
+                    Assert.IsTrue(world.Ledges.Any(l => Mathf.Approximately(l.Rect.yMax, h)), "ledge top at " + h + " tiles");
                 Assert.GreaterOrEqual(world.Hazards.Count, 1);
                 Assert.GreaterOrEqual(world.Lanterns.Count, 2);
                 var pc = roots.SelectMany(g => g.GetComponentsInChildren<Skp.Player.PlayerController>()).Single();

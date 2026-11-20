@@ -98,7 +98,7 @@ namespace Skp.Player
         string DebugLine()
         {
             if (Sim == null) return "";
-            return $"PLAYER pos {Sim.Position.x * 16:0},{Sim.Position.y * 16:0}px vel {Sim.Velocity.x * 16 / 60:0.00},{Sim.Velocity.y * 16 / 60:0.00}px/f " +
+            return $"PLAYER {Sim.Dimension} shadow {(Sim.Shadow.Active ? "on" : "off")} stun {Sim.Shadow.StunTicks} pos {Sim.Position.x * 16:0},{Sim.Position.y * 16:0}px vel {Sim.Velocity.x * 16 / 60:0.00},{Sim.Velocity.y * 16 / 60:0.00}px/f " +
                    $"{(Sim.Grounded ? "ground" : "air")} vit {Sim.Vitality}/{Sim.MaxVitality} flame {Sim.Flame} lives {(Sim.InfiniteLives ? "inf" : Sim.Lives.ToString())} cp {Sim.Checkpoint}";
         }
     }

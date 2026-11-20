@@ -25,5 +25,9 @@ namespace Skp.Levels
         public float enemyCap = 2.2f;
         [Tooltip("Shadow chase delay floor, in 60 Hz frames.")]
         public int minChaseFrames = 100;
+
+        /// <summary>Shadow lag for a level: the difficulty's frames x (1 - 0.035 L), never below the floor.</summary>
+        public int ChaseFrames(int difficultyFrames, int levelIndex) =>
+            Mathf.Max(minChaseFrames, Mathf.RoundToInt(difficultyFrames * (1f + chaseDelayPerLevel * Mathf.Max(0, levelIndex))));
     }
 }

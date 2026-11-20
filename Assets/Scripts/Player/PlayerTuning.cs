@@ -47,6 +47,11 @@ namespace Skp.Player
         [Tooltip("46 px")] public float wardRadius = 46f / 16f;
         [Tooltip("72 frames")] public float wardCooldown = 1.2f;
 
+        [Header("Anino shadow (Spirit dimension)")]
+        [Tooltip("50 px: a ward stuns the shadow within this distance (center to center)")] public float shadowWardReach = 50f / 16f;
+        [Tooltip("190 frames")] public float shadowWardStun = 190f / 60f;
+        [Tooltip("140 frames (Liwanag Bolt, M6)")] public float shadowBoltStun = 140f / 60f;
+
         [Header("Hurt and death")]
         [Tooltip("3.2 px/frame, away from gravity")] public float knockbackUp = 12f;
         [Tooltip("2.4 px/frame, away from the source")] public float knockbackSide = 9f;

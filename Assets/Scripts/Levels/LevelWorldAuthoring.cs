@@ -21,12 +21,13 @@ namespace Skp.Levels
             {
                 switch (m.kind)
                 {
-                    case WorldMarker.Kind.Ledge: w.Ledges.Add(m.Rect); break;
-                    case WorldMarker.Kind.Hazard: w.Hazards.Add(m.Rect); break;
+                    case WorldMarker.Kind.Ledge: w.Ledges.Add(new MaskedRect(m.Rect, m.mask)); break;
+                    case WorldMarker.Kind.Hazard: w.Hazards.Add(new MaskedRect(m.Rect, m.mask)); break;
                 }
             }
             foreach (var l in GetComponentsInChildren<LanternMarker>().OrderBy(l => l.order))
                 w.Lanterns.Add(l.transform.position);
+            foreach (var d in GetComponentsInChildren<DoorMarker>()) w.Doors.Add(d.ToDoor());
             return w;
         }
 

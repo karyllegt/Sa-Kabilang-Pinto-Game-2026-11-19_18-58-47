@@ -117,3 +117,18 @@ Running log of choices, defaults and open questions. Newest section at the botto
 | M2-10 | One-way ledges | Every ledge is one-way, as in the prototype (land from above, pass from below; nothing blocks sideways). Inverted gravity lands on undersides; the code path exists, dimensions arrive in M3. |
 | M2-11 | Test room | `Assets/Scenes/Dev/TestRoom.unity` (not in the build list): floor, ledges with tops at 1, 2, 3, 4 and 7 tiles, a spike strip, three lanterns (placeholder flame sprite until the lantern art in M4). Player prefab `Assets/Prefabs/Player/Player.prefab` uses `spr_pl_girl/boy_0..3` (idle, run, run, air). |
 | M2-12 | Ward visual | The ward pulse logic and event exist; its ring graphic is deferred to M8 (juice), since no ring sprite exists yet. |
+
+---
+
+## 2026-11-20 · M3 Dimensions and the Anino shadow
+
+| # | Topic | Decision |
+| --- | --- | --- |
+| M3-1 | Masks | `Dim` flags enum Ordinary 1, Spirit 2, Inverted 4, All 7 (prototype values). An object is active (solid, harmful, usable, drawn) iff `(mask & current) != 0`. Ledges and hazards are `MaskedRect`s; a plain `Rect` converts to `All`. Items and enemies use the same rule when they arrive (M4/M7). |
+| M3-2 | Drawing other dimensions | As the prototype's drawWorld(): ledges from other dimensions are a 16 percent ghost in their dimension colour, doors 12 percent in their target colour, hazards 12 percent red, items and enemies hidden; the exit is always drawn. Full-screen tint behind the world: Spirit teal 26 percent, Inverted violet 32 percent. `DimensionDirector.Changed` is the hook for the M8 audio filter and the M5 HUD label. |
+| M3-3 | Doors | `Door` = rect, mask (where it is seen and used), target dimension, kind (Enter, Home, Exit), optional arrival point (teleport), hanging flag. Usable within 4 px of the hitbox when Interact is pressed, first matching door wins (prototype order). Using a door clears the shadow trail. The Exit raises `ExitRequested`; locking and level completion are M4. |
+| M3-4 | Gravity | `GravitySign` derives from the dimension (Inverted = -1). Gravity, jump, jump cut, knockback, landing (on ledge undersides) and the sprite (flipped vertically) mirror; glide will reuse the same sign in M6. |
+| M3-5 | Lanterns | Standing at any lantern (lit or not) returns Tala to the Waking World, except in Inverted gravity where lanterns are ignored, exactly as in the prototype. |
+| M3-6 | Shadow | `ShadowChaser` keeps the last N+1 samples (position, facing, animation) recorded every tick in Spirit only, and sits on the oldest: exactly N ticks late, appearing after N+1 ticks. N = the difficulty's chase frames (Story 300, Standard 240, Nightmare 180, Endless 200), shortened per level by `DifficultyCurve.ChaseFrames` (x (1 - 0.035 L), floor 100), applied by the level loader in M4. Contact hurts through `TryHurt` (so `CanBeHurt` applies). Ward within 50 px stuns it 190 ticks; `StunShadow(140)` is the Liwanag Bolt hook (M6). Stun only applies when not already stunned. |
+| M3-7 | Reset on death | Respawn always returns to Ordinary (raising `DimensionChanged` so the scene and audio follow), clears the trail and the stun, and clears the near-door state. The prototype kept the stun timer across death; resetting it is the simplest leak-free reading of "no dimension state leak after death". |
+| M3-8 | Test room | `Assets/Scenes/Dev/DimensionRoom.unity` (not in the build): Spirit door and home door, Spirit-only stairs to an all-dimension lantern ledge, an Ordinary-only ledge and floor spikes, an Inverted door leading up through three ceiling ledges (one with spikes) to a hanging home door that teleports to the lantern, a ceiling so Tala cannot rise forever, the Anino shadow view and the dimension director. |

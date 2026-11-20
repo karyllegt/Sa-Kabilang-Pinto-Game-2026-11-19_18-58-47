@@ -21,6 +21,14 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Spikes knock back, sprite blinks while invulnerable | [ ] | [ ] | n/a | |
 | Touching the far lanterns lights them; dying respawns at the last one | [ ] | [ ] | n/a | |
 | Camera follows smoothly and never shows outside the room | [ ] | [ ] | n/a | |
+| **M3 dimensions (open Assets/Scenes/Dev/DimensionRoom.unity, press Play)** | | | | |
+| E at the teal door enters Spirit: teal tint, Spirit stairs solid, Ordinary ledge and spikes faint and harmless | [ ] | [ ] | n/a | |
+| In Spirit the Anino appears about 4 s behind on the same path and hurts on touch | [ ] | [ ] | n/a | |
+| Ward (F) next to the Anino stuns it (faint teal) for about 3 s | [ ] | [ ] | n/a | |
+| Reaching the lantern on the top ledge returns to the Waking World | [ ] | [ ] | n/a | |
+| E at the violet door: gravity flips, Tala falls up onto ceiling ledges, sprite upside down, jump goes down | [ ] | [ ] | n/a | |
+| Hanging home door at the top returns to the lantern in the Waking World | [ ] | [ ] | n/a | |
+| Dying in Spirit or Inverted respawns in the Waking World with no tint and no shadow | [ ] | [ ] | n/a | |
 | **Spec section C (fill in from M5 onward)** | | | | |
 | Menu navigation | [ ] | [ ] | [ ] | |
 | Tap/confirm completes the typewriter line, then advances | [ ] | [ ] | [ ] | |
