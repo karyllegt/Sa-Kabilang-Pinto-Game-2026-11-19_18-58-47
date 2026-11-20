@@ -29,6 +29,14 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | E at the violet door: gravity flips, Tala falls up onto ceiling ledges, sprite upside down, jump goes down | [ ] | [ ] | n/a | |
 | Hanging home door at the top returns to the lantern in the Waking World | [ ] | [ ] | n/a | |
 | Dying in Spirit or Inverted respawns in the Waking World with no tint and no shadow | [ ] | [ ] | n/a | |
+| **M4 levels (Title > Map > Jump starts the newest level)** | | | | |
+| Level 1, 2 and 3 can each be finished by hand on Standard | [ ] | [ ] | [ ] | |
+| The exit says LOCKED until the letter is found; the letter is in the middle room | [ ] | [ ] | [ ] | |
+| Lanterns light, add a heart and flame, and dying returns to the last one | [ ] | [ ] | [ ] | |
+| Quit at a lantern, relaunch, Map > Jump: resumes at that lantern | [ ] | [ ] | [ ] | |
+| Anino patrols turn at ledge ends; ward kills them | [ ] | [ ] | [ ] | |
+| Fragments raise max flame; flame stars refill it | [ ] | [ ] | [ ] | |
+| Level 3 violet doors lead up the inverted route to a hanging door home | [ ] | [ ] | [ ] | |
 | **Spec section C (fill in from M5 onward)** | | | | |
 | Menu navigation | [ ] | [ ] | [ ] | |
 | Tap/confirm completes the typewriter line, then advances | [ ] | [ ] | [ ] | |

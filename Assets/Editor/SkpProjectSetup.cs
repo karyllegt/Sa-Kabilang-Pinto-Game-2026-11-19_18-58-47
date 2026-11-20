@@ -47,8 +47,9 @@ public static class SkpProjectSetup
         var font = CreateFontAsset();
         CreatePixelBoxPrefab();
         var touch = CreateTouchControlsPrefab(font);
+        SkpTestRoomBuilder.Build();      // Player prefab first: the Level scene uses it
+        SkpLevelSetup.CreateDataAssets();
         BuildScenes(font, touch);
-        SkpTestRoomBuilder.Build();
         AssetDatabase.SaveAssets();
         foreach (var o in AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset"))
             AssetDatabase.SaveAssetIfDirty(o);
@@ -197,8 +198,7 @@ public static class SkpProjectSetup
             "SA KABILANG PINTO\nThe Lantern Between Worlds\n\nJUMP / ENTER: continue", SceneNames.Map, null, null);
         BuildScene(SceneNames.Map, "Assets/Art/Backgrounds/bg_map_overworld.png", font,
             "LEVEL MAP (placeholder)\nJUMP / ENTER: enter level   ESC: title", SceneNames.Level, SceneNames.Title, null);
-        BuildScene(SceneNames.Level, "Assets/Art/Backgrounds/bg_act1.png", font,
-            "LEVEL (placeholder)\nESC / PAUSE: back to map", null, SceneNames.Map, touchPrefab);
+        SkpLevelSetup.BuildLevelScene(font, touchPrefab);
 
         // Boot first; SampleScene leaves the build list (the file itself is kept).
         EditorBuildSettings.scenes = SceneNames.All
@@ -267,7 +267,7 @@ public static class SkpProjectSetup
 
     // ---------------------------------------------------------------- helpers
 
-    static GameObject NewCanvas(string name, int sortOrder)
+    public static GameObject NewCanvas(string name, int sortOrder)
     {
         var go = new GameObject(name, typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
         var c = go.GetComponent<Canvas>();
@@ -282,7 +282,7 @@ public static class SkpProjectSetup
         return go;
     }
 
-    static void AddLabel(Transform parent, string text, TMP_FontAsset font, float size)
+    public static void AddLabel(Transform parent, string text, TMP_FontAsset font, float size)
     {
         var go = new GameObject("Label", typeof(RectTransform));
         go.transform.SetParent(parent, false);
@@ -300,7 +300,7 @@ public static class SkpProjectSetup
         t.raycastTarget = false;
     }
 
-    static void Stretch(RectTransform rt)
+    public static void Stretch(RectTransform rt)
     {
         rt.anchorMin = Vector2.zero;
         rt.anchorMax = Vector2.one;

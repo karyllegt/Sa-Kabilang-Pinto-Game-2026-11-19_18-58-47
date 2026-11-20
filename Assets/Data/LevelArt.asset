@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1f2002087fff4d94ee2da1c23803b, type: 3}
+  m_Name: LevelArt
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelArt
+  wood: {fileID: 21300000, guid: d3cca126bc3fa3847b3edcb45cdbd0f7, type: 3}
+  spirit: {fileID: 21300000, guid: 539b52b9cc4393c44af55b113abe3b98, type: 3}
+  inverted: {fileID: 21300000, guid: 28fcb9dbe83b9d645bf194cc0d1d67d1, type: 3}
+  crumble: {fileID: 21300000, guid: b75289b6d2c926a45a21ea89efd75080, type: 3}
+  moving: {fileID: 21300000, guid: 56a52908224da9a4bbb1e2d6e5cfb68c, type: 3}
+  floorBlock: {fileID: 21300000, guid: e462308016bcb03428e55bba7f06b0c2, type: 3}
+  doorSpirit: {fileID: 21300000, guid: 62db77bc6cada4c419d43e86c9747eb6, type: 3}
+  doorInvert: {fileID: 21300000, guid: b72020639789fa34fb334b82f9ba2546, type: 3}
+  doorHome: {fileID: 21300000, guid: 6659179e22c23264abcfedddb0000f0e, type: 3}
+  exitLocked: {fileID: 21300000, guid: d8e2718a9aa9259409a59f1b07949977, type: 3}
+  exitOpen: {fileID: 21300000, guid: 83588bd8778357d46a6b81bc4c31ad6f, type: 3}
+  spike: {fileID: 21300000, guid: 52b9944f1b7b68846b0d63f53eaf4fb1, type: 3}
+  spikeGauntlet: {fileID: 21300000, guid: 5fee800125793144d9dea09aca6cd940, type: 3}
+  thorns: {fileID: 21300000, guid: ea4881dbabd5df04690e6f495f440ddc, type: 3}
+  thornsBurnt: {fileID: 21300000, guid: e109c3d834f8a6c419042d38ae3c19ed, type: 3}
+  rootDormant: {fileID: 21300000, guid: c216e94663daaa14589945e0b5a7cb6e, type: 3}
+  rootWarning: {fileID: 21300000, guid: be37553973b35f2438d65806a7e6096c, type: 3}
+  rootStrike: {fileID: 21300000, guid: 373ddfdb6b84c2e409062b0e20a15008, type: 3}
+  flame: {fileID: 21300000, guid: 2e367109d61c8e943996c153aa3f2306, type: 3}
+  shard: {fileID: 21300000, guid: 902e52728c6cd634eb353a842c4efd00, type: 3}
+  clue: {fileID: 21300000, guid: 8834773e614b0ab43a07b9cc2a4a43fd, type: 3}
+  anino:
+  - {fileID: 21300000, guid: be9d1da3b1eaf664e9676fd983c65e51, type: 3}
+  - {fileID: 21300000, guid: ad9b3982468e08d4bbeb3a72c50d6451, type: 3}
+  tikbalang:
+  - {fileID: 21300000, guid: 17ea9d4ae40bccf45af48bf4d5b305d6, type: 3}
+  - {fileID: 21300000, guid: d384be7961f33a7498f7a43665ccbc72, type: 3}
+  manananggal:
+  - {fileID: 21300000, guid: fe760d8b0e577764598f88ab3e743910, type: 3}
+  - {fileID: 21300000, guid: 65ff21f0bca6d3d4a90f3ec55ecf0b66, type: 3}
+  backdrops:
+  - {fileID: 21300000, guid: 38a65d3a54133924ea053f851cb39f58, type: 3}
+  - {fileID: 21300000, guid: aa311850aac99fe49be61db042bf7c4e, type: 3}
+  - {fileID: 21300000, guid: fda66af3bdec3c248836bb2ef3bcafe6, type: 3}

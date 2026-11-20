@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f38c6d3f581cf4fae3df4f8bb776c9, type: 3}
+  m_Name: LevelConfig_06
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelConfig
+  index: 5
+  spec:
+    name: The Horseman Trail
+    act: 2
+    rooms: 7
+    inverted: 1
+    enemies:
+    - tik
+    - anino
+    spike: 0.2
+    root: 0.3
+    crumble: 0.3
+    flood: 0
+    floodSpeed: 0
+    boss: 0
+    endless: 0
+    skill: spread
+    intro: A tikbalang walks the trail between the rooms. Do not follow its laughter. Ward it, then slip past.
+    clue: 'A horseshoe nailed to the beam: "It guards the path home, not the way out."'
+    hint: WARD stuns the tikbalang. Slip past it.
+  skill: {fileID: 11400000, guid: 44811735c82fa1c4b86f5d6cf364ddfa, type: 2}

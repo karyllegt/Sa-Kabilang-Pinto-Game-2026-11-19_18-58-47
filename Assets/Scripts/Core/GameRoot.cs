@@ -55,6 +55,9 @@ namespace Skp.Core
             if (Debug.isDebugBuild) gameObject.AddComponent<DebugOverlay>();
         }
 
+        /// <summary>Swap the save service (tests point it at a temp folder so the real save is never touched).</summary>
+        public void UseSave(SaveService save) => Save = save;
+
         void OnApplicationPause(bool paused)
         {
             // Android can kill a backgrounded app without warning: persist on the way out.

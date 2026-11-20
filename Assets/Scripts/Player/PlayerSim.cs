@@ -61,6 +61,14 @@ namespace Skp.Player
         public int Checkpoint;
         public long Tick;
 
+        // -------- level progress (prototype G.score, G.shards, G.clue, G.kills, G.time)
+        public int Score, Shards, Kills;
+        public bool HasClue;
+        /// <summary>The ledge Tala stood on at the end of the last tick (moving ledges carry her, crumbling ones start to fall).</summary>
+        public Ledge Standing;
+        /// <summary>Enemy speed multiplier: difficulty speed x (1 + 0.02 per level).</summary>
+        public float EnemySpeedMult = 1f;
+
         readonly bool _story;
 
         // -------- events (audio, effects, HUD, enemies)
@@ -72,6 +80,10 @@ namespace Skp.Player
         /// <summary>Interact at the exit door; the level decides whether it is locked (M4).</summary>
         public event Action<Door> ExitRequested;
         public event Action ShadowStunned;
+        public event Action<Item> ItemCollected;
+        public event Action ClueFound;
+        public event Action<Enemy> EnemyKilled;
+        public event Action<Ledge> LedgeCrumbled;
 
         public PlayerSim(PlayerTuning tuning, DifficultyMode difficulty, PlayerWorld world)
         {
@@ -137,6 +149,15 @@ namespace Skp.Player
             Respawned?.Invoke();
         }
 
+        /// <summary>Level start or Continue: stand at lantern <paramref name="checkpoint"/> with 60 ticks of grace (prototype startLevel).</summary>
+        public void BeginAt(int checkpoint)
+        {
+            Checkpoint = Mathf.Clamp(checkpoint, 0, Mathf.Max(0, World.Lanterns.Count - 1));
+            PlaceAtLantern(Checkpoint);
+            Velocity = Vector2.zero;
+            Invulnerable = 60;
+        }
+
         /// <summary>Switches dimension; the shadow forgets its trail (prototype setDim).</summary>
         public void SetDimension(Dim d)
         {
@@ -172,6 +193,83 @@ namespace Skp.Player
             DoorUsed?.Invoke(d);
         }
 
+        /// <summary>Prototype item pickup: flame +15 (score 10), fragment: max flame +5 up to 160 and full flame (score 200), letter (score 150).</summary>
+        void CollectItems()
+        {
+            var hb = Hitbox;
+            foreach (var it in World.Items)
+            {
+                if (it.Got || !DimensionRules.Active(it.Mask, Dimension) || !hb.Overlaps(it.Rect)) continue;
+                it.Got = true;
+                switch (it.Kind)
+                {
+                    case ItemKind.Flame:
+                        Flame = Mathf.Min(MaxFlame, Flame + 15); Score += 10; break;
+                    case ItemKind.Shard:
+                        Shards++; Score += 200;
+                        MaxFlame = Mathf.Min(Tuning.flameCap, MaxFlame + Tuning.flamePerFragment);
+                        Flame = MaxFlame; break;
+                    case ItemKind.Clue:
+                        HasClue = true; Score += 150;
+                        foreach (var o in World.Items) if (o.Kind == ItemKind.Clue) o.Got = true;
+                        break;
+                }
+                ItemCollected?.Invoke(it);
+                if (it.Kind == ItemKind.Clue) ClueFound?.Invoke();
+            }
+        }
+
+        /// <summary>Prototype updEnemies() for the walking creatures (Anino, tikbalang). Manananggal flight is M7.</summary>
+        void UpdateEnemies()
+        {
+            const float px = 1f / 16f;
+            foreach (var e in World.Enemies)
+            {
+                if (e.Dead || !DimensionRules.Active(e.Mask, Dimension)) continue;
+                if (e.Stun > 0) e.Stun--;
+                if (e.Kind == EnemyKind.Anino || e.Kind == EnemyKind.Tikbalang)
+                {
+                    if (e.Stun == 0)
+                    {
+                        float sp = e.Speed * EnemySpeedMult;
+                        if (e.Kind == EnemyKind.Tikbalang)
+                        {
+                            bool same = Mathf.Abs(Position.y - e.Position.y) < 14 * px;
+                            float dx = Center.x - e.Center.x;
+                            if (same && Mathf.Abs(dx) < 90 * px && Position.x > e.MinX - 20 * px && Position.x < e.MaxX + 20 * px)
+                            { e.Dir = dx < 0 ? -1 : 1; sp = 1.5f * EnemySpeedMult; e.Charging = true; }
+                            else e.Charging = false;
+                        }
+                        e.Position.x += e.Dir * sp * px;
+                        if (e.Position.x < e.MinX) { e.Position.x = e.MinX; e.Dir = 1; }
+                        if (e.Position.x + e.Size.x > e.MaxX) { e.Position.x = e.MaxX - e.Size.x; e.Dir = -1; }
+                    }
+                }
+                if (e.Stun == 0 && Hitbox.Overlaps(e.ContactRect)) TryHurt(1, e.Center.x);
+            }
+        }
+
+        /// <summary>Prototype wardPulse(): within the radius, an Anino dies; others lose 1 hp and are stunned 170 ticks.</summary>
+        void WardCreatures(float radius)
+        {
+            foreach (var e in World.Enemies)
+            {
+                if (e.Dead || !DimensionRules.Active(e.Mask, Dimension)) continue;
+                if ((e.Center - Center).sqrMagnitude >= radius * radius) continue;
+                if (e.Kind == EnemyKind.Anino) KillEnemy(e);
+                else { e.Hp--; if (e.Hp <= 0) KillEnemy(e); else e.Stun = 170; }
+            }
+        }
+
+        public void KillEnemy(Enemy e)
+        {
+            if (e.Dead) return;
+            e.Dead = true;
+            Kills++;
+            Score += 50;
+            EnemyKilled?.Invoke(e);
+        }
+
         void PlaceAtLantern(int i)
         {
             var l = World.Lanterns[Mathf.Clamp(i, 0, World.Lanterns.Count - 1)];
@@ -196,6 +294,27 @@ namespace Skp.Player
             var t = Tuning;
             int gs = GravitySign;
             Tick++;
+
+            // moving and crumbling ledges (prototype: start of stepGame)
+            foreach (var pl in World.Ledges)
+            {
+                if (pl.Kind == LedgeKind.Moving)
+                {
+                    float nx = pl.BaseX + Mathf.Sin(Tick * pl.Speed + pl.Phase) * pl.Amplitude;
+                    pl.DeltaX = nx - pl.Rect.x;
+                    pl.Rect.x = nx;
+                }
+                else if (pl.Kind == LedgeKind.Crumble)
+                {
+                    if (pl.DeadTicks > 0) { pl.DeadTicks--; if (pl.DeadTicks == 0) pl.CrumbleTimer = 0; }
+                    else if (pl.CrumbleTimer > 0)
+                    {
+                        pl.CrumbleTimer--;
+                        if (pl.CrumbleTimer == 0) { pl.DeadTicks = 220; LedgeCrumbled?.Invoke(pl); }
+                    }
+                }
+            }
+            if (Standing != null && Standing.Kind == LedgeKind.Moving) Position.x += Standing.DeltaX;
 
             // timers
             if (VeilTicks > 0) VeilTicks--;
@@ -228,6 +347,7 @@ namespace Skp.Player
                 WardTicks = PlayerTuning.Ticks(t.wardDuration);
                 WardCooldown = PlayerTuning.Ticks(t.wardCooldown);
                 Warded?.Invoke(Center, t.wardRadius);
+                WardCreatures(t.wardRadius);
                 if (Dimension == Dim.Spirit && Shadow.Active && (ShadowRect.center - Center).sqrMagnitude < t.shadowWardReach * t.shadowWardReach)
                     StunShadow(PlayerTuning.Ticks(t.shadowWardStun));
             }
@@ -283,25 +403,31 @@ namespace Skp.Player
             float prevBottom = Position.y, prevTop = Position.y + Size.y;
             Position.y += Velocity.y * Dt;
             Grounded = false;
+            Standing = null;
             float tol = t.landingTolerance;
             foreach (var ml in World.Ledges)
             {
-                if (!DimensionRules.Active(ml.Mask, Dimension)) continue;
+                if (!DimensionRules.Active(ml.Mask, Dimension) || ml.IsGone) continue;
                 var l = ml.Rect;
                 if (Position.x + Size.x <= l.xMin || Position.x >= l.xMax) continue;
                 if (gs > 0)
                 {
                     if (Velocity.y <= 0 && prevBottom >= l.yMax - tol && Position.y <= l.yMax)
-                    { Position.y = l.yMax; Velocity.y = 0; Grounded = true; }
+                    { Position.y = l.yMax; Velocity.y = 0; Grounded = true; Standing = ml; }
                 }
                 else
                 {
                     float top = Position.y + Size.y;
                     if (Velocity.y >= 0 && prevTop <= l.yMin + tol && top >= l.yMin)
-                    { Position.y = l.yMin - Size.y; Velocity.y = 0; Grounded = true; }
+                    { Position.y = l.yMin - Size.y; Velocity.y = 0; Grounded = true; Standing = ml; }
                 }
             }
-            if (Grounded) { AirJumps = 0; JumpCut = false; if (!wasGrounded) Landed?.Invoke(); }
+            if (Grounded)
+            {
+                AirJumps = 0; JumpCut = false;
+                if (!wasGrounded) Landed?.Invoke();
+                if (Standing != null && Standing.Kind == LedgeKind.Crumble && Standing.CrumbleTimer == 0) Standing.CrumbleTimer = 42;
+            }
             if (Grounded && Mathf.Abs(Velocity.x) * Dt * PlayerTuning.PxPerUnit > 0.4f)
                 Anim += Mathf.Abs(Velocity.x) * Dt * PlayerTuning.PxPerUnit * 0.11f;
             else if (!Grounded) Anim = 0;
@@ -321,6 +447,7 @@ namespace Skp.Player
                 if (k > Checkpoint)
                 {
                     Checkpoint = k;
+                    Score += 100;
                     Vitality = Mathf.Min(MaxVitality, Vitality + 1);
                     Flame = Mathf.Min(MaxFlame, Flame + t.lanternFlame);
                     LanternLit?.Invoke(k);
@@ -340,14 +467,32 @@ namespace Skp.Player
             }
             if (NearDoor >= 0 && input.InteractPressed) UseDoor(World.Doors[NearDoor]);
 
+            CollectItems();
+            UpdateEnemies();
+
             // hazards (1 px inset, as in the prototype)
             const float inset = 1f / 16f;
             var hb = Hitbox;
-            foreach (var mh in World.Hazards)
+            foreach (var hz in World.Hazards)
             {
-                if (!DimensionRules.Active(mh.Mask, Dimension)) continue;
-                var h = mh.Rect;
-                var r = new Rect(h.x + inset, h.y + inset, h.width - 2 * inset, h.height - 2 * inset);
+                if (!DimensionRules.Active(hz.Mask, Dimension)) continue;
+                var h = hz.Rect;
+                Rect r;
+                switch (hz.Kind)
+                {
+                    case HazardKind.Thorns:
+                        if (hz.BurnTicks > 0) { hz.BurnTicks--; continue; }
+                        r = new Rect(h.x + 2 * inset, h.y, h.width - 4 * inset, h.height);
+                        break;
+                    case HazardKind.Root:
+                        if (hz.BurnTicks > 0) { hz.BurnTicks--; continue; }
+                        if (!hz.RootStriking(Tick)) continue;
+                        r = h;
+                        break;
+                    default:
+                        r = new Rect(h.x + inset, h.y + inset, h.width - 2 * inset, h.height - 2 * inset);
+                        break;
+                }
                 if (hb.Overlaps(r)) TryHurt(1, h.center.x);
             }
         }

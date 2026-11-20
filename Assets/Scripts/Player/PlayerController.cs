@@ -35,7 +35,8 @@ namespace Skp.Player
 
         void Start()
         {
-            if (Sim == null) Initialize(worldSource != null ? worldSource.Build() : null);
+            // Dev rooms build their own world; in the Level scene the LevelRunner calls Attach (its Start may run later).
+            if (Sim == null && worldSource != null) Initialize(worldSource.Build());
         }
 
         /// <summary>Builds the simulation for a world. Called by Start, the level loader or tests.</summary>
@@ -45,17 +46,27 @@ namespace Skp.Player
             var table = difficulties != null ? difficulties : ScriptableObject.CreateInstance<DifficultyTable>();
             var save = GameRoot.Instance != null ? GameRoot.Instance.Save.Data : null;
             string key = !string.IsNullOrEmpty(difficultyOverride) ? difficultyOverride : save?.diff ?? "standard";
-            Sim = new PlayerSim(tuning, table.Get(key), world);
-            if (view != null) view.useBoy = save != null && save.@char == "boy";
-            _prevPos = Sim.Position;
+            Attach(new PlayerSim(tuning, table.Get(key), world));
             _latch.Clear();
-            if (cameraFollow != null) { cameraFollow.bounds = world.Bounds; cameraFollow.SnapTo(Sim.Center, Sim.GravitySign); }
             if (worldSource != null)
             {
                 var lanterns = worldSource.GetComponentsInChildren<LanternMarker>().OrderBy(l => l.order).ToArray();
                 for (int i = 0; i < lanterns.Length; i++) lanterns[i].SetLit(i == 0);
                 Sim.LanternLit += k => { if (k < lanterns.Length) lanterns[k].SetLit(true); };
             }
+            DebugOverlay.ExtraLines -= DebugLine;
+            DebugOverlay.ExtraLines += DebugLine;
+        }
+
+        /// <summary>Drive an existing simulation (the Level scene builds it through LevelSession).</summary>
+        public void Attach(PlayerSim sim)
+        {
+            Sim = sim ?? throw new ArgumentNullException(nameof(sim));
+            var save = GameRoot.Instance != null ? GameRoot.Instance.Save.Data : null;
+            if (view != null) view.useBoy = save != null && save.@char == "boy";
+            _prevPos = Sim.Position;
+            _latch.Clear();
+            if (cameraFollow != null) { cameraFollow.bounds = sim.World.Bounds; cameraFollow.SnapTo(Sim.Center, Sim.GravitySign); }
             DebugOverlay.ExtraLines -= DebugLine;
             DebugOverlay.ExtraLines += DebugLine;
         }

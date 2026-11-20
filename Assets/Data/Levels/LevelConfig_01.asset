@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f38c6d3f581cf4fae3df4f8bb776c9, type: 3}
+  m_Name: LevelConfig_01
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelConfig
+  index: 0
+  spec:
+    name: Fiesta Night
+    act: 1
+    rooms: 4
+    inverted: 0
+    enemies:
+    - anino
+    spike: 0.3
+    root: 0
+    crumble: 0
+    flood: 0
+    floodSpeed: 0
+    boss: 0
+    endless: 0
+    skill: dj
+    intro: The fiesta should be loud. Tonight the house is silent, and a bell keeps calling from above. Take your parol. Climb.
+    clue: 'A scrap of invitation: "Come home before the midnight bell, anak."'
+    hint: Reach the lantern above. Enter the TEAL door to change worlds.
+  skill: {fileID: 11400000, guid: daf8bb66f5895d4429da6cc3589e0fdf, type: 2}

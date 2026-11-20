@@ -12,7 +12,7 @@ public static class SkpScreenshots
     public const string Dir = "tests/Screenshots";
 
     [MenuItem("Sa Kabilang Pinto/Screenshots/All")]
-    public static void All() { TestRoom(); DimensionRoom(); }
+    public static void All() { TestRoom(); DimensionRoom(); Levels(); }
 
     [MenuItem("Sa Kabilang Pinto/Screenshots/Test Room")]
     public static void TestRoom()
@@ -62,6 +62,43 @@ public static class SkpScreenshots
             director.Apply(d, force: true);
             Capture(cam, 1600, 1040, $"m3_dimension_room_{d.ToString().ToLowerInvariant()}.png");
         }
+    }
+
+    [MenuItem("Sa Kabilang Pinto/Screenshots/Levels 1-3")]
+    public static void Levels()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "skp_shot_save");
+        var save = new Skp.Save.SaveService(dir);
+        save.Load();
+        for (int lv = 0; lv < 3; lv++)
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/Level.unity", OpenSceneMode.Single);
+            var runner = Object.FindAnyObjectByType<Skp.Levels.LevelRunner>();
+            var session = new Skp.Levels.LevelSession(runner.levels[lv].spec, new Skp.Core.LevelRequest { Level = lv, Difficulty = "standard" },
+                runner.tuning, runner.difficulties, runner.curve, save);
+            runner.view.Build(session.World, session.Sim);
+            runner.backdrop.sprite = runner.view.art.backdrops[runner.levels[lv].spec.act - 1];
+            runner.director.Refresh();
+            if (runner.director.screenTint != null && runner.director.screenTint.sprite == null)
+                runner.director.screenTint.sprite = Skp.Dimensions.DimensionDirector.WhiteSprite();
+            var pv = runner.player.view;
+            pv.Render(session.Sim, session.Sim.Position, 1f);
+            var cam = Camera.main;
+            var follow = cam.GetComponent<Skp.Core.CameraFollow>();
+            follow.bounds = session.World.Bounds;
+            var t = follow.Target(session.Sim.Center, 1);
+            cam.transform.position = new Vector3(t.x, t.y, -10);
+            Capture(cam, 960, 540, $"m4_level{lv + 1}_spawn.png");
+
+            var ppc = cam.GetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>();
+            if (ppc != null) ppc.enabled = false;
+            var b = session.World.Bounds;
+            cam.transform.position = new Vector3(b.center.x, b.center.y, -10);
+            cam.orthographicSize = b.height / 2f;
+            runner.backdrop.enabled = false;
+            Capture(cam, Mathf.RoundToInt(1400 * b.width / b.height), 1400, $"m4_level{lv + 1}_tower.png");
+        }
+        if (Directory.Exists(dir)) Directory.Delete(dir, true);
     }
 
     public static void Capture(Camera cam, int w, int h, string file)
