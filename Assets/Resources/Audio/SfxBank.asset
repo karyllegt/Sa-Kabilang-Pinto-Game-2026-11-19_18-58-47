@@ -30,7 +30,7 @@ MonoBehaviour:
     volume: 0.8
   - cue: dash
     clip: {fileID: 8300000, guid: b92039f63b536164a9409789d860904a, type: 3}
-    volume: 0.8
+    volume: 0.7966934
   - cue: die
     clip: {fileID: 8300000, guid: 710b2340c5cf11f4c8edd81cb36a2682, type: 3}
     volume: 0.8
@@ -49,11 +49,20 @@ MonoBehaviour:
   - cue: kill
     clip: {fileID: 8300000, guid: c0b3c7c3472fcf8438e01ecd14f363b6, type: 3}
     volume: 0.8
+  - cue: land
+    clip: {fileID: 8300000, guid: 55bde2ccb59b8654d9124b5031cb0bde, type: 3}
+    volume: 0.8
   - cue: lantern
     clip: {fileID: 8300000, guid: 07d288b359769f44e8c2823fe4f11c87, type: 3}
     volume: 0.8
+  - cue: letter
+    clip: {fileID: 8300000, guid: b5208864321bd3c448bbf8b7989b731e, type: 3}
+    volume: 0.8
   - cue: locked
     clip: {fileID: 8300000, guid: 360224780028fdd43a7ba2d68dbe3f00, type: 3}
+    volume: 0.8
+  - cue: parry
+    clip: {fileID: 8300000, guid: ce382c96ed6c75c4ab2764ebe15a51e0, type: 3}
     volume: 0.8
   - cue: select
     clip: {fileID: 8300000, guid: f8fc00049e9765440b8515b9ae99c21d, type: 3}
@@ -90,6 +99,9 @@ MonoBehaviour:
     volume: 0.8
   - cue: stun
     clip: {fileID: 8300000, guid: 757f42d3deae56b4190a5f3406fdf207, type: 3}
+    volume: 0.8
+  - cue: toll
+    clip: {fileID: 8300000, guid: c33e96bc6594c5147915bd0be8e5f243, type: 3}
     volume: 0.8
   - cue: ward
     clip: {fileID: 8300000, guid: 5381229ac0416244e9ca5864ab0b71b3, type: 3}

@@ -65,7 +65,11 @@ namespace Skp.Tests
             var sfx = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Sfx" }).Select(AssetDatabase.GUIDToAssetPath).ToArray();
             Assert.AreEqual(18, sfx.Count(p => p.EndsWith(".ogg") && System.IO.Path.GetDirectoryName(p).Replace("\\", "/") == "Assets/Audio/Sfx"));
             Assert.AreEqual(10, sfx.Count(p => p.StartsWith("Assets/Audio/Sfx/Skills/")));
-            Assert.AreEqual(5, AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Music" }).Length);
+            // the 5 provided tracks, plus (M8) their seamless loops in Music/Loops and 4 generated effects
+            var music = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Music" }).Select(AssetDatabase.GUIDToAssetPath).ToArray();
+            Assert.AreEqual(5, music.Count(p => p.EndsWith(".ogg") && System.IO.Path.GetDirectoryName(p).Replace("\\", "/") == "Assets/Audio/Music"));
+            Assert.AreEqual(5, music.Count(p => p.StartsWith("Assets/Audio/Music/Loops/")));
+            Assert.AreEqual(4, sfx.Count(p => p.StartsWith("Assets/Audio/Sfx/Generated/")));
         }
 
         // ------------------------------------------------------------ input

@@ -61,7 +61,9 @@ namespace Skp.Core
                 Input.Enable();
             }
 
+            gameObject.AddComponent<Skp.Audio.AudioService>();
             gameObject.AddComponent<Skp.Audio.SfxPlayer>();
+            gameObject.AddComponent<FeelService>();
             if (Debug.isDebugBuild) gameObject.AddComponent<DebugOverlay>();
         }
 
@@ -75,6 +77,7 @@ namespace Skp.Core
 
         void OnApplicationPause(bool paused)
         {
+            if (paused) Haptics.Stop();
             // Android can kill a backgrounded app without warning: persist on the way out.
             if (paused) Save?.Save();
         }

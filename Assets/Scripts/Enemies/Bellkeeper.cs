@@ -43,6 +43,8 @@ namespace Skp.Enemies
         /// <summary>A line for a toast (string table key).</summary>
         public event Action<string> Message;
         public event Action Parried, Struck, Defeated, ShockwaveLaunched, TollStarted;
+        /// <summary>The toll closed without a parry (it rings out and hurts unless veiled).</summary>
+        public event Action TollHit;
         public event Action<Door> ExitOpened;
 
         readonly System.Random _rng = new System.Random(9);
@@ -132,6 +134,7 @@ namespace Skp.Enemies
                         else
                         {
                             State = BossState.Idle; T = 0;
+                            TollHit?.Invoke();
                             sim.TryHurt(1, null, DamageSource.Boss);
                         }
                     }

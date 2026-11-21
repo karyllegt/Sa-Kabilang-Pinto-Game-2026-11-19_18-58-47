@@ -71,7 +71,7 @@ namespace Skp.UI
 
             // credits
             ["credits.title"] = "CREDITS",
-            ["credits.body"] = "Game concept: Karylle G. Torres and Pangkat Parol (CSEL).\nBuilt by Karylle G. Torres.\n\nInspired by Filipino folklore: the Anino, Tikbalang, Manananggal and the balete tree.\n\nFont: Press Start 2P by CodeMan38, SIL Open Font License 1.1.\n\nArt and sound are original to Sa Kabilang Pinto.",
+            ["credits.body"] = "Game concept: Karylle G. Torres and Pangkat Parol (CSEL).\nBuilt by Karylle G. Torres.\n\nInspired by Filipino folklore: the Anino, Tikbalang, Manananggal and the balete tree.\n\nFont: Press Start 2P by CodeMan38, SIL Open Font License 1.1.\n\nMusic: original prototype tracks, looped for the game. Sound effects: original, from the prototype or synthesized for it. All art and audio are original to Sa Kabilang Pinto.",
 
             // map
             ["map.talk"] = "TALK",

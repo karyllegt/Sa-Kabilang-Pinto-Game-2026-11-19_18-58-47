@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a4778b63957a543a719dfb508becf2, type: 3}
+  m_Name: AudioTuning
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Audio.AudioTuning
+  mixer: {fileID: 24100000, guid: ca671e4a80132c94e8d79a1293303db1, type: 2}
+  musicGroup: {fileID: -4889443461578093277, guid: ca671e4a80132c94e8d79a1293303db1, type: 2}
+  sfxGroup: {fileID: -2187907379881558514, guid: ca671e4a80132c94e8d79a1293303db1, type: 2}
+  gameGroup: {fileID: 9133580499858575660, guid: ca671e4a80132c94e8d79a1293303db1, type: 2}
+  uiGroup: {fileID: 392290177678028935, guid: ca671e4a80132c94e8d79a1293303db1, type: 2}
+  menu: {fileID: 8300000, guid: 6d2d59ce432077c43bdefe2e235bb1bc, type: 3}
+  act1: {fileID: 8300000, guid: a71371af1faa75d41829dd2076f388d9, type: 3}
+  act2: {fileID: 8300000, guid: a9a10b1f961ffdf4baee8828cdae99ef, type: 3}
+  act3: {fileID: 8300000, guid: e3eff50f6b36d424c96358fbf29a32d5, type: 3}
+  boss: {fileID: 8300000, guid: 16af7c050386706409fd5a5060e65f70, type: 3}
+  musicDb: -9
+  sfxDb: -3
+  muteDb: -80
+  pauseMusicDuckDb: -12
+  pauseGameDuckDb: -80
+  levelFadeSeconds: 0.25
+  trackCrossfadeSeconds: 1.2
+  openCutoffHz: 22000
+  spiritCutoffHz: 1300
+  invertedPitch: 0.84
+  dimensionGlideSeconds: 0.45
+  gameVoices: 8
+  uiVoices: 3
+  sameCueInterval: 0.05
+  defaultCueVolume: 0.7

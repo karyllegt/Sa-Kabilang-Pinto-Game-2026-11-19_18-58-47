@@ -48,6 +48,7 @@ public static class SkpProjectSetup
         CreatePixelBoxPrefab();
         SkpUiSetup.CreateUiAssets();
         SkpSkillSetup.CreateAssets();    // skill data, icons, fx sprites and sounds (the HUD and the player use them)
+        SkpAudioSetup.CreateAssets();    // M8: mixer, music loops, missing sounds, feel and particles
         var touch = CreateTouchControlsPrefab(font);
         SkpTestRoomBuilder.Build();      // Player prefab first: the Level scene uses it
         SkpLevelSetup.CreateDataAssets();

@@ -54,6 +54,8 @@ namespace Skp.UI
 
         void Start()
         {
+            Skp.Audio.Music.SetDimension(Skp.Dimensions.Dim.Ordinary);
+            Skp.Audio.Music.Play(Skp.Audio.MusicTrack.Menu);
             var save = Root != null ? Root.Save.Data : new SaveData();
             int from = GameSession.MapFrom;
             GameSession.MapFrom = -1;

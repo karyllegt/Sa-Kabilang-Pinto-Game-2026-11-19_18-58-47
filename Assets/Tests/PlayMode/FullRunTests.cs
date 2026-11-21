@@ -83,9 +83,15 @@ namespace Skp.Tests
             Root.UseSave(_save);
             yield return WaitFor(() => !Root.Loader.IsBusy, 10, "idle loader");
             var hints = new Dictionary<string, int>();
+            // M8: the music follows the acts, the boss and the Ending; the run's sounds play with no audio errors
+            var tracks = new HashSet<Skp.Audio.MusicTrack>();
+            System.Action seen = () => tracks.Add(Skp.Audio.Music.Current);
+            Skp.Audio.Music.Changed += seen;
+            Skp.Audio.Sfx.ResetCounts();
             for (int lv = 0; lv < 9; lv++)
             {
                 yield return Play(lv);
+                tracks.Add(Skp.Audio.Music.Current);
                 var runner = Object.FindAnyObjectByType<LevelRunner>();
                 var s = runner.Session;
                 var sim = s.Sim;
@@ -147,6 +153,12 @@ namespace Skp.Tests
                 }
             }
             CollectionAssert.AreEquivalent(SkillIds.All, _save.Data.skills, "all eight skills learned");
+            Skp.Audio.Music.Changed -= seen;
+            CollectionAssert.IsSubsetOf(new[] { Skp.Audio.MusicTrack.Act1, Skp.Audio.MusicTrack.Act2, Skp.Audio.MusicTrack.Act3, Skp.Audio.MusicTrack.Boss, Skp.Audio.MusicTrack.Menu }, tracks, "act, boss and Ending music");
+            Assert.AreEqual(Skp.Audio.MusicTrack.Menu, Skp.Audio.Music.Current, "the Ending plays the menu theme");
+            foreach (var cue in new[] { "letter", "skill_learned", "lantern", "bell", "parry", "win" })
+                Assert.Greater(Skp.Audio.Sfx.Count(cue), 0, "cue played in the run: " + cue);
+            Assert.IsNotNull(Skp.Audio.AudioService.Instance, "the audio service lives on the GameRoot");
         }
     }
 }

@@ -38,6 +38,11 @@ namespace Skp.Player
         public event Action<PlayerSim> Ticked;
 
         readonly FixedTickClock _clock = new FixedTickClock();
+        float _hitStop;
+
+        /// <summary>Holds the simulation still for a moment (M8 game feel). The longest request wins; never stacks.</summary>
+        public void HitStop(float seconds) { if (seconds > _hitStop) _hitStop = Mathf.Min(seconds, 0.25f); }
+        public float HitStopLeft => _hitStop;
         readonly PlayerInputLatch _latch = new PlayerInputLatch();
         Vector2 _prevPos;
 
@@ -85,6 +90,14 @@ namespace Skp.Player
         {
             if (Sim == null) return;
             if (_frozen) { if (view != null) view.Render(Sim, Sim.Position, 1f); return; }
+            if (_hitStop > 0f)
+            {
+                // hit-stop: the world holds for a few frames; input is kept, the clock does not run
+                _hitStop -= Time.deltaTime;
+                _latch.Collect(ReadInput());
+                if (view != null) view.Render(Sim, Sim.Position, 1f);
+                return;
+            }
             _latch.Collect(ReadInput());
             int n = _clock.Advance(Time.deltaTime);
             for (int i = 0; i < n; i++)

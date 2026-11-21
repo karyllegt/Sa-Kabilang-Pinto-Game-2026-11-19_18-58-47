@@ -23,6 +23,8 @@ namespace Skp.UI
 
         void Start()
         {
+            Skp.Audio.Music.SetDimension(Skp.Dimensions.Dim.Ordinary);
+            Skp.Audio.Music.Play(Skp.Audio.MusicTrack.Menu);
             UiNavigator.Fallback = () => true; // Back on the title itself does nothing
             title.newJourney.Clicked += () => Swap(characters);
             title.continueButton.Clicked += ContinueRun;

@@ -32,7 +32,8 @@ namespace Skp.UI
         [Tooltip("One chip per skill, in SkillIds.All order.")]
         public SkillChip[] chips = new SkillChip[0];
 
-        string _skillKey;
+        int _skillKey = -1; // owned skills as a bit mask (no string per frame)
+        int _objectiveKey = int.MinValue;
         bool _tall = true;
         float _laneFor = -1;
         /// <summary>Distance from the top of the HUD to the bottom of the objective line.</summary>
@@ -159,7 +160,7 @@ namespace Skp.UI
             string diff = Loc.Get("diff." + (s.DifficultyKey == "endless" ? "endless" : s.DifficultyKey));
             diff = diff.Length > 1 ? diff.Substring(0, 1) + diff.Substring(1).ToLowerInvariant() : diff;
             levelLabel.text = s.Level >= 0 ? Loc.Format("hud.level", s.Level + 1, diff) : diff;
-            _vit = _maxVit = _flame = _maxFlame = _score = -1; _lives = -2; _dim = (Dim)(-1); _objective = null; _skillKey = null; _laneFor = -1;
+            _vit = _maxVit = _flame = _maxFlame = _score = -1; _lives = -2; _dim = (Dim)(-1); _objective = null; _skillKey = -1; _objectiveKey = int.MinValue; _laneFor = -1;
         }
 
         /// <summary>Writes the HUD from the simulation; cheap when nothing changed.</summary>
@@ -181,13 +182,14 @@ namespace Skp.UI
                 _flame = sim.Flame; _maxFlame = sim.MaxFlame;
                 flameFill.rectTransform.anchorMax = new Vector2(Mathf.Clamp01(_flame / (float)Mathf.Max(1, _maxFlame)), 1);
                 flameFill.color = _flame < 25 ? th.danger : (Color)new Color32(0xe8, 0x9a, 0x3a, 0xff);
-                flameText.text = Loc.Format("hud.flame", _flame);
+                flameText.SetText(Loc.Get("hud.flame"), (float)_flame); // TMP formats the number without a new string
             }
             int lives = sim.InfiniteLives ? -1 : sim.Lives;
             if (lives != _lives || sim.Score != _score)
             {
                 _lives = lives; _score = sim.Score;
-                livesScore.text = lives < 0 ? Loc.Format("hud.lives.inf", _score) : Loc.Format("hud.lives", lives, _score);
+                if (lives < 0) livesScore.SetText(Loc.Get("hud.lives.inf"), (float)_score);
+                else livesScore.SetText(Loc.Get("hud.lives"), (float)lives, (float)_score);
             }
             if (sim.Dimension != _dim)
             {
@@ -196,15 +198,21 @@ namespace Skp.UI
                 dimension.color = _dim == Dim.Spirit ? th.teal : _dim == Dim.Inverted ? th.violet : th.gold;
             }
             ShowSkills(sim);
-            var o = Objective(s);
-            if (o != _objective) { _objective = o; objective.text = o; _laneFor = -1; }
+            // the objective text is formatted only when what it says changes (no string per frame)
+            int ok = ObjectiveKey(s);
+            if (ok != _objectiveKey)
+            {
+                _objectiveKey = ok;
+                var o = Objective(s);
+                if (o != _objective) { _objective = o; objective.text = o; _laneFor = -1; }
+            }
             FitLanes();
         }
 
         /// <summary>Keyboard and gamepad: compact chips. Touch layout: chips at least 48 dp tall.</summary>
         public void SetTallChips(bool tall)
         {
-            if (_tall == tall && _skillKey != null) return;
+            if (_tall == tall && _skillKey >= 0) return;
             _tall = tall;
             foreach (var c in chips) if (c != null) c.SetTall(tall);
             if (badgeGrid != null)
@@ -217,9 +225,8 @@ namespace Skp.UI
 
         void ShowSkills(PlayerSim sim)
         {
-            var key = new System.Text.StringBuilder(10);
-            foreach (var id in SkillIds.All) key.Append(sim.Has(id) ? '1' : '0');
-            string k = key.ToString();
+            int k = 0;
+            for (int i = 0; i < SkillIds.All.Length; i++) if (sim.Has(SkillIds.All[i])) k |= 1 << i;
             if (k != _skillKey)
             {
                 _skillKey = k;
@@ -303,6 +310,16 @@ namespace Skp.UI
                 h = objective.GetPreferredValues(text).y;
             }
             LaneBottom = ObjectiveTop + h + 12f;
+        }
+
+        /// <summary>A number that changes exactly when <see cref="Objective"/> would say something else.</summary>
+        public static int ObjectiveKey(LevelSession s)
+        {
+            var sim = s.Sim;
+            int k = s.Boss != null ? (s.Boss.Dead ? 2 : s.Boss.Active ? 1 : 0) : 0;
+            k = k * 8 + (int)sim.Dimension;
+            k = k * 2 + (sim.HasClue ? 1 : 0);
+            return k * 1024 + Mathf.Clamp(sim.Checkpoint, -1, 1000) + 1;
         }
 
         /// <summary>The objective line (prototype objective()).</summary>

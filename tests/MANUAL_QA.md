@@ -76,3 +76,11 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Level 9: parry the toll by hand with the ward; bolt and ward only hurt while stunned; the veil blocks the shockwave | [ ] | [ ] | [ ] | |
 | Veil gauntlet: the violet curtain reads as "use the veil"; crossing under it feels right | [ ] | [ ] | [ ] | |
 | Endless Nightmare unlocks after the Ending and loops with rising water | [ ] | [ ] | [ ] | |
+| **M8 audio and feel (automated evidence: M8AudioFeelTests, AudioFeelPlayModeTests, FullRunTests)** | | | | |
+| Doors: the Spirit muffle and the Inverted pitch-down are clear and not jarring; a lantern brings the music back smoothly | [ ] | [ ] | [ ] | |
+| Music loops with no audible seam (let each act play for 2 minutes) and the boss theme starts when the Bellkeeper wakes | [ ] | [ ] | [ ] | |
+| No clipping or distortion in a busy moment (bolts, bells and a hurt together), on the phone speaker and on headphones | [ ] | [ ] | [ ] | |
+| Pause: the music drops, game sounds stop, menu clicks still sound; resume brings everything back | [ ] | [ ] | [ ] | |
+| Screen shake and hit-stop feel punchy, not nauseating; Screen shake off removes all shake | [ ] | [ ] | [ ] | |
+| Vibration on the phone and rumble on a gamepad; Vibration off removes both | [ ] | [ ] | [ ] | |
+| Particles read at phone size (flame, fragment, veil, bolt, burnt thorns) | [ ] | [ ] | [ ] | |

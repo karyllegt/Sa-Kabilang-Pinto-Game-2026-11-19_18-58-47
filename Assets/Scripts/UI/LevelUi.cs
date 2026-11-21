@@ -64,7 +64,8 @@ namespace Skp.UI
                 boss.Message += k => toast.Show(Loc.Get(k), k == "boss.howto" ? 3.6f : 2.4f);
                 boss.TollStarted += () => Skp.Audio.Sfx.Cue("bell");
                 boss.ShockwaveLaunched += () => Skp.Audio.Sfx.Cue("crumble");
-                boss.Parried += () => Skp.Audio.Sfx.Cue("bell");
+                boss.Parried += () => Skp.Audio.Sfx.Cue("parry");
+                boss.TollHit += () => Skp.Audio.Sfx.Cue("toll");
                 boss.Struck += () => Skp.Audio.Sfx.Cue("stun");
                 boss.Defeated += () => Skp.Audio.Sfx.Cue("win");
                 boss.ExitOpened += _ => Skp.Audio.Sfx.Cue("lantern");
@@ -120,6 +121,7 @@ namespace Skp.UI
         void OnDestroy()
         {
             if (Application.isPlaying) Time.timeScale = 1f;
+            Skp.Audio.Music.Duck(false);
             if (Root != null && Root.Settings != null) Root.Settings.Changed -= ApplySettings;
             UiNavigator.Fallback = null;
         }
@@ -233,6 +235,7 @@ namespace Skp.UI
             if (!_playing || Paused || UiGate.Blocked || UiNavigator.Top != null || _session.Completed || _session.Over) return;
             Paused = true;
             if (Application.isPlaying) Time.timeScale = 0f;
+            Skp.Audio.Music.Duck(true);
             toast.Hide();
             pause.Open();
         }
@@ -247,6 +250,7 @@ namespace Skp.UI
         {
             Paused = false;
             if (Application.isPlaying) Time.timeScale = 1f;
+            Skp.Audio.Music.Duck(false);
         }
 
         /// <summary>Level Clear box, or the Ending after the final level (called by the session; public for the audit).</summary>
@@ -260,6 +264,7 @@ namespace Skp.UI
             if (!s.Spec.endless && s.Level >= ProgressRules.FinalLevelIndex)
             {
                 ending.stats.text = Loc.Format("ending.stats", secs, sim.Score, sim.Shards);
+                Skp.Audio.Music.Play(Skp.Audio.MusicTrack.Menu);
                 ending.Open();
                 return;
             }

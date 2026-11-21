@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a358ce74f8faebf4ea28b7b65243e347, type: 3}
+  m_Name: FeelTuning
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Core.FeelTuning
+  maxShake: 0.375
+  shakeDecay: 2.2
+  shakeFrequency: 24
+  hurt:
+    shake: 0.45
+    hitStop: 0.07
+    vibrateMs: 60
+    rumble: 0.5
+  die:
+    shake: 0.7
+    hitStop: 0.12
+    vibrateMs: 180
+    rumble: 0.9
+  kill:
+    shake: 0.2
+    hitStop: 0.05
+    vibrateMs: 25
+    rumble: 0.25
+  ward:
+    shake: 0.08
+    hitStop: 0
+    vibrateMs: 15
+    rumble: 0.15
+  boltHit:
+    shake: 0.1
+    hitStop: 0.03
+    vibrateMs: 15
+    rumble: 0.15
+  burn:
+    shake: 0.15
+    hitStop: 0.04
+    vibrateMs: 20
+    rumble: 0.2
+  parry:
+    shake: 0.65
+    hitStop: 0.12
+    vibrateMs: 120
+    rumble: 0.8
+  toll:
+    shake: 0.5
+    hitStop: 0.06
+    vibrateMs: 90
+    rumble: 0.6
+  bossStruck:
+    shake: 0.3
+    hitStop: 0.06
+    vibrateMs: 40
+    rumble: 0.4
+  bossDefeated:
+    shake: 0.8
+    hitStop: 0.2
+    vibrateMs: 250
+    rumble: 1
+  bell:
+    shake: 0.18
+    hitStop: 0
+    vibrateMs: 0
+    rumble: 0.2
+  crumble:
+    shake: 0.06
+    hitStop: 0
+    vibrateMs: 0
+    rumble: 0
+  letter:
+    shake: 0
+    hitStop: 0
+    vibrateMs: 40
+    rumble: 0.2
+  bellShakeRange: 8
+  flame:
+    count: 10
+    color: {r: 1, g: 0.83, b: 0.42, a: 1}
+    speed: 3.5
+    life: 0.5
+    rise: 3
+    sprite: {fileID: 21300000, guid: 1f13264321606e2448adeabf1c3f9e35, type: 3}
+  fragment:
+    count: 14
+    color: {r: 0.25, g: 0.88, b: 0.82, a: 1}
+    speed: 4
+    life: 0.7
+    rise: 1.5
+    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+  veil:
+    count: 16
+    color: {r: 0.75, g: 0.49, b: 1, a: 1}
+    speed: 2.5
+    life: 0.6
+    rise: 0.5
+    sprite: {fileID: 21300000, guid: 114b67a8e5c54db4ead86791dc80237f, type: 3}
+  veilTrickleTicks: 5
+  bolt:
+    count: 8
+    color: {r: 1, g: 0.93, b: 0.6, a: 1}
+    speed: 5
+    life: 0.3
+    rise: 0
+    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+  burnt:
+    count: 18
+    color: {r: 0.45, g: 0.4, b: 0.42, a: 1}
+    speed: 2.5
+    life: 1
+    rise: 2
+    sprite: {fileID: 21300000, guid: 29caedb7c1f75854bb22c94e69a616f4, type: 3}
+  ember:
+    count: 10
+    color: {r: 1, g: 0.35, b: 0.29, a: 1}
+    speed: 3
+    life: 0.6
+    rise: 2.5
+    sprite: {fileID: 21300000, guid: 114b67a8e5c54db4ead86791dc80237f, type: 3}
+  letterGlow:
+    count: 16
+    color: {r: 0.96, g: 0.9, b: 0.76, a: 1}
+    speed: 3
+    life: 0.8
+    rise: 1
+    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+  particleMaterial: {fileID: 2100000, guid: 4e91b09251707b5449516f5979d1bb5b, type: 2}
+  maxParticles: 128
