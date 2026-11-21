@@ -48,7 +48,14 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Low vitality and low flame are clearly visible | [ ] | [ ] | [ ] | |
 | Audio ducks on pause | [ ] | [ ] | [ ] | |
 | Vibration and screen shake toggles work | n/a | [ ] | [ ] | |
-| Left-handed layout mirrors without overlap | n/a | n/a | [ ] | |
+| Left-handed layout mirrors without overlap | n/a | n/a | [ ] | Layout audit 10b: mirrored, no overlap (automated) |
+| **M5 screens (automated evidence in tests/Screenshots/m5; still to try by hand)** | | | | |
+| Title: arrow and highlight follow keys, gamepad and hover; Continue greyed without a save | [ ] | [ ] | [ ] | |
+| Map: Up reaches the top bar, Down returns to the nodes; Talk by button or tapping Lola | [ ] | [ ] | [ ] | |
+| Lola's first meeting once; her "!" returns after a new unlock | [ ] | [ ] | [ ] | |
+| Pause button and Escape/Start pause; Back from Settings returns to Pause | [ ] | [ ] | [ ] | |
+| DOOR touch button appears only at a door | n/a | n/a | [ ] | |
+| Circle wipe looks right on a real screen (pixel edge, centered on the node) | [ ] | [ ] | [ ] | |
 | **Skills (docs/02, from M6)** | | | | |
 | Levels 1–4 back to back: each new skill introduced safely, hint on first use | [ ] | [ ] | [ ] | |
 | Difficulty clearly higher each level; last room harder than the first | [ ] | [ ] | [ ] | |

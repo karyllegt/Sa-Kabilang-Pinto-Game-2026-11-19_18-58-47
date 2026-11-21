@@ -97,7 +97,8 @@ namespace Skp.Tests
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/UI/TouchControls.prefab");
             Assert.IsNotNull(prefab);
             var buttons = prefab.GetComponentsInChildren<OnScreenButton>(true);
-            Assert.GreaterOrEqual(buttons.Length, 7);
+            // M5 thumb layout: left, right, jump, dash, ward, door (pause moved to the HUD; veil and bolt arrive in M6)
+            Assert.GreaterOrEqual(buttons.Length, 6);
             foreach (var b in buttons)
                 Assert.Contains(b.controlPath, bound, b.name + " must drive a bound control");
         }

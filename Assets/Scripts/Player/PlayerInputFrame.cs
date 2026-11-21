@@ -62,6 +62,9 @@ namespace Skp.Player
         /// <summary>0..1, how far the current time sits between the last two ticks (for drawing).</summary>
         public float Alpha => (float)(_acc * PlayerSim.TickRate);
 
+        /// <summary>Drops any accumulated time (after a pause or dialog).</summary>
+        public void Reset() => _acc = 0;
+
         public int Advance(float dt)
         {
             _acc += dt;

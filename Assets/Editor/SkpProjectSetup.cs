@@ -46,6 +46,7 @@ public static class SkpProjectSetup
         CreateDataAssets();
         var font = CreateFontAsset();
         CreatePixelBoxPrefab();
+        SkpUiSetup.CreateUiAssets();
         var touch = CreateTouchControlsPrefab(font);
         SkpTestRoomBuilder.Build();      // Player prefab first: the Level scene uses it
         SkpLevelSetup.CreateDataAssets();
@@ -150,21 +151,24 @@ public static class SkpProjectSetup
         var buttons = new GameObject("Buttons", typeof(RectTransform));
         buttons.transform.SetParent(root.transform, false);
         Stretch((RectTransform)buttons.transform);
+        buttons.AddComponent<SafeAreaFitter>(); // thumbs stay clear of notches and rounded corners
         tc.buttons = buttons;
 
-        // M1 layout: left thumb moves, right thumb jumps/dashes/wards/interacts. Pause top-right.
-        // Sizes are at the 960x540 reference; 88 px is about 14 mm on a 5.5" phone, well over 48 dp.
+        // M5 thumb layout (docs/04 known issue 1): left thumb moves; right thumb has JUMP in the corner, DASH
+        // beside it, WARD above DASH, and DOOR above JUMP only while Tala stands at a door. Two rows at most.
+        // Sizes at the 960x540 reference; every button is at least UiKit.MinTarget (48 dp on a 6.4" phone).
+        // Pause lives in the HUD (top-right). Veil and Bolt join the second row in M6.
         var specs = new[]
         {
-            new TouchSpec { name = "Left",     label = "<",     path = "<Gamepad>/dpad/left",     anchor = new Vector2(0, 0), pos = new Vector2(70, 70),   size = new Vector2(104, 96) },
-            new TouchSpec { name = "Right",    label = ">",     path = "<Gamepad>/dpad/right",    anchor = new Vector2(0, 0), pos = new Vector2(190, 70),  size = new Vector2(104, 96) },
-            new TouchSpec { name = "Jump",     label = "JUMP",  path = "<Gamepad>/buttonSouth",   anchor = new Vector2(1, 0), pos = new Vector2(-72, 70),  size = new Vector2(112, 96) },
-            new TouchSpec { name = "Dash",     label = "DASH",  path = "<Gamepad>/leftShoulder",  anchor = new Vector2(1, 0), pos = new Vector2(-196, 62), size = new Vector2(104, 80) },
-            new TouchSpec { name = "Ward",     label = "WARD",  path = "<Gamepad>/buttonNorth",   anchor = new Vector2(1, 0), pos = new Vector2(-196, 156),size = new Vector2(104, 80) },
-            new TouchSpec { name = "Interact", label = "DOOR",  path = "<Gamepad>/buttonEast",    anchor = new Vector2(1, 0), pos = new Vector2(-72, 172), size = new Vector2(112, 80) },
-            new TouchSpec { name = "Pause",    label = "II",    path = "<Gamepad>/start",         anchor = new Vector2(1, 1), pos = new Vector2(-48, -44), size = new Vector2(72, 64) },
+            new TouchSpec { name = "Left",     label = "<",    path = "<Gamepad>/dpad/left",    anchor = new Vector2(0, 0), pos = new Vector2(72, 70),    size = new Vector2(104, 96) },
+            new TouchSpec { name = "Right",    label = ">",    path = "<Gamepad>/dpad/right",   anchor = new Vector2(0, 0), pos = new Vector2(192, 70),   size = new Vector2(104, 96) },
+            new TouchSpec { name = "Jump",     label = "JUMP", path = "<Gamepad>/buttonSouth",  anchor = new Vector2(1, 0), pos = new Vector2(-76, 72),   size = new Vector2(112, 104) },
+            new TouchSpec { name = "Dash",     label = "DASH", path = "<Gamepad>/leftShoulder", anchor = new Vector2(1, 0), pos = new Vector2(-200, 64),  size = new Vector2(104, 88) },
+            new TouchSpec { name = "Ward",     label = "WARD", path = "<Gamepad>/buttonNorth",  anchor = new Vector2(1, 0), pos = new Vector2(-200, 170), size = new Vector2(104, 80) },
+            new TouchSpec { name = "Door",     label = "DOOR", path = "<Gamepad>/buttonEast",   anchor = new Vector2(1, 0), pos = new Vector2(-76, 178),  size = new Vector2(112, 76) },
         };
         var box = AssetDatabase.LoadAssetAtPath<Sprite>(PixelBoxSprite);
+        var slots = new List<TouchControls.Slot>();
         foreach (var s in specs)
         {
             var b = new GameObject(s.name, typeof(RectTransform), typeof(Image));
@@ -182,7 +186,10 @@ public static class SkpProjectSetup
             var osb = b.AddComponent<OnScreenButton>();
             osb.controlPath = s.path;
             AddLabel(b.transform, s.label, font, 14);
+            slots.Add(new TouchControls.Slot { rect = rt, anchor = s.anchor, position = s.pos });
+            if (s.name == "Door") tc.door = b;
         }
+        tc.slots = slots.ToArray();
         var prefab = PrefabUtility.SaveAsPrefabAsset(root, TouchPrefab);
         Object.DestroyImmediate(root);
         return prefab;
@@ -194,10 +201,8 @@ public static class SkpProjectSetup
     {
         EnsureFolder(ScenesDir);
         BuildScene(SceneNames.Boot, null, font, "", null, null, null, isBoot: true);
-        BuildScene(SceneNames.Title, "Assets/Art/UI/title_art.png", font,
-            "SA KABILANG PINTO\nThe Lantern Between Worlds\n\nJUMP / ENTER: continue", SceneNames.Map, null, null);
-        BuildScene(SceneNames.Map, "Assets/Art/Backgrounds/bg_map_overworld.png", font,
-            "LEVEL MAP (placeholder)\nJUMP / ENTER: enter level   ESC: title", SceneNames.Level, SceneNames.Title, null);
+        SkpUiSetup.BuildTitleScene();
+        SkpUiSetup.BuildMapScene();
         SkpLevelSetup.BuildLevelScene(font, touchPrefab);
 
         // Boot first; SampleScene leaves the build list (the file itself is kept).
@@ -279,6 +284,8 @@ public static class SkpProjectSetup
         s.referenceResolution = new Vector2(960, 540);
         s.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
         s.matchWidthOrHeight = 0.5f;
+        // 16 PPU sprites: one sprite pixel = one reference unit before the per-image multiplier
+        s.referencePixelsPerUnit = SkpAssetImportSettings.PixelsPerUnit;
         return go;
     }
 

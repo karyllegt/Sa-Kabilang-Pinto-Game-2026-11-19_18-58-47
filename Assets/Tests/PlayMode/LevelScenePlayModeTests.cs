@@ -12,8 +12,8 @@ using UnityEngine.TestTools;
 namespace Skp.Tests
 {
     /// <summary>
-    /// M4 in the real Level scene: level 1 loads and draws, Tala plays with scripted input, picks up the
-    /// letter, uses the exit, the save unlocks level 2, and the game returns to the Map. Any error log fails
+    /// M4 in the real Level scene: level 1 loads and draws, the intro dialog is dismissed, Tala plays with scripted input, picks up the
+    /// letter (and reads it), uses the exit, the save unlocks level 2, and Level Clear > Map returns to the Map. Any error log fails
     /// the test (Unity Test Framework default).
     /// </summary>
     public class LevelScenePlayModeTests
@@ -23,6 +23,17 @@ namespace Skp.Tests
             float t = 0;
             while (!cond() && t < timeout) { t += Time.unscaledDeltaTime; yield return null; }
             Assert.IsTrue(cond(), "timed out");
+        }
+
+        static IEnumerator Dismiss(Skp.UI.DialogBox d)
+        {
+            for (int i = 0; i < 40 && d.IsOpen; i++)
+            {
+                yield return WaitFor(() => !Skp.UI.UiGate.Blocked);
+                d.Advance();
+                yield return null;
+            }
+            Assert.IsFalse(d.IsOpen);
         }
 
         [UnityTest]
@@ -45,6 +56,10 @@ namespace Skp.Tests
             Assert.AreEqual("Fiesta Night", session.Spec.name);
             Assert.Greater(view.ObjectCount, 100, "the level is drawn");
 
+            // M5: the before-stage dialog comes first, then a circle wipe into play
+            yield return Dismiss(runner.ui.dialog);
+            yield return WaitFor(() => runner.ui.Playing && !Skp.UI.UiGate.Blocked);
+
             // play: run right and jump for a while
             var pc = runner.player;
             int f = 0;
@@ -58,6 +73,8 @@ namespace Skp.Tests
             session.Sim.Invulnerable = 100000;
             session.Sim.Position = new Vector2(clue.Rect.center.x - session.Sim.Size.x / 2, clue.Rect.y);
             yield return WaitFor(() => session.Sim.HasClue, 3f);
+            yield return WaitFor(() => runner.ui.dialog.IsOpen, 2f); // the letter
+            yield return Dismiss(runner.ui.dialog);
             var exit = session.World.Doors.First(d => d.Kind == DoorKind.Exit);
             session.Sim.SetDimension(Skp.Dimensions.Dim.Ordinary);
             session.Sim.Position = new Vector2(exit.Rect.center.x - session.Sim.Size.x / 2, exit.Rect.y);
@@ -65,6 +82,9 @@ namespace Skp.Tests
             pc.InputOverride = () => { var p = !pressed; pressed = true; return new PlayerInputFrame { InteractPressed = p }; };
             yield return WaitFor(() => session.Completed, 3f);
             Assert.AreEqual(2, save.Data.unlocked);
+            yield return null;
+            Assert.IsTrue(runner.ui.clear.IsOpen, "Level Clear box");
+            runner.ui.clear.map.Press();
             yield return WaitFor(() => SceneManager.GetActiveScene().name == SceneNames.Map, 6f);
 
             if (Directory.Exists(dir)) Directory.Delete(dir, true);

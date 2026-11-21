@@ -120,21 +120,8 @@ public static class SkpLevelSetup
         runner.director = director;
         runner.backdrop = bg;
 
-        // Placeholder status bar (M5 replaces it with the real HUD).
-        var canvas = SkpProjectSetup.NewCanvas("HudCanvas", 10);
-        var panel = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(SkpProjectSetup.PixelBoxPrefab), canvas.transform);
-        var prt = (RectTransform)panel.transform;
-        prt.anchorMin = new Vector2(0, 1); prt.anchorMax = new Vector2(1, 1);
-        prt.pivot = new Vector2(0.5f, 1);
-        prt.offsetMin = new Vector2(12, -84); prt.offsetMax = new Vector2(-96, -12);
-        SkpProjectSetup.AddLabel(panel.transform, "", font, 12);
-        var label = panel.GetComponentInChildren<TextMeshProUGUI>();
-        label.alignment = TextAlignmentOptions.MidlineLeft;
-        runner.status = label;
-
-        var es = new GameObject("EventSystem", typeof(EventSystem), typeof(InputSystemUIInputModule));
-        es.GetComponent<InputSystemUIInputModule>().actionsAsset = AssetDatabase.LoadAssetAtPath<InputActionAsset>(SkpProjectSetup.ActionsPath);
-        if (touchPrefab != null) PrefabUtility.InstantiatePrefab(touchPrefab);
+        // M5 UI: HUD, dialogs, pause, Level Clear, Game Over, Ending, touch controls.
+        SkpUiSetup.BuildLevelUi(runner, touchPrefab);
 
         EditorSceneManager.SaveScene(scene, $"{SkpProjectSetup.ScenesDir}/{SceneNames.Level}.unity");
     }

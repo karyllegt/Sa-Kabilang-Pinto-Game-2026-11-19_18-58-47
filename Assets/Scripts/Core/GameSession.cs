@@ -18,6 +18,9 @@ namespace Skp.Core
     {
         public static LevelRequest Pending;
 
+        /// <summary>Set when returning to the Map from a level: the token starts on that node and walks to the next one. -1 = none.</summary>
+        public static int MapFrom = -1;
+
         /// <summary>
         /// The request the Level scene uses when nothing was set (M4: the placeholder map). Resumes the saved
         /// checkpoint if there is one, otherwise the newest unlocked level.

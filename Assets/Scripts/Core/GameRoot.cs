@@ -17,6 +17,9 @@ namespace Skp.Core
         public SaveService Save { get; private set; }
         public InputReader Input { get; private set; }
         public SceneLoader Loader { get; private set; }
+        public SettingsStore Settings { get; private set; }
+        /// <summary>The circle wipe used by the loader and by in-scene transitions.</summary>
+        public Skp.UI.CircleWipe Wipe { get; private set; }
 
         /// <summary>Set by tests to keep the real save untouched (must be set before first access).</summary>
         public static string SaveDirectoryOverride;
@@ -37,8 +40,14 @@ namespace Skp.Core
 
             Save = SaveDirectoryOverride != null ? new SaveService(SaveDirectoryOverride) : new SaveService();
             Save.Load();
+            Settings = new SettingsStore(Save.Directory);
+            Settings.Load();
 
             Loader = gameObject.AddComponent<SceneLoader>();
+            Wipe = Skp.UI.CircleWipe.Create(transform);
+            Loader.Wipe = Wipe;
+            Skp.UI.UiGate.BlockedWhen = () => Loader.IsBusy || Wipe.Busy;
+            Loader.SceneLoaded += _ => Time.timeScale = 1f;
 
             var asset = InputSystem.actions;
             if (asset == null || asset.FindActionMap(InputReader.GameplayMap) == null)
@@ -48,7 +57,7 @@ namespace Skp.Core
             }
             else
             {
-                Input = new InputReader(asset) { BlockedWhen = () => Loader.IsBusy };
+                Input = new InputReader(asset) { BlockedWhen = () => Loader.IsBusy || Wipe.Busy };
                 Input.Enable();
             }
 
@@ -56,7 +65,12 @@ namespace Skp.Core
         }
 
         /// <summary>Swap the save service (tests point it at a temp folder so the real save is never touched).</summary>
-        public void UseSave(SaveService save) => Save = save;
+        public void UseSave(SaveService save)
+        {
+            Save = save;
+            Settings = new SettingsStore(save.Directory);
+            Settings.Load();
+        }
 
         void OnApplicationPause(bool paused)
         {

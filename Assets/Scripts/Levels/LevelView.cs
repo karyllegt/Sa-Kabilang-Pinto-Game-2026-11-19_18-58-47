@@ -31,7 +31,7 @@ namespace Skp.Levels
         {
             _world = world;
             _sim = sim;
-            if (_root != null) Destroy(_root.gameObject);
+            if (_root != null) { if (Application.isPlaying) Destroy(_root.gameObject); else DestroyImmediate(_root.gameObject); }
             _root = new GameObject("Level Objects").transform;
             _root.SetParent(transform, false);
             _ledges.Clear(); _hazards.Clear(); _items.Clear(); _enemies.Clear(); _lanterns.Clear();

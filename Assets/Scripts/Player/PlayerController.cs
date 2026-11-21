@@ -23,6 +23,14 @@ namespace Skp.Player
 
         public PlayerSim Sim { get; private set; }
 
+        /// <summary>Stops the simulation (dialogs, pause, level clear). Input pressed while frozen is dropped, never replayed.</summary>
+        public bool Frozen
+        {
+            get => _frozen;
+            set { if (_frozen && !value) { _latch.Clear(); _clock.Reset(); } _frozen = value; }
+        }
+        bool _frozen;
+
         /// <summary>Tests replace live input with scripted input.</summary>
         public Func<PlayerInputFrame> InputOverride;
 
@@ -76,6 +84,7 @@ namespace Skp.Player
         void Update()
         {
             if (Sim == null) return;
+            if (_frozen) { if (view != null) view.Render(Sim, Sim.Position, 1f); return; }
             _latch.Collect(ReadInput());
             int n = _clock.Advance(Time.deltaTime);
             for (int i = 0; i < n; i++)

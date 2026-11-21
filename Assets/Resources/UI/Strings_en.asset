@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b86a204ed3c4344a91bcde2b3d06bdc, type: 3}
+  m_Name: Strings_en
+  m_EditorClassIdentifier: Skp.Runtime::Skp.UI.StringTable
+  language: en
+  entries:
+  - key: common.back
+    text: BACK
+  - key: common.next
+    text: NEXT
+  - key: common.prev
+    text: PREV
+  - key: common.close
+    text: CLOSE
+  - key: common.begin
+    text: BEGIN
+  - key: common.continue
+    text: CONTINUE
+  - key: common.on
+    text: ON
+  - key: common.off
+    text: OFF
+  - key: title.logo
+    text: 'SA KABILANG
+
+      PINTO'
+  - key: title.tagline
+    text: THE LANTERN BETWEEN WORLDS
+  - key: title.footer
+    text: 9 haunted levels / 3 realms / one borrowed shadow
+  - key: title.new
+    text: NEW JOURNEY
+  - key: title.continue
+    text: CONTINUE
+  - key: title.map
+    text: LEVEL MAP
+  - key: title.settings
+    text: SETTINGS
+  - key: title.how
+    text: HOW TO PLAY
+  - key: title.credits
+    text: CREDITS
+  - key: chars.title
+    text: WHO CARRIES THE PAROL?
+  - key: chars.sub
+    text: Choose your character. Both share the same skills.
+  - key: chars.boy
+    text: BOY
+  - key: chars.girl
+    text: GIRL
+  - key: diff.title
+    text: CHOOSE YOUR NIGHT
+  - key: diff.story
+    text: STORY
+  - key: diff.story.desc
+    text: More vitality, unlimited lives, slower foes. Experience the whole tale.
+  - key: diff.standard
+    text: STANDARD
+  - key: diff.standard.desc
+    text: 4 vitality, 5 lives. The intended experience.
+  - key: diff.nightmare
+    text: NIGHTMARE
+  - key: diff.nightmare.desc
+    text: 3 vitality, 3 lives, faster foes, harsher dimensions.
+  - key: diff.endless
+    text: ENDLESS NIGHTMARE
+  - key: diff.endless.locked
+    text: Clear the story to unlock an endless climb for score.
+  - key: diff.endless.desc
+    text: Rising water, every dimension, no end. Best score {0}.
+  - key: how.title
+    text: HOW TO PLAY
+  - key: how.page
+    text: '{0} / {1}'
+  - key: how.1
+    text: 'Climb each haunted tower to the lantern above. Every room has a fork: take the ledges of the waking world, or enter a doorway.
+
+
+      <color=#41e0d0>TEAL doors</color> open the Spirit world: new ledges appear, but your shadow follows your path 4 seconds behind. Any door is refuge.
+
+
+      <color=#c07dff>VIOLET doors</color> flip gravity upward: walk off a ledge and rise to the next. Rise to HOME above.'
+  - key: how.2
+    text: '<color=#ff6b5a>Red</color> means danger. <color=#ffd36a>Gold</color> means safety. <color=#41e0d0>Teal</color> marks spirit paths.
+
+
+      DASH spends flame and makes you untouchable for a moment. WARD stuns or harms creatures and parries the Bellkeeper''s toll.
+
+
+      Light the lanterns to save your progress.'
+  - key: how.3
+    text: '<color=#ffd36a>LETTERS</color> hidden in each tower are more than memos. Every one you find teaches Tala a new skill: double jump, the Lambong veil, the Liwanag bolt, and more.
+
+
+      Keys: A/D or arrows move. Space jump. Q dash. F ward. C veil. X bolt. E door. Esc pause.
+
+
+      Gamepad and touch are supported.'
+  - key: settings.title
+    text: SETTINGS
+  - key: settings.music
+    text: Music
+  - key: settings.sfx
+    text: Sound effects
+  - key: settings.vibration
+    text: Vibration
+  - key: settings.shake
+    text: Screen shake
+  - key: settings.flash
+    text: Reduced flash
+  - key: settings.contrast
+    text: High contrast
+  - key: settings.lefty
+    text: Left-handed layout
+  - key: settings.touch
+    text: Touch controls
+  - key: settings.touch.auto
+    text: AUTO
+  - key: settings.touch.on
+    text: ON
+  - key: settings.touch.off
+    text: OFF
+  - key: settings.note
+    text: Reduced flash replaces white flashes and blinking roots with soft tints.
+  - key: credits.title
+    text: CREDITS
+  - key: credits.body
+    text: 'Game concept: Karylle G. Torres and Pangkat Parol (CSEL).
+
+      Built by Karylle G. Torres.
+
+
+      Inspired by Filipino folklore: the Anino, Tikbalang, Manananggal and the balete tree.
+
+
+      Font: Press Start 2P by CodeMan38, SIL Open Font License 1.1.
+
+
+      Art and sound are original to Sa Kabilang Pinto.'
+  - key: map.talk
+    text: TALK
+  - key: map.enter
+    text: ENTER
+  - key: map.replay
+    text: REPLAY
+  - key: map.ready
+    text: READY
+  - key: map.cleared
+    text: CLEARED
+  - key: map.locked
+    text: 'LOCKED: clear level {0} first'
+  - key: map.node
+    text: '{0}. {1}'
+  - key: map.sub
+    text: '{0} - {1}'
+  - key: lola.name
+    text: LOLA
+  - key: lola.sub
+    text: THE LANTERN PATH
+  - key: lola.first.1
+    text: Apo, you came home late. The bell has been calling for you since the fiesta began.
+  - key: lola.first.2
+    text: Every lantern on this path is a room of the old house. Walk to one and open its door.
+  - key: lola.first.3
+    text: Teal doors lead to the spirit world, but your shadow will follow behind you. Violet doors turn the world upside down. Gold light is always safe.
+  - key: lola.first.4
+    text: 'Look for the folded letters hidden in each room. They are more than memories. Each one will teach you something: to leap twice, to hide in a veil, to throw light.'
+  - key: lola.first.5
+    text: Light the lanterns in order. When you reach the last bell, I will be waiting.
+  - key: lola.cleared
+    text: Salamat, apo. The house is quiet at last. Come back and walk the path whenever you like.
+  - key: lola.act1
+    text: The house wakes slowly. Stay near the gold light. When your shadow starts to follow, any door is a place to rest.
+  - key: lola.act2a
+    text: The roots flash before they strike, apo. Count the flash, then move. And the black water rises faster than you think.
+  - key: lola.act2b
+    text: A tikbalang laughs to pull you off the path. Do not follow it. Use your ward, then slip past. Something with wings hunts above the corridor, so keep your flame close.
+  - key: lola.act3
+    text: The Bellkeeper only listens to its own toll. Use your ward when the golden ring closes on you.
+  - key: level.node
+    text: '{0}. {1}'
+  - key: level.endless.sub
+    text: ENDLESS NIGHTMARE - LOOP {0}
+  - key: level.endless.intro
+    text: The house loops. Rooms rise, water climbs, and every dimension bites harder. Climb as high as you can.
+  - key: clue.name
+    text: A LETTER, FOLDED SMALL
+  - key: clue.sub
+    text: FOUND IN {0}
+  - key: hud.level
+    text: '{0} / 9 - {1}'
+  - key: hud.lives
+    text: Lives {0}  Score {1}
+  - key: hud.lives.inf
+    text: Lives -  Score {0}
+  - key: hud.flame
+    text: FLAME {0}
+  - key: hud.dim.1
+    text: WAKING WORLD
+  - key: hud.dim.2
+    text: SPIRIT
+  - key: hud.dim.4
+    text: INVERTED / GRAVITY UP
+  - key: obj.boss
+    text: DEFEAT THE BELLKEEPER - WARD when the ring closes
+  - key: obj.bossdone
+    text: ENTER THE LAST DOOR
+  - key: obj.spirit
+    text: SPIRIT - reach the lantern above or take the door home
+  - key: obj.inverted
+    text: INVERTED - rise to the HOME door above
+  - key: obj.arena
+    text: CLIMB INTO THE BELL ARENA
+  - key: obj.findfinal
+    text: FIND THE CLUE, THEN THE FINAL DOOR
+  - key: obj.final
+    text: ENTER THE FINAL DOOR
+  - key: obj.findroom
+    text: FIND THE CLUE IN THIS ROOM
+  - key: obj.climb
+    text: CLIMB TO THE LANTERN ABOVE - room {0} of {1}
+  - key: boss.name
+    text: THE BELLKEEPER
+  - key: toast.lantern
+    text: LANTERN LIT - progress saved
+  - key: toast.fragment
+    text: FLAME FRAGMENT - max flame up
+  - key: toast.locked
+    text: LOCKED - find the clue hidden in this tower first
+  - key: pause.title
+    text: PAUSED
+  - key: pause.resume
+    text: RESUME
+  - key: pause.settings
+    text: SETTINGS
+  - key: pause.lantern
+    text: TO LANTERN
+  - key: pause.restart
+    text: RESTART LEVEL
+  - key: pause.quit
+    text: SAVE AND QUIT
+  - key: clear.title
+    text: LEVEL {0} CLEAR
+  - key: clear.loop
+    text: LOOP {0} CLEAR
+  - key: clear.loop.sub
+    text: The water rises faster next loop.
+  - key: clear.time
+    text: TIME
+  - key: clear.score
+    text: SCORE
+  - key: clear.fragments
+    text: FRAGMENTS
+  - key: clear.clue
+    text: CLUE
+  - key: clear.next
+    text: NEXT LEVEL
+  - key: clear.nextloop
+    text: NEXT LOOP
+  - key: clear.replay
+    text: REPLAY
+  - key: clear.map
+    text: MAP
+  - key: clear.menu
+    text: MENU
+  - key: clear.seconds
+    text: '{0}s'
+  - key: over.title
+    text: THE NIGHT TAKES YOU
+  - key: over.stats
+    text: Level {0}. Score {1}. Fragments {2}/3.
+  - key: over.retry
+    text: TRY AGAIN
+  - key: over.map
+    text: MAP
+  - key: ending.title
+    text: DAWN
+  - key: ending.stats
+    text: Time {0}s. Score {1}. Fragments {2}. Endless Nightmare unlocked.
+  - key: ending.menu
+    text: MAIN MENU
