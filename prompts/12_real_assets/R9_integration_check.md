@@ -11,7 +11,8 @@
    - the screenshot suite.
 4. Check `docs/ART_MANIFEST.md` against the project:
    - every file under `Assets/Art/Game/` has a manifest row (asset id, model, raw file, credits, touch-up);
-   - every raw file in `reference/spritecook_raw/` is listed;
+   - every raw file in `reference/spritecook_raw/` and every `.pxl.txt` grid in `Assets/Art/Source/` is listed;
+   - every grid still builds to the PNG in the project (re-run `SkpPixelText` and compare);
    - the Credits screen names SpriteCook, its models and every audio source.
 
    Add an EditMode test that fails on an unlisted file.

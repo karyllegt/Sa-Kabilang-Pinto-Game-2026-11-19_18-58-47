@@ -12,15 +12,17 @@ Set the rules and the tooling, and show me a small sample, before any bulk art. 
    - the game's own identity, in words: what makes Tala, the Anino and the house-towers look like this game and not a generic pixel platformer. Also a SpriteCook prompt template per asset type.
 3. **Cleanup pipeline.**
    - Write `Assets/Editor/SkpArtCleanup.cs` (menu **Sa Kabilang Pinto > Art > Clean SpriteCook Downloads**). It takes `reference/spritecook_raw/` and writes cleaned PNGs to `Assets/Art/Game/`: exact size, grid snap, palette quantize, no partial alpha, pivot.
+   - Write `Assets/Editor/SkpPixelText.cs` (menu **Sa Kabilang Pinto > Art > Build Text-Grid Art**). It converts every `.pxl.txt` grid in `Assets/Art/Source/` to a PNG in `Assets/Art/Game/`. The grid format: a palette header, then one character per pixel, with frames separated by a line. Add a test that a sample grid converts to the exact pixels.
    - Write `docs/ART_MANIFEST.md`.
    - Add an EditMode test `ArtRules` that checks every PNG under `Assets/Art/Game/`: point filter, no compression, 16 PPU, colours within the palette, no partial alpha, sizes as in the bible.
    - Add a test that runs the cleanup on a fixture image with known stray pixels and checks the result.
-4. **Sample sheet.** Keep it within the free 40 credits; show the estimate first.
-   - With SpriteCook, make 2 or 3 short style options: Tala idle at 16x18 plus one Act I backdrop slice each, with `pixel-engine-image-v1` for Tala.
-   - Clean them, and put them in `tests/Screenshots/r2/style_options.png` at 1x and 4x, beside the prototype versions.
-   - Stop and ask me to pick one, then save the picked images as the style reference (their asset ids go into the manifest as `style_asset_ids` for every later prompt).
-5. Do not make bulk art in this prompt. Say what SpriteCook plan R3 to R7 will need, with a credit estimate per prompt.
+4. **Sample sheet.** Use about half the free credits at most, so some remain for the later key frames. Show the cost and ask before generating.
+   - SpriteCook: 2 options for Tala idle at 16x18 (`pixel-engine-image-v1`) and 1 Act I backdrop slice.
+   - Text grid: a third Tala option drawn as a grid, plus a lantern lit and unlit and one door, so I can judge how grid art looks.
+   - Clean everything, and put it in `tests/Screenshots/r2/style_options.png` at 1x and 4x, beside the prototype versions.
+   - Stop and ask me to pick. Save the picked images as the style reference: their asset ids go into the manifest as `style_asset_ids`, and the grids copy their proportions and shading.
+5. Do not make bulk art in this prompt. Write the credit plan: the remaining balance, and which items from the README priority list it covers. Everything else is a text grid.
 
-Tests: `ArtRules` and the cleanup test pass; the full EditMode and PlayMode suites pass.
+Tests: `ArtRules`, the cleanup test and the text-grid test pass; the full EditMode and PlayMode suites pass.
 
-Done when: the bible, cleanup script, manifest, tests and the picked style exist, I have approved the look, committed.
+Done when: the bible, both art scripts, the manifest, the tests, the credit plan and the picked style exist, I have approved the look, committed.

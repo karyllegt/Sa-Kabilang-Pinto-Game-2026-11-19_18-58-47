@@ -1,17 +1,17 @@
 # Prompt R7: UI and level map art
 
-Keep the M5 layouts (they pass the audit) and replace the art inside them. Art follows the "Art pipeline" in the README: SpriteCook's UI kit tools for the interface (concept, component sheets, extraction, finalize, with the 9-slice borders checked), and image generation for portraits, title and map. Estimate the credits and ask before each batch.
+Keep the M5 layouts (they pass the audit) and replace the art inside them. Art follows the "Art pipeline" in the README. SpriteCook is used only where the R2 credit plan covers it: one UI panel concept image, and the level map (state the cost and ask first). The UI kit tools cost more than the free plan has and are not used. Everything else is a text grid.
 
 **Art**
-1. A UI kit concept in the approved style, with capiz-pattern corners on the panels. From it, extract:
+1. A UI panel style with capiz-pattern corners. It follows the SpriteCook concept image if one was made, otherwise it is designed directly as a grid. Draw as text grids:
    - the one PixelBox panel (keep a single shared style, 9-slice border checked);
    - buttons (normal, pressed, disabled, focused) and toggles;
    - hearts, the touch buttons and the skill chips.
 
    Redraw the 8 skill icons to the bible, replacing the generated `icon_skill_*`.
 2. Portraits at 24x24 for Tala (boy, girl), Lola, Anino, the Bellkeeper and the letter, each with 2 or 3 expressions.
-3. Title art, character cards and Ending art.
-4. A new level map: the three acts as one landscape (houses, the balete and the well, the church), node art (house, well, church bell), the path, and Lola's spot.
+3. Title art, character cards and Ending art, as text grids built from the new Tala, the lantern and the backdrop layers.
+4. A new level map, from SpriteCook if the credits cover it (cleaned), otherwise assembled from the R5 backdrop layers and text-grid landmarks: the three acts as one landscape (houses, the balete and the well, the church), node art (house, well, church bell), the path, and Lola's spot.
 
 **Game work**
 5. `SkpUiSetup` uses the new sprites. Every screen keeps its layout, the safe area and the 48 dp targets.

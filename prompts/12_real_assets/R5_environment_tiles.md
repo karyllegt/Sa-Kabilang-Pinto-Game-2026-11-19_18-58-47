@@ -1,16 +1,16 @@
 # Prompt R5: Environment, tiles and backdrops
 
-Make each act look like its place: Act I the haunted house-towers, Act II the balete and the well, Act III the church and its bell. Consult the `unity:create-tile-palette-or-rule-tiles` and `unity:manage-sprite-atlas` skills. Art follows the "Art pipeline" in the README (here SpriteCook output needs light cleanup only). Estimate the credits per act and ask before each batch.
+Make each act look like its place: Act I the haunted house-towers, Act II the balete and the well, Act III the church and its bell. Consult the `unity:create-tile-palette-or-rule-tiles` and `unity:manage-sprite-atlas` skills. Art follows the "Art pipeline" in the README: tiles and decoration are text grids. Backdrops come from SpriteCook only where the R2 credit plan covers them (state the cost and ask first); every other backdrop layer is a text grid.
 
 **Art**
-1. Per act, a 16 px tile set, made with SpriteCook's tileset generation (`list_tileset_options` first, side-view platformer pieces), replacing the recoloured `tile_root_ledge` and `tile_stone_ledge`:
+1. Per act, a 16 px tile set drawn as text grids (one grid file per act, one block per tile), replacing the recoloured `tile_root_ledge` and `tile_stone_ledge`:
    - ledge top and underside, left and right ends, and middle variants;
    - the ground block with edges;
    - wall and window tiles for the room backs;
    - Spirit and Inverted ledge versions, and the crumble and moving ledges.
 
-   Clean them with `SkpArtCleanup`.
-2. Per act, 3 or 4 parallax backdrop layers at 480x270 (far sky, silhouettes, near room wall), made with SpriteCook using the R2 style reference, then cleaned. The layers must tile horizontally (check the seam).
+   Build them with `SkpPixelText`.
+2. Per act, 3 or 4 parallax backdrop layers at 480x270 (far sky, silhouettes, near room wall). The free-credit piece, if any, is the far layer from SpriteCook, cleaned with `SkpArtCleanup`. The silhouette and wall layers are text grids. They may be drawn as a repeating 16 or 32 px pattern plus a few landmark shapes (house roofs, the balete, the church tower), so they stay small enough to write. The layers must tile horizontally (check the seam).
 3. Decoration sprites per act: hanging roots, candles, capiz lamps, picture frames, bell ropes.
 
 **Game work**

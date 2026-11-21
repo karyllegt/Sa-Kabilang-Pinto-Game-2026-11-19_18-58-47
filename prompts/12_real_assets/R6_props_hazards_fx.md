@@ -1,6 +1,6 @@
 # Prompt R6: Props, hazards, items and effects
 
-Replace the remaining prototype, recoloured and code-drawn pieces. Art follows the "Art pipeline" in the README: SpriteCook at exact sizes with `pixel-engine-image-v1`, then cleanup, then a touch-up for animated frames. Estimate the credits and ask before each batch.
+Replace the remaining prototype, recoloured and code-drawn pieces. Art follows the "Art pipeline" in the README: every prop, hazard, item and particle is a text grid in the R2 style, built with `SkpPixelText`. No credits are spent here.
 
 **Art and objects**
 1. Lantern checkpoint (today a 2 px post): a capiz lantern on a post, with unlit, lighting (4 frames) and lit loop (4) states.
