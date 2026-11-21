@@ -45,7 +45,7 @@ namespace Skp.Tests
         {
             var d = _table.Get(df);
             var set = new HashSet<string>(skills ?? new string[0]);
-            return LevelGenerator.Build(Specs[lv], lv, LevelSession.Exact(d.hazardMult), LevelSession.Exact(d.enemyMult), LevelSession.Exact(d.floodMult), set.Contains);
+            return LevelGenerator.Build(Specs[lv], lv, LevelSession.Exact(d.hazardMult), LevelSession.Exact(d.enemyMult), LevelSession.Exact(d.floodMult), set.Contains, 0, GenOptions.PrototypeExact);
         }
 
         [Test]

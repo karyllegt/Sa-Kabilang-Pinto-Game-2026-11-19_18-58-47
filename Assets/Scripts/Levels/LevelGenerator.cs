@@ -5,10 +5,36 @@ using System.Linq;
 namespace Skp.Levels
 {
     /// <summary>
+    /// Generator options. <see cref="Prototype"/> reproduces the prototype exactly (the M4 fixtures). The default M7 mode
+    /// keeps the prototype's draws and adds docs/02 Feature 4: glide gaps truly wide, veil gauntlets under a thorn curtain
+    /// with the way on past the far end, Act III falling bells, secret flame nooks in long levels, slightly narrower
+    /// ledges later on, and the ramp numbers from the DifficultyCurve.
+    /// </summary>
+    public class GenOptions
+    {
+        public bool Prototype;
+        public double HazardPerLevel = .08, HazardPerRoom = .05, HazardCap = 2.4;
+        public double EnemyPerLevel = .06, EnemyPerRoom = .04, EnemyCap = 2.2;
+        public SkillObstacleTuning Obstacles;
+
+        public static GenOptions PrototypeExact => new GenOptions { Prototype = true };
+
+        public static GenOptions From(DifficultyCurve c, SkillObstacleTuning o)
+        {
+            var g = new GenOptions { Obstacles = o };
+            if (c == null) return g;
+            g.HazardPerLevel = Math.Round(c.hazardPerLevel, 6); g.HazardPerRoom = Math.Round(c.hazardPerRoom, 6); g.HazardCap = Math.Round(c.hazardCap, 6);
+            g.EnemyPerLevel = Math.Round(c.enemyPerLevel, 6); g.EnemyPerRoom = Math.Round(c.enemyPerRoom, 6); g.EnemyCap = Math.Round(c.enemyCap, 6);
+            return g;
+        }
+    }
+
+    /// <summary>
     /// Port of the prototype's buildLevel() and route() (reference/prototype/index.html), statement by
     /// statement and in the same random-draw order, so a given level, difficulty and skill set produces
-    /// exactly the prototype's layout (checked against tests/prototype/fixtures/prototype_levels.json).
-    /// Deterministic: the seed depends only on the level index (or the endless loop).
+    /// exactly the prototype's layout in <see cref="GenOptions.Prototype"/> mode (checked against
+    /// tests/prototype/fixtures/prototype_levels.json). Deterministic: the seed depends only on the level index
+    /// (or the endless loop).
     /// </summary>
     public static class LevelGenerator
     {
@@ -20,13 +46,17 @@ namespace Skp.Levels
         /// <param name="floodMult">Difficulty flood multiplier.</param>
         /// <param name="hasSkill">Skills owned when the level is built (skill-aware obstacles).</param>
         public static LevelLayout Build(LevelSpec cfg, int lv, double hazardMult, double enemyMult, double floodMult,
-                                        Func<string, bool> hasSkill, int loop = 0)
+                                        Func<string, bool> hasSkill, int loop = 0, GenOptions opts = null)
         {
             hasSkill ??= _ => false;
+            opts ??= new GenOptions();
+            bool m7 = !opts.Prototype;
+            var ot = opts.Obstacles != null ? opts.Obstacles : SkillObstacleTuning.Default;
             double seed = (lv >= 0 ? lv + 1 : 60 + loop) * 2654435.0 + 17;
             var R = new SeededRandom(seed);
             var R2 = new SeededRandom(seed * 3 + 7);
             var RS = new SeededRandom(seed * 5 + 11);
+            var RB = new SeededRandom(seed * 7 + 13); // M7 additions only: the prototype's own draws stay untouched
             int lvE = lv >= 0 ? lv : 8 + loop;
             int RH = 22 * T, rooms = cfg.rooms, arena = cfg.boss ? 19 * T : 0;
             double Hpx = (rooms * 22 + 5) * T + arena, y0 = Hpx - 3 * T;
@@ -45,16 +75,17 @@ namespace Skp.Levels
             P(0, y0, LW * T, ALL, "floor", 3 * T);
             L.Lanterns.Add(new LLantern { x = 15 * T, y = y0, room = -1 });
             double enMul, hzMul;
-            double lvS = 1 + .08 * Math.Max(0, lv);
+            double lvS = 1 + opts.HazardPerLevel * Math.Max(0, lv);
             int shardsLeft = 3;
 
             for (int r = 0; r < rooms; r++)
             {
                 double ys = y0 - r * RH, ye = ys - RH;
                 bool last = r == rooms - 1;
-                double rmS = 1 + .05 * r;
-                hzMul = Math.Min(2.4, hazardMult * lvS * rmS);
-                enMul = Math.Min(2.2, enemyMult * (1 + .06 * Math.Max(0, lv)) * (1 + .04 * r));
+                double rmS = 1 + opts.HazardPerRoom * r;
+                hzMul = Math.Min(opts.HazardCap, hazardMult * lvS * rmS);
+                enMul = Math.Min(opts.EnemyCap, enemyMult * (1 + opts.EnemyPerLevel * Math.Max(0, lv)) * (1 + opts.EnemyPerRoom * r));
+                L.RoomMults.Add((hzMul, enMul));
                 P(0, ye, LW * T, ALL, "floor");
                 // doors on the start ledge
                 L.Doors.Add(new LDoor { x = 6 * T, y = ys - 28, w = 16, h = 28, kind = "enter", dim = SPI, m = ORD, room = r });
@@ -68,17 +99,30 @@ namespace Skp.Levels
                 // ---- ordinary route
                 int act = cfg.act;
                 bool hasClue = r == L.ClueRoom && L.NeedClue;
-                var oo = new RouteOpts { dyMin = 1, dyMax = 3, gap1 = 3, gap2 = 2, wMin = act > 1 ? 3 : 4, wMax = 7 };
+                var oo = new RouteOpts { dyMin = 1, dyMax = 3, gap1 = 3, gap2 = 2, wMin = act > 1 ? 3 : 4, wMax = m7 && lvE >= ot.narrowFromLevel ? 6 : 7, M7 = m7, WideGap = ot.glideGap, DashGap = ot.dashGap, HasDj = hasSkill("dj"), HasGlide = hasSkill("glide") };
                 oo.dashAt = ((act > 1 || hasSkill("swift")) && R.Next() < .5) ? 1 + (int)Math.Floor(R.Next() * 3) : -1;
                 if (!hasClue || r != L.ClueRoom)
                 {   // the letter room stays kind to the skills the player has not met
                     oo.RS = RS;
                     oo.gaunt = hasSkill("veil") && lvE >= 2 ? Math.Min(.5, .3 + .03 * lvE) : 0;
-                    oo.gW = hasSkill("veil2") ? 12 : 9;
+                    oo.gW = hasSkill("veil2") ? (m7 ? ot.greaterGauntletWidth : 12) : (m7 ? ot.gauntletWidth : 9);
                     oo.dj = hasSkill("dj") && lvE >= 1 ? Math.Min(.5, .14 + .05 * lvE) : 0;
                     oo.wide = hasSkill("glide") && lvE >= 3 ? Math.Min(.3, .1 + .03 * lvE) : 0;
                 }
                 var ord = Route(R, ys, ye, oo);
+                if (m7)
+                    for (int i = 0; i < ord.Count; i++)
+                    {
+                        // a gauntlet's curtain must not cut through another ledge of the route; the way on must exist
+                        var l = ord[i];
+                        if (l.kind != "gaunt") continue;
+                        double cx0 = (l.x0 + 1) * T, cx1 = (l.x0 + l.w - 1) * T, cy0 = l.y - ot.curtainGap - ot.curtainHeight, cy1 = l.y - ot.curtainGap;
+                        double ly0 = l.y + 8, ly1 = Math.Min(ys, l.y + 8 + ot.curtainBelow); // under the ledge, down to the room floor at most
+                        // other ledges keep two tiles of headroom under a curtain (room to jump onto them)
+                        bool Hits(RouteLedge o2, double y0, double y1) => o2.x0 * T < cx1 && (o2.x0 + o2.w) * T > cx0 && o2.y - 2 * T < y1 && o2.y + 8 > y0;
+                        bool blocked = i + 1 >= ord.Count || ord.Where((o2, k) => k != i && (Hits(o2, cy0, cy1) || Hits(o2, ly0, ly1))).Any();
+                        if (blocked) l.kind = null;
+                    }
                 for (int i = 0; i < ord.Count; i++)
                 {
                     var l = ord[i];
@@ -99,10 +143,22 @@ namespace Skp.Levels
                     if (i > 0 && l.kind == "gaunt")
                     {
                         double sx = (l.x0 + 1) * T;
-                        L.Haz.Add(new LHaz { x = sx, y = l.y - 7, w = (l.w - 2) * T, h = 7, m = ORD, kind = "spike", gaunt = true });
+                        var spikes = new LHaz { x = sx, y = l.y - 7, w = (l.w - 2) * T, h = 7, m = ORD, kind = "spike", gaunt = true };
+                        L.Haz.Add(spikes);
                         L.Features.Add("gaunt");
                         L.Items.Add(new LItem { x = (l.x0 + l.w / 2.0) * T - 5, y = l.y - 24, m = ORD, kind = "flame" });
+                        if (m7)
+                        {
+                            L.Haz.Add(new LHaz { x = sx, y = l.y - ot.curtainGap - ot.curtainHeight, w = (l.w - 2) * T, h = ot.curtainHeight, m = ORD, kind = "curtain" });
+                            // and under it, so nobody slips beneath the gauntlet
+                            double below = Math.Min(ys, l.y + 8 + ot.curtainBelow) - (l.y + 8);
+                            if (below > 4) L.Haz.Add(new LHaz { x = sx, y = l.y + 8, w = (l.w - 2) * T, h = below, m = ORD, kind = "curtain" });
+                            L.Obstacles.Add(new LObstacle { type = "veil", skill = "veil", room = r, From = ord[i - 1].pl, Over = l.pl, To = ord[i + 1].pl, Hazard = spikes });
+                        }
                     }
+                    if (m7 && i > 0 && l.kind == "dj") L.Obstacles.Add(new LObstacle { type = "dj", skill = "dj", room = r, From = ord[i - 1].pl, To = l.pl });
+                    if (m7 && i > 0 && l.kind == "wide") L.Obstacles.Add(new LObstacle { type = "glide", skill = "glide", room = r, From = ord[i - 1].pl, To = l.pl });
+                    if (m7 && i > 0 && l.dash) L.Obstacles.Add(new LObstacle { type = "dash", skill = "dash", room = r, From = ord[i - 1].pl, To = l.pl });
                     if (l.kind == "dj") L.Features.Add("dj");
                     if (l.kind == "wide") L.Features.Add("wide");
                     // bolt thorn wall on a narrow ledge, toward the next ledge
@@ -115,14 +171,21 @@ namespace Skp.Levels
                         int ii = i;
                         bool clear = !(nx.x0 * T < tx + T && (nx.x0 + nx.w) * T > tx)
                                      && !ord.Where((o2, k) => k != ii && o2.x0 * T < tx + T && (o2.x0 + o2.w) * T > tx && o2.y < l.y + 8 && o2.y > l.y - 140).Any();
+                        // M7: no earlier ledge of this room reaches past the wall (the way on is only through it)
+                        if (m7 && clear) clear = nx.kind == null && !nx.dash && !ord[i - 1].thorn && l.pl.kind != "crumble"; // M7: the way on is a plain step, walls never come two in a row, nor stand on a crumbling ledge
                         if (clear)
                         {
-                            L.Haz.Add(new LHaz { x = tx, y = l.y - 130, w = T, h = 130, m = ORD, kind = "thorns" });
+                            var wall = new LHaz { x = tx, y = l.y - 130, w = T, h = 130, m = ORD, kind = "thorns" };
+                            L.Haz.Add(wall);
                             L.Features.Add("thorn");
                             l.thorn = true;
+                            if (m7) L.Obstacles.Add(new LObstacle { type = "bolt", skill = "bolt", room = r, From = l.pl, Over = l.pl, To = nx.pl, Hazard = wall });
                         }
                     }
                     if (i == 0 || l.dash || l.pl.kind == "crumble" || l.kind == "gaunt" || l.thorn) continue;
+                    if (m7 && (l.kind == "dj" || l.kind == "wide")) continue; // M7: a skill landing is a reward, not a trap
+                    if (m7 && i + 1 < ord.Count && (ord[i + 1].kind == "dj" || ord[i + 1].kind == "wide" || ord[i + 1].dash)) continue; // nor is its take-off
+                    if (m7 && (ord[i - 1].thorn || ord[i - 1].kind == "gaunt")) continue; // the way on past a wall or a gauntlet is clear
                     double cxp = (l.x0 + l.w / 2.0) * T;
                     double roll = R2.Next();
                     if (l.w >= 5 && roll < cfg.spike * hzMul)
@@ -136,7 +199,12 @@ namespace Skp.Levels
                         string ty = ti < types.Length ? types[ti] : "anino";
                         if (ty == "tik" && l.w < 6) L.Enemies.Add(MakeEnemy("anino", l, ORD, L.Enemies.Count));
                         else L.Enemies.Add(MakeEnemy(ty, l, ORD, L.Enemies.Count));
-                        if (hasSkill("spread") && lvE >= 5 && l.w >= 6 && RS.Next() < .5) L.Enemies.Add(MakeEnemy("anino", l, ORD, L.Enemies.Count));
+                        if (hasSkill("spread") && lvE >= 5 && l.w >= 6 && RS.Next() < .5)
+                        {
+                            L.Enemies.Add(MakeEnemy("anino", l, ORD, L.Enemies.Count));
+                            L.Features.Add("pack");
+                            if (m7) L.Obstacles.Add(new LObstacle { type = "pack", skill = "spread", room = r, From = l.pl, Over = l.pl, To = l.pl });
+                        }
                     }
                     if (R2.Next() < .5) L.Items.Add(new LItem { x = cxp + (R2.Next() < .5 ? -20 : 20) - 5, y = l.y - 14, m = ORD, kind = "flame" });
                 }
@@ -145,6 +213,8 @@ namespace Skp.Levels
                     var l = ord[ord.Count - 1];
                     L.Items.Add(new LItem { x = (l.x0 + l.w / 2.0) * T - 4, y = l.y - 16, m = ORD, kind = "clue" });
                 }
+
+                if (m7) AddBellsAndNooks(L, cfg, ord, r, lvE, hzMul, rooms, RB, ot);
 
                 // ---- spirit route
                 var so = new RouteOpts { dyMin = 1, dyMax = 2, gap1 = 3, gap2 = 3, wMin = 3, wMax = 5, dashAt = int.MinValue };
@@ -253,13 +323,62 @@ namespace Skp.Levels
             public SeededRandom RS;
             public double gaunt, dj, wide;
             public bool hadG;
+            // M7: wide gaps are exactly WideGap tiles; after a gauntlet the way on starts past its far end
+            public bool M7;
+            public int WideGap = 14, DashGap = 6;
+            public bool HasDj, HasGlide;
+            public int gx0 = -1, gx1 = -1, gFar;
+        }
+
+        /// <summary>
+        /// Act III falling bells on free ordinary ledges, and in long levels a small hidden ledge with two flame stars
+        /// above the route (own random stream, so the prototype's draws are unchanged).
+        /// </summary>
+        static void AddBellsAndNooks(LevelLayout L, LevelSpec cfg, List<RouteLedge> ord, int r, int lvE, double hzMul, int rooms, SeededRandom RB, SkillObstacleTuning ot)
+        {
+            bool Free(RouteLedge l) =>
+                l.pl.kind != "crumble" && l.kind == null && !l.thorn &&
+                !L.Haz.Any(h => h.x < (l.x0 + l.w) * T && h.x + h.w > l.x0 * T && Math.Abs(h.y + h.h - l.y) < 20);
+            if (cfg.act == 3 && !cfg.boss)
+            {
+                for (int i = 1; i < ord.Count; i++)
+                {
+                    var l = ord[i];
+                    double roll = RB.Next();
+                    if (!Free(l) || l.w < 4 || roll >= ot.bellChance * hzMul) continue;
+                    double x = (l.x0 + l.w / 2.0) * T;
+                    double top = l.y - ot.bellDrop * T;
+                    foreach (var o in ord) if (o != l && o.x0 * T < x + 7 && (o.x0 + o.w) * T > x - 7 && o.y < l.y && o.y + 8 > top) top = o.y + 8;
+                    if (l.y - top < 4 * T) continue; // no room to fall
+                    int period = Math.Max(150, ot.bellPeriod - 10 * Math.Max(0, lvE - 6));
+                    L.Bells.Add(new LBell { x = x, top = top, ground = l.y, period = period, phase = (int)Math.Floor(RB.Next() * period) });
+                    L.Features.Add("bell");
+                }
+            }
+            if (rooms >= 6 && ord.Count >= 3 && RB.Next() < ot.nookChance)
+            {
+                int i = 1 + (int)Math.Floor(RB.Next() * (ord.Count - 2));
+                var l = ord[i];
+                bool right = RB.Next() < .5;
+                int nx = right ? l.x0 + l.w + 1 : l.x0 - 3;
+                double ny = l.y - ot.nookHeight * T;
+                if (nx < 1 || nx + 2 > LW - 1) return;
+                double x0 = nx * T, x1 = (nx + 2) * T;
+                bool clash = L.Plats.Any(p => p.x < x1 + T && p.x + p.w > x0 - T && p.y < ny + 3 * T && p.y + p.h > ny - 3 * T)
+                             || L.Haz.Any(h => h.x < x1 && h.x + h.w > x0 && h.y < ny + 2 * T && h.y + h.h > ny - 3 * T);
+                if (clash) return;
+                L.Plats.Add(new LPlat { x = x0, y = ny, w = 2 * T, h = 8, m = ORD, kind = "wood" });
+                L.Items.Add(new LItem { x = x0 + 3, y = ny - 14, m = ORD, kind = "flame" });
+                L.Items.Add(new LItem { x = x0 + 18, y = ny - 14, m = ORD, kind = "flame" });
+                L.Features.Add("nook");
+            }
         }
 
         public class RouteLedge
         {
             public int x0, w;
             public double y;
-            public bool dash, thorn;
+            public bool dash, thorn, gate;
             public string kind;
             internal LPlat pl;
         }
@@ -285,28 +404,75 @@ namespace Skp.Levels
                     else if (o.dj != 0 && q < o.gaunt + o.dj)
                     {
                         dy = Math.Min(5, (int)Math.Floor((y - ye) / T) - 1);
-                        if (dy >= 4) kind = "dj"; else dy = o.dyMin;
+                        if (dy >= (o.M7 ? 5 : 4)) kind = "dj"; else dy = o.dyMin; // M7: 5 tiles, well past a single jump
                     }
                     else if (o.wide != 0 && q < o.gaunt + o.dj + o.wide) { dy = 1; kind = "wide"; }
                 }
-                if (o.dashAt == outL.Count && outL.Count > 0)
+                if (o.M7 && kind == "wide")
+                {
+                    // a real glide gap: exactly WideGap tiles from the last ledge, on whichever side has room
+                    var opt = new List<int>();
+                    if (pvx1 + o.WideGap + w <= LW - 1) opt.Add(pvx1 + o.WideGap);
+                    if (pvx0 - o.WideGap - w >= 1) opt.Add(pvx0 - o.WideGap - w);
+                    if (opt.Count > 0) pick = opt[(int)Math.Floor(R.Next() * opt.Count)];
+                    else kind = null;
+                }
+                // M7: the step after an obstacle never comes back toward where Tala started it (no way around it)
+                int afterGaunt = o.M7 && o.gx0 >= 0 && outL.Count > 0 && outL[outL.Count - 1].gate ? o.gFar : 0;
+                bool afterGauntlet = afterGaunt != 0 && outL[outL.Count - 1].kind == "gaunt";
+                if (afterGauntlet && kind != null) { kind = null; pick = null; dy = o.dyMin + dy % (o.dyMax - o.dyMin + 1); } // the way on from a gauntlet is a plain step
+                if (o.dashAt == outL.Count && outL.Count > 0 && !(o.M7 && kind == "wide" && pick != null))
                 {
                     dy = 1;
                     var opt = new List<int>();
-                    if (pvx1 + 5 + w <= LW - 1) opt.Add(pvx1 + 5);
-                    if (pvx0 - 5 - w >= 1) opt.Add(pvx0 - 5 - w);
-                    if (opt.Count > 0) { pick = opt[(int)Math.Floor(R.Next() * opt.Count)]; dash = true; }
+                    int dg = o.M7 ? o.DashGap + (o.HasDj ? 3 : 0) : 5; // M7: past a double jump too, once Tala has one
+                    if (pvx1 + dg + w <= LW - 1) opt.Add(pvx1 + dg);
+                    if (pvx0 - dg - w >= 1) opt.Add(pvx0 - dg - w);
+                    if (opt.Count > 0) { pick = opt[(int)Math.Floor(R.Next() * opt.Count)]; dash = true; if (o.M7) kind = null; }
+                    if (o.M7 && o.HasGlide && dash) { pick = null; dash = false; } // a glide crosses any dash gap: none once Tala has one // M7: a dash gap is only that
                 }
+                if (afterGaunt != 0 && dash) { pick = null; dash = false; } // the way on from a gauntlet is a plain step
                 for (int k = 0; k < 50 && pick == null; k++)
                 {
                     int x0 = 2 + (int)Math.Floor(R.Next() * (LW - 4 - w + 1));
                     int gap = Math.Max(0, Math.Max(x0 - pvx1, pvx0 - (x0 + w)));
                     int allowed = kind == "wide" ? 5 : kind == "dj" ? 2 : (dy >= 2 ? o.gap2 : o.gap1);
-                    if (gap <= allowed && Math.Abs((x0 + w / 2.0) - (pvx0 + pvx1) / 2.0) >= 2) pick = x0;
+                    // after a gauntlet the next ledge starts past its far safe tile (it cannot be reached from the near end)
+                    bool clearOfSpikes = !(o.M7 && kind == "gaunt") || pvx1 <= x0 + 1 || pvx0 >= x0 + w - 1;
+                    bool farOk = clearOfSpikes && afterGaunt == 0
+                                 || (afterGauntlet ? (afterGaunt > 0 ? x0 >= o.gx1 - 1 : x0 + w <= o.gx0 + 1)
+                                                   : (afterGaunt > 0 ? x0 >= o.gx0 : x0 + w <= o.gx1));
+                    if (gap <= allowed && farOk && Math.Abs((x0 + w / 2.0) - (pvx0 + pvx1) / 2.0) >= 2) pick = x0;
                 }
+                if (pick == null && afterGauntlet)
+                {
+                    int x0 = afterGaunt > 0 ? o.gx1 - 1 : o.gx0 + 1 - w;
+                    if (x0 >= 1 && x0 + w <= LW - 1) pick = x0;
+                    else outL[outL.Count - 1].kind = null; // no room on the far side: the gauntlet becomes a plain ledge
+                }
+                if (pick == null && o.M7 && kind == "gaunt") { kind = null; o.hadG = false; } // no room for a fair gauntlet here
                 if (pick == null) pick = Clamp((int)Math.Floor((pvx0 + pvx1) / 2.0 - w / 2.0 + 0.5) + 3, 2, LW - 2 - w);
                 y -= dy * T;
                 outL.Add(new RouteLedge { x0 = pick.Value, w = w, y = y, dash = dash, kind = kind });
+                var placed = outL[outL.Count - 1];
+                if (o.M7 && (kind == "dj" || kind == "wide" || dash))
+                {
+                    // the next step stays on the far side of this ledge, seen from the last one
+                    placed.gate = true;
+                    o.gx0 = pick.Value; o.gx1 = pick.Value + w;
+                    double prevC = (pvx0 + pvx1) / 2.0, c = pick.Value + w / 2.0;
+                    o.gFar = prevC < c ? 1 : prevC > c ? -1 : (pick.Value + w + 3 <= LW - 1 ? 1 : -1);
+                }
+                if (o.M7 && kind == "gaunt")
+                {
+                    placed.gate = true;
+                    // Tala arrives from the previous ledge's side; the far end is the other one (or the side with room)
+                    o.gx0 = pick.Value; o.gx1 = pick.Value + w;
+                    double prevC = (pvx0 + pvx1) / 2.0, c = pick.Value + w / 2.0;
+                    o.gFar = prevC <= c ? 1 : -1;
+                    // no room past the far end: no gauntlet here (the way on would be on Tala's own side)
+                    if ((o.gFar > 0 && o.gx1 + 2 > LW - 1) || (o.gFar < 0 && o.gx0 - 3 < 1)) { placed.kind = null; placed.gate = false; o.hadG = false; }
+                }
                 pvx0 = pick.Value; pvx1 = pick.Value + w;
             }
             return outL;

@@ -347,3 +347,19 @@ MonoBehaviour:
     text: The greater veil lasts longer and gathers sooner. Trust it under the bells.
   - key: lola.skill.glide
     text: Pakpak. Hold the jump and let the night air carry you over the wide gaps.
+  - key: obj.lastdoor
+    text: ENTER THE LAST DOOR
+  - key: boss.awakens
+    text: THE BELLKEEPER AWAKENS
+  - key: boss.howto
+    text: WARD when the golden ring closes on the Bellkeeper
+  - key: boss.toll
+    text: WARD NOW when the ring closes!
+  - key: boss.parry
+    text: PARRY! The Bellkeeper falls. Strike it with WARD
+  - key: boss.lastdoor
+    text: THE LAST DOOR OPENS
+  - key: hint.water
+    text: THE WATER BURNS. CLIMB!
+  - key: hint.bell
+    text: Bells fall where the red line flickers. Step aside, or raise the veil.

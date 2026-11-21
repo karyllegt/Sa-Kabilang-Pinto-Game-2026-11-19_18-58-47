@@ -48,9 +48,10 @@ namespace Skp.Tests
             root0.UseSave(save);
 
             GameSession.Pending = new LevelRequest { Level = 0, Difficulty = "standard" };
+            var old = Object.FindAnyObjectByType<LevelRunner>(); // an earlier test may have ended in the Level scene
             SceneManager.LoadScene(SceneNames.Level);
             LevelRunner runner = null;
-            yield return WaitFor(() => (runner = Object.FindAnyObjectByType<LevelRunner>()) != null && runner.Session != null);
+            yield return WaitFor(() => (runner = Object.FindAnyObjectByType<LevelRunner>()) != null && runner != old && runner.Session != null);
 
             var session = runner.Session;
             var view = runner.view;

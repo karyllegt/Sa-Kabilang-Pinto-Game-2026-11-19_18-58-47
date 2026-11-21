@@ -4,7 +4,8 @@ namespace Skp.Levels
 {
     /// <summary>
     /// Level-to-level and room-to-room ramp (docs/02 Feature 3, docs/PROTOTYPE_NUMBERS.md).
-    /// Shell in M1; the multiplier functions and their tests arrive in M7.
+    /// The generator reads the hazard and enemy numbers (LevelGenerator GenOptions.From); the session applies the shadow,
+    /// flood and enemy-speed ramps. Difficulty-mode multipliers apply on top.
     /// </summary>
     [CreateAssetMenu(menuName = "Sa Kabilang Pinto/Difficulty Curve", fileName = "DifficultyCurve")]
     public class DifficultyCurve : ScriptableObject
@@ -25,6 +26,21 @@ namespace Skp.Levels
         public float enemyCap = 2.2f;
         [Tooltip("Shadow chase delay floor, in 60 Hz frames.")]
         public int minChaseFrames = 100;
+
+        [Header("Skill obstacles")]
+        public SkillObstacleTuning obstacles;
+
+        public float HazardMult(float difficulty, int levelIndex, int room) =>
+            Mathf.Min(hazardCap, difficulty * (1f + hazardPerLevel * Mathf.Max(0, levelIndex)) * (1f + hazardPerRoom * room));
+
+        public float EnemyMult(float difficulty, int levelIndex, int room) =>
+            Mathf.Min(enemyCap, difficulty * (1f + enemyPerLevel * Mathf.Max(0, levelIndex)) * (1f + enemyPerRoom * room));
+
+        /// <summary>Flood rise: +5 percent per level.</summary>
+        public float FloodFactor(int levelIndex) => 1f + floodPerLevel * Mathf.Max(0, levelIndex);
+
+        /// <summary>Creature speed: the difficulty's speed, +2 percent per level.</summary>
+        public float EnemySpeed(float difficulty, int levelIndex) => difficulty * (1f + enemySpeedPerLevel * Mathf.Max(0, levelIndex));
 
         /// <summary>Shadow lag for a level: the difficulty's frames x (1 - 0.035 L), never below the floor.</summary>
         public int ChaseFrames(int difficultyFrames, int levelIndex) =>

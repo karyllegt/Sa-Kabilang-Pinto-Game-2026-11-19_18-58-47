@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Skp.Levels
 {
-    /// <summary>Sprite references the level view draws with (all from reference/assets, imported in M1).</summary>
+    /// <summary>Sprite references the level view draws with: the provided art (reference/assets, M1) and the M7 gap art generated in the same palette.</summary>
     [CreateAssetMenu(menuName = "Sa Kabilang Pinto/Level Art", fileName = "LevelArt")]
     public class LevelArt : ScriptableObject
     {
@@ -23,6 +23,14 @@ namespace Skp.Levels
         public Sprite[] anino = new Sprite[2];
         public Sprite[] tikbalang = new Sprite[2];
         public Sprite[] manananggal = new Sprite[2];
+
+        [Header("M7: act ledges, flood, bells, curtain, props")]
+        [Tooltip("Act II balete-root ledge and Act III church-stone ledge (48 x 16, middle repeats)")] public Sprite rootLedge, stoneLedge;
+        public Sprite waterSurface, bell, curtain;
+        [Tooltip("Act II hanging balete roots, Act III church candle (decoration only)")] public Sprite propRoots, propCandle;
+
+        [Header("M7: the Bellkeeper")]
+        public Sprite boss, bossStun, bossToll, shockwave;
 
         [Header("Backdrops per act")]
         public Sprite[] backdrops = new Sprite[3];

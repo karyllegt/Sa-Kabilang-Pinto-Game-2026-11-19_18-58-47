@@ -15,6 +15,8 @@ namespace Skp.Core
         [Range(0, 1)] public float easeY = 0.1f;
         [Tooltip("Player height in the view, from the bottom (prototype: 0.42 of the screen).")]
         [Range(0, 1)] public float playerHeightInView = 0.42f;
+        /// <summary>While set, the view's top edge is held here (the Bellkeeper arena: prototype ty = arena floor - 240 px).</summary>
+        public float? LockTopY { get; set; }
 
         Vector2 ViewSize
         {
@@ -32,7 +34,7 @@ namespace Skp.Core
             var v = ViewSize;
             float k = gravitySign > 0 ? playerHeightInView : 1f - playerHeightInView;
             float cx = playerCenter.x;
-            float cy = playerCenter.y + (0.5f - k) * v.y;
+            float cy = LockTopY.HasValue ? LockTopY.Value - v.y * 0.5f : playerCenter.y + (0.5f - k) * v.y;
             cx = Clamp(cx, bounds.xMin + v.x * 0.5f, bounds.xMax - v.x * 0.5f);
             cy = Clamp(cy, bounds.yMin + v.y * 0.5f, bounds.yMax - v.y * 0.5f);
             return new Vector2(cx, cy);

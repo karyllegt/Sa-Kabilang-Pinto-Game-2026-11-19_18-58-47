@@ -56,6 +56,19 @@ namespace Skp.UI
             session.Sim.LanternLit += k => { if (k > 0) toast.Show(Loc.Get("toast.lantern"), 1.8f); };
             session.Sim.ItemCollected += it => { if (it.Kind == ItemKind.Shard) toast.Show(Loc.Get("toast.fragment"), 2f); };
             session.Sim.NotEnoughFlame += () => toast.Show(Loc.Get("toast.noflame"), 1.5f);
+            session.Sim.WaterTouched += () => { Skp.Audio.Sfx.Cue("splash"); if (_hinted.Add("hint.water")) toast.Show(Loc.Get("hint.water"), 2.2f); };
+            session.Sim.BellLanded += _ => Skp.Audio.Sfx.Cue("crumble");
+            var boss = session.Boss;
+            if (boss != null)
+            {
+                boss.Message += k => toast.Show(Loc.Get(k), k == "boss.howto" ? 3.6f : 2.4f);
+                boss.TollStarted += () => Skp.Audio.Sfx.Cue("bell");
+                boss.ShockwaveLaunched += () => Skp.Audio.Sfx.Cue("crumble");
+                boss.Parried += () => Skp.Audio.Sfx.Cue("bell");
+                boss.Struck += () => Skp.Audio.Sfx.Cue("stun");
+                boss.Defeated += () => Skp.Audio.Sfx.Cue("win");
+                boss.ExitOpened += _ => Skp.Audio.Sfx.Cue("lantern");
+            }
             _hinted.Clear();
             SyncLanes();
 
@@ -276,6 +289,10 @@ namespace Skp.UI
             hud.Show(_session);
             SyncLanes();
             var sim = _session.Sim;
+            var b = _session.Boss;
+            hud.SetBoss(b != null && b.Active && !b.Dead, b != null ? b.Fraction : 1f);
+            var follow = _runner.player.cameraFollow;
+            if (follow != null) follow.LockTopY = b != null && b.Active && !b.Dead ? b.FloorY + 240f / 16f : (float?)null;
             if (touch != null)
             {
                 touch.SetSkills(sim.Has(SkillIds.Veil), sim.Has(SkillIds.Bolt));
@@ -297,6 +314,7 @@ namespace Skp.UI
             Hint(260, "gaunt", SkillIds.Veil, "hint.gaunt");
             Hint(320, "thorn", SkillIds.Bolt, "hint.thorn");
             Hint(380, "wide", SkillIds.Glide, "hint.wide");
+            if (sim.Tick == 440 && f.Contains("bell") && _hinted.Add("hint.bell")) toast.Show(Loc.Get("hint.bell"), 3.4f);
         }
     }
 }

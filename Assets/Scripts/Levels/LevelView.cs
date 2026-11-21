@@ -13,6 +13,8 @@ namespace Skp.Levels
     public class LevelView : MonoBehaviour
     {
         public LevelArt art;
+        [Tooltip("1 to 3: picks the act's ledge art and decoration (set by the runner before Build).")]
+        public int act = 1;
 
         PlayerWorld _world;
         PlayerSim _sim;
@@ -23,6 +25,9 @@ namespace Skp.Levels
         readonly List<SpriteRenderer> _lanterns = new List<SpriteRenderer>();
         SpriteRenderer _exit;
         Transform _root;
+        SpriteRenderer _water, _waterTop;
+        readonly List<(BellDrop b, SpriteRenderer bell, SpriteRenderer mark)> _bells = new List<(BellDrop, SpriteRenderer, SpriteRenderer)>();
+        int _doorCount;
         static Sprite _white;
 
         public int ObjectCount => _root == null ? 0 : _root.childCount;
@@ -34,7 +39,8 @@ namespace Skp.Levels
             if (_root != null) { if (Application.isPlaying) Destroy(_root.gameObject); else DestroyImmediate(_root.gameObject); }
             _root = new GameObject("Level Objects").transform;
             _root.SetParent(transform, false);
-            _ledges.Clear(); _hazards.Clear(); _items.Clear(); _enemies.Clear(); _lanterns.Clear();
+            _ledges.Clear(); _hazards.Clear(); _items.Clear(); _enemies.Clear(); _lanterns.Clear(); _bells.Clear();
+            _exit = null; _water = _waterTop = null;
 
             foreach (var l in world.Ledges) AddLedge(l);
             foreach (var h in world.Hazards) AddHazard(h);
@@ -42,6 +48,52 @@ namespace Skp.Levels
             foreach (var it in world.Items) AddItem(it);
             foreach (var e in world.Enemies) AddEnemy(e);
             for (int i = 0; i < world.Lanterns.Count; i++) AddLantern(world.Lanterns[i]);
+            _doorCount = world.Doors.Count;
+            foreach (var b in world.Bells) AddBell(b);
+            if (world.Flood != null) AddWater();
+            AddDecor();
+        }
+
+        /// <summary>The black water: a dark body under a rippling surface strip (prototype drawWorld).</summary>
+        void AddWater()
+        {
+            _water = NewSprite("water", White(), Vector2.zero, 20, Dim.All, DimensionMember.Ghost.AlwaysVisible);
+            _water.color = new Color(6 / 255f, 12 / 255f, 20 / 255f, 0.82f);
+            if (art.waterSurface != null)
+            {
+                _waterTop = NewSprite("water surface", art.waterSurface, Vector2.zero, 21, Dim.All, DimensionMember.Ghost.AlwaysVisible);
+                _waterTop.drawMode = SpriteDrawMode.Tiled;
+                _waterTop.tileMode = SpriteTileMode.Continuous;
+                _waterTop.size = new Vector2(_world.Bounds.width, art.waterSurface.bounds.size.y);
+            }
+        }
+
+        void AddBell(BellDrop b)
+        {
+            var bell = NewSprite("falling bell", art.bell, new Vector2(b.X, b.TopY), 7, b.Mask, DimensionMember.Ghost.Hidden);
+            var mark = NewSprite("bell mark", White(), new Vector2(b.X, (b.TopY + b.GroundY) * 0.5f), 2, b.Mask, DimensionMember.Ghost.Hidden);
+            mark.color = new Color32(0xff, 0x5a, 0x4a, 0xa0);
+            mark.transform.localScale = new Vector3(2f / 16f, b.TopY - b.GroundY, 1);
+            _bells.Add((b, bell, mark));
+        }
+
+        /// <summary>Act II hanging balete roots under room floors, Act III candles on them (decoration only, fixed spots).</summary>
+        void AddDecor()
+        {
+            var s = act == 2 ? art.propRoots : act == 3 ? art.propCandle : null;
+            if (s == null) return;
+            int n = 0;
+            foreach (var l in _world.Ledges)
+            {
+                if (l.Kind != LedgeKind.Floor || l.Rect.height > 1.5f) continue;
+                foreach (float fx in new[] { 3.5f, 28.5f })
+                {
+                    float x = l.Rect.x + fx + (n++ % 3);
+                    var pos = act == 2 ? new Vector2(x, l.Rect.yMin - s.bounds.size.y * 0.5f) : new Vector2(x, l.Rect.yMax + s.bounds.size.y * 0.5f);
+                    var sr = NewSprite("decor", s, pos, -2, Dim.All, DimensionMember.Ghost.Ledge);
+                    sr.color = new Color(1, 1, 1, 0.85f);
+                }
+            }
         }
 
         // ------------------------------------------------------------ builders
@@ -69,7 +121,7 @@ namespace Skp.Levels
                 LedgeKind.Inverted => art.inverted,
                 LedgeKind.Crumble => art.crumble,
                 LedgeKind.Moving => art.moving,
-                _ => art.wood,
+                _ => act == 2 && art.rootLedge != null ? art.rootLedge : act == 3 && art.stoneLedge != null ? art.stoneLedge : art.wood,
             };
             // Ledge art is one tile tall: aligned to the top surface (to the underside for Inverted-only ledges).
             float h = ground ? r.height : 1f;
@@ -89,11 +141,12 @@ namespace Skp.Levels
             Sprite s = h.Kind switch
             {
                 HazardKind.Thorns => art.thorns,
+                HazardKind.Curtain => art.curtain != null ? art.curtain : art.thorns,
                 HazardKind.Root => art.rootDormant,
                 _ => h.Gauntlet ? art.spikeGauntlet : art.spike,
             };
             var sr = NewSprite(h.Kind.ToString(), s, r.center, 3, h.Mask, DimensionMember.Ghost.Hazard);
-            if (h.Kind == HazardKind.Spike)
+            if (h.Kind == HazardKind.Spike || h.Kind == HazardKind.Curtain)
             {
                 sr.drawMode = SpriteDrawMode.Tiled;
                 sr.tileMode = SpriteTileMode.Continuous;
@@ -193,14 +246,37 @@ namespace Skp.Levels
                 if (e.Dead) { if (tr.gameObject.activeSelf) tr.gameObject.SetActive(false); continue; }
                 var frames = Frames(e.Kind);
                 if (frames != null && frames.Length > 1 && frames[0] != null) sr.sprite = frames[(int)((t >> 4) & 1)];
-                sr.flipX = e.Dir < 0;
+                sr.flipX = e.Kind == EnemyKind.Manananggal ? _sim.Center.x < e.Center.x : e.Dir < 0; // the manananggal watches Tala
                 tr.position = new Vector3(Mathf.Round(e.Center.x * 16f) / 16f, Mathf.Round(e.Position.y * 16f) / 16f, tr.position.z);
                 var c = sr.color;
                 c.a = e.Stun > 0 ? 0.6f + Mathf.Sin(t * 0.5f) * 0.2f : (DimensionRules.Active(e.Mask, _sim.Dimension) ? 1f : c.a);
                 sr.color = c;
             }
 
+            // doors added during play (the last door after the Bellkeeper falls)
+            while (_doorCount < _world.Doors.Count) AddDoor(_world.Doors[_doorCount++]);
             if (_exit != null) _exit.sprite = !_world.NeedClue || _sim.HasClue ? art.exitOpen : art.exitLocked;
+
+            foreach (var (b, bell, mark) in _bells)
+            {
+                bool here = DimensionRules.Active(b.Mask, _sim.Dimension);
+                bell.enabled = b.Falling && here;
+                if (b.Falling) bell.transform.position = new Vector3(b.X, Mathf.Round((b.Y + BellDrop.Size.y * 0.5f) * 16f) / 16f, bell.transform.position.z);
+                mark.enabled = here && b.Warning && ((t >> 3) & 1) == 0;
+            }
+            var fl = _world.Flood;
+            if (fl != null && _water != null)
+            {
+                float bottom = _world.Bounds.yMin - 3f;
+                float h = Mathf.Max(0.01f, fl.Y - bottom);
+                _water.transform.position = new Vector3(_world.Bounds.center.x, bottom + h * 0.5f, 0);
+                _water.transform.localScale = new Vector3(_world.Bounds.width, h, 1);
+                if (_waterTop != null)
+                {
+                    float ripple = Mathf.Round(Mathf.Sin(t * 0.08f) * 1.5f) / 16f;
+                    _waterTop.transform.position = new Vector3(_world.Bounds.center.x, fl.Y + ripple, 0);
+                }
+            }
             for (int i = 0; i < _lanterns.Count; i++)
             {
                 var c = _lanterns[i].color;

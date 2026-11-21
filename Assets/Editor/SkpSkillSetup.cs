@@ -31,6 +31,7 @@ public static class SkpSkillSetup
     /// <summary>Called by SkpProjectSetup.RunAll before the prefabs and scenes are built.</summary>
     public static void CreateAssets()
     {
+        SkpLevelArtSetup.WriteArt();      // M7 gap art and the obstacle tuning
         SkpLevelSetup.CreateDataAssets(); // the SkillDefinitions exist first
         SkpProjectSetup.EnsureFolder(IconDir);
         SkpProjectSetup.EnsureFolder(FxDir);

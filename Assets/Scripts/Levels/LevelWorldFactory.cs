@@ -33,7 +33,7 @@ namespace Skp.Levels
             foreach (var h in L.Haz)
             {
                 w.Hazards.Add(new Hazard(R(L, h.x, h.y, h.w, h.h), (Dim)h.m,
-                    h.kind == "root" ? HazardKind.Root : h.kind == "thorns" ? HazardKind.Thorns : HazardKind.Spike)
+                    h.kind == "root" ? HazardKind.Root : h.kind == "thorns" ? HazardKind.Thorns : h.kind == "curtain" ? HazardKind.Curtain : HazardKind.Spike)
                 { Phase = (int)h.ph, Hanging = h.up, Gauntlet = h.gaunt });
             }
             foreach (var d in L.Doors)
@@ -78,6 +78,10 @@ namespace Skp.Levels
                 });
             }
             foreach (var l in L.Lanterns) w.Lanterns.Add(new Vector2((float)(l.x / T), Y(L, l.y)));
+            if (L.Water != null) w.Flood = new Flood { Y = Y(L, L.Water.y), Speed = (float)(L.Water.sp / T) };
+            if (L.BossArena != null) w.Arena = new BossArena { FloorY = Y(L, L.BossArena.yf), TopY = Y(L, L.BossArena.top) };
+            foreach (var b in L.Bells)
+                w.Bells.Add(new BellDrop { X = (float)(b.x / T), TopY = Y(L, b.top), GroundY = Y(L, b.ground), Period = b.period, Phase = b.phase, Mask = Dim.Ordinary });
             return w;
         }
 

@@ -25,6 +25,8 @@ namespace Skp.Levels
         public LevelSession Session { get; private set; }
         public LevelRequest Request { get; private set; }
         Skp.Audio.SkillCues _cues;
+        Skp.Enemies.BossView _bossView;
+        public Skp.Enemies.BossView BossView => _bossView;
 
         void Start()
         {
@@ -44,13 +46,39 @@ namespace Skp.Levels
             if (_cues != null) player.Ticked -= _cues.Tick;
             _cues = new Skp.Audio.SkillCues(Session.Sim);
             player.Ticked += _cues.Tick;
+            view.act = Mathf.Clamp(spec.act, 1, 3);
             view.Build(Session.World, Session.Sim);
+            if (_bossView != null) { if (Application.isPlaying) Destroy(_bossView.gameObject); else DestroyImmediate(_bossView.gameObject); }
+            if (Session.Boss != null)
+            {
+                _bossView = new GameObject("Bellkeeper View").AddComponent<Skp.Enemies.BossView>();
+                _bossView.Bind(Session.Boss, view.art);
+            }
+            if (player.cameraFollow != null) player.cameraFollow.LockTopY = null;
             if (backdrop != null && view.art != null && view.art.backdrops != null && view.art.backdrops.Length >= 3)
                 backdrop.sprite = view.art.backdrops[Mathf.Clamp(spec.act - 1, 0, 2)];
             if (director != null) director.Refresh();
             // Continue from a lantern past the first resumes straight into play; a fresh start shows the intro.
             bool resumed = req.Resume != null && req.Resume.active && req.Resume.cp > 0;
             if (ui != null) ui.Bind(this, Session, !resumed);
+            DebugOverlay.ExtraLines -= DebugLine;
+            DebugOverlay.ExtraLines += DebugLine;
+        }
+
+        void OnDestroy() => DebugOverlay.ExtraLines -= DebugLine;
+
+        /// <summary>Development overlay: level and room, the room's hazard and enemy multipliers, and its hazard and enemy counts.</summary>
+        public string DebugLine()
+        {
+            if (Session == null) return "";
+            var L = Session.Layout;
+            int room = Mathf.Clamp(Session.Sim.Checkpoint, 0, Mathf.Max(0, L.Rooms - 1));
+            var (hz, en) = room < L.RoomMults.Count ? L.RoomMults[room] : (0d, 0d);
+            float y0 = LevelWorldFactory.RoomBottom(room), y1 = y0 + LevelLayout.RoomTiles;
+            int haz = 0, ens = 0;
+            foreach (var h in Session.World.Hazards) if (h.Rect.y >= y0 && h.Rect.y < y1) haz++;
+            foreach (var e in Session.World.Enemies) if (e.Position.y >= y0 && e.Position.y < y1) ens++;
+            return $"RAMP level {Session.Level} room {room + 1}/{L.Rooms} hazard x{hz:0.00} enemy x{en:0.00} | room hazards {haz} enemies {ens} bells {Session.World.Bells.Count} | speed x{Session.Sim.EnemySpeedMult:0.00} chase {Session.Sim.Shadow.Delay}";
         }
     }
 }

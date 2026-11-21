@@ -22,3 +22,4 @@ MonoBehaviour:
   hazardCap: 2.4
   enemyCap: 2.2
   minChaseFrames: 100
+  obstacles: {fileID: 11400000, guid: 21b6fb6e4c3c2624c82fea7b2168a65f, type: 2}

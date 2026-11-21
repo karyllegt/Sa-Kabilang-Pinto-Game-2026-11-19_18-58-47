@@ -56,7 +56,7 @@ public static class SkpUiAudit
 
     struct State { public string Scene, Name; public Action<Ctx> Setup; }
 
-    static readonly string[] M6States = { "04b", "08b", "08c", "10c", "10d", "10e", "10f", "10g", "10h", "12s", "12t", "12u", "13b" };
+    static readonly string[] M6States = { "04b", "08b", "08c", "10c", "10d", "10e", "10f", "10g", "10h", "12s", "12t", "12u", "13b", "10i" };
 
     class Ctx
     {
@@ -128,6 +128,20 @@ public static class SkpUiAudit
             Add(SceneNames.Level, $"12t_{lv + 1}_{id}_new_skill", c => { LevelState(c, lv, true); LetterBox(c, lv, id, true, 1); });
         }
         Add(SceneNames.Level, "12u_skill_known", c => { LevelState(c, 5, true, skills: SkillIds.All); LetterBox(c, 5, "spread", false, 1); });
+        // M7: the Bellkeeper fight HUD (boss bar between the thumbs, the boss objective)
+        Add(SceneNames.Level, "10i_boss_hud", c =>
+        {
+            LevelState(c, 8, true, skills: SkillIds.All);
+            var sim = c.Session.Sim;
+            var lantern = c.Session.World.Lanterns[c.Session.Layout.Rooms];
+            sim.Position = new Vector2(lantern.x - 0.3f, lantern.y);
+            sim.Step(default);
+            c.Session.Boss.Hp = c.Session.Boss.MaxHp * 2 / 3;
+            c.Ui.hud.SetBoss(true, c.Session.Boss.Fraction);
+            c.Ui.hud.Show(c.Session);
+            c.Ui.toast.Show(Loc.Get("boss.howto"), 99);
+            c.Ui.SyncLanes();
+        });
         Add(SceneNames.Level, "13_level_clear", c => { LevelState(c, 0, true); c.Session.Sim.Score = 750; c.Session.Sim.Shards = 2; c.Ui.ShowCompleted(); });
         Add(SceneNames.Level, "13b_level_clear_new_skill", c =>
         {
@@ -411,6 +425,7 @@ public static class SkpUiAudit
                 if (t != null && t.gameObject.activeInHierarchy) blocks.Add((RectTransform)t);
             }
             blocks.Add((RectTransform)hud.pause.transform);
+            if (hud.bossBar != null && hud.bossBar.gameObject.activeInHierarchy) blocks.Add(hud.bossBar);
             foreach (var b in UnityEngine.Object.FindObjectsByType<OnScreenButton>(FindObjectsInactive.Exclude)) blocks.Add((RectTransform)b.transform);
             var toast = UnityEngine.Object.FindAnyObjectByType<Toast>();
             if (toast != null && toast.Visible) blocks.Add(toast.box.rectTransform);

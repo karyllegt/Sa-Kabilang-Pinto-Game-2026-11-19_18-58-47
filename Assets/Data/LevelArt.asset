@@ -42,6 +42,17 @@ MonoBehaviour:
   manananggal:
   - {fileID: 21300000, guid: fe760d8b0e577764598f88ab3e743910, type: 3}
   - {fileID: 21300000, guid: 65ff21f0bca6d3d4a90f3ec55ecf0b66, type: 3}
+  rootLedge: {fileID: 21300000, guid: 0126472d0f94d0043b9116854f5fe330, type: 3}
+  stoneLedge: {fileID: 21300000, guid: 331860a91656d854db4ca9e130e1b554, type: 3}
+  waterSurface: {fileID: 21300000, guid: 53db6cf8a87666543ba1b0b4faed3474, type: 3}
+  bell: {fileID: 21300000, guid: 1d6997d63b8e07846aaa24bcbaeb7d44, type: 3}
+  curtain: {fileID: 21300000, guid: aa444e3b336c8ee46a021ea7644ba380, type: 3}
+  propRoots: {fileID: 21300000, guid: 3a65ed20523c2f34ba3722d586f32c47, type: 3}
+  propCandle: {fileID: 21300000, guid: dcdb3059cb63b674e8f9aaff78905858, type: 3}
+  boss: {fileID: 21300000, guid: 753dc097eabfc3e4fa72eae33806dbcf, type: 3}
+  bossStun: {fileID: 21300000, guid: e8c7937e2805a044093ca3c2a66be80f, type: 3}
+  bossToll: {fileID: 21300000, guid: b979e49559f94a24a8760737a3823161, type: 3}
+  shockwave: {fileID: 21300000, guid: 12df1944822f45c4ab4816cbafe599e7, type: 3}
   backdrops:
   - {fileID: 21300000, guid: 38a65d3a54133924ea053f851cb39f58, type: 3}
   - {fileID: 21300000, guid: aa311850aac99fe49be61db042bf7c4e, type: 3}

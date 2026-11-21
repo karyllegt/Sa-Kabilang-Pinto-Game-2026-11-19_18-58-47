@@ -66,9 +66,13 @@ namespace Skp.UI
         }
 
         /// <summary>Shows <paramref name="text"/> for <paramref name="seconds"/> (unscaled), replacing any toast on screen.</summary>
+        /// <summary>Raised with every message shown (tests count hints).</summary>
+        public event System.Action<string> Shown;
+
         public void Show(string text, float seconds = DefaultSeconds)
         {
             if (string.IsNullOrEmpty(text)) return;
+            Shown?.Invoke(text);
             label.text = text;
             // wrap long hints (640 px, or narrower beside the skill chips) instead of running off a narrow screen
             Wrap();

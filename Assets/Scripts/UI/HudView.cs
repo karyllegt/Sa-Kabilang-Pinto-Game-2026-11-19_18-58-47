@@ -134,8 +134,10 @@ namespace Skp.UI
 
             var boss = UiKit.Box(root, "BossBar", th.buttonBoxScale);
             h.bossBar = boss.rectTransform;
-            UiKit.Place(h.bossBar, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 12), new Vector2(300, 44));
-            h.bossName = UiKit.Label(boss.transform, "Name", Loc.Get("boss.name"), th.tinySize, th.danger, TextAlignmentOptions.Top, false);
+            UiKit.Place(h.bossBar, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 222), new Vector2(240, 44)); // above both rows of thumb buttons
+            h.bossName = UiKit.Label(boss.transform, "Name", Loc.Get("boss.name"), th.tinySize, th.text, TextAlignmentOptions.Top, false);
+            h.bossName.outlineWidth = 0.25f;
+            h.bossName.outlineColor = new Color32(0, 0, 0, 255);
             UiKit.Stretch(h.bossName.rectTransform, 8, 20, 8, 6);
             h.bossFill = UiKit.Fill(boss.transform, "Fill", th.danger);
             var brt = h.bossFill.rectTransform;
@@ -303,11 +305,13 @@ namespace Skp.UI
             LaneBottom = ObjectiveTop + h + 12f;
         }
 
-        /// <summary>The objective line (prototype objective()); the boss lines arrive with the Bellkeeper in M7.</summary>
+        /// <summary>The objective line (prototype objective()).</summary>
         public static string Objective(LevelSession s)
         {
             var sim = s.Sim;
             var L = s.Layout;
+            if (s.Boss != null && s.Boss.Active && !s.Boss.Dead) return Loc.Get("obj.boss");
+            if (s.Boss != null && s.Boss.Dead) return Loc.Get("obj.lastdoor");
             if (sim.Dimension == Dim.Spirit) return Loc.Get("obj.spirit");
             if (sim.Dimension == Dim.Inverted) return Loc.Get("obj.inverted");
             int cp = Mathf.Max(0, sim.Checkpoint);

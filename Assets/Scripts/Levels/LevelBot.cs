@@ -20,6 +20,9 @@ namespace Skp.Levels
         {
             public bool ClueReachable, ExitReachable, ExitReachableAfterClue;
             public bool[] LanternReachable;
+            /// <summary>Lanterns reached in the search that starts at the letter.</summary>
+            public bool[] LanternReachableAfterClue;
+            public bool LanternAfterClue(int k) => LanternReachableAfterClue != null && k < LanternReachableAfterClue.Length && LanternReachableAfterClue[k];
             public int StatesVisited, MacrosRun;
             /// <summary>Fewest hits to touch the letter; fewest hits for the whole run spawn to letter to exit.</summary>
             public int HitsOnCluePath, HitsOnExitPath;
@@ -37,6 +40,8 @@ namespace Skp.Levels
         }
 
         readonly PlayerWorld _world;
+        readonly int _room = -1;
+        readonly bool _needExit;
         readonly PlayerSim _sim;
         readonly Dictionary<Ledge, int> _ledgeIndex = new Dictionary<Ledge, int>();
         readonly List<Rect> _clueRects = new List<Rect>();
@@ -48,16 +53,55 @@ namespace Skp.Levels
         static readonly int[] RunUps = { 0, 6, 14 };
         static readonly int[] Holds = { 0, 5, 40 };
 
-        public LevelBot(LevelLayout layout, PlayerTuning tuning, DifficultyMode difficulty)
+        /// <param name="skills">Skills Tala has (passives such as the glide apply to its moves); none by default.</param>
+        /// <param name="room">Search one room only (-1 = the whole level): its ledges, hazards, doors and letter, from its
+        /// lantern to the next one (and the exit in the last room). Much faster; a level is completable when every room is.</param>
+        public LevelBot(LevelLayout layout, PlayerTuning tuning, DifficultyMode difficulty, Skp.Skills.ISkillSet skills = null, int room = -1)
         {
             _world = LevelWorldFactory.Build(layout);
+            _room = room;
+            if (room >= 0)
+            {
+                float lo = LevelWorldFactory.RoomBottom(room) - 1.5f, hi = LevelWorldFactory.RoomBottom(room) + LevelLayout.RoomTiles + 1.5f;
+                _world.Ledges.RemoveAll(l => l.Rect.yMax < lo || l.Rect.yMin > hi);
+                _world.Hazards.RemoveAll(h => h.Rect.yMax < lo || h.Rect.yMin > hi);
+                _world.Doors.RemoveAll(d => d.Rect.yMax < lo || d.Rect.yMin > hi);
+                float b0 = LevelWorldFactory.RoomBottom(room), b1 = b0 + LevelLayout.RoomTiles;
+                _world.Items.RemoveAll(i => i.Rect.center.y < b0 || i.Rect.center.y >= b1); // items belong to exactly one room
+                _needExit = layout.Doors.Exists(d => d.kind == "exit" && d.room == room);
+            }
             for (int i = 0; i < _world.Ledges.Count; i++) _ledgeIndex[_world.Ledges[i]] = i;
             foreach (var it in _world.Items)
                 if (it.Kind == ItemKind.Clue) { _clueRects.Add(it.Rect); _clueMasks.Add(it.Mask); }
             foreach (var d in _world.Doors) if (d.Kind == DoorKind.Exit) { _exit = d.Rect; _hasExit = true; }
             _world.Items.Clear();
             _world.Enemies.Clear();
-            _sim = new PlayerSim(tuning, difficulty, _world);
+            _world.Bells.Clear();   // bells, water and the boss move on their own clocks: left to the playtests
+            _world.Flood = null;
+            _sim = new PlayerSim(tuning, difficulty, _world) { Skills = skills ?? Skp.Skills.SkillSet.None, SkillTuning = Skp.Skills.SkillLibrary.Tuning };
+            if (room >= 0) { _sim.BeginAt(room); MaxStates = 3000; }
+        }
+
+        /// <summary>
+        /// Room by room: from each lantern the next one is reachable; in the letter's room the letter is, and the next
+        /// lantern from the letter; in the last room the exit. Returns the failures (empty = completable).
+        /// </summary>
+        public static List<string> RunRooms(LevelLayout layout, PlayerTuning tuning, DifficultyMode difficulty, Skp.Skills.ISkillSet skills = null)
+        {
+            var fails = new List<string>();
+            for (int r = 0; r < layout.Rooms; r++)
+            {
+                var bot = new LevelBot(layout, tuning, difficulty, skills, r);
+                var res = bot.Run();
+                int next = r + 1;
+                bool lantern = next < res.LanternReachable.Length && res.LanternReachable[next];
+                bool hasClue = bot._clueRects.Count > 0;
+                if (bot._needExit && !(hasClue ? res.ExitReachableAfterClue : res.ExitReachable)) fails.Add($"room {r + 1}: exit not reached ({res})");
+                else if (!bot._needExit && !lantern) fails.Add($"room {r + 1}: lantern {next} not reached ({res})");
+                if (hasClue && !res.ClueReachable) fails.Add($"room {r + 1}: letter not reached ({res})");
+                if (hasClue && res.ClueReachable && !bot._needExit && !res.LanternAfterClue(next)) fails.Add($"room {r + 1}: lantern {next} not reached from the letter ({res})");
+            }
+            return fails;
         }
 
         public Result Run()
@@ -74,6 +118,7 @@ namespace Skp.Levels
                 var dummy = new Result { LanternReachable = new bool[_world.Lanterns.Count] };
                 var (_, exitAfter, hitsExit) = Search(clueNode.Value, false, ref dummy);
                 r.ExitReachableAfterClue = exitAfter;
+                r.LanternReachableAfterClue = dummy.LanternReachable;
                 r.HitsOnExitPath = hitsExit;
                 r.MacrosRun += dummy.MacrosRun;
                 r.StatesVisited += dummy.StatesVisited;
@@ -97,6 +142,8 @@ namespace Skp.Levels
                 // once the letter (if needed) and the exit are found at this cost or less, nothing cheaper remains
                 if (exit && exitHits <= b && (!lookForClue || (clue.HasValue && clueHits <= b))
                     && System.Array.TrueForAll(r.LanternReachable, x => x)) break;
+                if (_room >= 0 && r.LanternReachable[Mathf.Min(_room + 1, r.LanternReachable.Length - 1)] && (!_needExit || exit)
+                    && (!lookForClue || _clueRects.Count == 0 || clue.HasValue)) break;
                 for (int qi = 0; qi < buckets[b].Count; qi++)
                 {
                     int head = buckets[b][qi];

@@ -14,7 +14,7 @@ namespace Skp.Tests
         {
             var r = SkpUiAudit.Run(saveShots: true);
             Assert.Greater(r.Checks, 1000, "the audit ran");
-            Assert.AreEqual(45 * 5 + 10, r.Shots.Count, "45 screen states x 5 resolutions + 5 contact sheets + 5 M6 sheets");
+            Assert.AreEqual(46 * 5 + 10, r.Shots.Count, "46 screen states x 5 resolutions + 5 contact sheets + 5 M6/M7 sheets");
             Assert.IsEmpty(r.Problems, string.Join("\n", r.Problems));
         }
     }

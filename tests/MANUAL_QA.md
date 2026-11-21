@@ -69,3 +69,10 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Rapid double-tap on VEIL and BOLT; two-finger jump plus bolt | n/a | n/a | [ ] | |
 | Each skill sound is distinct and the fanfare plays on NEW SKILL (sound effects setting off silences them) | [ ] | [ ] | [ ] | |
 | Map SKILLS button with keyboard/gamepad (Up to the top bar) and touch | [ ] | [ ] | [ ] | |
+| **M7 levels (automated evidence: M7Tests, FullRunTests, tests/Screenshots/m7/obstacle_report.md, tests/Screenshots/m7)** | | | | |
+| Play levels 1 to 4 back to back: each new skill introduced safely, its hint once; difficulty clearly higher each level | [ ] | [ ] | [ ] | |
+| Level 5: the water feels fair (rises, slows, burns), and resets after a death | [ ] | [ ] | [ ] | |
+| Level 8: a manananggal dive can be read and dodged; ward and bolt stun it | [ ] | [ ] | [ ] | |
+| Level 9: parry the toll by hand with the ward; bolt and ward only hurt while stunned; the veil blocks the shockwave | [ ] | [ ] | [ ] | |
+| Veil gauntlet: the violet curtain reads as "use the veil"; crossing under it feels right | [ ] | [ ] | [ ] | |
+| Endless Nightmare unlocks after the Ending and loops with rising water | [ ] | [ ] | [ ] | |

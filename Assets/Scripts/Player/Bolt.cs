@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Skp.Player
 {
     /// <summary>Every source of damage. Each one goes through <see cref="PlayerSim.TryHurt"/>, which asks <see cref="PlayerSim.CanBeHurt"/>.</summary>
-    public enum DamageSource { Spike, Root, Thorns, Enemy, Shadow, Water, Boss, Other }
+    public enum DamageSource { Spike, Root, Thorns, Enemy, Shadow, Water, Boss, Bell, Other }
 
     /// <summary>What a Liwanag Bolt hit.</summary>
     public enum BoltTarget { Ledge, Anino, Creature, Root, Thorns, Shadow, Boss, Expired }

@@ -1,5 +1,6 @@
 using System;
 using Skp.Core;
+using Skp.Enemies;
 using Skp.Player;
 using Skp.Save;
 using Skp.Skills;
@@ -29,6 +30,9 @@ namespace Skp.Levels
         /// <summary>The learned skills (saved in the save file).</summary>
         public readonly SkillService Skills;
         public readonly SkillTuning SkillTuning;
+        /// <summary>The Bellkeeper on the boss level, else null.</summary>
+        public readonly Bellkeeper Boss;
+        public readonly DifficultyCurve Curve;
 
         /// <summary>The skill this level's letter teaches (empty on the boss level and in Endless).</summary>
         public string LetterSkill => Spec.endless ? "" : Spec.skill ?? "";
@@ -60,7 +64,7 @@ namespace Skp.Levels
             SkillTuning = skillTuning != null ? skillTuning : SkillLibrary.Tuning;
             var data = save.Data;
             Layout = LevelGenerator.Build(spec, Level, Exact(Difficulty.hazardMult), Exact(Difficulty.enemyMult), Exact(Difficulty.floodMult),
-                                          id => ProgressRules.HasSkill(data, id), Loop);
+                                          id => ProgressRules.HasSkill(data, id), Loop, GenOptions.From(curve, curve != null ? curve.obstacles : null));
             World = LevelWorldFactory.Build(Layout);
             Sim = new PlayerSim(tuning, Difficulty, World) { Skills = Skills, SkillTuning = SkillTuning };
             // Heart Charm: one more heart on every level start
@@ -68,7 +72,17 @@ namespace Skp.Levels
 
             int ramp = Mathf.Max(0, Level);
             Sim.SetChaseDelay(curve != null ? curve.ChaseFrames(Difficulty.chaseFrames, ramp) : Difficulty.chaseFrames);
-            Sim.EnemySpeedMult = Difficulty.speedMult * (1f + 0.02f * ramp);
+            Sim.EnemySpeedMult = curve != null ? curve.EnemySpeed(Difficulty.speedMult, ramp) : Difficulty.speedMult * (1f + 0.02f * ramp);
+            Curve = curve;
+            // the flood rises 5 percent faster per level (the prototype builds it from the base difficulty)
+            if (World.Flood != null) World.Flood.Speed *= curve != null ? curve.FloodFactor(ramp) : 1f + 0.05f * ramp;
+            // the Bellkeeper wakes when Tala lights the arena lantern (or at once when she continues from it)
+            if (World.Arena != null)
+            {
+                Boss = new Bellkeeper(World.Arena, Difficulty.bossHp, World.Bounds.width);
+                Sim.Boss = Boss;
+                Sim.LanternLit += k => { if (k >= Layout.Rooms) Boss.Activate(); };
+            }
 
             var resume = req.Resume;
             if (resume != null && resume.active)
@@ -86,6 +100,7 @@ namespace Skp.Levels
                 }
             }
             else Sim.BeginAt(0);
+            if (Boss != null && Sim.Checkpoint >= Layout.Rooms) Boss.Activate();
 
             Sim.LanternLit += _ => SaveCheckpoint();
             Sim.ExitRequested += _ => TryExit();

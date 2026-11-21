@@ -111,6 +111,11 @@ namespace Skp.Player
         public event Action<DamageSource> VeilBlocked;
         /// <summary>The Bellkeeper's bolt test (M7): returns true when the bolt struck it (it takes damage only while stunned).</summary>
         public Func<Vector2, bool> BoltHitsBoss;
+        /// <summary>Tala is in the black water on a damage tick (hint, splash).</summary>
+        public event Action WaterTouched;
+        public event Action<BellDrop> BellLanded;
+        /// <summary>The Bellkeeper fight (level 9), stepped at the end of every tick.</summary>
+        public IBossFight Boss;
 
         public PlayerSim(PlayerTuning tuning, DifficultyMode difficulty, PlayerWorld world)
         {
@@ -182,6 +187,8 @@ namespace Skp.Player
             Vitality = MaxVitality;
             Flame = Mathf.Max(Flame, Tuning.respawnMinFlame);
             Life = PlayerLife.Playing;
+            ResetFlood();
+            Boss?.OnRespawn(this);
             Respawned?.Invoke();
         }
 
@@ -192,6 +199,14 @@ namespace Skp.Player
             PlaceAtLantern(Checkpoint);
             Velocity = Vector2.zero;
             Invulnerable = 60;
+            ResetFlood();
+        }
+
+        /// <summary>The water drops back to 10 tiles below the current lantern (prototype startLevel and respawn).</summary>
+        void ResetFlood()
+        {
+            if (World.Flood == null || World.Lanterns.Count == 0) return;
+            World.Flood.Y = World.Lanterns[Mathf.Clamp(Checkpoint, 0, World.Lanterns.Count - 1)].y - Flood.BelowLantern;
         }
 
         /// <summary>Switches dimension; the shadow forgets its trail (prototype setDim).</summary>
@@ -281,7 +296,59 @@ namespace Skp.Player
                         if (e.Position.x + e.Size.x > e.MaxX) { e.Position.x = e.MaxX - e.Size.x; e.Dir = -1; }
                     }
                 }
+                else if (e.Kind == EnemyKind.Manananggal)
+                {
+                    if (e.Stun > 0) { e.Position.y -= 1.4f * px; continue; } // stunned: drops, harmless
+                    FlyManananggal(e, px);
+                }
                 if (e.Stun == 0 && Hitbox.Overlaps(e.ContactRect)) TryHurt(1, e.Center.x, DamageSource.Enemy);
+            }
+        }
+
+        /// <summary>
+        /// Prototype manananggal flight (updEnemies, 'manan'): hover around its home (55 px sway, 10 px bob), dive at
+        /// Tala's position when she comes within 130 px and it is not cooling down, then fly back and cool down 150 ticks.
+        /// Home is the top-left of its body; positions here are the body's bottom-left (y up).
+        /// </summary>
+        void FlyManananggal(Enemy e, float px)
+        {
+            if (e.Cool > 0) e.Cool--;
+            float t = Tick;
+            float topY = e.Position.y + e.Size.y;
+            // player and creature top-left corners, as the prototype compares them
+            float dxp = Position.x - e.Position.x, dyp = (Position.y + Size.y) - topY;
+            switch (e.Flight)
+            {
+                case FlightState.Hover:
+                {
+                    e.Position.x = e.Home.x + Mathf.Sin(t * 0.02f + e.Phase) * 55f * px;
+                    topY = e.Home.y - Mathf.Sin(t * 0.05f + e.Phase) * 10f * px;
+                    e.Position.y = topY - e.Size.y;
+                    if (e.Cool == 0 && dxp * dxp + dyp * dyp < 130f * 130f * px * px)
+                    {
+                        e.Flight = FlightState.Dive;
+                        e.DiveTarget = new Vector2(Position.x, Position.y + Size.y); // Tala's top-left
+                        e.DiveTicks = 48;
+                    }
+                    break;
+                }
+                case FlightState.Dive:
+                {
+                    var to = e.DiveTarget - new Vector2(e.Position.x, topY);
+                    float m = to.magnitude;
+                    if (m > 1e-5f) { var step = to / m * 2.5f * EnemySpeedMult * px; e.Position += step; }
+                    if (--e.DiveTicks <= 0) e.Flight = FlightState.Back;
+                    break;
+                }
+                default:
+                {
+                    var target = new Vector2(e.Home.x + Mathf.Sin(t * 0.02f + e.Phase) * 55f * px, e.Home.y);
+                    var to = target - new Vector2(e.Position.x, topY);
+                    float m = to.magnitude;
+                    if (m > 1e-5f) e.Position += to / m * 1.5f * px;
+                    if (m < 4f * px) { e.Flight = FlightState.Hover; e.Cool = 150; }
+                    break;
+                }
             }
         }
 
@@ -403,7 +470,7 @@ namespace Skp.Player
                         hit = BoltTarget.Shadow;
                 }
 
-                if (hit == null && BoltHitsBoss != null && BoltHitsBoss(p)) hit = BoltTarget.Boss;
+                if (hit == null && ((BoltHitsBoss != null && BoltHitsBoss(p)) || (Boss != null && Boss.BoltStrikes(this, p)))) hit = BoltTarget.Boss;
 
                 if (hit != null)
                 {
@@ -580,11 +647,21 @@ namespace Skp.Player
                 }
             }
 
+            // the black water slows Tala and caps her fall (prototype: vx * 0.8, fall at most 1.5 px per frame)
+            if (World.Flood != null && Position.y < World.Flood.Y)
+            {
+                Velocity.x *= 0.8f;
+                float cap = 1.5f * TickRate / PlayerTuning.PxPerUnit;
+                if (-Velocity.y * gs > cap) Velocity.y = -gs * cap;
+            }
+
             // move x, clamp to the level
+            float prevX = Position.x;
             Position.x += Velocity.x * Dt;
             var b = World.Bounds;
             if (Position.x < b.xMin) { Position.x = b.xMin; Velocity.x = 0; }
             if (Position.x > b.xMax - Size.x) { Position.x = b.xMax - Size.x; Velocity.x = 0; }
+            BlockAtThornWalls(prevX);
 
             // move y, land on one-way ledges
             bool wasGrounded = Grounded;
@@ -683,6 +760,59 @@ namespace Skp.Player
                         break;
                 }
                 if (hb.Overlaps(r)) TryHurt(1, h.center.x, hz.Kind == HazardKind.Root ? DamageSource.Root : hz.Kind == HazardKind.Thorns ? DamageSource.Thorns : DamageSource.Spike);
+            }
+
+            UpdateBells();
+
+            // the flood rises 1 step per tick and burns every 36 ticks (prototype: G.t % 36), never above the tower
+            var fl = World.Flood;
+            if (fl != null)
+            {
+                fl.Y = Mathf.Min(World.Bounds.yMax, fl.Y + fl.Speed);
+                if (Life == PlayerLife.Playing && Position.y < fl.Y && Tick % 36 == 0)
+                {
+                    WaterTouched?.Invoke();
+                    TryHurt(1, null, DamageSource.Water);
+                }
+            }
+
+            Boss?.Step(this);
+        }
+
+        // ------------------------------------------------------------ hazards that move
+
+        /// <summary>
+        /// M7: an unburnt thorn wall is solid. Walking or dashing into it stops Tala at its face (and its thorns hurt), so
+        /// only the Liwanag Bolt opens the way (docs/02: thorn walls cannot be passed or jumped; the prototype let a
+        /// dash slip through because dashing is untouchable).
+        /// </summary>
+        void BlockAtThornWalls(float prevX)
+        {
+            foreach (var hz in World.Hazards)
+            {
+                if (hz.Kind != HazardKind.Thorns || hz.BurnTicks > 0 || !DimensionRules.Active(hz.Mask, Dimension)) continue;
+                var r = hz.Rect;
+                if (Position.y >= r.yMax || Position.y + Size.y <= r.yMin) continue;
+                if (Position.x + Size.x <= r.xMin || Position.x >= r.xMax) continue;
+                if (prevX + Size.x <= r.xMin + 1e-4f) { Position.x = r.xMin - Size.x; Velocity.x = 0; TryHurt(1, r.center.x, DamageSource.Thorns); }
+                else if (prevX >= r.xMax - 1e-4f) { Position.x = r.xMax; Velocity.x = 0; TryHurt(1, r.center.x, DamageSource.Thorns); }
+            }
+        }
+
+        /// <summary>Act III falling bells: idle, a warning mark, then a drop that ends on the ledge below.</summary>
+        void UpdateBells()
+        {
+            const float px = 1f / 16f;
+            foreach (var b in World.Bells)
+            {
+                int c = (int)((Tick + b.Phase) % b.Period);
+                b.Warning = !b.Falling && c >= b.Period - b.WarnTicks;
+                if (c == 0 && !b.Falling) { b.Falling = true; b.Y = b.TopY; b.Vy = 0; }
+                if (!b.Falling) continue;
+                b.Vy = Mathf.Min(6.5f * px, b.Vy + 0.3f * px);
+                b.Y -= b.Vy;
+                if (b.Y <= b.GroundY) { b.Falling = false; BellLanded?.Invoke(b); continue; }
+                if (DimensionRules.Active(b.Mask, Dimension) && Hitbox.Overlaps(b.HitRect)) TryHurt(1, b.X, DamageSource.Bell);
             }
         }
     }

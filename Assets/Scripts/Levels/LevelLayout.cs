@@ -26,6 +26,12 @@ namespace Skp.Levels
         public readonly List<LEnemy> Enemies = new List<LEnemy>();
         public readonly List<LLantern> Lanterns = new List<LLantern>();
         public LWater Water;
+        /// <summary>Act III falling bells (M7).</summary>
+        public readonly List<LBell> Bells = new List<LBell>();
+        /// <summary>Skill obstacles placed in this layout, for the bots and the statistics (M7).</summary>
+        public readonly List<LObstacle> Obstacles = new List<LObstacle>();
+        /// <summary>Hazard and enemy multipliers used for each room (debug overlay, tests).</summary>
+        public readonly List<(double hazard, double enemy)> RoomMults = new List<(double, double)>();
         public LBossArena BossArena;
     }
 
@@ -37,4 +43,12 @@ namespace Skp.Levels
     public class LLantern { public double x, y; public int room; }
     public class LWater { public double y, sp; }
     public class LBossArena { public double yf, top, triggerY; }
+    /// <summary>A bell that drops on column x from top onto the ledge whose top is ground (px, y down).</summary>
+    public class LBell { public double x, top, ground; public int period, phase; }
+    /// <summary>
+    /// One skill obstacle: its type (dj climb, veil gauntlet, bolt thorns, dash gap, glide gap, triple-bolt pack), the room,
+    /// the ledge Tala comes from (From), the ledge the obstacle guards (Over: gauntlet or thorn ledge) and the ledge that
+    /// is the way on (To).
+    /// </summary>
+    public class LObstacle { public string type, skill; public int room; public LPlat From, Over, To; public LHaz Hazard; }
 }

@@ -67,7 +67,8 @@ public static class SkpLevelSetup
         art.tikbalang = new[] { S("Enemies/spr_tik_0"), S("Enemies/spr_tik_1") };
         art.manananggal = new[] { S("Enemies/spr_manan_0"), S("Enemies/spr_manan_1") };
         art.backdrops = new[] { S("Backgrounds/bg_act1"), S("Backgrounds/bg_act2"), S("Backgrounds/bg_act3") };
-        if (isNew) AssetDatabase.CreateAsset(art, LevelArtPath); else EditorUtility.SetDirty(art);
+        if (isNew) AssetDatabase.CreateAsset(art, LevelArtPath);
+        SkpLevelArtSetup.Assign(art);
         AssetDatabase.SaveAssets();
     }
 

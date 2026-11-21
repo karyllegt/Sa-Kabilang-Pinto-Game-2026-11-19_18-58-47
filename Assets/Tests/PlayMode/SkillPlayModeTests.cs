@@ -251,6 +251,7 @@ namespace Skp.Tests
         {
             var s = BoltSim();
             var e = Creature(kind, 24, hp: 3);
+            e.Home = new Vector2(24, e.Size.y); // a manananggal hovers about its home (top-left): on Tala's line
             s.World.Enemies.Add(e);
             var hits = Fire(s, 30);
             CollectionAssert.Contains(hits, BoltTarget.Creature);
