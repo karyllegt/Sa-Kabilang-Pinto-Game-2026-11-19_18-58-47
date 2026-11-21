@@ -285,7 +285,7 @@ namespace Skp.Tests
             Assert.Greater(Vector2.Distance(s.Center, s.ShadowRect.center), 50 * Px);
             s.Step(In(move: 1, ward: true));
             Assert.AreEqual(0, s.Shadow.StunTicks);
-            Assert.IsTrue(s.StunShadow(PlayerTuning.Ticks(_t.shadowBoltStun)));
+            Assert.IsTrue(s.StunShadow(PlayerTuning.Ticks(Skp.Skills.SkillTuning.Default.boltShadowStun)));
             Assert.AreEqual(140, s.Shadow.StunTicks);
             Assert.IsFalse(s.StunShadow(140), "no re-stun while stunned");
         }

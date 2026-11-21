@@ -3,6 +3,7 @@ using Skp.Core;
 using Skp.Levels;
 using Skp.Player;
 using Skp.Save;
+using Skp.Skills;
 using UnityEngine;
 
 namespace Skp.UI
@@ -25,9 +26,10 @@ namespace Skp.UI
         public EndingScreen ending;
         public TouchControls touch;
 
+        readonly HashSet<string> _hinted = new HashSet<string>();
         LevelRunner _runner;
         LevelSession _session;
-        bool _playing, _wired;
+        bool _playing, _wired, _lineHooked;
 
         public bool Paused { get; private set; }
         public bool Playing => _playing;
@@ -53,7 +55,15 @@ namespace Skp.UI
             session.Sim.ClueFound += ShowLetter;
             session.Sim.LanternLit += k => { if (k > 0) toast.Show(Loc.Get("toast.lantern"), 1.8f); };
             session.Sim.ItemCollected += it => { if (it.Kind == ItemKind.Shard) toast.Show(Loc.Get("toast.fragment"), 2f); };
+            session.Sim.NotEnoughFlame += () => toast.Show(Loc.Get("toast.noflame"), 1.5f);
+            _hinted.Clear();
+            SyncLanes();
 
+            if (!_lineHooked)
+            {
+                _lineHooked = true;
+                dialog.LineShown += i => { if (dialog.CurrentLine.Who == Speaker.Skill) Skp.Audio.Sfx.Cue(_session != null && _session.LetterSkillWasNew ? "skill_learned" : "skill_known"); };
+            }
             if (showIntro) ShowIntro();
             else BeginPlay(false);
         }
@@ -101,9 +111,19 @@ namespace Skp.UI
             UiNavigator.Fallback = null;
         }
 
-        void ApplySettings(GameSettings s)
+        public void ApplySettings(GameSettings s)
         {
             if (touch != null) touch.Apply(s);
+            // chips are 48 dp tall whenever the touch layout is in use
+            hud.SetTallChips(touch == null || touch.Wanted);
+            hud.FitLanes(true);
+        }
+
+        /// <summary>Keeps the toast lane under the objective line and clear of the skill chips.</summary>
+        public void SyncLanes()
+        {
+            hud.FitLanes();
+            toast.SetLane(hud.LaneBottom + 22f, hud.LaneWidth);
         }
 
         void Load(LevelRequest req, string scene)
@@ -148,19 +168,51 @@ namespace Skp.UI
             return cam.WorldToViewportPoint(_session.Sim.Center);
         }
 
+        /// <summary>Seconds the skill box ignores taps after it is fully shown, so rapid taps cannot skip it.</summary>
+        public const float SkillHoldSeconds = 0.6f;
+
+        /// <summary>
+        /// The letter pickup: box 1 is the letter, box 2 is NEW SKILL (or SKILL KNOWN on a replay) with the skill's
+        /// name, Filipino name, description and controls. Play stays frozen through both.
+        /// </summary>
         public void ShowLetter()
         {
             var spec = _session.Spec;
             if (string.IsNullOrEmpty(spec.clue)) return;
-            var line = new DialogLine
+            var lines = LetterLines(spec, _session.LetterSkill, _session.LetterSkillWasNew);
+            dialog.Show(lines, null, PlayerIsBoy);
+        }
+
+        /// <summary>The letter dialog's lines (public for the audit and tests).</summary>
+        public static List<DialogLine> LetterLines(LevelSpec spec, string skillId, bool fresh)
+        {
+            var lines = new List<DialogLine>
             {
-                Who = Speaker.Clue,
-                Sub = Loc.Format("clue.sub", spec.name.ToUpperInvariant()),
-                Name = Loc.Get("clue.name"),
-                Text = spec.clue,
-                Button = Loc.Get("common.continue"),
+                new DialogLine
+                {
+                    Who = Speaker.Clue,
+                    Sub = Loc.Format("clue.sub", spec.name.ToUpperInvariant()),
+                    Name = Loc.Get("clue.name"),
+                    Text = spec.clue,
+                    Button = Loc.Get("common.continue"),
+                },
             };
-            dialog.Show(new[] { line }, null, PlayerIsBoy);
+            var def = string.IsNullOrEmpty(skillId) ? null : SkillLibrary.Find(skillId);
+            if (def != null)
+            {
+                lines.Add(new DialogLine
+                {
+                    Who = Speaker.Skill,
+                    Sub = Loc.Format(fresh ? "skill.new.sub" : "skill.known.sub", def.tag),
+                    Name = def.FullName,
+                    NameColor = def.color,
+                    Text = def.description,
+                    Portrait = def.icon,
+                    Button = Loc.Get("common.continue"),
+                    HoldSeconds = SkillHoldSeconds,
+                });
+            }
+            return lines;
         }
 
         public void Pause()
@@ -203,7 +255,7 @@ namespace Skp.UI
                            Loc.Get("clear.nextloop"), Loc.Get("clear.menu"));
             else
                 clear.Fill(Loc.Format("clear.title", s.Level + 1), s.Spec.name, Loc.Format("clear.seconds", secs), sim.Score.ToString(), sim.Shards + "/3",
-                           s.Spec.clue, Loc.Get("clear.next"), Loc.Get("clear.map"));
+                           s.Spec.clue, Loc.Get("clear.next"), Loc.Get("clear.map"), SkillLibrary.Find(s.LearnedThisRun));
             clear.Open();
         }
 
@@ -222,7 +274,29 @@ namespace Skp.UI
             bool frozen = !_playing || Paused || UiNavigator.Top != null || UiGate.Blocked || _session.Completed || _session.Over;
             _runner.player.Frozen = frozen;
             hud.Show(_session);
-            if (touch != null) touch.SetPlaying(!frozen, _session.Sim.NearDoor >= 0);
+            SyncLanes();
+            var sim = _session.Sim;
+            if (touch != null)
+            {
+                touch.SetSkills(sim.Has(SkillIds.Veil), sim.Has(SkillIds.Bolt));
+                touch.SetPlaying(!frozen, sim.NearDoor >= 0);
+            }
+            if (!frozen) Hints(sim);
+        }
+
+        /// <summary>Prototype contextual hints: the first time a level holds an obstacle built for an owned skill.</summary>
+        void Hints(PlayerSim sim)
+        {
+            var f = _session.Layout.Features;
+            void Hint(long tick, string feature, string skill, string key)
+            {
+                if (sim.Tick != tick || !f.Contains(feature) || !sim.Has(skill) || !_hinted.Add(key)) return;
+                toast.Show(Loc.Get(key), 3.5f);
+            }
+            Hint(200, "dj", SkillIds.DoubleJump, "hint.dj");
+            Hint(260, "gaunt", SkillIds.Veil, "hint.gaunt");
+            Hint(320, "thorn", SkillIds.Bolt, "hint.thorn");
+            Hint(380, "wide", SkillIds.Glide, "hint.wide");
         }
     }
 }

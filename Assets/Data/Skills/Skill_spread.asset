@@ -19,3 +19,8 @@ MonoBehaviour:
   tag: UPGRADE
   color: {r: 1, g: 0.827451, b: 0.41568628, a: 1}
   type: 2
+  shortLabel: 3X
+  keyHint: 
+  icon: {fileID: 21300000, guid: ad9b1c8d17f136d4891cbdeeb377066d, type: 3}
+  level: 5
+  cue: skill_bolt3

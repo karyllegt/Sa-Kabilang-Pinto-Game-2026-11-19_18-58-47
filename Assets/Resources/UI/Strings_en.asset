@@ -289,3 +289,61 @@ MonoBehaviour:
     text: Time {0}s. Score {1}. Fragments {2}. Endless Nightmare unlocked.
   - key: ending.menu
     text: MAIN MENU
+  - key: how.4
+    text: 'Every letter teaches a skill for good:
+
+      <color=#8fd3ff>DOUBLE JUMP</color>  JUMP again in mid-air
+
+      <color=#c07dff>LAMBONG VEIL</color>  C: no harm for 3 s
+
+      <color=#ffd36a>LIWANAG BOLT</color>  X: stun creatures, burn roots
+
+      <color=#ff9a5a>SWIFT DASH</color>  a cheaper, quicker dash
+
+      <color=#ff6b7d>HEART CHARM</color>  one more heart
+
+      <color=#ffd36a>TRIPLE BOLT</color>  three rays in a fan
+
+      <color=#c07dff>GREATER VEIL</color>  5 s, recharges sooner
+
+      <color=#8fd3ff>PAKPAK GLIDE</color>  hold JUMP to float down'
+  - key: map.skills
+    text: SKILLS
+  - key: skills.title
+    text: SKILLS
+  - key: skills.locked
+    text: '? ? ?'
+  - key: skills.lockedsub
+    text: Hidden in the letter of level {0}.
+  - key: skill.new.sub
+    text: NEW SKILL - {0}
+  - key: skill.known.sub
+    text: SKILL KNOWN - {0}
+  - key: clear.newskill
+    text: 'NEW SKILL: {0}'
+  - key: toast.noflame
+    text: Not enough flame for a bolt.
+  - key: hint.dj
+    text: Some ledges sit too high for one jump. Press JUMP again in mid-air.
+  - key: hint.gaunt
+    text: Spiked ledges ahead. Cross them under the LAMBONG VEIL (C).
+  - key: hint.thorn
+    text: Thorn walls block narrow ledges. Burn them with the LIWANAG BOLT (X).
+  - key: hint.wide
+    text: Wide gaps ahead. Hold JUMP in the air to glide across.
+  - key: lola.skill.dj
+    text: You leapt twice on the stair, apo? Your lolo did that at every fiesta. When one jump is not enough, jump again in the air.
+  - key: lola.skill.veil
+    text: The Lambong is an old kindness. Wear it when the spikes crowd close, then give it time to gather again.
+  - key: lola.skill.bolt
+    text: Liwanag remembers the lantern that made it. Throw it at the shadows and the thorn walls. It burns away what blocks you.
+  - key: lola.skill.swift
+    text: Dali, dali! Your dash costs less flame now. Use it often, apo, but never blindly.
+  - key: lola.skill.heart
+    text: Puso. You carry more of us with you now. One more heart against the long night.
+  - key: lola.skill.spread
+    text: Three rays, like the points of a parol. Even a tikbalang cannot dodge them all.
+  - key: lola.skill.veil2
+    text: The greater veil lasts longer and gathers sooner. Trust it under the bells.
+  - key: lola.skill.glide
+    text: Pakpak. Hold the jump and let the night air carry you over the wide gaps.

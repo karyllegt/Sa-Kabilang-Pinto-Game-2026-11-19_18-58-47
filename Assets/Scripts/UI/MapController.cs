@@ -22,6 +22,7 @@ namespace Skp.UI
         public SpriteRenderer background;
         [Header("Art")]
         public Sprite white, star, bell, lola;
+        public SkillsScreen skillsScreen;
         public Sprite[] boyFrames = new Sprite[4], girlFrames = new Sprite[4];
         public TMP_FontAsset font;
         [Tooltip("Level names come from the level data assets.")]
@@ -70,6 +71,7 @@ namespace Skp.UI
             screen.enter.Clicked += () => Enter();
             screen.enter.ClickedWhileDisabled += () => { };
             screen.difficulty.Clicked += CycleDifficulty;
+            screen.skills.Clicked += ShowSkills;
             screen.tapArea.Tapped += OnTap;
             UiNavigator.Fallback = () => true;
         }
@@ -361,6 +363,15 @@ namespace Skp.UI
                 if (Root != null) Root.Save.Save();
                 Refresh();
             }, _save.@char == "boy");
+        }
+
+        /// <summary>Opens the skill list (owned skills, and "?" with the level for the rest).</summary>
+        public void ShowSkills()
+        {
+            if (skillsScreen == null || UiGate.Blocked || Entering) return;
+            skillsScreen.Bind(_save);
+            skillsScreen.BackRequested = () => skillsScreen.Close();
+            skillsScreen.Open();
         }
 
         /// <summary>Edit-mode/audit helper: show Lola's dialog without the game root.</summary>

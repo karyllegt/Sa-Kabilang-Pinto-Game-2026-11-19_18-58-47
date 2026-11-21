@@ -24,6 +24,7 @@ namespace Skp.Levels
 
         public LevelSession Session { get; private set; }
         public LevelRequest Request { get; private set; }
+        Skp.Audio.SkillCues _cues;
 
         void Start()
         {
@@ -40,6 +41,9 @@ namespace Skp.Levels
             Session = new LevelSession(spec, req, tuning, difficulties, curve, root.Save);
 
             player.Attach(Session.Sim);
+            if (_cues != null) player.Ticked -= _cues.Tick;
+            _cues = new Skp.Audio.SkillCues(Session.Sim);
+            player.Ticked += _cues.Tick;
             view.Build(Session.World, Session.Sim);
             if (backdrop != null && view.art != null && view.art.backdrops != null && view.art.backdrops.Length >= 3)
                 backdrop.sprite = view.art.backdrops[Mathf.Clamp(spec.act - 1, 0, 2)];

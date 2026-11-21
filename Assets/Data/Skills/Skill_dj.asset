@@ -19,3 +19,8 @@ MonoBehaviour:
   tag: PASSIVE
   color: {r: 0.56078434, g: 0.827451, b: 1, a: 1}
   type: 0
+  shortLabel: 2J
+  keyHint: 
+  icon: {fileID: 21300000, guid: d9804cc6e8d8b9c49b5912cfa9972053, type: 3}
+  level: 0
+  cue: skill_dj

@@ -47,6 +47,7 @@ public static class SkpProjectSetup
         var font = CreateFontAsset();
         CreatePixelBoxPrefab();
         SkpUiSetup.CreateUiAssets();
+        SkpSkillSetup.CreateAssets();    // skill data, icons, fx sprites and sounds (the HUD and the player use them)
         var touch = CreateTouchControlsPrefab(font);
         SkpTestRoomBuilder.Build();      // Player prefab first: the Level scene uses it
         SkpLevelSetup.CreateDataAssets();
@@ -154,17 +155,20 @@ public static class SkpProjectSetup
         buttons.AddComponent<SafeAreaFitter>(); // thumbs stay clear of notches and rounded corners
         tc.buttons = buttons;
 
-        // M5 thumb layout (docs/04 known issue 1): left thumb moves; right thumb has JUMP in the corner, DASH
-        // beside it, WARD above DASH, and DOOR above JUMP only while Tala stands at a door. Two rows at most.
+        // Thumb layout (docs/04 known issue 1, M5 and M6): left thumb moves; right thumb has JUMP in the corner with
+        // DASH and WARD beside it on the bottom row. The second row holds BOLT above DASH and VEIL above WARD (shown
+        // once learned) and DOOR above JUMP only while Tala stands at a door. Two rows at most.
         // Sizes at the 960x540 reference; every button is at least UiKit.MinTarget (48 dp on a 6.4" phone).
-        // Pause lives in the HUD (top-right). Veil and Bolt join the second row in M6.
+        // Pause lives in the HUD (top-right).
         var specs = new[]
         {
             new TouchSpec { name = "Left",     label = "<",    path = "<Gamepad>/dpad/left",    anchor = new Vector2(0, 0), pos = new Vector2(72, 70),    size = new Vector2(104, 96) },
             new TouchSpec { name = "Right",    label = ">",    path = "<Gamepad>/dpad/right",   anchor = new Vector2(0, 0), pos = new Vector2(192, 70),   size = new Vector2(104, 96) },
             new TouchSpec { name = "Jump",     label = "JUMP", path = "<Gamepad>/buttonSouth",  anchor = new Vector2(1, 0), pos = new Vector2(-76, 72),   size = new Vector2(112, 104) },
             new TouchSpec { name = "Dash",     label = "DASH", path = "<Gamepad>/leftShoulder", anchor = new Vector2(1, 0), pos = new Vector2(-200, 64),  size = new Vector2(104, 88) },
-            new TouchSpec { name = "Ward",     label = "WARD", path = "<Gamepad>/buttonNorth",  anchor = new Vector2(1, 0), pos = new Vector2(-200, 170), size = new Vector2(104, 80) },
+            new TouchSpec { name = "Ward",     label = "WARD", path = "<Gamepad>/buttonNorth",  anchor = new Vector2(1, 0), pos = new Vector2(-324, 64),  size = new Vector2(104, 88) },
+            new TouchSpec { name = "Bolt",     label = "BOLT", path = "<Gamepad>/buttonWest",   anchor = new Vector2(1, 0), pos = new Vector2(-200, 170), size = new Vector2(104, 80) },
+            new TouchSpec { name = "Veil",     label = "VEIL", path = "<Gamepad>/rightShoulder", anchor = new Vector2(1, 0), pos = new Vector2(-324, 170), size = new Vector2(104, 80) },
             new TouchSpec { name = "Door",     label = "DOOR", path = "<Gamepad>/buttonEast",   anchor = new Vector2(1, 0), pos = new Vector2(-76, 178),  size = new Vector2(112, 76) },
         };
         var box = AssetDatabase.LoadAssetAtPath<Sprite>(PixelBoxSprite);
@@ -188,6 +192,8 @@ public static class SkpProjectSetup
             AddLabel(b.transform, s.label, font, 14);
             slots.Add(new TouchControls.Slot { rect = rt, anchor = s.anchor, position = s.pos });
             if (s.name == "Door") tc.door = b;
+            if (s.name == "Veil") { tc.veil = b; b.SetActive(false); }
+            if (s.name == "Bolt") { tc.bolt = b; b.SetActive(false); }
         }
         tc.slots = slots.ToArray();
         var prefab = PrefabUtility.SaveAsPrefabAsset(root, TouchPrefab);

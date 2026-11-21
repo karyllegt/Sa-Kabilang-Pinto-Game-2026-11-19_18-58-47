@@ -2,6 +2,7 @@ using System;
 using Skp.Core;
 using Skp.Player;
 using Skp.Save;
+using Skp.Skills;
 using UnityEngine;
 
 namespace Skp.Levels
@@ -25,6 +26,16 @@ namespace Skp.Levels
         public readonly PlayerWorld World;
         public readonly PlayerSim Sim;
         readonly SaveService _save;
+        /// <summary>The learned skills (saved in the save file).</summary>
+        public readonly SkillService Skills;
+        public readonly SkillTuning SkillTuning;
+
+        /// <summary>The skill this level's letter teaches (empty on the boss level and in Endless).</summary>
+        public string LetterSkill => Spec.endless ? "" : Spec.skill ?? "";
+        /// <summary>The skill learned in this run (shown on the Level Clear box), or null.</summary>
+        public string LearnedThisRun { get; private set; }
+        /// <summary>The letter was read this run and its skill was new (NEW SKILL) or already known (SKILL KNOWN).</summary>
+        public bool LetterSkillWasNew { get; private set; }
 
         public bool Completed { get; private set; }
         public bool Over { get; private set; }
@@ -33,8 +44,11 @@ namespace Skp.Levels
         public event Action LockedExit;
         public event Action LevelCompleted;
         public event Action GameOver;
+        /// <summary>The letter was picked up: skill id (may be empty) and whether it was newly learned. Raised before the letter dialog.</summary>
+        public event Action<string, bool> LetterRead;
 
-        public LevelSession(LevelSpec spec, LevelRequest req, PlayerTuning tuning, DifficultyTable table, DifficultyCurve curve, SaveService save)
+        public LevelSession(LevelSpec spec, LevelRequest req, PlayerTuning tuning, DifficultyTable table, DifficultyCurve curve, SaveService save,
+                            SkillTuning skillTuning = null)
         {
             Spec = spec;
             Level = req.Level;
@@ -42,11 +56,15 @@ namespace Skp.Levels
             DifficultyKey = req.Difficulty;
             Difficulty = table.Get(req.Difficulty);
             _save = save;
+            Skills = new SkillService(save);
+            SkillTuning = skillTuning != null ? skillTuning : SkillLibrary.Tuning;
             var data = save.Data;
             Layout = LevelGenerator.Build(spec, Level, Exact(Difficulty.hazardMult), Exact(Difficulty.enemyMult), Exact(Difficulty.floodMult),
                                           id => ProgressRules.HasSkill(data, id), Loop);
             World = LevelWorldFactory.Build(Layout);
-            Sim = new PlayerSim(tuning, Difficulty, World);
+            Sim = new PlayerSim(tuning, Difficulty, World) { Skills = Skills, SkillTuning = SkillTuning };
+            // Heart Charm: one more heart on every level start
+            if (Skills.Has(SkillIds.Heart)) { Sim.MaxVitality += SkillTuning.heartBonus; Sim.Vitality = Sim.MaxVitality; }
 
             int ramp = Mathf.Max(0, Level);
             Sim.SetChaseDelay(curve != null ? curve.ChaseFrames(Difficulty.chaseFrames, ramp) : Difficulty.chaseFrames);
@@ -72,6 +90,21 @@ namespace Skp.Levels
             Sim.LanternLit += _ => SaveCheckpoint();
             Sim.ExitRequested += _ => TryExit();
             Sim.OutOfLives += OnGameOver;
+            Sim.ClueFound += OnLetter;
+        }
+
+        /// <summary>The letter teaches its skill once, saved at once; on a replay it is already known.</summary>
+        void OnLetter()
+        {
+            string id = LetterSkill;
+            bool fresh = false;
+            if (!string.IsNullOrEmpty(id))
+            {
+                fresh = Skills.Learn(id);
+                if (fresh) { LearnedThisRun = id; Sim.OnSkillLearned(id); }
+            }
+            LetterSkillWasNew = fresh;
+            LetterRead?.Invoke(id, fresh);
         }
 
         /// <summary>Recovers the exact decimal behind a float multiplier (0.6f -> 0.6) so generation matches the prototype's doubles.</summary>

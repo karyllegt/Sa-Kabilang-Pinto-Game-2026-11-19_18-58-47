@@ -284,6 +284,7 @@ public static class SkpUiSetup
         mc.background = bg;
         mc.screen = Prefab(MapScreen.Build(safe));
         mc.dialog = Prefab(DialogBox.Build(safe));
+        mc.skillsScreen = Prefab(SkillsScreen.Build(safe));
         mc.white = S(WhitePath);
         mc.star = S("Assets/Art/Items/spr_star.png");
         mc.bell = S(BellPath);

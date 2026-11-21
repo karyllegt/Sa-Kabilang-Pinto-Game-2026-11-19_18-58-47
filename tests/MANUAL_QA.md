@@ -62,3 +62,10 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Pause during veil and during a bolt in flight; resume restores them | [ ] | [ ] | [ ] | |
 | Quit and relaunch: skills and hearts correct; deleting the save removes skills | [ ] | [ ] | [ ] | |
 | Rapid double-tap on VEIL and BOLT; two-finger jump plus bolt | n/a | n/a | [ ] | |
+| **M6 skills (automated evidence in tests/Screenshots/m6; still to try by hand)** | | | | |
+| Levels 1 to 4 back to back: each new skill is learned at the letter, and its first-use hint shows once | [ ] | [ ] | [ ] | |
+| Pause during the veil and during a bolt in flight; resume restores timers and bolts exactly | [ ] | [ ] | [ ] | |
+| Quit and relaunch: skills and the extra heart stay; deleting the save removes the skills | [ ] | [ ] | [ ] | |
+| Rapid double-tap on VEIL and BOLT; two-finger jump plus bolt | n/a | n/a | [ ] | |
+| Each skill sound is distinct and the fanfare plays on NEW SKILL (sound effects setting off silences them) | [ ] | [ ] | [ ] | |
+| Map SKILLS button with keyboard/gamepad (Up to the top bar) and touch | [ ] | [ ] | [ ] | |

@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44dbb18d364def428e3643880835768, type: 3}
+  m_Name: SfxBank
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Audio.SfxBank
+  entries:
+  - cue: bell
+    clip: {fileID: 8300000, guid: 5f3b97c2514aa3342bfa086d039c693f, type: 3}
+    volume: 0.8
+  - cue: bolt_hit
+    clip: {fileID: 8300000, guid: 6ba9ec7942832bd4781cc086af45a10b, type: 3}
+    volume: 0.8
+  - cue: burn
+    clip: {fileID: 8300000, guid: 83c8dc762b07f3449b6b477961c22061, type: 3}
+    volume: 0.8
+  - cue: clue
+    clip: {fileID: 8300000, guid: c20737853bcb38241a3148e86f4932fa, type: 3}
+    volume: 0.8
+  - cue: crumble
+    clip: {fileID: 8300000, guid: 2e98df22897ca354fadb4c588a47990c, type: 3}
+    volume: 0.8
+  - cue: dash
+    clip: {fileID: 8300000, guid: b92039f63b536164a9409789d860904a, type: 3}
+    volume: 0.8
+  - cue: die
+    clip: {fileID: 8300000, guid: 710b2340c5cf11f4c8edd81cb36a2682, type: 3}
+    volume: 0.8
+  - cue: door
+    clip: {fileID: 8300000, guid: 3e17842ce0b696644b8dd9fcc98912cd, type: 3}
+    volume: 0.8
+  - cue: flame
+    clip: {fileID: 8300000, guid: f53cb2be68a22224e9ab311a924cc4b0, type: 3}
+    volume: 0.8
+  - cue: hurt
+    clip: {fileID: 8300000, guid: f9e54dc1b5d16a740afea441d4d661f4, type: 3}
+    volume: 0.8
+  - cue: jump
+    clip: {fileID: 8300000, guid: f1713602b7a20114698c7c3de225f01f, type: 3}
+    volume: 0.8
+  - cue: kill
+    clip: {fileID: 8300000, guid: c0b3c7c3472fcf8438e01ecd14f363b6, type: 3}
+    volume: 0.8
+  - cue: lantern
+    clip: {fileID: 8300000, guid: 07d288b359769f44e8c2823fe4f11c87, type: 3}
+    volume: 0.8
+  - cue: locked
+    clip: {fileID: 8300000, guid: 360224780028fdd43a7ba2d68dbe3f00, type: 3}
+    volume: 0.8
+  - cue: select
+    clip: {fileID: 8300000, guid: f8fc00049e9765440b8515b9ae99c21d, type: 3}
+    volume: 0.8
+  - cue: shard
+    clip: {fileID: 8300000, guid: e26b35bf8669cbc4299abd1467c564ec, type: 3}
+    volume: 0.8
+  - cue: skill_bolt
+    clip: {fileID: 8300000, guid: 6f2b7759e3ad1924796a7e1aa9cd73b4, type: 3}
+    volume: 0.8
+  - cue: skill_bolt3
+    clip: {fileID: 8300000, guid: 5a83f5d93f9d2f648be081a9d47f1985, type: 3}
+    volume: 0.8
+  - cue: skill_dj
+    clip: {fileID: 8300000, guid: d8dbc8051e97ba34f94aec4094e2b611, type: 3}
+    volume: 0.8
+  - cue: skill_glide
+    clip: {fileID: 8300000, guid: 17d4ea45965a05e4ea6f4f3bae4be8a2, type: 3}
+    volume: 0.8
+  - cue: skill_known
+    clip: {fileID: 8300000, guid: ad514a55b7e5a7945b14d1d694de4857, type: 3}
+    volume: 0.8
+  - cue: skill_learned
+    clip: {fileID: 8300000, guid: b0a85b49b4f257347a8767977a0aabc6, type: 3}
+    volume: 0.8
+  - cue: skill_veil
+    clip: {fileID: 8300000, guid: 43a5c3e289429cf4aa8a3d2f418c4289, type: 3}
+    volume: 0.8
+  - cue: skill_veil_end
+    clip: {fileID: 8300000, guid: 8fd0ec75c44e2c84795b2cf211936ce7, type: 3}
+    volume: 0.8
+  - cue: splash
+    clip: {fileID: 8300000, guid: dfb4dd2e207084646b28598fd34bce2b, type: 3}
+    volume: 0.8
+  - cue: stun
+    clip: {fileID: 8300000, guid: 757f42d3deae56b4190a5f3406fdf207, type: 3}
+    volume: 0.8
+  - cue: ward
+    clip: {fileID: 8300000, guid: 5381229ac0416244e9ca5864ab0b71b3, type: 3}
+    volume: 0.8
+  - cue: win
+    clip: {fileID: 8300000, guid: 47260e7135b324c4292979eb71205d5d, type: 3}
+    volume: 0.8

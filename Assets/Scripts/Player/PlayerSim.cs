@@ -1,6 +1,8 @@
 using System;
 using Skp.Core;
+using System.Collections.Generic;
 using Skp.Dimensions;
+using Skp.Skills;
 using UnityEngine;
 
 namespace Skp.Player
@@ -20,6 +22,11 @@ namespace Skp.Player
 
         public readonly PlayerTuning Tuning;
         public PlayerWorld World;
+        /// <summary>Skill numbers (M6). Defaults when no asset is given.</summary>
+        public SkillTuning SkillTuning = SkillTuning.Default;
+        /// <summary>The learned skills, asked every tick (so a skill learned mid-level works at once).</summary>
+        public ISkillSet Skills = SkillSet.None;
+        public bool Has(string id) => Skills != null && Skills.Has(id);
 
         // -------- body
         /// <summary>Bottom-left corner of the hitbox.</summary>
@@ -42,9 +49,17 @@ namespace Skp.Player
 
         // -------- timers, in ticks
         public int Coyote, JumpBuffer, DashTicks, DashCooldown, WardTicks, WardCooldown, Invulnerable, VeilTicks;
+        /// <summary>Lambong Veil and Liwanag Bolt cooldowns, in ticks (counted from activation).</summary>
+        public int VeilCooldown, BoltCooldown;
         public bool JumpCut;
-        /// <summary>Extra jumps used this airtime (double jump, M6).</summary>
+        /// <summary>Extra jumps used this airtime (Double Jump).</summary>
         public int AirJumps;
+        /// <summary>Pakpak Glide is holding the fall this tick.</summary>
+        public bool Gliding;
+        /// <summary>Liwanag Bolts in flight.</summary>
+        public readonly List<Bolt> Bolts = new List<Bolt>();
+        /// <summary>The last damage source that went through <see cref="TryHurt"/> (dealt or blocked).</summary>
+        public DamageSource LastDamageSource { get; private set; }
         /// <summary>Run cycle phase for the animator.</summary>
         public float Anim;
 
@@ -84,6 +99,18 @@ namespace Skp.Player
         public event Action ClueFound;
         public event Action<Enemy> EnemyKilled;
         public event Action<Ledge> LedgeCrumbled;
+        /// <summary>Double Jump used.</summary>
+        public event Action AirJumped;
+        public event Action VeilStarted;
+        /// <summary>Bolts fired (1, or 3 with Triple Bolt).</summary>
+        public event Action<int> BoltFired;
+        public event Action<Vector2, BoltTarget> BoltHit;
+        /// <summary>Bolt pressed with too little flame.</summary>
+        public event Action NotEnoughFlame;
+        /// <summary>A hit that <see cref="CanBeHurt"/> refused while the veil was up.</summary>
+        public event Action<DamageSource> VeilBlocked;
+        /// <summary>The Bellkeeper's bolt test (M7): returns true when the bolt struck it (it takes damage only while stunned).</summary>
+        public Func<Vector2, bool> BoltHitsBoss;
 
         public PlayerSim(PlayerTuning tuning, DifficultyMode difficulty, PlayerWorld world)
         {
@@ -100,16 +127,24 @@ namespace Skp.Player
         }
 
         /// <summary>
-        /// Single source of truth for damage immunity. Every damage source goes through
-        /// <see cref="TryHurt"/>, which asks this first: post-hit invulnerability, dashing and
-        /// (from M6) the Lambong Veil all make Tala untouchable.
+        /// Single source of truth for damage immunity. Every damage source (spikes, roots, thorns, creatures,
+        /// the shadow, water, the Bellkeeper) goes through <see cref="TryHurt"/>, which asks this first:
+        /// post-hit invulnerability, dashing and the Lambong Veil all make Tala untouchable.
         /// </summary>
         public bool CanBeHurt() => Life == PlayerLife.Playing && Invulnerable <= 0 && DashTicks <= 0 && VeilTicks <= 0;
 
+        /// <summary>The Lambong Veil is up.</summary>
+        public bool Veiled => VeilTicks > 0;
+
         /// <summary>Deals damage if <see cref="CanBeHurt"/>. <paramref name="fromX"/> is the source's x (null = push backwards).</summary>
-        public bool TryHurt(int amount, float? fromX)
+        public bool TryHurt(int amount, float? fromX, DamageSource source = DamageSource.Other)
         {
-            if (!CanBeHurt()) return false;
+            LastDamageSource = source;
+            if (!CanBeHurt())
+            {
+                if (VeilTicks > 0 && Life == PlayerLife.Playing) VeilBlocked?.Invoke(source);
+                return false;
+            }
             Vitality -= amount;
             Invulnerable = PlayerTuning.Ticks(_story ? Tuning.invulnerableTimeStory : Tuning.invulnerableTime);
             Velocity.y = GravitySign * Tuning.knockbackUp;
@@ -136,6 +171,7 @@ namespace Skp.Player
             PlaceAtLantern(Checkpoint);
             Velocity = Vector2.zero;
             Coyote = JumpBuffer = DashTicks = DashCooldown = WardTicks = WardCooldown = VeilTicks = 0;
+            VeilCooldown = BoltCooldown = 0; Gliding = false; Bolts.Clear();
             AirJumps = 0; JumpCut = false; Anim = 0; Facing = 1;
             // No dimension state survives death: back to the Waking World, no trail, no stun.
             SetDimension(Dim.Ordinary);
@@ -245,7 +281,7 @@ namespace Skp.Player
                         if (e.Position.x + e.Size.x > e.MaxX) { e.Position.x = e.MaxX - e.Size.x; e.Dir = -1; }
                     }
                 }
-                if (e.Stun == 0 && Hitbox.Overlaps(e.ContactRect)) TryHurt(1, e.Center.x);
+                if (e.Stun == 0 && Hitbox.Overlaps(e.ContactRect)) TryHurt(1, e.Center.x, DamageSource.Enemy);
             }
         }
 
@@ -268,6 +304,113 @@ namespace Skp.Player
             Kills++;
             Score += 50;
             EnemyKilled?.Invoke(e);
+        }
+
+        // ------------------------------------------------------------ skills
+
+        /// <summary>A skill was just learned (letter): Heart Charm adds a heart now; Double Jump is ready at once.</summary>
+        public void OnSkillLearned(string id)
+        {
+            var st = SkillTuning ?? SkillTuning.Default;
+            if (id == SkillIds.Heart)
+            {
+                MaxVitality += st.heartBonus;
+                Vitality = Mathf.Min(MaxVitality, Vitality + st.heartBonus);
+            }
+            if (id == SkillIds.DoubleJump) AirJumps = 0;
+        }
+
+        /// <summary>Prototype fireBolt(): from 6 px ahead of Tala's center, one ray or a fan of three.</summary>
+        void FireBolt(bool spread, SkillTuning st)
+        {
+            float a = st.tripleBoltAngle * Mathf.Deg2Rad;
+            int n = spread ? 3 : 1;
+            for (int i = 0; i < n; i++)
+            {
+                float ang = spread ? (i - 1) * a : 0f;
+                Bolts.Add(new Bolt
+                {
+                    Position = Center + new Vector2(Facing * st.boltSpawnAhead, 0),
+                    // prototype vy = sin(a) * speed with y down; y is up here
+                    Velocity = new Vector2(Mathf.Cos(ang) * Facing * st.boltSpeed, -Mathf.Sin(ang) * st.boltSpeed),
+                    Life = PlayerTuning.Ticks(st.boltLifetime),
+                });
+            }
+            BoltFired?.Invoke(n);
+        }
+
+        /// <summary>
+        /// Prototype updBolts(): move, then the first thing struck stops the bolt. Ledges of this dimension stop it;
+        /// an Anino dies; other creatures lose 1 hp and are stunned; roots and thorn walls burn; the Spirit shadow is
+        /// stunned; the Bellkeeper is hit (M7 decides the damage).
+        /// </summary>
+        void UpdateBolts()
+        {
+            var st = SkillTuning ?? SkillTuning.Default;
+            const float px = 1f / 16f;
+            for (int i = Bolts.Count - 1; i >= 0; i--)
+            {
+                var b = Bolts[i];
+                b.Position += b.Velocity * Dt;
+                var p = b.Position;
+                BoltTarget? hit = null;
+                if (--b.Life <= 0) hit = BoltTarget.Expired;
+
+                if (hit == null)
+                    foreach (var pl in World.Ledges)
+                    {
+                        if (!DimensionRules.Active(pl.Mask, Dimension) || pl.IsGone) continue;
+                        var r = pl.Rect; // prototype: inside x, and between 2 px below the top and 1 px above the bottom
+                        if (p.x > r.xMin && p.x < r.xMax && p.y < r.yMax - 2 * px && p.y > r.yMin + px) { hit = BoltTarget.Ledge; break; }
+                    }
+
+                if (hit == null)
+                    foreach (var e in World.Enemies)
+                    {
+                        if (e.Dead || !DimensionRules.Active(e.Mask, Dimension)) continue;
+                        if (p.x > e.Position.x - 2 * px && p.x < e.Position.x + e.Size.x + 2 * px && p.y > e.Position.y - 2 * px && p.y < e.Position.y + e.Size.y + 2 * px)
+                        {
+                            if (e.Kind == EnemyKind.Anino) { KillEnemy(e); hit = BoltTarget.Anino; }
+                            else
+                            {
+                                e.Hp--;
+                                if (e.Hp <= 0) KillEnemy(e); else e.Stun = PlayerTuning.Ticks(st.boltCreatureStun);
+                                hit = BoltTarget.Creature;
+                            }
+                            break;
+                        }
+                    }
+
+                if (hit == null)
+                    foreach (var h in World.Hazards)
+                    {
+                        if ((h.Kind != HazardKind.Root && h.Kind != HazardKind.Thorns) || !DimensionRules.Active(h.Mask, Dimension) || h.BurnTicks > 0) continue;
+                        var r = h.Rect;
+                        if (p.x > r.xMin - 3 * px && p.x < r.xMax + 3 * px && p.y > r.yMin - 3 * px && p.y < r.yMax + 3 * px)
+                        {
+                            bool thorns = h.Kind == HazardKind.Thorns;
+                            h.BurnTicks = PlayerTuning.Ticks(thorns ? st.thornBurnTime : st.rootBurnTime);
+                            Score += st.burnScore;
+                            hit = thorns ? BoltTarget.Thorns : BoltTarget.Root;
+                            break;
+                        }
+                    }
+
+                if (hit == null && Dimension == Dim.Spirit && Shadow.Active && Shadow.StunTicks == 0)
+                {
+                    var c = ShadowRect.center;
+                    if (Mathf.Abs(p.x - c.x) < 8 * px && Mathf.Abs(p.y - c.y) < 10 * px && StunShadow(PlayerTuning.Ticks(st.boltShadowStun)))
+                        hit = BoltTarget.Shadow;
+                }
+
+                if (hit == null && BoltHitsBoss != null && BoltHitsBoss(p)) hit = BoltTarget.Boss;
+
+                if (hit != null)
+                {
+                    Bolts.RemoveAt(i);
+                    BoltHit?.Invoke(p, hit.Value);
+                }
+            }
         }
 
         void PlaceAtLantern(int i)
@@ -318,6 +461,8 @@ namespace Skp.Player
 
             // timers
             if (VeilTicks > 0) VeilTicks--;
+            if (VeilCooldown > 0) VeilCooldown--;
+            if (BoltCooldown > 0) BoltCooldown--;
             if (Invulnerable > 0) Invulnerable--;
             if (DashCooldown > 0) DashCooldown--;
             if (WardCooldown > 0) WardCooldown--;
@@ -330,15 +475,42 @@ namespace Skp.Player
             if (input.JumpPressed) JumpBuffer = PlayerTuning.Ticks(t.jumpBufferTime); else if (JumpBuffer > 0) JumpBuffer--;
             if (Grounded) Coyote = PlayerTuning.Ticks(t.coyoteTime); else if (Coyote > 0) Coyote--;
 
-            // dash
-            if (input.DashPressed && DashCooldown == 0 && Flame >= t.dashFlameCost && DashTicks == 0)
+            var st = SkillTuning ?? SkillTuning.Default;
+
+            // dash (Swift Dash: cheaper and quicker to recharge)
+            bool swift = Has(SkillIds.Swift);
+            int dashCost = swift ? st.swiftDashFlameCost : t.dashFlameCost;
+            if (input.DashPressed && DashCooldown == 0 && Flame >= dashCost && DashTicks == 0)
             {
                 DashTicks = PlayerTuning.Ticks(t.dashDuration);
-                DashCooldown = PlayerTuning.Ticks(t.dashCooldown);
-                Flame -= t.dashFlameCost;
+                DashCooldown = PlayerTuning.Ticks(swift ? st.swiftDashCooldown : t.dashCooldown);
+                Flame -= dashCost;
                 if (ax != 0) Facing = ax;
                 Velocity.y = 0;
                 Dashed?.Invoke();
+            }
+
+            // Lambong Veil (Greater Veil: longer, quicker to recharge)
+            if (input.VeilPressed && Has(SkillIds.Veil) && VeilCooldown == 0)
+            {
+                bool big = Has(SkillIds.GreaterVeil);
+                VeilTicks = PlayerTuning.Ticks(big ? st.greaterVeilDuration : st.veilDuration);
+                VeilCooldown = PlayerTuning.Ticks(big ? st.greaterVeilCooldown : st.veilCooldown);
+                VeilStarted?.Invoke();
+            }
+
+            // Liwanag Bolt (Triple Bolt: three rays)
+            if (input.BoltPressed && Has(SkillIds.Bolt) && BoltCooldown == 0)
+            {
+                bool spread = Has(SkillIds.TripleBolt);
+                int cost = spread ? st.tripleBoltFlameCost : st.boltFlameCost;
+                if (Flame >= cost)
+                {
+                    Flame -= cost;
+                    BoltCooldown = PlayerTuning.Ticks(spread ? st.tripleBoltCooldown : st.boltCooldown);
+                    FireBolt(spread, st);
+                }
+                else NotEnoughFlame?.Invoke();
             }
 
             // ward
@@ -384,6 +556,22 @@ namespace Skp.Player
                     JumpBuffer = 0; Coyote = 0; Grounded = false; JumpCut = false;
                     Jumped?.Invoke();
                 }
+                // Double Jump: a fresh press in mid-air, never on a ground or coyote jump frame, once per airtime
+                else if (input.JumpPressed && Has(SkillIds.DoubleJump) && !Grounded && Coyote == 0 && AirJumps < st.airJumps)
+                {
+                    AirJumps++;
+                    Velocity.y = gs * st.doubleJumpSpeed;
+                    JumpCut = false; JumpBuffer = 0;
+                    AirJumped?.Invoke();
+                }
+
+                // Pakpak Glide: holding jump while falling caps the fall (mirrored in Inverted gravity)
+                Gliding = false;
+                if (Has(SkillIds.Glide) && input.JumpHeld && !Grounded && -Velocity.y * gs > st.glideFallSpeed)
+                {
+                    Velocity.y = -gs * st.glideFallSpeed;
+                    Gliding = true;
+                }
 
                 if (!input.JumpHeld && !JumpCut && Velocity.y * gs > 0)
                 {
@@ -424,7 +612,7 @@ namespace Skp.Player
             }
             if (Grounded)
             {
-                AirJumps = 0; JumpCut = false;
+                AirJumps = 0; JumpCut = false; Gliding = false;
                 if (!wasGrounded) Landed?.Invoke();
                 if (Standing != null && Standing.Kind == LedgeKind.Crumble && Standing.CrumbleTimer == 0) Standing.CrumbleTimer = 42;
             }
@@ -436,7 +624,7 @@ namespace Skp.Player
             if (Dimension == Dim.Spirit)
             {
                 Shadow.Record(Position, Facing, Anim);
-                if (Shadow.CanHurt && Hitbox.Overlaps(ShadowRect)) TryHurt(1, ShadowRect.center.x);
+                if (Shadow.CanHurt && Hitbox.Overlaps(ShadowRect)) TryHurt(1, ShadowRect.center.x, DamageSource.Shadow);
             }
 
             // lanterns (checkpoints)
@@ -469,6 +657,7 @@ namespace Skp.Player
 
             CollectItems();
             UpdateEnemies();
+            UpdateBolts();
 
             // hazards (1 px inset, as in the prototype)
             const float inset = 1f / 16f;
@@ -493,7 +682,7 @@ namespace Skp.Player
                         r = new Rect(h.x + inset, h.y + inset, h.width - 2 * inset, h.height - 2 * inset);
                         break;
                 }
-                if (hb.Overlaps(r)) TryHurt(1, h.center.x);
+                if (hb.Overlaps(r)) TryHurt(1, h.center.x, hz.Kind == HazardKind.Root ? DamageSource.Root : hz.Kind == HazardKind.Thorns ? DamageSource.Thorns : DamageSource.Spike);
             }
         }
     }

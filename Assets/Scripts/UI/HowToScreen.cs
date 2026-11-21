@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Skp.UI
 {
-    /// <summary>How to Play, in three short pages so the body text stays at 14 px on every screen.</summary>
+    /// <summary>How to Play, in four short pages (the last lists the skills) so the body text stays at 14 px on every screen.</summary>
     public class HowToScreen : UiScreen
     {
-        public const int Pages = 3;
+        public const int Pages = 4;
         public PixelButton back, prev, next;
         public TextMeshProUGUI body, counter;
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Skp.UI
 {
-    public enum Speaker { Player, Lola, Clue, Anino, Boss }
+    public enum Speaker { Player, Lola, Clue, Anino, Boss, Skill }
 
     /// <summary>One page of a dialog.</summary>
     public struct DialogLine
@@ -16,6 +16,12 @@ namespace Skp.UI
         public string Sub, Name, Text;
         /// <summary>Label of the button on the last line (BEGIN, CONTINUE); NEXT is used before that.</summary>
         public string Button;
+        /// <summary>Overrides the speaker portrait (the skill card shows the skill icon).</summary>
+        public Sprite Portrait;
+        /// <summary>Once the whole line is visible, taps are ignored for this long so a fast tapper cannot skip it.</summary>
+        public float HoldSeconds;
+        /// <summary>Color of the speaker name (default gold).</summary>
+        public Color? NameColor;
     }
 
     /// <summary>
@@ -38,15 +44,18 @@ namespace Skp.UI
         public bool IsTyping { get; private set; }
         public int LineIndex { get; private set; }
         public int LineCount => _lines.Count;
+        public DialogLine CurrentLine => _lines.Count > 0 ? _lines[LineIndex] : default;
 
         readonly List<DialogLine> _lines = new List<DialogLine>();
         Action _done;
-        float _typeT;
+        float _typeT, _completedAt;
         bool _wired;
         bool _isPlayerBoy;
 
         /// <summary>Raised when the last line is dismissed (after the completion callback).</summary>
         public event Action Finished;
+        /// <summary>Raised when a line starts showing (its index).</summary>
+        public event Action<int> LineShown;
 
         public static DialogBox Build(Transform parent)
         {
@@ -113,14 +122,16 @@ namespace Skp.UI
         {
             var l = _lines[LineIndex];
             var th = UiKit.Theme;
-            portrait.sprite = PortraitFor(l.Who, th);
+            portrait.sprite = l.Portrait != null ? l.Portrait : PortraitFor(l.Who, th);
             sub.text = l.Sub ?? "";
             speaker.text = l.Name ?? "";
+            speaker.color = l.NameColor ?? th.gold;
             body.text = l.Text ?? "";
             body.maxVisibleCharacters = 0;
             next.Text = LineIndex < _lines.Count - 1 ? Loc.Get("common.next") : (string.IsNullOrEmpty(l.Button) ? Loc.Get("common.close") : l.Button);
             _typeT = 0;
             IsTyping = true;
+            LineShown?.Invoke(LineIndex);
         }
 
         Sprite PortraitFor(Speaker who, UiTheme th)
@@ -148,6 +159,7 @@ namespace Skp.UI
         /// <summary>Shows the whole current line at once.</summary>
         public void CompleteLine()
         {
+            if (IsTyping) _completedAt = Time.unscaledTime;
             IsTyping = false;
             if (body != null) body.maxVisibleCharacters = 99999;
         }
@@ -157,6 +169,7 @@ namespace Skp.UI
         {
             if (!IsOpen || UiGate.Blocked) return;
             if (IsTyping) { CompleteLine(); return; }
+            if (_lines.Count > 0 && Time.unscaledTime - _completedAt < _lines[LineIndex].HoldSeconds) return; // still holding this line
             if (LineIndex < _lines.Count - 1)
             {
                 LineIndex++;

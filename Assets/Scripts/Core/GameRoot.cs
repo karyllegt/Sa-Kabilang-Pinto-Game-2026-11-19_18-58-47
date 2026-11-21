@@ -61,6 +61,7 @@ namespace Skp.Core
                 Input.Enable();
             }
 
+            gameObject.AddComponent<Skp.Audio.SfxPlayer>();
             if (Debug.isDebugBuild) gameObject.AddComponent<DebugOverlay>();
         }
 

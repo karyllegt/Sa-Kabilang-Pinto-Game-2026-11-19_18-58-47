@@ -27,7 +27,8 @@ namespace Skp.Tests
 
         static IEnumerator Dismiss(Skp.UI.DialogBox d)
         {
-            for (int i = 0; i < 40 && d.IsOpen; i++)
+            float t0 = Time.realtimeSinceStartup;
+            while (d.IsOpen && Time.realtimeSinceStartup - t0 < 10f) // the skill box holds taps for a moment
             {
                 yield return WaitFor(() => !Skp.UI.UiGate.Blocked);
                 d.Advance();

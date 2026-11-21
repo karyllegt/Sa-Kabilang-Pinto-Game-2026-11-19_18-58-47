@@ -8,8 +8,9 @@ namespace Skp.UI
     /// <summary>
     /// On-screen buttons (Input System OnScreenButtons driving a virtual gamepad, so they feed the same
     /// Gameplay actions as keyboard and gamepad). Thumb layout (docs/04 known layout issue 1): left thumb
-    /// moves; right thumb has JUMP in the corner with DASH beside it and WARD above DASH; DOOR appears above
-    /// JUMP only when Tala stands at a door, so the play area stays clear. Two rows at most. The whole
+    /// moves; right thumb has JUMP in the corner with DASH and WARD beside it on the bottom row; the second row
+    /// holds BOLT (above DASH) and VEIL (above WARD) once learned, and DOOR (above JUMP) only when Tala stands at
+    /// a door, so the play area stays clear. Two rows at most. The whole
     /// layout mirrors for left-handed players. Shown only during play, per the Touch controls setting.
     /// </summary>
     public class TouchControls : MonoBehaviour
@@ -26,6 +27,8 @@ namespace Skp.UI
         public Slot[] slots = new Slot[0];
         [Tooltip("The contextual door button.")]
         public GameObject door;
+        [Tooltip("Skill buttons, shown once the skill is learned.")]
+        public GameObject veil, bolt;
         public bool forceShow;
 
         TouchMode _mode = TouchMode.Auto;
@@ -57,6 +60,13 @@ namespace Skp.UI
                 s.rect.anchorMin = s.rect.anchorMax = a;
                 s.rect.anchoredPosition = _left ? new Vector2(-s.position.x, s.position.y) : s.position;
             }
+        }
+
+        /// <summary>Shows VEIL and BOLT only once they are learned.</summary>
+        public void SetSkills(bool hasVeil, bool hasBolt)
+        {
+            if (veil != null && veil.activeSelf != hasVeil) veil.SetActive(hasVeil);
+            if (bolt != null && bolt.activeSelf != hasBolt) bolt.SetActive(hasBolt);
         }
 
         public void SetPlaying(bool playing, bool nearDoor)

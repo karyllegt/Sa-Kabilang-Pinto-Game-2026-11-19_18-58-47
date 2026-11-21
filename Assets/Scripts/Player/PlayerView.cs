@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Skp.Player
@@ -15,6 +16,13 @@ namespace Skp.Player
         [Tooltip("spr_pl_boy_0..3")] public Sprite[] boy = new Sprite[4];
         public bool useBoy;
         [Tooltip("Optional ring shown while the ward pulse is active.")] public SpriteRenderer wardRing;
+        [Tooltip("Purple Lambong Veil ring (flickers in its last second).")] public SpriteRenderer veilRing;
+        [Tooltip("Pakpak Glide wings, shown while gliding.")] public SpriteRenderer glideWings;
+        [Tooltip("Liwanag Bolt sprite (drawn once per bolt in flight).")] public Sprite boltSprite;
+
+        readonly List<SpriteRenderer> _bolts = new List<SpriteRenderer>();
+        /// <summary>Bolt sprites currently drawn (tests).</summary>
+        public int VisibleBolts { get; private set; }
 
         public int CurrentFrame { get; private set; }
 
@@ -42,6 +50,8 @@ namespace Skp.Player
             float y = sim.GravitySign > 0 ? pos.y : pos.y + sim.Size.y;
             transform.position = new Vector3(Snap(x), Snap(y), transform.position.z);
 
+            RenderSkills(sim, x, pos);
+
             if (wardRing != null)
             {
                 float wt = sim.WardTicks / Mathf.Max(1f, PlayerTuning.Ticks(sim.Tuning.wardDuration));
@@ -54,6 +64,54 @@ namespace Skp.Player
                     var wc = wardRing.color; wc.a = wt; wardRing.color = wc;
                 }
             }
+        }
+
+        void RenderSkills(PlayerSim sim, float x, Vector2 pos)
+        {
+            float cy = pos.y + sim.Size.y * 0.5f;
+            if (veilRing != null)
+            {
+                int flickerTicks = PlayerTuning.Ticks(sim.SkillTuning != null ? sim.SkillTuning.veilFlickerTime : 1f);
+                bool flickerOff = sim.VeilTicks < flickerTicks && ((sim.Tick >> 2) & 1) == 1;
+                veilRing.enabled = sim.Life == PlayerLife.Playing && sim.VeilTicks > 0 && !flickerOff;
+                if (veilRing.enabled)
+                {
+                    veilRing.transform.position = new Vector3(Snap(x), Snap(cy), transform.position.z - 0.01f);
+                    veilRing.transform.localScale = Vector3.one * (1f + Mathf.Sin(sim.Tick * 0.2f) * 1.5f / 13f); // prototype: radius 13 + sin(t * 0.2) * 1.5 px
+                }
+            }
+            if (glideWings != null)
+            {
+                glideWings.enabled = sim.Gliding && sim.Life == PlayerLife.Playing;
+                if (glideWings.enabled)
+                {
+                    glideWings.flipY = sim.GravitySign < 0;
+                    float wy = sim.GravitySign > 0 ? pos.y + sim.Size.y - 3f / 16f : pos.y + 3f / 16f;
+                    glideWings.transform.position = new Vector3(Snap(x), Snap(wy), transform.position.z + 0.01f);
+                }
+            }
+            int n = 0;
+            if (boltSprite != null)
+            {
+                foreach (var b in sim.Bolts)
+                {
+                    if (n >= _bolts.Count)
+                    {
+                        var go = new GameObject("Bolt");
+                        go.transform.SetParent(transform.parent, false);
+                        var sr = go.AddComponent<SpriteRenderer>();
+                        sr.sprite = boltSprite;
+                        sr.sortingOrder = (body != null ? body.sortingOrder : 10) + 1;
+                        _bolts.Add(sr);
+                    }
+                    var r = _bolts[n++];
+                    r.enabled = true;
+                    r.flipX = b.Velocity.x < 0;
+                    r.transform.position = new Vector3(Snap(b.Position.x), Snap(b.Position.y), transform.position.z);
+                }
+            }
+            for (int i = n; i < _bolts.Count; i++) _bolts[i].enabled = false;
+            VisibleBolts = n;
         }
 
         static float Snap(float v) => Mathf.Round(v * PlayerTuning.PxPerUnit) / PlayerTuning.PxPerUnit;

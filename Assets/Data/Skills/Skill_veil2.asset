@@ -19,3 +19,8 @@ MonoBehaviour:
   tag: UPGRADE
   color: {r: 0.7529412, g: 0.49019608, b: 1, a: 1}
   type: 2
+  shortLabel: V+
+  keyHint: 
+  icon: {fileID: 21300000, guid: 5fb771671e741f74ea945abd8423bbf2, type: 3}
+  level: 6
+  cue: 

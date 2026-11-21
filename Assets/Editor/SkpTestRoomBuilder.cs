@@ -55,6 +55,21 @@ public static class SkpTestRoomBuilder
         sr.sprite = view.girl[0];
         pc.view = view;
 
+        // M6 skill effects: veil ring, glide wings (siblings of the body so they are placed in world space) and the bolt sprite
+        var veil = new GameObject("VeilRing").AddComponent<SpriteRenderer>();
+        veil.transform.SetParent(root.transform, false);
+        veil.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(SkpSkillSetup.VeilRingSprite);
+        veil.sortingOrder = 11;
+        veil.enabled = false;
+        view.veilRing = veil;
+        var wings = new GameObject("GlideWings").AddComponent<SpriteRenderer>();
+        wings.transform.SetParent(root.transform, false);
+        wings.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(SkpSkillSetup.GlideWingsSprite);
+        wings.sortingOrder = 9;
+        wings.enabled = false;
+        view.glideWings = wings;
+        view.boltSprite = AssetDatabase.LoadAssetAtPath<Sprite>(SkpSkillSetup.BoltSprite);
+
         var prefab = PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
         Object.DestroyImmediate(root);
         return prefab;

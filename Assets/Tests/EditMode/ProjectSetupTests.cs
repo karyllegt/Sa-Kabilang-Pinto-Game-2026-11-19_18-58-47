@@ -61,7 +61,10 @@ namespace Skp.Tests
         [Test]
         public void EveryAudioClip_IsImported()
         {
-            Assert.AreEqual(18, AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Sfx" }).Length);
+            // the 18 provided effects; the M6 skill sounds are generated into Sfx/Skills
+            var sfx = AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Sfx" }).Select(AssetDatabase.GUIDToAssetPath).ToArray();
+            Assert.AreEqual(18, sfx.Count(p => p.EndsWith(".ogg") && System.IO.Path.GetDirectoryName(p).Replace("\\", "/") == "Assets/Audio/Sfx"));
+            Assert.AreEqual(10, sfx.Count(p => p.StartsWith("Assets/Audio/Sfx/Skills/")));
             Assert.AreEqual(5, AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Music" }).Length);
         }
 

@@ -128,10 +128,11 @@ namespace Skp.UI
             if (!s.metLola) return new[] { "lola.first.1", "lola.first.2", "lola.first.3", "lola.first.4", "lola.first.5" };
             if (s.cleared) return new[] { "lola.cleared" };
             int u = s.unlocked;
-            if (u <= 3) return new[] { "lola.act1" };
-            if (u <= 5) return new[] { "lola.act2a" };
-            if (u <= 8) return new[] { "lola.act2b" };
-            return new[] { "lola.act3" };
+            string act = u <= 3 ? "lola.act1" : u <= 5 ? "lola.act2a" : u <= 8 ? "lola.act2b" : "lola.act3";
+            // then a word about the skill the last letter taught
+            var sk = s.skills;
+            if (sk != null && sk.Length > 0 && !string.IsNullOrEmpty(sk[sk.Length - 1])) return new[] { act, "lola.skill." + sk[sk.Length - 1] };
+            return new[] { act };
         }
 
         public static int ActOf(int node) => node / 3;

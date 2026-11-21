@@ -18,6 +18,25 @@ namespace Skp.UI
         public TextMeshProUGUI label;
 
         float _until;
+        float _maxWidth = 640f;
+
+        /// <summary>Moves the lane (top edge, from the top of the HUD) and caps the width (the HUD narrows it while skill chips show).</summary>
+        public void SetLane(float top, float maxWidth)
+        {
+            top = Mathf.Max(LaneTop, top);
+            maxWidth = Mathf.Min(640f, maxWidth - 36f);
+            var rt = box.rectTransform;
+            if (!Mathf.Approximately(rt.anchoredPosition.y, -top)) rt.anchoredPosition = new Vector2(0, -top);
+            if (Mathf.Approximately(maxWidth, _maxWidth)) return;
+            _maxWidth = maxWidth;
+            if (Visible) Wrap();
+        }
+
+        void Wrap()
+        {
+            var le = label.GetComponent<LayoutElement>();
+            le.preferredWidth = label.GetPreferredValues(label.text).x > _maxWidth ? _maxWidth : -1;
+        }
         public string Current => box != null && box.gameObject.activeSelf ? label.text : null;
         public bool Visible => box != null && box.gameObject.activeSelf;
 
@@ -51,9 +70,8 @@ namespace Skp.UI
         {
             if (string.IsNullOrEmpty(text)) return;
             label.text = text;
-            // wrap long hints at 640 px instead of running off a narrow screen
-            var le = label.GetComponent<LayoutElement>();
-            le.preferredWidth = label.GetPreferredValues(text).x > 640 ? 640 : -1;
+            // wrap long hints (640 px, or narrower beside the skill chips) instead of running off a narrow screen
+            Wrap();
             box.gameObject.SetActive(true);
             _until = Time.unscaledTime + seconds;
         }

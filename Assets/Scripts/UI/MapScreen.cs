@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Skp.UI
 {
     /// <summary>
-    /// The level map's overlay: top bar (Back, act name, difficulty toggle, Talk) and a short bottom
+    /// The level map's overlay: top bar (Back, act name, Skills, difficulty toggle, Talk) and a short bottom
     /// info panel (level number and name, act and state, ENTER/REPLAY). Taps on the map itself go
     /// through <see cref="TapArea"/> to the <see cref="MapController"/>. The info panel is kept short
     /// (docs/04 known layout issue 3); node numbers sit above the nodes.
@@ -16,7 +16,7 @@ namespace Skp.UI
     {
         public const float InfoHeight = 84f;
 
-        public PixelButton back, difficulty, talk, enter;
+        public PixelButton back, skills, difficulty, talk, enter;
         public TextMeshProUGUI act, levelName, levelSub;
         public RectTransform topBar, infoPanel;
         public MapTapArea tapArea;
@@ -44,19 +44,26 @@ namespace Skp.UI
             bar.offsetMin = new Vector2(12, -12 - UiKit.MinTarget);
             bar.offsetMax = new Vector2(-12, -12);
             s.topBar = bar;
+            // one row: Back | act name (takes the rest, shrinks its text on narrow screens) | Skills | difficulty | Talk
+            var row = bar.gameObject.AddComponent<HorizontalLayoutGroup>();
+            row.spacing = 8;
+            row.childAlignment = TextAnchor.MiddleCenter;
+            row.childControlWidth = row.childControlHeight = true;
+            row.childForceExpandWidth = row.childForceExpandHeight = false;
             s.back = UiKit.Button(bar, "Back", Loc.Get("common.back"), new Vector2(104, UiKit.MinTarget), th.smallSize);
-            UiKit.Place((RectTransform)s.back.transform, new Vector2(0, 0.5f), new Vector2(0, 0.5f), Vector2.zero, ((RectTransform)s.back.transform).sizeDelta);
 
             var actBox = UiKit.Box(bar, "ActPanel", th.buttonBoxScale);
-            UiKit.Place(actBox.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-40, 0), new Vector2(360, 44));
+            UiKit.Size(actBox, 120, 44, 1);
             actBox.raycastTarget = false;
             s.act = UiKit.Label(actBox.transform, "Act", "ACT I - THE HOUSE WAKES", th.smallSize, th.gold, TextAlignmentOptions.Center, false);
+            s.act.enableAutoSizing = true;
+            s.act.fontSizeMin = th.tinySize;
+            s.act.fontSizeMax = th.smallSize;
             UiKit.Stretch(s.act.rectTransform, 8, 4, 8, 4);
 
-            s.talk = UiKit.Button(bar, "Talk", Loc.Get("map.talk"), new Vector2(96, UiKit.MinTarget), th.smallSize);
-            UiKit.Place((RectTransform)s.talk.transform, new Vector2(1, 0.5f), new Vector2(1, 0.5f), Vector2.zero, ((RectTransform)s.talk.transform).sizeDelta);
+            s.skills = UiKit.Button(bar, "Skills", Loc.Get("map.skills"), new Vector2(104, UiKit.MinTarget), th.smallSize);
             s.difficulty = UiKit.Button(bar, "Difficulty", "STANDARD", new Vector2(148, UiKit.MinTarget), th.smallSize);
-            UiKit.Place((RectTransform)s.difficulty.transform, new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-108, 0), ((RectTransform)s.difficulty.transform).sizeDelta);
+            s.talk = UiKit.Button(bar, "Talk", Loc.Get("map.talk"), new Vector2(96, UiKit.MinTarget), th.smallSize);
 
             // bottom info panel
             var info = UiKit.Box(root, "InfoPanel");

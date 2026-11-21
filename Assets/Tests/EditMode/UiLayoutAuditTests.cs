@@ -5,7 +5,7 @@ namespace Skp.Tests
     /// <summary>
     /// Every screen at 1280x720, 2400x1080, 2340x1080 with a notch, 1024x768 and 800x480: no overlapping targets,
     /// 48 dp minimum, safe area, no clipped or overflowing text, text at least 10 px, contrast, dialog never over
-    /// the pause button. Writes the screenshots and contact sheets to tests/Screenshots/m5 (see layout_report.md).
+    /// the pause button. Writes the screenshots and contact sheets to tests/Screenshots/m6 (see layout_report.md).
     /// </summary>
     public class UiLayoutAuditTests
     {
@@ -14,7 +14,7 @@ namespace Skp.Tests
         {
             var r = SkpUiAudit.Run(saveShots: true);
             Assert.Greater(r.Checks, 1000, "the audit ran");
-            Assert.AreEqual(18 * 5 + 5, r.Shots.Count, "18 screens x 5 resolutions + 5 contact sheets");
+            Assert.AreEqual(45 * 5 + 10, r.Shots.Count, "45 screen states x 5 resolutions + 5 contact sheets + 5 M6 sheets");
             Assert.IsEmpty(r.Problems, string.Join("\n", r.Problems));
         }
     }

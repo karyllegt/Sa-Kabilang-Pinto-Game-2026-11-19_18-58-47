@@ -1,14 +1,17 @@
+using Skp.Skills;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Skp.UI
 {
-    /// <summary>Level Clear box: title, level name, Time / Score / Fragments tiles, the letter as a quote, Next Level, Replay, Map.</summary>
+    /// <summary>Level Clear box: title, level name, Time / Score / Fragments tiles, the letter as a quote with the skill it taught this run, Next Level, Replay, Map.</summary>
     public class LevelClearScreen : UiScreen
     {
         public TextMeshProUGUI title, levelName, time, score, fragments, clueLabel, clue;
-        public GameObject clueGroup;
+        public GameObject clueGroup, skillGroup;
+        public Image skillIcon;
+        public TextMeshProUGUI skillText;
         public PixelButton next, replay, map;
 
         public static LevelClearScreen Build(Transform parent)
@@ -39,6 +42,11 @@ namespace Skp.UI
             s.clueGroup = cg.gameObject;
             s.clueLabel = UiKit.Text(cg.transform, "Label", Loc.Get("clear.clue"), th.tinySize, th.textDim);
             s.clue = UiKit.Text(cg.transform, "Text", "", th.bodySize, th.text, TextAlignmentOptions.Center, 580);
+            var sg = UiKit.HStack(cg.transform, "NewSkill", 10);
+            s.skillGroup = sg.gameObject;
+            s.skillIcon = UiKit.Picture(sg.transform, "Icon", null, new Vector2(24, 24));
+            s.skillText = UiKit.Text(sg.transform, "Text", "", th.smallSize, th.goldBright, TextAlignmentOptions.Left);
+            s.skillGroup.SetActive(false);
             var buttons = UiKit.HStack(v.transform, "Buttons", 12, UiKit.Pad(0, 4));
             s.next = UiKit.Button(buttons.transform, "Next", Loc.Get("clear.next"), new Vector2(176, UiKit.MinTarget));
             s.replay = UiKit.Button(buttons.transform, "Replay", Loc.Get("clear.replay"), new Vector2(150, UiKit.MinTarget));
@@ -48,14 +56,23 @@ namespace Skp.UI
             return s;
         }
 
-        public void Fill(string titleText, string sub, string timeText, string scoreText, string fragText, string clueText, string nextText, string mapText)
+        public void Fill(string titleText, string sub, string timeText, string scoreText, string fragText, string clueText, string nextText, string mapText,
+                         SkillDefinition newSkill = null)
         {
+            skillGroup.SetActive(newSkill != null);
+            if (newSkill != null)
+            {
+                skillIcon.sprite = newSkill.icon;
+                skillIcon.enabled = newSkill.icon != null;
+                skillText.text = Loc.Format("clear.newskill", newSkill.displayName);
+                skillText.color = newSkill.color;
+            }
             title.text = titleText;
             levelName.text = sub;
             time.text = timeText;
             score.text = scoreText;
             fragments.text = fragText;
-            clueGroup.SetActive(!string.IsNullOrEmpty(clueText));
+            clueGroup.SetActive(!string.IsNullOrEmpty(clueText) || newSkill != null);
             clue.text = clueText ?? "";
             next.Text = nextText;
             map.Text = mapText;

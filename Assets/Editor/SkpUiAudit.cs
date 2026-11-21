@@ -1,6 +1,6 @@
-// M5 layout audit: opens every screen at 1280x720, 2400x1080, 2340x1080 with a simulated notch, 1024x768 and
+// M5 and M6 layout audit: opens every screen at 1280x720, 2400x1080, 2340x1080 with a simulated notch, 1024x768 and
 // 800x480, checks it in code (overlapping targets, 48 dp minimum, safe area, clipped text, contrast, dialog vs
-// pause button) and saves a screenshot of each plus a contact sheet per resolution in tests/Screenshots/m5.
+// pause button) and saves a screenshot of each plus a contact sheet per resolution in tests/Screenshots/m6 (M5: m5).
 // Menu: Sa Kabilang Pinto > Screenshots > M5 UI Audit. Batch: -executeMethod SkpUiAudit.RunBatch
 // The EditMode test UiLayoutAuditTests runs the same audit and fails on any problem.
 using System;
@@ -11,6 +11,7 @@ using System.Text;
 using Skp.Core;
 using Skp.Levels;
 using Skp.Save;
+using Skp.Skills;
 using Skp.UI;
 using TMPro;
 using UnityEditor;
@@ -21,7 +22,7 @@ using UnityEngine.UI;
 
 public static class SkpUiAudit
 {
-    public const string OutDir = "tests/Screenshots/m5";
+    public const string OutDir = "tests/Screenshots/m6"; // M5 evidence stays in tests/Screenshots/m5
 
     public struct Res
     {
@@ -54,6 +55,8 @@ public static class SkpUiAudit
     }
 
     struct State { public string Scene, Name; public Action<Ctx> Setup; }
+
+    static readonly string[] M6States = { "04b", "08b", "08c", "10c", "10d", "10e", "10f", "10g", "10h", "12s", "12t", "12u", "13b" };
 
     class Ctx
     {
@@ -89,16 +92,51 @@ public static class SkpUiAudit
         Add(SceneNames.Title, "02_character", c => { c.Title.characters.Open(); c.Title.characters.girl.SetHighlighted(true); });
         Add(SceneNames.Title, "03_difficulty", c => { c.Title.difficulty.Bind(false, 0); c.Title.difficulty.Open(); c.Title.difficulty.standard.SetHighlighted(true); });
         Add(SceneNames.Title, "04_how_to_play", c => { c.Title.howTo.Open(); });
+        Add(SceneNames.Title, "04b_how_to_skills", c => { c.Title.howTo.Open(); c.Title.howTo.ShowPage(HowToScreen.Pages - 1); });
         Add(SceneNames.Title, "05_settings", c => { c.Title.settings.Bind(new SettingsStore(Path.Combine(Path.GetTempPath(), "skp_audit_settings")), null); c.Title.settings.Open(); });
         Add(SceneNames.Title, "06_credits", c => { c.Title.credits.Open(); });
         Add(SceneNames.Map, "07_level_map", c => { MapState(c, 5, true); });
         Add(SceneNames.Map, "07b_level_map_locked", c => { MapState(c, 2, true); c.Map.TapNode(6); });
         Add(SceneNames.Map, "08_lola_dialog", c => { MapState(c, 1, false); c.Map.ShowLolaForAudit(); });
+        Add(SceneNames.Map, "08b_map_skill_list", c => { MapState(c, 4, true, "dj", "veil", "bolt"); c.Map.ShowSkills(); });
+        Add(SceneNames.Map, "08c_map_skill_list_all", c => { MapState(c, 9, true, SkillIds.All); c.Map.ShowSkills(); });
         Add(SceneNames.Level, "09_before_stage", c => { LevelState(c, 3, false); c.Ui.ShowIntro(); c.Ui.dialog.CompleteLine(); });
         Add(SceneNames.Level, "10_gameplay", c => { LevelState(c, 3, true); });
         Add(SceneNames.Level, "10b_gameplay_lefthanded", c => { LevelState(c, 3, true, leftHanded: true); });
+        // M6 HUD: 0 skills (above), 2 and all 8, normal and left-handed touch layouts, plus the keyboard layout
+        Add(SceneNames.Level, "10c_hud_2_skills", c => { LevelState(c, 3, true, skills: new[] { "dj", "veil" }); });
+        Add(SceneNames.Level, "10d_hud_2_skills_lefthanded", c => { LevelState(c, 3, true, leftHanded: true, skills: new[] { "dj", "veil" }); });
+        Add(SceneNames.Level, "10e_hud_8_skills", c => { LevelState(c, 7, true, skills: SkillIds.All); });
+        Add(SceneNames.Level, "10f_hud_8_skills_lefthanded", c => { LevelState(c, 7, true, leftHanded: true, skills: SkillIds.All); });
+        Add(SceneNames.Level, "10g_hud_8_skills_keyboard", c => { LevelState(c, 7, true, skills: SkillIds.All, touch: false); });
+        // worst case for the lanes: the longest objective (Spirit) and a long hint toast beside all eight chips
+        Add(SceneNames.Level, "10h_hud_8_skills_spirit_toast", c =>
+        {
+            LevelState(c, 7, true, skills: SkillIds.All);
+            c.Session.Sim.SetDimension(Skp.Dimensions.Dim.Spirit);
+            c.Ui.hud.Show(c.Session);
+            c.Ui.toast.Show(Loc.Get("hint.thorn"), 99);
+            c.Ui.SyncLanes();
+        });
         Add(SceneNames.Level, "12_letter", c => { LevelState(c, 3, true); c.Ui.toast.Hide(); c.Ui.ShowLetter(); c.Ui.dialog.CompleteLine(); });
+        // M6: the two letter boxes for every skill (letter, then NEW SKILL), and SKILL KNOWN on a replay
+        for (int i = 0; i < SkillIds.All.Length; i++)
+        {
+            int lv = i;
+            string id = SkillIds.All[i];
+            Add(SceneNames.Level, $"12s_{lv + 1}_{id}_letter", c => { LevelState(c, lv, true); LetterBox(c, lv, id, true, 0); });
+            Add(SceneNames.Level, $"12t_{lv + 1}_{id}_new_skill", c => { LevelState(c, lv, true); LetterBox(c, lv, id, true, 1); });
+        }
+        Add(SceneNames.Level, "12u_skill_known", c => { LevelState(c, 5, true, skills: SkillIds.All); LetterBox(c, 5, "spread", false, 1); });
         Add(SceneNames.Level, "13_level_clear", c => { LevelState(c, 0, true); c.Session.Sim.Score = 750; c.Session.Sim.Shards = 2; c.Ui.ShowCompleted(); });
+        Add(SceneNames.Level, "13b_level_clear_new_skill", c =>
+        {
+            LevelState(c, 2, true, skills: new[] { "dj", "veil" });
+            TakeLetter(c);
+            c.Ui.dialog.Close();
+            c.Session.Sim.Score = 1250; c.Session.Sim.Shards = 3;
+            c.Ui.ShowCompleted();
+        });
         Add(SceneNames.Level, "14_pause", c => { LevelState(c, 3, true); c.Ui.Pause(); });
         Add(SceneNames.Level, "14b_settings_from_pause", c => { LevelState(c, 3, true); c.Ui.settings.Bind(new SettingsStore(Path.Combine(Path.GetTempPath(), "skp_audit_settings")), null); c.Ui.settings.Open(); });
         Add(SceneNames.Level, "15_game_over", c => { LevelState(c, 3, true); c.Ui.ShowGameOver(); });
@@ -106,17 +144,35 @@ public static class SkpUiAudit
         return l;
     }
 
-    static void MapState(Ctx c, int unlocked, bool metLola)
+    static void LetterBox(Ctx c, int level, string id, bool fresh, int line)
     {
-        var s = new SaveData { unlocked = unlocked, metLola = metLola, lolaSeen = metLola ? unlocked - 1 : 0, diff = "standard", @char = "girl" };
+        c.Ui.toast.Hide();
+        var lines = LevelUi.LetterLines(c.Session.Spec, id, fresh);
+        c.Ui.dialog.Show(new[] { lines[line] }, null);
+        c.Ui.dialog.CompleteLine();
+    }
+
+    static void TakeLetter(Ctx c)
+    {
+        var sim = c.Session.Sim;
+        var clue = c.Session.World.Items.First(i => i.Kind == Skp.Player.ItemKind.Clue && i.Mask == Skp.Dimensions.Dim.Ordinary);
+        sim.Invulnerable = 100000;
+        sim.Position = new Vector2(clue.Rect.center.x - sim.Size.x / 2, clue.Rect.y);
+        for (int i = 0; i < 5 && !sim.HasClue; i++) sim.Step(default);
+    }
+
+    static void MapState(Ctx c, int unlocked, bool metLola, params string[] skills)
+    {
+        var s = new SaveData { unlocked = unlocked, metLola = metLola, lolaSeen = metLola ? unlocked - 1 : 0, diff = "standard", @char = "girl", skills = skills };
         c.Map.Present(s);
         c.Map.screen.Open();
     }
 
-    static void LevelState(Ctx c, int level, bool playing, bool leftHanded = false)
+    static void LevelState(Ctx c, int level, bool playing, bool leftHanded = false, string[] skills = null, bool touch = true)
     {
         var runner = UnityEngine.Object.FindAnyObjectByType<LevelRunner>();
         c.Save.Data.unlocked = 9;
+        c.Save.Data.skills = skills ?? new string[0];
         c.Session = new LevelSession(runner.levels[level].spec, new LevelRequest { Level = level, Difficulty = "standard" },
                                      runner.tuning, runner.difficulties, runner.curve, c.Save);
         runner.view.Build(c.Session.World, c.Session.Sim);
@@ -132,10 +188,12 @@ public static class SkpUiAudit
         c.Ui = runner.ui;
         c.Ui.Bind(runner, c.Session, false);
         if (!playing) { }
-        c.Ui.touch.forceShow = true;
-        c.Ui.touch.Apply(new GameSettings { leftHanded = leftHanded, touch = TouchMode.On });
+        c.Ui.touch.forceShow = touch;
+        c.Ui.ApplySettings(new GameSettings { leftHanded = leftHanded, touch = touch ? TouchMode.On : TouchMode.Off });
+        c.Ui.touch.SetSkills(c.Session.Sim.Has(SkillIds.Veil), c.Session.Sim.Has(SkillIds.Bolt));
         c.Ui.touch.SetPlaying(true, true); // worst case: the contextual door button is showing
         c.Ui.hud.Show(c.Session);
+        c.Ui.SyncLanes();
     }
 
     // ------------------------------------------------------------------ run
@@ -168,7 +226,13 @@ public static class SkpUiAudit
             }
             if (saveShots)
             {
-                foreach (var kv in shotsByRes) ContactSheet(kv.Key, kv.Value, report);
+                foreach (var kv in shotsByRes)
+                {
+                    ContactSheet(kv.Key, kv.Value, report);
+                    // the states new in M6 on their own sheet, for review
+                    var m6 = kv.Value.Where(v => M6States.Any(p => v.Item1.StartsWith(p))).ToList();
+                    if (m6.Count > 0) ContactSheet("m6_" + kv.Key, m6, report);
+                }
                 WriteReport(report);
             }
         }
@@ -202,11 +266,15 @@ public static class SkpUiAudit
         }
 
         st.Setup(c);
+        // as with an overlay canvas in play, the world draws under the UI: move every world renderer below the canvases
+        foreach (var wr in UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Include))
+            if (wr.GetComponentInParent<Canvas>() == null && wr.sortingOrder > -20000) wr.sortingOrder -= 20000;
         // as in play: the touch buttons hide while any box or dialog is open
         var lu = UnityEngine.Object.FindAnyObjectByType<LevelUi>();
         if (lu != null && lu.touch != null && UnityEngine.Object.FindObjectsByType<UiScreen>(FindObjectsInactive.Exclude).Length > 0) lu.touch.SetPlaying(false, false);
         foreach (var f in UnityEngine.Object.FindObjectsByType<SafeAreaFitter>(FindObjectsInactive.Include)) f.Apply();
         Relayout(canvases);
+        if (lu != null && lu.Session != null) { lu.hud.FitLanes(true); lu.SyncLanes(); Relayout(canvases); }
 
         // render once without any text: the contrast check measures each text against the real pixels behind it
         var texts = UnityEngine.Object.FindObjectsByType<TMP_Text>(FindObjectsInactive.Exclude).Where(t => t.enabled).ToArray();
@@ -337,7 +405,7 @@ public static class SkpUiAudit
         if (hud != null && !modal)
         {
             var blocks = new List<RectTransform>();
-            foreach (var n in new[] { "Left", "Center", "Right", "Objective" })
+            foreach (var n in new[] { "Left", "Skills", "Center", "Right", "Objective" })
             {
                 var t = hud.transform.Find(n);
                 if (t != null && t.gameObject.activeInHierarchy) blocks.Add((RectTransform)t);
@@ -352,6 +420,24 @@ public static class SkpUiAudit
                     r.Checks++;
                     if (Overlaps(ScreenRect(blocks[i], cam), ScreenRect(blocks[j], cam)))
                         r.Fail(rn, state, $"HUD overlap: {PathOf(blocks[i])} and {PathOf(blocks[j])}");
+                }
+            // skill chips: inside the safe area, 48 dp tall in the touch layout, never on top of each other
+            var chipRects = new List<RectTransform>();
+            foreach (var chip in hud.chips)
+            {
+                if (chip == null || !chip.gameObject.activeInHierarchy) continue;
+                var cr = ScreenRect((RectTransform)chip.transform, cam);
+                chipRects.Add((RectTransform)chip.transform);
+                r.Checks++;
+                if (hud.TallChips && chip.active && cr.height < minPx - 0.5f) r.Fail(rn, state, $"skill chip {chip.skillId} is {cr.height:0} px tall, below 48 dp ({minPx:0} px)");
+                r.Checks++;
+                if (!Inside(cr, safe)) r.Fail(rn, state, $"skill chip {chip.skillId} leaves the safe area");
+            }
+            for (int i = 0; i < chipRects.Count; i++)
+                for (int j = i + 1; j < chipRects.Count; j++)
+                {
+                    r.Checks++;
+                    if (Overlaps(ScreenRect(chipRects[i], cam), ScreenRect(chipRects[j], cam))) r.Fail(rn, state, $"skill chips overlap: {chipRects[i].name} and {chipRects[j].name}");
                 }
             // the dialog never covers the pause button
             var dlg = UnityEngine.Object.FindAnyObjectByType<DialogBox>();
@@ -474,7 +560,7 @@ public static class SkpUiAudit
     static void WriteReport(Report r)
     {
         var sb = new StringBuilder();
-        sb.AppendLine("# M5 UI layout audit");
+        sb.AppendLine("# UI layout audit (M5 screens and M6 skills)");
         sb.AppendLine();
         sb.AppendLine($"Generated by `SkpUiAudit` ({DateTime.Now:yyyy-MM-dd HH:mm}). {r.Checks} checks, {r.Problems.Count} problems, {r.Shots.Count} screenshots.");
         sb.AppendLine();
