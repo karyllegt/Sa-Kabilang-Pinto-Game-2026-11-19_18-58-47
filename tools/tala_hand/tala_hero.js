@@ -27,19 +27,19 @@ const BODY = [
   '............ohhhHHHHhhhhhhhhhhho................', // 5
   '...........ohhhhhHHhhhhhhhhhhhhho...............',
   '..........ohhhhhhhhhhhhhhhhhhhhhho..............',
-  '.........orrohhhhhhhhhhhhhhggghhhho.............',
-  '.........oRrqohhhhhhhhhhhhggsssghhho............',
-  '.........orrqohhhhhhhhhhhgsSSSsssghho...........', // 10
-  '..........ooohhhhhhhhhhgsSSSSSsssshho...........',
-  '...........ohhhhhhhhhhgsSSSSSSssskkho...........',
-  '...........ohhhhhhhhhgsSSSSSSSsskxkho...........',
-  '...........ohhhhhhhhgssskksSSSSskiiko...........',
-  '...........ohhhhhhhhgssskisSSSSskiiko...........', // 15
-  '...........ohhhhhhhhgsssSSSSSSSsskkso...........',
-  '...........ohhhhhhhhgzsbbbsSSSSsssssso..........',
-  '...........ohhhhhhhhhgzsssssssmmsssso...........',
-  '............ohhhhhhhhgzzsssssssssszo............',
-  '............ohhhhhhhhhgzzzssssszzzo.............', // 20
+  '.........orrohhhhhhhhhhhhhhhhhhhhhho.............',
+  '.........oRrqohhhhhhhhhhhhhhhhhhhhhho............',
+  '.........orrqohhhhhhhhhhhhggggggghhhho...........', // 10
+  '..........ooohhhhhhhhhhgsSSSSSSSSgghho...........',
+  '...........ohhhhhhhhgsSSSSSSSSSSSSsho...........',
+  '...........ohhhhhhhhgsSkkSSSSSkkSSssho...........',
+  '...........ohhhhhhhhgsSxkSSSSSxkSSssho...........',
+  '...........ohhhhhhhhgssikSSSSSikSSsso............', // 15
+  '...........ohhhhhhhhgssSSSSSSSSSSSsso............',
+  '...........ohhhhhhhhgzsbbSSSSSSbbsso.............',
+  '...........ohhhhhhhhhgzssssmmsssszo..............',
+  '............ohhhhhhhhgzzsssssssszo...............',
+  '............ohhhhhhhhhgzzzzssszzo................', // 20
   '............ohhhhhhhhhoooozssszoo...............',
   '...........ohhhhhhhhhhooeeezzzeeoo..............',
   '..........ohhhhhhhhhhowWWweWeWewwwo.............',
