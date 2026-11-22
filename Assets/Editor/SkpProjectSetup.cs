@@ -259,21 +259,25 @@ public static class SkpProjectSetup
         EditorSceneManager.SaveScene(scene, $"{ScenesDir}/{name}.unity");
     }
 
+    /// <summary>A-2/A-7: 3x detail. The camera renders 1440x810 at 48 PPU (the same world view as 480x270 at 16 PPU),
+    /// so the 48 PPU art shows every pixel and 16 PPU art draws as exact 3x3 blocks.</summary>
+    public const int CameraPPU = 48, CameraRefWidth = 1440, CameraRefHeight = 810;
+
     public static Camera CreatePixelCamera()
     {
         var go = new GameObject("Main Camera");
         go.tag = "MainCamera";
         var cam = go.AddComponent<Camera>();
         cam.orthographic = true;
-        cam.orthographicSize = 270f / 2f / SkpAssetImportSettings.PixelsPerUnit;
+        cam.orthographicSize = CameraRefHeight / 2f / CameraPPU; // 8.4375 units tall, the same view as 480x270 at 16 PPU
         cam.clearFlags = CameraClearFlags.SolidColor;
         cam.backgroundColor = Shadow;
         go.transform.position = new Vector3(0, 0, -10);
         go.AddComponent<UniversalAdditionalCameraData>();
         var ppc = go.AddComponent<PixelPerfectCamera>();
-        ppc.assetsPPU = SkpAssetImportSettings.PixelsPerUnit;
-        ppc.refResolutionX = 480;
-        ppc.refResolutionY = 270;
+        ppc.assetsPPU = CameraPPU;
+        ppc.refResolutionX = CameraRefWidth;
+        ppc.refResolutionY = CameraRefHeight;
         ppc.gridSnapping = PixelPerfectCamera.GridSnapping.UpscaleRenderTexture;
         ppc.cropFrame = PixelPerfectCamera.CropFrame.None;
         return cam;

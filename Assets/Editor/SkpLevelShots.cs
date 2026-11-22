@@ -34,6 +34,18 @@ public static class SkpLevelShots
     static string _out = OutDir;
     static bool _withLevel1;
     public const string R1Dir = "tests/Screenshots/r1/after";
+    public const string A7Dir = "tests/Screenshots/a7";
+
+    /// <summary>A-7: the same level shots with the hand-pixelled 48 px Tala in the world (tests/Screenshots/a7).</summary>
+    public static void RunA7Batch()
+    {
+        _out = A7Dir; _withLevel1 = true;
+        List<string> files;
+        try { files = Run(); }
+        finally { _out = OutDir; _withLevel1 = false; }
+        Debug.Log($"[SkpLevelShots] {files.Count} screenshots in {A7Dir}");
+        EditorApplication.Exit(files.Count >= 9 ? 0 : 3);
+    }
 
     /// <summary>
     /// R1: renders the same shots with the prefab-built views into tests/Screenshots/r1/after (plus level 1 at its first lantern),

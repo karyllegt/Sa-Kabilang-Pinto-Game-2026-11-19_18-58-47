@@ -139,7 +139,8 @@ const UNLIT = PAROL.map(r => r.replace(/Y/g, 'p').replace(/y/g, 'P').replace(/G/
 const LIT_TONE = { s: 'S', z: 's', Z: 'z', w: 'W', v: 'w', V: 'v', r: 'R', q: 'r', h: 'k', k: 'H', g: 'h', L: 'L', d: 'L' };
 
 // opts (for animation): breathe = chest drops 1 px (the camisa loses row 27, everything above and the hand,
-// stick and parol move down 1); hairDx = the tips of the girl's back hair (rows 35-39) sway sideways; tasselDx = tassels sway
+// stick and parol move down 1); dy = bob of the overlays; girl = draw the ribbon (default: body is BODY);
+// tasselTrail = tassels blown back (rows 13-14 by n, 15-17 by n+1); hairDx = the tips of the girl's back hair (rows 35-39) sway sideways; tasselDx = tassels sway
 function frame(body, parol, lit, opts = {}) {
   for (const [n, r] of body.entries()) if (r.length !== 48) throw new Error(`row ${n} has ${r.length}`);
   let rows = body.map(r => [...r]);
@@ -148,21 +149,23 @@ function frame(body, parol, lit, opts = {}) {
     part.forEach((c, x) => { if (c !== '.' && x + opts.hairDx >= 0 && x + opts.hairDx < 16) sh[x + opts.hairDx] = c; });
     rows[y] = [...sh, ...r.slice(16)];
   }
-  const dy = opts.breathe ? 1 : 0;
+  const dy = (opts.breathe ? 1 : 0) + (opts.dy || 0); // opts.dy: whole-body bob (the body rows are shifted by the caller)
   if (dy) rows = [Array(48).fill('.'), ...rows.slice(0, 27), ...rows.slice(28)];
   const g = rows;
-  for (const [row, col, str] of [...(body === BODY ? BOW : []), ...STICK]) [...str].forEach((c, k) => { if (c !== '.') g[row + dy][col + k] = c; });
-  parol.forEach((r, j) => [...r].forEach((c, i) => { if (c === '.') return; const x = 35 + i + (j >= 15 ? (opts.tasselDx || 0) : 0); if (x < 48) g[18 + j + dy][x] = c; }));
+  const px = opts.pdx || 0, py = opts.pdy || 0; // pdx, pdy: the hand, stick and parol move together (ward raises, bolt thrusts)
+  for (const [row, col, str] of ((opts.girl ?? body === BODY) ? BOW : [])) [...str].forEach((c, k) => { if (c !== '.' && g[row + dy]) g[row + dy][col + k] = c; });
+  for (const [row, col, str] of STICK) [...str].forEach((c, k) => { if (c !== '.' && g[row + dy + py] && col + k + px < 48) g[row + dy + py][col + k + px] = c; });
+  parol.forEach((r, j) => [...r].forEach((c, i) => { if (c === '.') return; const x = 35 + px + i + (j >= 15 ? (opts.tasselDx || 0) : 0) + (opts.tasselTrail && j >= 13 ? (j >= 15 ? -opts.tasselTrail - 1 : -opts.tasselTrail) : 0); if (x < 48 && g[18 + j + dy + py]) g[18 + j + dy + py][x] = c; }));
   if (lit) for (let y = 0; y < 54; y++) for (let x = 0; x < 34; x++) {
     const c = g[y][x]; if (!LIT_TONE[c]) continue;
     // only pixels that face the parol (right-hand side of each run) catch the light
     let edge = false; for (let t = 1; t <= 3; t++) { const n = g[y][x + t]; if (n === '.' || n === 'o' || n === undefined) { edge = true; break; } }
-    const d = Math.hypot(x - 41, (y - 24 - dy) * 1.15);
+    const d = Math.hypot(x - 41 - px, (y - 24 - dy - py) * 1.15);
     if (d < 11 || (edge && d < 20)) g[y][x] = LIT_TONE[c];
   }
   return g;
 }
-module.exports = { PAL, BODY, BOY, PAROL, UNLIT, frame };
+module.exports = { PAL, BODY, BOY, PAROL, UNLIT, LIT_TONE, frame };
 if (require.main === module) {
 const rgb = h => [1, 3, 5].map(k => parseInt(h.substr(k, 2), 16));
 const frames = [frame(BODY, UNLIT, false), frame(BODY, PAROL, true), frame(BOY, UNLIT, false), frame(BOY, PAROL, true)];

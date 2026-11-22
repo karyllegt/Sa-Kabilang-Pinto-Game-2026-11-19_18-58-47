@@ -9,6 +9,10 @@ using UnityEngine;
 public class SkpAssetImportSettings : AssetPostprocessor
 {
     public const int PixelsPerUnit = 16;
+    /// <summary>A-7: hand-pixelled 3x art (48 px per unit, same world size as 16 px art). Lives in <see cref="HiDetailDir"/>.</summary>
+    public const int HiDetailPPU = 48;
+    public const string HiDetailDir = "Assets/Art/Game/Characters48/";
+    public static bool IsHiDetail(string path) => path.StartsWith(HiDetailDir);
 
     void OnPreprocessTexture()
     {
@@ -16,7 +20,7 @@ public class SkpAssetImportSettings : AssetPostprocessor
         var ti = (TextureImporter)assetImporter;
         ti.textureType = TextureImporterType.Sprite;
         ti.spriteImportMode = SpriteImportMode.Single;
-        ti.spritePixelsPerUnit = PixelsPerUnit;
+        ti.spritePixelsPerUnit = IsHiDetail(assetPath) ? HiDetailPPU : PixelsPerUnit;
         ti.filterMode = FilterMode.Point;
         ti.textureCompression = TextureImporterCompression.Uncompressed;
         ti.mipmapEnabled = false;
@@ -44,7 +48,7 @@ public class SkpAssetImportSettings : AssetPostprocessor
     }
 
     public static bool IsGameCharacterFolder(string path) =>
-        path.StartsWith("Assets/Art/Game/Characters/") || path.StartsWith("Assets/Art/Game/Creatures/") || path.StartsWith("Assets/Art/Game/Npc/");
+        path.StartsWith("Assets/Art/Game/Characters/") || IsHiDetail(path) || path.StartsWith("Assets/Art/Game/Creatures/") || path.StartsWith("Assets/Art/Game/Npc/");
 
     public static Vector4 BorderFor(string n)
     {

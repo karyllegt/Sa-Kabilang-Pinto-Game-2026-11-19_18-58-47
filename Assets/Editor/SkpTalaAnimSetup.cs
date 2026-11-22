@@ -68,6 +68,14 @@ public static class SkpTalaAnimSetup
         foreach (var (anim, file, ticks, loop) in Table)
         {
             var frames = new List<Sprite>();
+            // A-7: the hand-pixelled 48x54 frames (48 PPU, same world size) win when they exist
+            for (int i = 0; i < 16; i++)
+            {
+                var s48 = AssetDatabase.LoadAssetAtPath<Sprite>($"{SkpAssetImportSettings.HiDetailDir}spr_tala48_{ch}_{file}_{i}.png");
+                if (s48 == null) break;
+                frames.Add(s48);
+            }
+            if (frames.Count > 0) { clips.Add(new PlayerAnimSet.Clip { anim = anim, frames = frames.ToArray(), ticksPerFrame = ticks, loop = loop }); continue; }
             string baseName = $"{SkpPixelText.GameDir}/Characters/spr_tala_{ch}_{file}";
             var single = AssetDatabase.LoadAssetAtPath<Sprite>(baseName + ".png");
             if (single != null) frames.Add(single);

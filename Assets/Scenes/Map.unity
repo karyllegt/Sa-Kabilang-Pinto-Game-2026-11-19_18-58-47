@@ -152,6 +152,7 @@ MonoBehaviour:
   dialog: {fileID: 4679562520009524318}
   cam: {fileID: 2036754705}
   background: {fileID: 736320220}
+  catalog: {fileID: 0}
   white: {fileID: 21300000, guid: c433f5ffedf1ba649b521d0ea4c4fea3, type: 3}
   star: {fileID: 21300000, guid: 2e367109d61c8e943996c153aa3f2306, type: 3}
   bell: {fileID: 21300000, guid: 3678cd0f12aa5614e9bef61e875328bb, type: 3}
@@ -685,9 +686,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 480
-  m_RefResolutionY: 270
+  m_AssetsPPU: 48
+  m_RefResolutionX: 1440
+  m_RefResolutionY: 810
   m_CropFrame: 0
   m_GridSnapping: 2
   m_FilterMode: 0

@@ -21,7 +21,7 @@ namespace Skp.Tests
         // ------------------------------------------------------------ imports
 
         [Test]
-        public void EveryArtTexture_IsPointFiltered16PpuUncompressedSprite()
+        public void EveryArtTexture_IsPointFilteredUncompressedSprite_16PpuOr48PpuFor3x()
         {
             var guids = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Art" });
             Assert.GreaterOrEqual(guids.Length, 56, "all provided sprites imported");
@@ -32,7 +32,8 @@ namespace Skp.Tests
                 var ti = (TextureImporter)AssetImporter.GetAtPath(path);
                 Assert.AreEqual(TextureImporterType.Sprite, ti.textureType, path);
                 Assert.AreEqual(FilterMode.Point, ti.filterMode, path);
-                Assert.AreEqual(16f, ti.spritePixelsPerUnit, path);
+                // A-7: 3x art in Characters48 is 48 PPU (same world size); everything else stays 16 PPU
+                Assert.AreEqual(SkpAssetImportSettings.IsHiDetail(path) ? 48f : 16f, ti.spritePixelsPerUnit, path);
                 Assert.AreEqual(TextureImporterCompression.Uncompressed, ti.textureCompression, path);
                 Assert.IsFalse(ti.mipmapEnabled, path);
             }
@@ -128,7 +129,7 @@ namespace Skp.Tests
         }
 
         [Test]
-        public void EveryScene_HasPixelPerfectCamera_480x270_16ppu()
+        public void EveryScene_HasPixelPerfectCamera_1440x810_48ppu()
         {
             foreach (var name in SceneNames.All)
             {
@@ -137,9 +138,9 @@ namespace Skp.Tests
                 {
                     var ppc = scene.GetRootGameObjects().SelectMany(g => g.GetComponentsInChildren<PixelPerfectCamera>(true)).SingleOrDefault();
                     Assert.IsNotNull(ppc, name);
-                    Assert.AreEqual(16, ppc.assetsPPU, name);
-                    Assert.AreEqual(480, ppc.refResolutionX, name);
-                    Assert.AreEqual(270, ppc.refResolutionY, name);
+                    Assert.AreEqual(48, ppc.assetsPPU, name);
+                    Assert.AreEqual(1440, ppc.refResolutionX, name);
+                    Assert.AreEqual(810, ppc.refResolutionY, name);
                     foreach (var scaler in scene.GetRootGameObjects().SelectMany(g => g.GetComponentsInChildren<CanvasScaler>(true)))
                     {
                         Assert.AreEqual(CanvasScaler.ScaleMode.ScaleWithScreenSize, scaler.uiScaleMode, name);

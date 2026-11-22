@@ -72,7 +72,7 @@ namespace Skp.Tests
         }
 
         [Test]
-        public void AnimSets_HaveEveryAnimation_ForBothCharacters_On16x18WithBottomPivot()
+        public void AnimSets_HaveEveryAnimation_ForBothCharacters_InTheTala48Frames_WithBottomPivot()
         {
             foreach (var ch in new[] { "girl", "boy" })
             {
@@ -84,8 +84,11 @@ namespace Skp.Tests
                     Assert.IsNotNull(clip, $"{ch} {anim}");
                     foreach (var f in clip.frames)
                     {
-                        Assert.AreEqual(new Vector2(16, 18), f.rect.size, $"{ch} {anim} {f.name} canvas");
-                        Assert.AreEqual(new Vector2(8, 0), f.pivot, $"{ch} {anim} {f.name} pivot bottom centre");
+                        // A-7: the hand-pixelled 48x54 frames at 48 PPU, the same 1 x 1.125 unit world box as the 16x18 ones
+                        Assert.AreEqual(new Vector2(48, 54), f.rect.size, $"{ch} {anim} {f.name} canvas");
+                        Assert.AreEqual(48f, f.pixelsPerUnit, $"{ch} {anim} {f.name} PPU");
+                        Assert.AreEqual(new Vector2(24, 0), f.pivot, $"{ch} {anim} {f.name} pivot bottom centre");
+                        StringAssert.StartsWith("spr_tala48_" + ch, f.name);
                     }
                 }
                 Assert.AreEqual(4, set.Get(TalaAnim.Idle).frames.Length, "idle 4");

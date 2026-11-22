@@ -115,3 +115,6 @@ InitTestScene*.unity*
 
 # Progress video output (large; shared directly, re-recorded by ProgressVideoRun)
 tests/Video/
+
+# Local test run output (EditMode/PlayMode XML, batch logs); the counts go into docs/PROGRESS_AUDIT.md
+tests/Results/

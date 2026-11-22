@@ -105,6 +105,7 @@ namespace Skp.Tests
         public void EveryGamePng_FollowsTheArtBible()
         {
             var pal = new HashSet<Color32>(SkpArtCleanup.PaletteColours());
+            var pal48 = new HashSet<Color32>(SkpTala48Setup.PaletteColours()); // A-7: the hand-pixelled Tala has its own palette
             var sizes = ManifestSizes();
             var problems = new List<string>();
             foreach (var path in GamePngs())
@@ -115,7 +116,8 @@ namespace Skp.Tests
                 if (ti.filterMode != FilterMode.Point) problems.Add(path + ": filter");
                 if (ti.textureCompression != TextureImporterCompression.Uncompressed) problems.Add(path + ": compressed");
                 if (ti.mipmapEnabled) problems.Add(path + ": mipmaps");
-                if (!Mathf.Approximately(ti.spritePixelsPerUnit, 16)) problems.Add(path + ": PPU");
+                bool hi = SkpAssetImportSettings.IsHiDetail(path);
+                if (!Mathf.Approximately(ti.spritePixelsPerUnit, hi ? 48 : 16)) problems.Add(path + ": PPU");
                 var t = new Texture2D(2, 2);
                 t.LoadImage(File.ReadAllBytes(path));
                 if (size != null && size != $"{t.width}x{t.height}") problems.Add($"{path}: {t.width}x{t.height}, manifest says {size}");
@@ -124,11 +126,11 @@ namespace Skp.Tests
                 {
                     if (c.a != 0 && c.a != 255) { problems.Add(path + ": partial alpha"); break; }
                     if (c.a == 0) continue;
-                    if (!pal.Contains(c)) { problems.Add(path + ": off-palette " + c); break; }
+                    if (!(hi ? pal48 : pal).Contains(c)) { problems.Add(path + ": off-palette " + c); break; }
                     colours.Add(c);
                 }
                 bool big = path.Contains("/Backdrops/") || path.Contains("/Tiles/") || path.Contains("portrait_") || path.Contains("bellkeeper");
-                int limit = big ? 43 : 12;
+                int limit = hi ? 40 : big ? 43 : 12;
                 if (colours.Count > limit) problems.Add($"{path}: {colours.Count} colours, limit {limit}");
                 Object.DestroyImmediate(t);
             }

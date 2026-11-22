@@ -16,7 +16,7 @@ Gold `#e8b85a` and `#ffd36a` mean safe or interactive. Teal `#41e0d0` means Spir
 - `sprites/bg_act1..3.png` (480x270 parallax backdrops), `bg_map_overworld.png` (1440x270 scrolling level map), `title_art.png`, `char_card_*.png`, `fx_vignette.png`, `spr_menubg.png` -> `Assets/Art/Backgrounds/` and `Assets/Art/UI/`
 - `audio/sfx_*.ogg` -> `Assets/Audio/Sfx/`, `audio/mus_*.ogg` -> `Assets/Audio/Music/`
 
-Copy `unity_starter/Assets/Editor/SkpAssetImportSettings.cs` into `Assets/Editor/` first so imports get the right settings (Point filter, 16 PPU, uncompressed, bottom-center pivot for characters, 9-slice border). Review it in the Editor; it was written without running Unity.
+(Done in M1: the starter importer now lives in `Assets/Editor/SkpAssetImportSettings.cs` and the `unity_starter/` copy was removed.) Copy `unity_starter/Assets/Editor/SkpAssetImportSettings.cs` into `Assets/Editor/` first so imports get the right settings (Point filter, 16 PPU, uncompressed, bottom-center pivot for characters, 9-slice border). Review it in the Editor; it was written without running Unity.
 
 ## Known gaps you must fill (same style, then add to `Assets/Art` or `Assets/Audio`)
 - Sprites: animation frames for enemy attacks and the Bellkeeper phases (wave, bells, toll, stun, death), the Tala death and hurt frames, the lantern checkpoint (lit and unlit), the water surface, the bell and the church tower for the map, skill icons for the HUD chips (veil, bolt, double jump, dash, heart, triple bolt, greater veil, glide), the bolt projectile and impact, the veil ring, the glide wings, particles (flame, spark, ash), tile variety (several wood tops and undersides, wall and window tiles, balete roots for Act II, church stone for Act III), and a Spirit/Inverted tint material.

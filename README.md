@@ -31,8 +31,8 @@ Nash Abrenica is no longer in the group; his roles are split as above.
 | Player feel and skill numbers | `Assets/Data/PlayerTuning.asset`, skill assets made by **Sa Kabilang Pinto > Setup** |
 | Art rules and palette (Mary) | `docs/06_ART_BIBLE.md`, `Assets/Art/Source/palette.txt`, `docs/ART_MANIFEST.md` (every art file and its source) |
 | New game art (Mary) | `Assets/Art/Game/` (in the game), `Assets/Art/Source/` (text-grid sources); the prototype art in the other `Assets/Art/` folders is the fallback |
-| Art tools (Mary) | `tools/tala_frames/` (16x18 Tala), `tools/tala_rig/` (48x54 Tala, in progress), `tools/creature_frames/` (R4 key frames), **Sa Kabilang Pinto > Art** menu |
-| Tala's animations | `Assets/Data/Player/TalaAnims_girl.asset`, `TalaAnims_boy.asset` (rebuild: **Setup > Tala Animation (R3)**) |
+| Art tools (Mary) | `tools/tala_hand/` (the 48x54 Tala: hero grids `tala_hero3.js`, every animation `tala_anim.js`), `tools/tala_frames/` (old 16x18 Tala, fallback), `tools/creature_frames/` (R4 key frames), **Sa Kabilang Pinto > Art** menu |
+| Tala's animations | frames `Assets/Art/Game/Characters48/` (48x54, 48 PPU), sets `Assets/Data/Player/TalaAnims_girl.asset`, `TalaAnims_boy.asset` (rebuild: **Setup > Tala 48 and 3x Camera (A-7)**), preview `tests/Screenshots/r3/tala48_all_animations.png` |
 | Level, boss and map objects | `Assets/Prefabs/Level`, `Boss`, `Map` (listed in `Assets/Resources/Level/LevelPrefabCatalog.asset`), player in `Assets/Prefabs/Player`, UI in `Assets/Prefabs/UI` |
 | Music and sounds (Mary) | `Assets/Audio/`, the mixer and `AudioTuning`/`FeelTuning` assets (rebuild: **Setup > Run M8 Audio Setup**) |
 | Tests | `Assets/Tests/EditMode`, `Assets/Tests/PlayMode`, the progress video in `Assets/Tests/Video` |
@@ -41,7 +41,7 @@ Nash Abrenica is no longer in the group; his roles are split as above.
 | Milestone and task prompts | `prompts/` (M1 to M11), `prompts/12_real_assets/` (R1 to R9), `prompts/FULL_GAME_PROMPT.md` (the whole game in one prompt) |
 | Original design and story | `docs/00_PROJECT_CONTEXT.md`, `docs/03_ORIGINAL_PROPOSAL.md`, the browser prototype `reference/prototype/index.html` |
 
-**Current art direction (2026-11-22):** new art is drawn at **3x detail (48 pixels per unit)** so it matches the quality bar of the detailed prototype sprites, with the camera to move from 480x270 to 1440x810; gameplay sizes do not change. No paid or generated art: every sprite is made by our own tools or by hand. See `DECISIONS.md` A-1 to A-4.
+**Current art direction (2026-11-23):** new art is drawn at **3x detail (48 pixels per unit)** so it matches the quality bar of the detailed prototype sprites; the camera is now **1440x810 at 48 PPU** (same world view as before, gameplay sizes unchanged). **Tala is done at 3x** (hand-pixelled, all 13 animations, girl and boy, in the game); everything else still uses the prototype art and must be brought to her level in the **2 to 3 day sprint to the Play Store** (`docs/HANDOFF_MARY_RONN.md` section 0). No paid or generated art: every sprite is made by our own tools or by hand. See `DECISIONS.md` A-1 to A-7.
 
 ## For Claude Code (the engineer)
 
@@ -96,3 +96,4 @@ See `DECISIONS.md` and git log. Milestones M1 to M10 are in `prompts/`.
 - **R3 Tala animation: done (2026-11-22).** 13 animations for the girl and the boy (idle, run, jump rise, apex, fall, land, dash, ward, hurt, death, door, glide, bolt cast; 76 frames) in the R2 style, built from shared body parts (`tools/tala_frames/make_tala_frames.js` writes the text grids), played by `PlayerAnimator` from `Assets/Data/Player/TalaAnims_*.asset` once per simulation tick. Sheet: `tests/Screenshots/r3/tala_contact_sheet.png`. Rebuild with **Setup > Tala Animation (R3)**.
 - **Progress video (2026-11-22).** `Assets/Tests/Video` records the game playing itself (bot-driven real input, UI and audio) to `tests/Video/progress.mp4`; run it on its own (see `docs/HANDOFF_MARY_RONN.md`).
 - **Handoff (2026-11-22).** Nash left the group; Mary (Pixel Art, UI, and Audio) and Ronn (Level Design, Narrative, and QA Lead) continue from here: `docs/HANDOFF_MARY_RONN.md`. What is done and what is left: `docs/PROGRESS_AUDIT.md`.
+- **Tala 48 (2026-11-23).** Tala hand-pixelled at 48x54 (hero frames approved area by area, then idle, run, jump, apex, fall, land, dash, ward, hurt, death, door, glide and bolt cast for the girl and the boy, 76 frames) and put in the game at 48 PPU; every scene's camera moved to 1440x810 at 48 PPU (A-2, A-5 to A-7). Rebuild: `node tools/tala_hand/tala_anim.js export Assets/Art/Game/Characters48`, then **Setup > Tala 48 and 3x Camera (A-7)**.

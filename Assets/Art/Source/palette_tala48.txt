@@ -1,0 +1,37 @@
+# Tala 48 palette (DECISIONS A-5..A-7): the hand-pixelled 48x54 Tala frames in Assets/Art/Game/Characters48.
+# Source of truth: PAL in tools/tala_hand/tala_hero3.js. One line: symbol hex name. "." is clear.
+o #2a1420 outline
+g #1e120e hair deep
+h #3a261c hair
+k #56392a hair mid
+H #7a5240 hair light
+S #fbd6ac skin light
+s #e8a978 skin
+z #c07a4e skin shade
+Z #8a4e32 skin deep
+l #2a1812 lash
+i #7a4a2c iris
+x #ffffff eye shine
+m #a8443a mouth
+b #f29a84 blush
+W #fffbf0 camisa light
+w #f0e2c4 camisa
+v #cdb48c camisa shade
+V #9c825e camisa deep
+e #d04a3c trim
+E #9a2c24 trim shade
+R #e8604a red light
+r #bf3a2c red
+q #8a2a22 red shade
+Q #5a1612 red deep
+j #e8b85a gold thread
+L #b07c44 sandal
+d #6e4422 sandal shade
+F #a87838 bamboo
+f #5a3418 bamboo dark
+Y #fffbe0 parol core
+y #ffd860 parol gold
+G #f3a334 parol orange
+P #f1e5c4 paper
+p #d6c39a paper shade
+n #a08a64 paper deep

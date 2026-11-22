@@ -1,6 +1,6 @@
 # Progress audit: Sa Kabilang Pinto
 
-Snapshot of 2026-11-22, made at the handoff from Karylle to Mary and Ronn (`docs/HANDOFF_MARY_RONN.md`). Evidence is in the repo (tests, screenshots, git log). Deadline: Dec 1, 2026.
+Snapshot of 2026-11-22, made at the handoff from Karylle to Mary and Ronn; updated 2026-11-23 for Tala 48 and the Play Store sprint (`docs/HANDOFF_MARY_RONN.md` section 0) (`docs/HANDOFF_MARY_RONN.md`). Evidence is in the repo (tests, screenshots, git log). Deadline: Dec 1, 2026.
 
 Legend: **Done** = built, tested and committed. **Partial** = some of it works, the rest is listed. **Not started** = nothing built yet.
 
@@ -26,7 +26,7 @@ Legend: **Done** = built, tested and committed. **Partial** = some of it works, 
 | --- | --- | --- | --- | --- |
 | R1 | Level objects as prefabs | Done | `R1PrefabTests`, `R1PrefabBaselineTests`, `tests/Screenshots/r1` | |
 | R2 | Art bible and style | Done | `docs/06_ART_BIBLE.md`, `ArtRulesTests`, `tests/Screenshots/r2` | |
-| R3 | Tala animation | **Done (interim art)** | `R3TalaAnimTests`, `R3TalaAnimPlayModeTests`, `tests/Screenshots/r3` | Hand polish of the frames, new character select cards, map token and portraits (Mary) |
+| R3 | Tala animation | **Done (3x art, 2026-11-23)** | `R3TalaAnimTests` (48x54 frames at 48 PPU), `R3TalaAnimPlayModeTests`, `tests/Screenshots/r3/tala48_all_animations.png` | New character select cards, map token and portraits at 3x (Mary) |
 | R4 | Creatures, Lola, the Bellkeeper | **Not started** | | Everything (Mary) |
 | R5 | Environment, tiles, backdrops | **Partial** | Act I far backdrop made (not in the game yet) | Tiles per act, Act II and III backdrops, wiring (Mary) |
 | R6 | Props, hazards, items, effects | **Partial** | Lantern and Spirit door samples (not in the game yet) | Everything else and wiring (Mary) |
@@ -38,8 +38,7 @@ Legend: **Done** = built, tested and committed. **Partial** = some of it works, 
 
 - **Done:** `PlayerAnimator` (13 states from the simulation, one step per tick, hit-stop pauses it, 0 B per frame), `PlayerAnimSet` data per character, the setup step (**Setup > Tala Animation (R3)**), the Player prefab wired, 76 frames (girl and boy) at 16x18 built from shared parts, tests (state table, one-shots, sets, prefab, every action in the real Level scene for both characters).
 - **Art direction changed after R3 (DECISIONS A-1 to A-4):** you set the quality bar at the detailed sprites of the old Codex copy and chose 3x detail (48 px per unit, camera 1440x810) with no SpriteCook. The 16x18 frames are the interim set and the fallback.
-- **Started, not finished:** `tools/tala_rig/make_tala48.js`, a jointed-figure renderer that draws Tala at 48x54 natively (selective outline, shading from the upper left). Left: finish and review the 48x54 frames, the camera and import switch to 48 px per unit, update the art bible and `ArtRules` for 3x art, new character-select cards, map token and portraits.
-- **Hand-pixelled hero frame (2026-11-23):** the rig output was judged too messy, so Tala is now pixelled by hand at 48x54 (`tools/tala_hand/tala_hero.js`): girl idle with the parol **unlit and lit** (`tests/Screenshots/r3/tala_hero_unlit_lit.png`). It is the quality gate: once approved, the other frames (and the boy) are drawn from it by hand, then the camera switch puts them in the game. The rig (`tools/tala_rig`) is kept only as a pose reference.
+- **Tala 48 in the game (2026-11-23, A-5 to A-7):** the hero frames (girl and boy, parol unlit and lit) were approved area by area, then every animation was drawn from them by `tools/tala_hand/tala_anim.js` (38 frames per character, lit parol) and wired in at 48 PPU; every scene camera is now 1440x810 at 48 PPU; `ArtRulesTests` check the frames against `palette_tala48.txt`. This replaces the rig and the interim 16x18 set (kept as the fallback).
 - **R4 key frames** (16 px, approved) are in `reference/art_samples/r4` and `tests/Screenshots/r4/key_frames.png`; they are superseded by the 3x direction and serve as design references for the 3x creatures.
 
 ## 3. Acceptance (README "Definition of a good state")
@@ -65,15 +64,15 @@ Legend: **Done** = built, tested and committed. **Partial** = some of it works, 
 
 | Suite | Result | File |
 | --- | --- | --- |
-| EditMode (all) | 173 / 173 pass | tests/Results/r3_editmode.xml (local) |
-| PlayMode (all) | 48 pass, 0 fail, 1 skipped (the progress video runs only on its own) | tests/Results/r3_playmode.xml (local) |
+| EditMode (all) | 173 / 173 pass (2026-11-23, after Tala 48 and the 1440x810 camera) | tests/Results/a7_editmode.xml (local) |
+| PlayMode (all) | 48 pass, 0 fail, 1 skipped (the progress video runs only on its own), 2026-11-23 | tests/Results/a7_playmode.xml (local) |
 | Layout audit | 39,217 checks, 0 problems | tests/Screenshots/m6/layout_report.md |
 
 ## 6. Untouched or open items
 
 - Android: nothing configured yet (M9). The C: drive was short of space for Android support on 6000.6.6f1.
 - Real-device checks: touch, performance, save after app kill, safe areas on a notched phone.
-- The new art (R2 samples, R3 Tala) is the only non-prototype art in the game; creatures, tiles, props, UI and map are still the prototype's.
+- Tala (3x, hand-pixelled) is the only finished art in the game; creatures, tiles, props, UI and map are still the prototype's.
 - Music is the five provided OGG tracks, looped; sound effects partly generated (M6, M8).
 - No human playtest notes yet; no bug list file yet (Ronn creates `tests/PLAYTEST_NOTES.md`, `tests/BUGS.md`).
 - Credits screen lists the team; licences for any new audio or fonts must be added when they come in.

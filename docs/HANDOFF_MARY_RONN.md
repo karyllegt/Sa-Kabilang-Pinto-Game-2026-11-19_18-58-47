@@ -34,17 +34,31 @@ Karylle already built a working version of each part (see `docs/PROGRESS_AUDIT.m
 
 ---
 
+## 0. Sprint to the Play Store (2026-11-23, 2 to 3 days)
+
+Karylle's call: the game still **looks like a prototype**. Tala is now real 3x art (48 px per unit, hand-pixelled, every animation, in the game); **everything else on screen must be upgraded to the same level in 2 to 3 days**, so the game can go on Google Play with time left to gather reviews and downloads (goal: 500, then 1000). Work in this order and merge small Pull Requests every day; a finished upgrade in the game beats a perfect one in a folder.
+
+| Day | Mary (art, UI, audio) | Ronn (levels, story, QA, release) |
+| --- | --- | --- |
+| 1 | Creatures and the Bellkeeper at 3x (R4): Anino, tikbalang, manananggal, Lola, boss; same method as Tala (`tools/tala_hand`, 48 PPU in a `*48` folder) | Android build (M9): install the Android module, build the APK, play it on a phone; start `tests/BUGS.md` |
+| 2 | Tiles and backdrops per act (R5), doors, lanterns, hazards, letter, flame stars (R6) | Playtest every level, tune `LevelConfig_*` and the curve, rewrite the letters and Lola's lines; Play Console listing (title, short and full description, 8 phone screenshots, 512 px icon, 1024x500 feature graphic, privacy policy page, content rating, data safety form) |
+| 3 | UI frame, buttons, HUD, map (R7), music and sound pass (R8), credits | R9 integration check, MANUAL_QA on a phone (touch, save after app kill, 60 fps), signed AAB, internal testing track, then production |
+
+**Getting downloads and reviews the right way.** Google Play removes apps that buy, trade or reward reviews or installs, and fake reviews get deleted. Grow honestly: closed testing with classmates and family first (new personal developer accounts must run a closed test with at least 12 testers for 14 days before production, so start that on day 1), a clear store page with real screenshots and a short trailer from the progress video, posts in school, Filipino gaming and indie game groups, and an in-game "rate us" prompt after Level Clear that asks once and never blocks play.
+
+---
+
 ## 2. Mary: Pixel Artist, UI, and Audio
 
 ### What exists today
 - **Art bible** `docs/06_ART_BIBLE.md`: palette (43 colours, `Assets/Art/Source/palette.txt`), outline and shading rules, sprite sizes, naming. The `ArtRules` test checks every PNG in `Assets/Art/Game/`.
 - **Tools**: text-grid sprites (`Assets/Art/Source/**/*.pxl.txt`, built by **Sa Kabilang Pinto > Art > Build Text-Grid Art**), SpriteCook cleanup (**Art > Clean SpriteCook Downloads**), the Tala frame maker `tools/tala_frames/make_tala_frames.js`.
-- **Tala (R3)**: 13 animations for the girl and the boy, built from shared body parts (`Assets/Art/Source/Characters/`), played by `PlayerAnimator` from `Assets/Data/Player/TalaAnims_*.asset`.
+- **Tala (A-5 to A-7, 2026-11-23)**: hand-pixelled at **48x54, 48 px per unit** (3x detail), all 13 animations for the girl and the boy (38 frames each) in `Assets/Art/Game/Characters48/`, played by `PlayerAnimator` from `Assets/Data/Player/TalaAnims_*.asset`. Source: `tools/tala_hand/tala_hero3.js` (the approved hero grids and palette) and `tools/tala_hand/tala_anim.js` (leg poses and one short spec per frame). Preview: `tests/Screenshots/r3/tala48_all_animations.png`. The camera is now 1440x810 at 48 PPU, so the rest of the art can move to 3x too (16 px art still works and shows as 3x3 blocks).
 - **Everything else on screen** still uses the prototype art (creatures, Lola, the boss, tiles, backdrops, props, UI frames, the map), except the Act I backdrop, the lantern and the Spirit door samples.
 - **Audio (M8)**: mixer (Music, SFX > Game and UI), 5 music loops from the provided OGGs, every gameplay sound, Spirit muffle and Inverted pitch. Numbers in `AudioTuning`; build with **Setup > Run M8 Audio Setup**.
 
 ### Your tasks (in order)
-1. **Polish Tala (R3 follow-up).** Open the preview sheet `tests/Screenshots/r3/tala_contact_sheet.png`. Touch up any frame by editing its grid (or in LibreSprite/Pixelorama, then copy back), rebuild, check it at 1x. Ideas: real arm swing in the run, a hair bounce, a clearer door turn, a nicer death. Keep the 16x18 canvas, bottom-centre pivot, at most 12 colours.
+1. **Bring the rest of the game to Tala's level** (section 0). Tala herself is done; to touch her up, edit the grids in `tools/tala_hand/tala_hero3.js` (body) or the `LEGS`/`ANIMS` tables in `tala_anim.js`, then run `node tools/tala_hand/tala_anim.js preview <folder>` to look and `node tools/tala_hand/tala_anim.js export Assets/Art/Game/Characters48` plus **Setup > Tala 48 and 3x Camera (A-7)** to put it in the game. Keep 48x54, the bottom-centre pivot, the colours in `Assets/Art/Source/palette_tala48.txt`, no partial alpha.
 2. **R4 Creatures, Lola and the Bellkeeper** (`prompts/12_real_assets/R4_creatures_and_boss.md`): Anino, tikbalang, manananggal, Lola, the boss, portraits.
 3. **R5 Environment** (`R5_environment_tiles.md`): ledge tiles per act, ground, Act II and III backdrops in the style of `bg_act1_far.png`.
 4. **R6 Props, hazards, items, effects** (`R6_props_hazards_fx.md`): doors, spikes, roots, thorns, flame stars, letter, bells, particles.
@@ -99,6 +113,7 @@ From the project folder, with the `unity` CLI (Unity Hub's command line) and Uni
 | Only some tests | add `--filter "Skp.Tests.ArtRulesTests"` |
 | Rebuild text-grid art | `unity run . -- -executeMethod SkpPixelText.BuildAllBatch` |
 | Rebuild Tala's animation sets | `unity run . -- -executeMethod SkpTalaAnimSetup.RunBatch` |
+| Tala 48 frames into the game, cameras at 1440x810 | `node tools/tala_hand/tala_anim.js export Assets/Art/Game/Characters48`, then `unity run . -- -executeMethod SkpTala48Setup.RunBatch` |
 | Re-record the progress video (about 1 to 2 hours) | `unity test --mode PlayMode --filter "Skp.Tests.Video.ProgressVideoRun" --timeout 7200 --output tests/Results/video.xml .` |
 
 The full PlayMode suite includes the layout audit and takes 20 to 40 minutes. Close every other Unity editor first.

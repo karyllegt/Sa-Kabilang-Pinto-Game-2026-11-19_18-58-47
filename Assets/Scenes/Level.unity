@@ -749,9 +749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 480
-  m_RefResolutionY: 270
+  m_AssetsPPU: 48
+  m_RefResolutionX: 1440
+  m_RefResolutionY: 810
   m_CropFrame: 0
   m_GridSnapping: 2
   m_FilterMode: 0
@@ -1961,6 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelView
   art: {fileID: 11400000, guid: dfc9561ba7d0b994093c19661e49d22f, type: 2}
+  catalog: {fileID: 0}
   act: 1
 --- !u!4 &2019705824
 Transform:

@@ -130,3 +130,13 @@ Frame rates are tied to the 60 Hz simulation so they never drift: idle 6 fps (10
 > `<subject from section 1>, side view, 2D pixel art game sprite, <W>x<H> pixels, 1 px dark outline, limited palette of warm lamplight gold, night violet <+ act ramp>, light from upper left, transparent background, no anti-aliasing, Filipino fiesta night folklore`
 
 Backdrops: `<act place>, side-scrolling game background layer, 480x270, pixel art, deep violet night, warm lamplight, no characters, seamless left-right, Filipino town folklore`.
+
+## 8. 3x detail art (A-1 to A-7, 2026-11-23)
+
+The quality bar moved to detailed sprites drawn **natively at 3x**: 48 pixels per unit, the same world size as the 16 px art (a 16x18 px box becomes a 48x54 canvas). Tala is the first, and the model for every 3x sprite:
+
+- **Where**: `Assets/Art/Game/<Group>48/` (Tala: `Characters48`), imported at 48 PPU with a bottom-centre pivot (`SkpAssetImportSettings.HiDetailDir`). The camera renders 1440x810 at 48 PPU, so every 3x pixel shows and 16 px art draws as 3x3 blocks.
+- **How**: hand-pixelled full grids, one character per pixel (`tools/tala_hand/tala_hero3.js`), never formula rigs or generated images. Animation frames reuse the approved grids and change only what moves (`tala_anim.js`: leg poses, bob, swings, trails).
+- **Look**: warm dark selective outline (`#2a1420`), 3 to 4 tones per material with light from the parol side, clean deliberate clusters (no noise or dither speckle), friendly faces (small warm eyes with a glint, blush), no partial alpha.
+- **Palette**: its own ramp per character family (Tala: `Assets/Art/Source/palette_tala48.txt`, 35 colours, max 40 per frame), checked by `ArtRulesTests`; keep the bible's meaning colours (gold = safe, teal = Spirit, violet = Inverted, red = danger) for anything interactive.
+- **Review**: approve the hero frame area by area (head, top, lower half, prop) before drawing the animation; preview sheets in `tests/Screenshots/<task>/`.
