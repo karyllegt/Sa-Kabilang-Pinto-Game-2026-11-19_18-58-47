@@ -138,20 +138,32 @@ const PAROL = [ // 13x18, top-left at (35, 18): star frame, centre ring, facet l
 const UNLIT = PAROL.map(r => r.replace(/Y/g, 'p').replace(/y/g, 'P').replace(/G/g, 'n'));
 const LIT_TONE = { s: 'S', z: 's', Z: 'z', w: 'W', v: 'w', V: 'v', r: 'R', q: 'r', h: 'k', k: 'H', g: 'h', L: 'L', d: 'L' };
 
-function frame(body, parol, lit) {
+// opts (for animation): breathe = chest drops 1 px (the camisa loses row 27, everything above and the hand,
+// stick and parol move down 1); hairDx = the tips of the girl's back hair (rows 35-39) sway sideways; tasselDx = tassels sway
+function frame(body, parol, lit, opts = {}) {
   for (const [n, r] of body.entries()) if (r.length !== 48) throw new Error(`row ${n} has ${r.length}`);
-  const g = body.map(r => [...r]);
-  for (const [row, col, str] of [...(body === BODY ? BOW : []), ...STICK]) [...str].forEach((c, k) => { if (c !== '.') g[row][col + k] = c; });
-  parol.forEach((r, j) => [...r].forEach((c, i) => { if (c !== '.') g[18 + j][35 + i] = c; }));
+  let rows = body.map(r => [...r]);
+  if (opts.hairDx && body === BODY) for (let y = 35; y <= 39; y++) {
+    const r = rows[y], part = r.slice(0, 16), sh = Array(16).fill('.');
+    part.forEach((c, x) => { if (c !== '.' && x + opts.hairDx >= 0 && x + opts.hairDx < 16) sh[x + opts.hairDx] = c; });
+    rows[y] = [...sh, ...r.slice(16)];
+  }
+  const dy = opts.breathe ? 1 : 0;
+  if (dy) rows = [Array(48).fill('.'), ...rows.slice(0, 27), ...rows.slice(28)];
+  const g = rows;
+  for (const [row, col, str] of [...(body === BODY ? BOW : []), ...STICK]) [...str].forEach((c, k) => { if (c !== '.') g[row + dy][col + k] = c; });
+  parol.forEach((r, j) => [...r].forEach((c, i) => { if (c === '.') return; const x = 35 + i + (j >= 15 ? (opts.tasselDx || 0) : 0); if (x < 48) g[18 + j + dy][x] = c; }));
   if (lit) for (let y = 0; y < 54; y++) for (let x = 0; x < 34; x++) {
     const c = g[y][x]; if (!LIT_TONE[c]) continue;
     // only pixels that face the parol (right-hand side of each run) catch the light
     let edge = false; for (let t = 1; t <= 3; t++) { const n = g[y][x + t]; if (n === '.' || n === 'o' || n === undefined) { edge = true; break; } }
-    const d = Math.hypot(x - 41, (y - 24) * 1.15);
+    const d = Math.hypot(x - 41, (y - 24 - dy) * 1.15);
     if (d < 11 || (edge && d < 20)) g[y][x] = LIT_TONE[c];
   }
   return g;
 }
+module.exports = { PAL, BODY, BOY, PAROL, UNLIT, frame };
+if (require.main === module) {
 const rgb = h => [1, 3, 5].map(k => parseInt(h.substr(k, 2), 16));
 const frames = [frame(BODY, UNLIT, false), frame(BODY, PAROL, true), frame(BOY, UNLIT, false), frame(BOY, PAROL, true)];
 const S = 6, pad = 12, PW = pad + 4 * (48 + pad) + 4 * (48 * S + pad), PH = 54 * S + pad * 2;
@@ -172,3 +184,4 @@ const ch = (t, d) => { const l = Buffer.alloc(4); l.writeUInt32BE(d.length); con
 const ih = Buffer.alloc(13); ih.writeUInt32BE(PW, 0); ih.writeUInt32BE(PH, 4); ih[8] = 8; ih[9] = 2;
 fs.writeFileSync(process.argv[2], Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), ch('IHDR', ih), ch('IDAT', zlib.deflateSync(raw)), ch('IEND', Buffer.alloc(0))]));
 console.log('preview ' + process.argv[2]);
+}
