@@ -23,7 +23,10 @@ const R = {
   parol:  ['#fff6c8', '#ffd36a', '#e8a83a', '#a8782e'].map(hex),
   frame:  ['#c08a44', '#8a5a2a', '#5a3820', '#3a2410'].map(hex),
   tassel: ['#5fd07a', '#2e9a4a', '#c0392b', '#e8b85a'].map(hex),
-  eye:    ['#ffffff', '#1d130f', '#1d130f', '#1d130f'].map(hex),
+  eye:    ['#1d130f', '#1d130f', '#1d130f', '#1d130f'].map(hex),
+  shine:  ['#ffffff', '#ffffff', '#ffffff', '#ffffff'].map(hex),
+  blush:  ['#f4b08e', '#eb9a7e', '#d8846c', '#b8685a'].map(hex),
+  mouth:  ['#7a2e26', '#5e211c', '#451712', '#2e0e0b'].map(hex),
   glow:   ['#fff8e0', '#ffe9a0', '#ffd36a', '#e8b85a'].map(hex),
 };
 const OUTLINE_DARKEN = 0.42;
@@ -92,8 +95,8 @@ function figure(ch, p) {
   const back = L(-2, p.hip[0], p.hip[1], legLen1, legLen2), front = L(2, p.hip[2], p.hip[3], legLen1, legLen2);
   const A = (o, a1, a2) => {
     const s0 = [sh[0] + o, sh[1] + 1];
-    const [ex, ey] = rot(0, 7, a1), e = [s0[0] + ex, s0[1] + ey];
-    const [hx, hy] = rot(0, 6.5, a1 + a2), h = [e[0] + hx, e[1] + hy];
+    const [ex, ey] = rot(0, 5.6, a1), e = [s0[0] + ex, s0[1] + ey];
+    const [hx, hy] = rot(0, 5.2, a1 + a2), h = [e[0] + hx, e[1] + hy];
     return { s0, e, h };
   };
   const bArm = A(-6, p.arm[0], p.arm[1]), fArm = A(5, p.arm[2], p.arm[3]);
@@ -114,27 +117,30 @@ function figure(ch, p) {
   s.push(ellipse('embroid', sh[0] - 1, sh[1] + 4, 1.4, 1.2), ellipse('embroid', sh[0] + 2.5, sh[1] + 6, 1.1, 1), ellipse('embroid', sh[0] - 3, sh[1] + 7, 1, 1));
   // head
   s.push(ellipse('skin', head[0] + 0.5, head[1] + 7.5, 2.2, 2.5)); // neck
-  s.push(ellipse('skin', head[0], head[1], 8, 8.4));
-  s.push(ellipse('hair', head[0] - 1, head[1] - 2.4, 8.6, 7.2, { clip: (x, y) => y < head[1] - 1.5 + (x - head[0] < -2 ? 9 : x - head[0] > 4 ? -1 : 0) }));
-  s.push(poly('hair', [[head[0] + 1, head[1] - 7], [head[0] + 8.5, head[1] - 3], [head[0] + 7, head[1] - 0.5], [head[0] + 3, head[1] - 3.5]], { rx: 5, ry: 4 })); // fringe
-  if (boy) s.push(ellipse('hair', head[0] - 6, head[1] + 1, 3, 5));
+  s.push(ellipse('skin', head[0], head[1], 9.2, 9.4));
+  s.push(ellipse('hair', head[0] - 1.2, head[1] - 2.8, 9.9, 8, { clip: (x, y) => y < head[1] - 1.5 + (x - head[0] < -2 ? 9 : x - head[0] > 4 ? -1 : 0) }));
+  s.push(poly('hair', [[head[0] + 1, head[1] - 8], [head[0] + 9.5, head[1] - 3.5], [head[0] + 8, head[1] - 1], [head[0] + 5.5, head[1] - 3], [head[0] + 3.5, head[1] - 2], [head[0] + 2.5, head[1] - 4]], { rx: 5, ry: 4 })); // fringe
+  if (boy) s.push(ellipse('hair', head[0] - 6.5, head[1] + 1, 3.4, 5.5),
+    poly('hair', [[head[0] - 3, head[1] - 9], [head[0] - 1, head[1] - 12], [head[0] + 1, head[1] - 9]], { rx: 2, ry: 2 }),
+    poly('hair', [[head[0] - 7, head[1] - 6], [head[0] - 8, head[1] - 10], [head[0] - 4, head[1] - 8.5]], { rx: 2, ry: 2 }));
   else s.push(ellipse('sash', head[0] - 6.5, head[1] - 5.5, 2, 1.8)); // red ribbon
   // face
-  const ex = head[0] + 4, ey = head[1] + 0.5;
-  if (p.eyes === 'shut') s.push(capsule('hair', [ex - 1, ey + 1], [ex + 1.2, ey + 1], 0.55));
-  else s.push(ellipse('eye', ex, ey + 0.5, 1.1, 1.9), ellipse('eye', ex + 0.5, ey - 0.4, 0.45, 0.5, { white: true }));
-  s.push(capsule('hair', [ex - 1.5, ey - 3], [ex + 1.5, ey - 3.2], 0.5)); // brow
-  if (p.mouth === 'open') s.push(ellipse('embroid', head[0] + 5.6, head[1] + 4.6, 1, 1.2));
-  else if (p.mouth === 'grit') s.push(capsule('camisa', [head[0] + 4.2, head[1] + 4.8], [head[0] + 6.4, head[1] + 4.8], 0.6));
-  else s.push(capsule('skin', [head[0] + 4.6, head[1] + 4.8], [head[0] + 6.2, head[1] + 4.6], 0.5, {}), ellipse('embroid', head[0] + 5.4, head[1] + 4.8, 0.9, 0.5));
-  s.push(ellipse('embroid', head[0] + 2, head[1] + 3, 1.2, 0.8, { blush: true }));
+  const ex = head[0] + 4.6, ey = head[1] + 0.8;
+  if (p.eyes === 'shut') s.push(capsule('eye', [ex - 1.3, ey + 0.8], [ex + 1.3, ey + 1.2], 0.6));
+  else s.push(poly('eye', [[ex - 1.2, ey - 1.6], [ex + 1.4, ey - 1.6], [ex + 1.4, ey + 2], [ex - 1.2, ey + 2]], { flat: true }), poly('shine', [[ex + 0.1, ey - 1.1], [ex + 1.1, ey - 1.1], [ex + 1.1, ey - 0.1], [ex + 0.1, ey - 0.1]], { flat: true }));
+  s.push(capsule('hair', [ex - 1.8, ey - 3.4], [ex + 1.8, ey - 3.8], 0.55)); // brow
+  if (p.mouth === 'open') s.push(ellipse('mouth', head[0] + 6.2, head[1] + 5.6, 1.1, 1.3));
+  else if (p.mouth === 'grit') s.push(capsule('mouth', [head[0] + 4.8, head[1] + 5.6], [head[0] + 7.2, head[1] + 5.4], 0.6));
+  else s.push(capsule('mouth', [head[0] + 5.4, head[1] + 5.6], [head[0] + 6.8, head[1] + 5.4], 0.45));
+  s.push(ellipse('blush', head[0] + 2.2, head[1] + 3.6, 1.6, 0.9));
   // front arm and the parol on its string
   const pd = p.parol || [0, 0];
   const pc = [fArm.h[0] + 3 + pd[0], fArm.h[1] + 6 + pd[1]];
   s.push(capsule('frame', fArm.h, [pc[0], pc[1] - 5], 0.45));
-  if (p.glow) s.push(ellipse('glow', pc[0], pc[1], 8.5, 8.5, { soft: true }));
-  s.push(star('parol', pc[0], pc[1], p.bigParol ? 6.4 : 5.6, p.bigParol ? 3 : 2.6));
-  s.push(ellipse('glow', pc[0], pc[1], 1.6, 1.6));
+  const pr = p.bigParol ? 6.6 : 5.8;
+  s.push(star('frame', pc[0], pc[1], pr, pr * 0.5));
+  s.push(star('parol', pc[0], pc[1], pr - 1.4, pr * 0.5 - 0.8));
+  s.push(ellipse('glow', pc[0], pc[1], p.glow ? 2.4 : 1.6, p.glow ? 2.4 : 1.6));
   s.push(capsule('tassel', [pc[0] - 3, pc[1] + 3], [pc[0] - 3.5, pc[1] + 7], 0.6), capsule('tassel', [pc[0] + 3, pc[1] + 3], [pc[0] + 3.5, pc[1] + 7], 0.6));
   s.push(capsule('skin', fArm.s0, fArm.e, 2.1), capsule('skin', fArm.e, fArm.h, 1.9), ellipse('skin', fArm.h[0], fArm.h[1], 2.2, 2.1));
   s.push(ellipse('camisa', fArm.s0[0], fArm.s0[1] + 0.5, 3.2, 3)); // front sleeve over the shoulder
@@ -149,7 +155,6 @@ function render(shapes, opt = {}) {
     for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
       const r = sh.test(x + 0.5, y + 0.5);
       if (!r) continue;
-      if (sh.mat === 'glow' && i > 0 && shapes[i].test && id[y * W + x] >= 0 && shapes[id[y * W + x]].mat !== 'glow' && r && Math.hypot(r.nx, r.ny) > 0.35) continue; // soft glow only fills empty space
       id[y * W + x] = i; nrm[(y * W + x) * 2] = r.nx; nrm[(y * W + x) * 2 + 1] = r.ny; flags[y * W + x] = r.flat ? 1 : 0;
     }
   });
@@ -162,7 +167,10 @@ function render(shapes, opt = {}) {
     let lit = -(nx * LIGHT[0] + ny * LIGHT[1]);              // +1 facing the light
     let t = flags[i] ? (ny < -0.2 ? 0 : ny > 0.4 ? 2 : 1) : lit > 0.45 && edge > 0.3 ? 0 : lit < -0.35 && edge > 0.45 ? 2 : 1;
     if (!flags[i] && edge > 0.92 && lit < -0.1) t = 3;       // core shadow on the far rim
-    if (sh.mat === 'eye') t = sh.test === undefined ? 1 : 1;
+    const x = i % W, y = (i / W) | 0;
+    if (sh.mat === 'hair' && t <= 1 && (x * 2 + y) % 5 === 0) t++;           // strands
+    if ((sh.mat === 'skirt' || sh.mat === 'shorts') && t <= 1 && x % 4 === 1) t = 2; // folds
+    if (sh.mat === 'camisa' && t === 1 && y % 6 === 0 && x % 2 === 0) t = 2;   // weave
     if (sh.mat === 'glow') t = edge > 0.7 ? 3 : edge > 0.45 ? 2 : edge > 0.2 ? 1 : 0;
     const c = ramp[Math.max(0, Math.min(3, t))];
     px[i * 4] = c[0]; px[i * 4 + 1] = c[1]; px[i * 4 + 2] = c[2]; px[i * 4 + 3] = 255;
@@ -181,7 +189,7 @@ function render(shapes, opt = {}) {
       for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
         const X = x + dx, Y = y + dy; if (X < 0 || Y < 0 || X >= W || Y >= H) continue;
         const o = id[Y * W + X];
-        if (o > me && shapes[o].mat !== shapes[me].mat && !['eye', 'embroid', 'glow', 'frame'].includes(shapes[o].mat) && !['glow'].includes(shapes[me].mat)) {
+        if (o > me && shapes[o].mat !== shapes[me].mat && !['eye', 'embroid', 'glow', 'frame', 'shine', 'blush', 'mouth'].includes(shapes[o].mat) && !['glow'].includes(shapes[me].mat)) {
           const ramp = R[shapes[me].mat]; const c = ramp[3];
           out[i * 4] = c[0]; out[i * 4 + 1] = c[1]; out[i * 4 + 2] = c[2];
           break;
@@ -196,10 +204,10 @@ function render(shapes, opt = {}) {
     }
     if (best < 0) continue;
     const c = R[shapes[best].mat][3];
+    if (opt.flash) { out[i * 4] = 255; out[i * 4 + 1] = 250; out[i * 4 + 2] = 235; out[i * 4 + 3] = 255; continue; } // hurt: a white rim, the body keeps its colours
     out[i * 4] = Math.round(c[0] * OUTLINE_DARKEN); out[i * 4 + 1] = Math.round(c[1] * OUTLINE_DARKEN); out[i * 4 + 2] = Math.round(c[2] * OUTLINE_DARKEN); out[i * 4 + 3] = 255;
   }
   // eye shine
-  if (opt.flash) for (let i = 0; i < W * H; i++) if (out[i * 4 + 3]) { out[i * 4] = 255; out[i * 4 + 1] = Math.min(255, out[i * 4 + 1] + 120); out[i * 4 + 2] = Math.min(255, out[i * 4 + 2] + 120); }
   if (opt.fade) for (let i = 0; i < W * H; i++) if (out[i * 4 + 3]) {
     const x = i % W, y = (i / W) | 0;
     if (((x * 7 + y * 13) % 10) < opt.fade * 10) out[i * 4 + 3] = 0;
