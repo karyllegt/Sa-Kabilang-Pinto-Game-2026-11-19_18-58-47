@@ -1,8 +1,51 @@
 # Sa Kabilang Pinto (The Lantern Between Worlds)
 
-2D pixel-art Filipino-folklore platformer for Android, built in Unity 2D by one developer (Karylle G. Torres, group Pangkat Parol, CSEL course). Real deadline: Dec 1, 2026. You (Claude Code) are the engineer; I direct.
+2D pixel-art Filipino-folklore platformer for Android, made in Unity 6 (6000.6.6f1) by **Pangkat Parol** for the CSEL course. Real deadline: **Dec 1, 2026**. Repo: https://github.com/karyllegt/Sa-Kabilang-Pinto-Game-2026-11-19_18-58-47
 
-## Read these first, in this order
+## Team
+
+| Member | Role | Owns |
+| --- | --- | --- |
+| Karylle G. Torres | Game Director, Lead Programmer | the code base, milestones M1 to M8, R1 to R3 (built with Claude Code as the engineer) |
+| Mary Rose G. Balcarse | Pixel Artist, UI, **and Audio** (from Nash) | everything the player sees and hears: art (R3 polish, R4 to R7), UI, music and sound (R8) |
+| Ronn Lester T. Esquierda | Level Designer, Narrative Writer, **and QA Lead** (from Nash) | everything the player plays and reads, and proof it works: levels, story text, testing, bug list, R9, Android (M9 to M11) |
+
+Nash Abrenica is no longer in the group; his roles are split as above.
+
+## Mary and Ronn: start here
+
+1. **`docs/HANDOFF_MARY_RONN.md`**: setup (Git LFS, Unity version), your task lists in order, how to test without opening Unity, the Git branch and Pull Request workflow.
+2. **`docs/PROGRESS_AUDIT.md`**: what is done, partial and not started, with evidence and the owner of each remaining item.
+3. **`DECISIONS.md`**: every choice made so far and why (newest at the bottom; the art direction is A-1 to A-4).
+4. Play it: open `Assets/Scenes/Boot.unity` in Unity and press Play (keyboard: arrows or A/D move, Space jump, Shift dash, J ward, K veil, L bolt, E interact, Esc back or pause; a gamepad works too).
+
+### Where is what
+
+| Looking for | Go to |
+| --- | --- |
+| Scenes (Boot > Title > Map > Level) | `Assets/Scenes/` (dev rooms in `Assets/Scenes/Dev/`) |
+| Game code | `Assets/Scripts/` : `Player` (movement, animation), `Levels` (generator, level runner, bots), `Enemies` (creatures, the Bellkeeper), `Skills`, `Dimensions`, `UI` (every screen, HUD, map), `Audio`, `Save`, `Core` |
+| Level settings (Ronn) | `Assets/Data/Levels/LevelConfig_01..09.asset`, `Assets/Data/DifficultyCurve.asset`, `Assets/Data/DifficultyTable.asset` |
+| Story text: letters, intros, hints (Ronn) | `Assets/Data/Levels/LevelConfig_*.asset` |
+| Menus, Lola's lines, toasts, the Ending (Ronn) | `Assets/Resources/UI/Strings_en.asset` (defaults in `Assets/Scripts/UI/StringDefaults.cs`) |
+| Player feel and skill numbers | `Assets/Data/PlayerTuning.asset`, skill assets made by **Sa Kabilang Pinto > Setup** |
+| Art rules and palette (Mary) | `docs/06_ART_BIBLE.md`, `Assets/Art/Source/palette.txt`, `docs/ART_MANIFEST.md` (every art file and its source) |
+| New game art (Mary) | `Assets/Art/Game/` (in the game), `Assets/Art/Source/` (text-grid sources); the prototype art in the other `Assets/Art/` folders is the fallback |
+| Art tools (Mary) | `tools/tala_frames/` (16x18 Tala), `tools/tala_rig/` (48x54 Tala, in progress), `tools/creature_frames/` (R4 key frames), **Sa Kabilang Pinto > Art** menu |
+| Tala's animations | `Assets/Data/Player/TalaAnims_girl.asset`, `TalaAnims_boy.asset` (rebuild: **Setup > Tala Animation (R3)**) |
+| Level, boss and map objects | `Assets/Prefabs/Level`, `Boss`, `Map` (listed in `Assets/Resources/Level/LevelPrefabCatalog.asset`), player in `Assets/Prefabs/Player`, UI in `Assets/Prefabs/UI` |
+| Music and sounds (Mary) | `Assets/Audio/`, the mixer and `AudioTuning`/`FeelTuning` assets (rebuild: **Setup > Run M8 Audio Setup**) |
+| Tests | `Assets/Tests/EditMode`, `Assets/Tests/PlayMode`, the progress video in `Assets/Tests/Video` |
+| Manual QA checklist (Ronn) | `tests/MANUAL_QA.md` |
+| Screenshots per milestone | `tests/Screenshots/<milestone>/` (layout audit: `m6`, levels: `m7`, art: `r2`, `r3`, `r4`) |
+| Milestone and task prompts | `prompts/` (M1 to M11), `prompts/12_real_assets/` (R1 to R9), `prompts/FULL_GAME_PROMPT.md` (the whole game in one prompt) |
+| Original design and story | `docs/00_PROJECT_CONTEXT.md`, `docs/03_ORIGINAL_PROPOSAL.md`, the browser prototype `reference/prototype/index.html` |
+
+**Current art direction (2026-11-22):** new art is drawn at **3x detail (48 pixels per unit)** so it matches the quality bar of the detailed prototype sprites, with the camera to move from 480x270 to 1440x810; gameplay sizes do not change. No paid or generated art: every sprite is made by our own tools or by hand. See `DECISIONS.md` A-1 to A-4.
+
+## For Claude Code (the engineer)
+
+Read these first, in this order:
 1. `docs/00_PROJECT_CONTEXT.md` : concept, design essentials, skills table, decisions.
 2. `docs/01_BUILD_SPEC.md` : UI and layout spec, milestones, testing and verification rules.
 3. `docs/02_SKILLS_AND_PROGRESSION.md` : letter skills, long levels, difficulty ramp, skill-aware obstacles, and their tests.
@@ -34,8 +77,8 @@ Tala (boy or girl) climbs nine haunted house-towers in three acts to reach the B
 ## Definition of a good state (acceptance)
 The game is only done when all of this is true and shown with evidence: it builds and runs on Android; every screen in `reference/assets/screenshots/` exists in Unity with the same or better layout (and the known layout issues are fixed); all nine levels are completable; every skill and every skill obstacle works; difficulty rises level to level; all tests pass; no console errors in a full scripted run; touch, keyboard and gamepad all work; saves survive an app kill.
 
-## Folder map (create as needed)
-`Assets/Scripts/{Core,Player,Skills,Dimensions,Enemies,UI,Audio,Save,Levels}`, `Assets/Prefabs`, `Assets/Scenes`, `Assets/Art`, `Assets/Audio`, `Assets/Tests/{EditMode,PlayMode}`, `Tests/Screenshots`, `DECISIONS.md`, `Tests/MANUAL_QA.md`.
+## Folder map
+See **Where is what** above. New folders follow the same pattern: code in `Assets/Scripts/<area>`, data in `Assets/Data`, art in `Assets/Art/Game/<group>`, tests in `Assets/Tests/{EditMode,PlayMode}`, evidence in `tests/Screenshots/<task>`.
 
 ## Status
 See `DECISIONS.md` and git log. Milestones M1 to M10 are in `prompts/`.
