@@ -209,6 +209,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0272b5cf60996b43b90be3333ed44bf, type: 3}
   - {fileID: 21300000, guid: 1b4e42bbe3539a24cafd92cfdd0dd867, type: 3}
   useBoy: 0
+  girlAnims: {fileID: 11400000, guid: a69d0155be4391e45b686b7c951f135f, type: 2}
+  boyAnims: {fileID: 11400000, guid: 869e48f9e7df8ce4c83b4f8f3e726bce, type: 2}
   wardRing: {fileID: 0}
   veilRing: {fileID: 5567878219921555562}
   glideWings: {fileID: 3213289863598231685}

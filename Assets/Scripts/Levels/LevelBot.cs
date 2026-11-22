@@ -14,7 +14,7 @@ namespace Skp.Levels
     /// but Tala cannot die; hits are counted. Items and creatures are left out of the search (the letter is
     /// detected by touch; creatures move and are covered by the playtests).
     /// </summary>
-    public class LevelBot
+    public partial class LevelBot
     {
         public struct Result
         {
@@ -227,9 +227,9 @@ namespace Skp.Levels
             {
                 if (m.Door)
                 {
-                    _sim.Step(new PlayerInputFrame());
+                    StepRec(new PlayerInputFrame());
                     if (_sim.NearDoor < 0) return n;
-                    _sim.Step(new PlayerInputFrame { InteractPressed = true });
+                    StepRec(new PlayerInputFrame { InteractPressed = true });
                     Settle(ref clue, ref exit, 120);
                 }
                 else
@@ -272,7 +272,7 @@ namespace Skp.Levels
 
         void Tick(PlayerInputFrame f, ref bool clue, ref bool exit)
         {
-            _sim.Step(f);
+            StepRec(f);
             var hb = _sim.Hitbox;
             for (int i = 0; i < _clueRects.Count; i++)
                 if (!clue && DimensionRules.Active(_clueMasks[i], _sim.Dimension) && hb.Overlaps(_clueRects[i])) clue = true;

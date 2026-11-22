@@ -53,6 +53,7 @@ public static class SkpProjectSetup
         SkpTestRoomBuilder.Build();      // Player prefab first: the Level scene uses it
         SkpLevelSetup.CreateDataAssets();
         SkpPrefabSetup.CreateAll();      // R1: level, boss and map prefabs and their catalog (the scenes reference it)
+        SkpTalaAnimSetup.Run();          // R3: Tala's animation sets on the Player prefab
         BuildScenes(font, touch);
         AssetDatabase.SaveAssets();
         foreach (var o in AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset"))

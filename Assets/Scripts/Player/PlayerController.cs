@@ -76,7 +76,7 @@ namespace Skp.Player
         {
             Sim = sim ?? throw new ArgumentNullException(nameof(sim));
             var save = GameRoot.Instance != null ? GameRoot.Instance.Save.Data : null;
-            if (view != null) view.useBoy = save != null && save.@char == "boy";
+            if (view != null) { view.useBoy = save != null && save.@char == "boy"; view.Bind(Sim); }
             _prevPos = Sim.Position;
             _latch.Clear();
             if (cameraFollow != null) { cameraFollow.bounds = sim.World.Bounds; cameraFollow.SnapTo(Sim.Center, Sim.GravitySign); }
@@ -84,7 +84,11 @@ namespace Skp.Player
             DebugOverlay.ExtraLines += DebugLine;
         }
 
-        void OnDestroy() => DebugOverlay.ExtraLines -= DebugLine;
+        void OnDestroy()
+        {
+            DebugOverlay.ExtraLines -= DebugLine;
+            if (view != null) view.Animator.Unbind();
+        }
 
         void Update()
         {
@@ -104,6 +108,7 @@ namespace Skp.Player
             {
                 _prevPos = Sim.Position;
                 Sim.Step(_latch.Consume());
+                if (view != null) view.Tick(Sim);
                 if (cameraFollow != null) cameraFollow.Tick(Sim.Center, Sim.GravitySign);
                 Ticked?.Invoke(Sim);
             }

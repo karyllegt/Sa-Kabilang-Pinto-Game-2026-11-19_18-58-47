@@ -1,0 +1,18 @@
+# R4 key frame: anino (4 colours). For review; the other frames are drawn from it once approved.
+name: spr_anino_key
+size: 12x13
+out: Creatures
+frame
+..TTTTTT....
+.TnnnnnnT...
+TnnnnnnnnT..
+TnNnnnnnnT..
+TnnpnnnpnT..
+TnnnnnnnnT..
+.TnNnnnnT...
+TnnnnnnnnT..
+nNnnnnnnnnT.
+nNnnnnnnNnT.
+TnnnnnnnnT..
+TnnTnnnTnT..
+TnT.TnTTnT..

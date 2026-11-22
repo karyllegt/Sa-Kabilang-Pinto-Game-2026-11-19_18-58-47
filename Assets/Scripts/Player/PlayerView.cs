@@ -15,6 +15,15 @@ namespace Skp.Player
         [Tooltip("spr_pl_girl_0..3")] public Sprite[] girl = new Sprite[4];
         [Tooltip("spr_pl_boy_0..3")] public Sprite[] boy = new Sprite[4];
         public bool useBoy;
+        [Tooltip("R3: the girl's animation set (empty = the 4 prototype frames above).")] public PlayerAnimSet girlAnims;
+        [Tooltip("R3: the boy's animation set (empty = the 4 prototype frames above).")] public PlayerAnimSet boyAnims;
+
+        /// <summary>R3: picks the animation from the simulation, one step per tick (the controller calls <see cref="Tick"/>).</summary>
+        public PlayerAnimator Animator { get; } = new PlayerAnimator();
+        public PlayerAnimSet ActiveAnims => useBoy ? boyAnims : girlAnims;
+
+        public void Bind(PlayerSim sim) => Animator.Bind(sim);
+        public void Tick(PlayerSim sim) => Animator.Tick(sim);
         [Tooltip("Optional ring shown while the ward pulse is active.")] public SpriteRenderer wardRing;
         [Tooltip("Purple Lambong Veil ring (flickers in its last second).")] public SpriteRenderer veilRing;
         [Tooltip("Pakpak Glide wings, shown while gliding.")] public SpriteRenderer glideWings;
@@ -31,7 +40,8 @@ namespace Skp.Player
         public void Render(PlayerSim sim, Vector2 previousPosition, float alpha)
         {
             if (body == null) return;
-            bool dead = sim.Life != PlayerLife.Playing;
+            // R3: the death animation is drawn when there is one; without it Tala is hidden while dead, as before
+            bool dead = sim.Life != PlayerLife.Playing && (ActiveAnims == null || ActiveAnims.Get(TalaAnim.Death) == null);
             bool blinkOff = sim.Invulnerable > 0 && ((sim.Tick >> 2) & 1) == 1 && sim.DashTicks == 0;
             body.enabled = !dead && !blinkOff;
 
@@ -39,8 +49,14 @@ namespace Skp.Player
             if (!sim.Grounded) f = 3;
             else if (Mathf.Abs(sim.Velocity.x) * PlayerSim.Dt * PlayerTuning.PxPerUnit > 0.4f) f = 1 + ((int)sim.Anim % 2);
             CurrentFrame = f;
-            var set = useBoy ? boy : girl;
-            if (set != null && f < set.Length && set[f] != null) body.sprite = set[f];
+            var anims = ActiveAnims;
+            var animSprite = anims != null ? anims.Frame(Animator.State, Animator.StateTicks) : null;
+            if (animSprite != null) body.sprite = animSprite;
+            else
+            {
+                var set = useBoy ? boy : girl;
+                if (set != null && f < set.Length && set[f] != null) body.sprite = set[f];
+            }
 
             body.flipX = sim.Facing < 0;
             body.flipY = sim.GravitySign < 0;

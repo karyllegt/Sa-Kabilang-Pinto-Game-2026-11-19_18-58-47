@@ -89,3 +89,7 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Open a few prefabs in Assets/Prefabs/Level (lantern, a creature, the exit): change a colour, Play, and see it in the level | [ ] | [ ] | [ ] | |
 | **R2 art style (automated evidence: ArtRulesTests, tests/Screenshots/r2)** | | | | |
 | On a phone at 1x: the picked Tala, the lantern and the Spirit door read clearly against the new Act I backdrop | [ ] | [ ] | [ ] | |
+| **R3 Tala animation (automated evidence: R3TalaAnimTests, R3TalaAnimPlayModeTests, tests/Screenshots/r3)** | | | | |
+| Play as the girl, then the boy: idle breathes, run cycles, jump rises/peaks/falls, landing squashes; dash leans with speed lines | [ ] | [ ] | [ ] | |
+| Ward raises the parol, bolt cast pushes it forward with a flare, glide holds it overhead; hurt flashes; death kneels and fades | [ ] | [ ] | [ ] | |
+| Going through a door darkens Tala; everything still reads upside down in Inverted | [ ] | [ ] | [ ] | |

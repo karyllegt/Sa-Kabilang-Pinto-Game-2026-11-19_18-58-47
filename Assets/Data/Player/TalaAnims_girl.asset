@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ced6c446a4771a40837d25ec378677e, type: 3}
+  m_Name: TalaAnims_girl
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Player.PlayerAnimSet
+  clips:
+  - anim: 0
+    frames:
+    - {fileID: 21300000, guid: b1f089f3df1580d4bb696a4640ebf5fe, type: 3}
+    - {fileID: 21300000, guid: 0b1b7322ba9db834f94d57189395c995, type: 3}
+    - {fileID: 21300000, guid: 41dd20fdc2b15474199b16115888ac55, type: 3}
+    - {fileID: 21300000, guid: be95cc8090b7a8c42b7d626ce96c8ed9, type: 3}
+    ticksPerFrame: 10
+    loop: 1
+  - anim: 1
+    frames:
+    - {fileID: 21300000, guid: 3e3c972c4e9f5cb49a5cf06c1474c4a3, type: 3}
+    - {fileID: 21300000, guid: 0dbdfe5630b5dc6408fa5d0b45c74505, type: 3}
+    - {fileID: 21300000, guid: f341cdf9ff2be114688bc2051794a491, type: 3}
+    - {fileID: 21300000, guid: 39e5f9eb9c3588145b6774f08f90367d, type: 3}
+    - {fileID: 21300000, guid: e73bd485baff70146bcb37be3e6bdc38, type: 3}
+    - {fileID: 21300000, guid: 335eb08dff51e9b46955418895133abb, type: 3}
+    ticksPerFrame: 6
+    loop: 1
+  - anim: 2
+    frames:
+    - {fileID: 21300000, guid: 4d5a1067b16204f478087e33c5c78944, type: 3}
+    - {fileID: 21300000, guid: 86d7fc57f562bdb48851ab9443cb375c, type: 3}
+    ticksPerFrame: 5
+    loop: 0
+  - anim: 3
+    frames:
+    - {fileID: 21300000, guid: 4688e0ef3676a9045ba878174eb66553, type: 3}
+    ticksPerFrame: 6
+    loop: 0
+  - anim: 4
+    frames:
+    - {fileID: 21300000, guid: 22f55c646a09b7b4b9f25b4349b3e1ee, type: 3}
+    - {fileID: 21300000, guid: 6c6ab60d235ec0a43a83f284aa51ed9e, type: 3}
+    ticksPerFrame: 8
+    loop: 1
+  - anim: 5
+    frames:
+    - {fileID: 21300000, guid: c8237cce8f4b12f48ac3d96e8145869d, type: 3}
+    - {fileID: 21300000, guid: 4f9c02f5d3dedc847b9fabc8847006b0, type: 3}
+    ticksPerFrame: 4
+    loop: 0
+  - anim: 6
+    frames:
+    - {fileID: 21300000, guid: b38bbebfafbe7ce448d91d865de3f61b, type: 3}
+    - {fileID: 21300000, guid: abf5c07ecb310d14fa0176f3c3f335fd, type: 3}
+    - {fileID: 21300000, guid: 4321571d2a5ec6b4bb15698b92de168b, type: 3}
+    ticksPerFrame: 4
+    loop: 0
+  - anim: 7
+    frames:
+    - {fileID: 21300000, guid: a5150c37a59beaf468c63fba0e1ee0b5, type: 3}
+    - {fileID: 21300000, guid: ae3e182b0ae66214591e9b0062a53993, type: 3}
+    - {fileID: 21300000, guid: 9bace48ced6681947a9548d83edf5ca6, type: 3}
+    ticksPerFrame: 5
+    loop: 0
+  - anim: 8
+    frames:
+    - {fileID: 21300000, guid: 398f03357835a8b45aede8e57f671b5d, type: 3}
+    - {fileID: 21300000, guid: 3fd31599d1a5afc488eb3d34835407c1, type: 3}
+    ticksPerFrame: 8
+    loop: 0
+  - anim: 9
+    frames:
+    - {fileID: 21300000, guid: d6f5771a79037b14ab84b92893867aae, type: 3}
+    - {fileID: 21300000, guid: 290eb28a8f6c82d4391fadf8acd194d0, type: 3}
+    - {fileID: 21300000, guid: 3f6e540be19b53f4c982c031ebea29b7, type: 3}
+    - {fileID: 21300000, guid: 13faf237490645b47828414424f32cfa, type: 3}
+    - {fileID: 21300000, guid: 342c9fdda8ce19d45b5a31d5e510a78a, type: 3}
+    ticksPerFrame: 9
+    loop: 0
+  - anim: 10
+    frames:
+    - {fileID: 21300000, guid: 6be1bf1ba34bef04fa3b07cbf036b3a4, type: 3}
+    - {fileID: 21300000, guid: ae65e1b6f45ee5e4593c02f0ed4fb630, type: 3}
+    - {fileID: 21300000, guid: 5bd8fedb307029f42abe17d521557dd5, type: 3}
+    - {fileID: 21300000, guid: 58884e8bec60f7348b9b76cd4efbe162, type: 3}
+    ticksPerFrame: 6
+    loop: 0
+  - anim: 11
+    frames:
+    - {fileID: 21300000, guid: e5545e09c02e27c409a4cb50b1ef844c, type: 3}
+    - {fileID: 21300000, guid: cc2251ecc29c9804ea15e7548e5e9013, type: 3}
+    ticksPerFrame: 10
+    loop: 1
+  - anim: 12
+    frames:
+    - {fileID: 21300000, guid: cb2b7d927fd62ff48be5ba53ebed1791, type: 3}
+    - {fileID: 21300000, guid: be2c93ee2941bc148941077321987888, type: 3}
+    ticksPerFrame: 5
+    loop: 0
