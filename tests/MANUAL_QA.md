@@ -87,3 +87,5 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | **R1 prefabs (automated evidence: R1PrefabTests, R1PrefabBaselineTests, tests/Screenshots/r1)** | | | | |
 | Level 5: the rising flood is dark, translucent water (not a white block); lantern posts are dark wood | [ ] | [ ] | [ ] | |
 | Open a few prefabs in Assets/Prefabs/Level (lantern, a creature, the exit): change a colour, Play, and see it in the level | [ ] | [ ] | [ ] | |
+| **R2 art style (automated evidence: ArtRulesTests, tests/Screenshots/r2)** | | | | |
+| On a phone at 1x: the picked Tala, the lantern and the Spirit door read clearly against the new Act I backdrop | [ ] | [ ] | [ ] | |

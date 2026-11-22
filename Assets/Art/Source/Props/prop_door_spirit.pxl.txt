@@ -1,0 +1,37 @@
+# Spirit door in the option-A style: full ink outline, two-tone narra frame, teal capiz panel, gold handle.
+name: prop_door_spirit
+size: 20x32
+out: Props
+frame
+.....kkkkkkkkkk.....
+...kk3333333322kk...
+..k3322222222211k...
+..k3kkkkkkkkkkkk1k..
+..k3kTTTTTTTTTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kTTTTTTTTTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttkGTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttttttttTTk1k..
+..k3kttTttTttTTk1k..
+..k3kkkkkkkkkkkk1k..
+..k22222222222221k..
+.k1111111111111111k.
+.kkkkkkkkkkkkkkkkkk.

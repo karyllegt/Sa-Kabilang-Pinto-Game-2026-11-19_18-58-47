@@ -1,0 +1,44 @@
+# Sa Kabilang Pinto palette (docs/06_ART_BIBLE.md section 3). One line: symbol hex name. "." is clear.
+k #0a0710 ink: outline, deepest shadow
+K #14101c panel night
+n #241a2e night violet
+N #3a2f4a dusk violet
+s #f0c08a skin light
+S #c98a5a skin mid
+z #8a5434 skin shadow
+h #2a1a14 hair
+H #4a2e1f hair light
+r #c0392b red cloth
+R #8a2420 red cloth shadow
+w #f6e7c1 cream cloth, text
+W #d9c49a cream shadow
+p #fff8e8 bone white, eye shine
+g #e8b85a gold (safe, interactive)
+G #ffd36a gold bright
+y #a8782e gold shadow
+b #6b4a22 brown line
+l #ffefb0 flame core
+L #ff9f3a flame orange
+4 #3a2410 deep wood
+1 #5a3820 dark wood
+2 #8b5a2b wood
+3 #b07a3e light wood
+5 #1e2e22 balete deep green
+6 #2e4a2c balete green
+7 #4a6a3a moss
+8 #7a9a4a leaf light
+9 #1a3a4a well water deep
+0 #2e5a6a well water
+c #3a3444 church stone dark
+C #5a5466 church stone
+v #8a8496 church stone light
+x #8a5a2a bronze
+X #c08a44 bronze light
+t #41e0d0 Spirit teal
+T #1f8a80 Spirit teal shadow
+u #c07dff Inverted violet
+U #6a3ea0 Inverted violet shadow
+d #ff5a4a danger red
+D #a02a22 danger red shadow
+m #c8a8e0 lilac (Lola)
+M #8a6aa8 lilac shadow

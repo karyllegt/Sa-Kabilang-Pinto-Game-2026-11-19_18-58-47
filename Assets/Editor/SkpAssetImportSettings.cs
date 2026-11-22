@@ -27,7 +27,8 @@ public class SkpAssetImportSettings : AssetPostprocessor
         var settings = new TextureImporterSettings();
         ti.ReadTextureSettings(settings);
         string n = System.IO.Path.GetFileNameWithoutExtension(assetPath);
-        settings.spriteAlignment = (int)(IsCharacter(n) ? SpriteAlignment.BottomCenter : SpriteAlignment.Center);
+        bool feet = IsCharacter(n) || IsGameCharacterFolder(assetPath); // R2: Assets/Art/Game/{Characters,Creatures,Npc}
+        settings.spriteAlignment = (int)(feet ? SpriteAlignment.BottomCenter : SpriteAlignment.Center);
         settings.spriteMeshType = SpriteMeshType.FullRect;
         settings.spriteExtrude = 0;
         ti.SetTextureSettings(settings);
@@ -41,6 +42,9 @@ public class SkpAssetImportSettings : AssetPostprocessor
         return n.StartsWith("spr_pl_") || n.StartsWith("spr_anino") || n.StartsWith("spr_tik") ||
                n.StartsWith("spr_manan") || n.StartsWith("spr_boss") || n.StartsWith("spr_lola");
     }
+
+    public static bool IsGameCharacterFolder(string path) =>
+        path.StartsWith("Assets/Art/Game/Characters/") || path.StartsWith("Assets/Art/Game/Creatures/") || path.StartsWith("Assets/Art/Game/Npc/");
 
     public static Vector4 BorderFor(string n)
     {
