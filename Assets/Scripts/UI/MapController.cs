@@ -21,6 +21,8 @@ namespace Skp.UI
         public Camera cam;
         public SpriteRenderer background;
         [Header("Art")]
+        [Tooltip("R1: the map's dots, node plates and icons, numbers, corners, Lola, her marker and the token. Falls back to Resources.")]
+        public Skp.Levels.LevelPrefabCatalog catalog;
         public Sprite white, star, bell, lola;
         public SkillsScreen skillsScreen;
         public Sprite[] boyFrames = new Sprite[4], girlFrames = new Sprite[4];
@@ -93,12 +95,15 @@ namespace Skp.UI
 
         // ------------------------------------------------------------------ world
 
+        Skp.Levels.LevelPrefabCatalog Catalog => catalog != null ? catalog : (catalog = Skp.Levels.LevelPrefabCatalog.Load());
+
         void BuildWorld()
         {
             if (_world != null) DestroyImmediate(_world.gameObject);
-            _world = new GameObject("MapWorld").transform;
+            _world = new GameObject("MapWorld").transform; // an empty folder; everything drawn below is a prefab instance
             _world.SetParent(transform, false);
             _nodeIcons.Clear(); _nodePlates.Clear(); _nodeNumbers.Clear(); _dots.Clear(); _dotSegment.Clear(); _corners.Clear();
+            var cat = Catalog;
 
             // dotted path between nodes, every 9 px
             for (int i = 0; i < MapModel.Nodes.Length - 1; i++)
@@ -108,85 +113,40 @@ namespace Skp.UI
                 for (int k = 1; k < n; k++)
                 {
                     var p = Vector2.Lerp(a, b, k / (float)n);
-                    _dots.Add(Rect("Dot", p + new Vector2(1.5f, 1), new Vector2(3, 2), Color.white, 2));
+                    _dots.Add(Place(cat.mapDot, p + new Vector2(1.5f, 1)).main);
                     _dotSegment.Add(i);
                 }
             }
             for (int i = 0; i < MapModel.Nodes.Length; i++)
             {
                 var p = MapModel.Nodes[i];
-                Rect("Shadow", p + new Vector2(0, 3.5f), new Vector2(16, 3), new Color(0, 0, 0, 0.45f), 3);
-                _nodePlates.Add(Rect("Plate", p + new Vector2(0, 1.5f), new Vector2(14, 3), Color.white, 4));
-                var icon = Sprite(i == 8 ? bell : star, p + new Vector2(0, i == 8 ? -10 : -11), 5);
-                _nodeIcons.Add(icon);
+                Place(cat.mapNodeShadow, p + new Vector2(0, 3.5f));
+                _nodePlates.Add(Place(cat.mapNodePlate, p + new Vector2(0, 1.5f)).main);
+                var icon = Place(cat.mapNodeIcon, p + new Vector2(0, i == 8 ? -10 : -11));
+                icon.SetState(i == 8 ? 1 : 0); // flame star, the last node's bell
+                _nodeIcons.Add(icon.main);
                 // the number sits ABOVE the node so the info panel never hides it (docs/04 issue 3)
-                _nodeNumbers.Add(Number((i + 1).ToString(), p + new Vector2(0, -27)));
+                var num = Place(cat.mapNumber, p + new Vector2(0, -27)).label;
+                num.text = (i + 1).ToString();
+                _nodeNumbers.Add(num);
             }
-            for (int c = 0; c < 4; c++) _corners.Add(new GameObject("Corner").transform);
-            foreach (var c in _corners)
-            {
-                c.SetParent(_world, false);
-                var h = Rect("H", Vector2.zero, new Vector2(4, 1), UiKit.Theme.goldBright, 6); h.transform.SetParent(c, false);
-                var v = Rect("V", Vector2.zero, new Vector2(1, 4), UiKit.Theme.goldBright, 6); v.transform.SetParent(c, false);
-            }
+            for (int c = 0; c < 4; c++) _corners.Add(Skp.Levels.LevelPiece.Spawn(cat.mapCorner, _world, _world.position).transform);
 
-            _lola = Sprite(lola, MapModel.Lola + new Vector2(7, 20), 6);
-            _lola.transform.position = (Vector3)MapModel.ToWorld(MapModel.Lola + new Vector2(7, 20));
-            _lolaMark = new GameObject("LolaMark");
-            _lolaMark.transform.SetParent(_world, false);
-            var mbox = Rect("Box", MapModel.Lola + new Vector2(7.5f, -8.5f), new Vector2(9, 9), UiKit.Theme.text, 7);
-            mbox.transform.SetParent(_lolaMark.transform, true);
-            var mark = Number("!", MapModel.Lola + new Vector2(7.5f, -8.5f));
-            mark.color = UiKit.Theme.panel;
-            mark.transform.SetParent(_lolaMark.transform, true);
-            mark.sortingOrder = 8;
+            _lola = Place(cat.mapLola, MapModel.Lola + new Vector2(7, 20)).main;
+            var mark = Skp.Levels.LevelPiece.Spawn(cat.mapLolaMark, _world, _world.position);
+            Vector3 at = MapModel.ToWorld(MapModel.Lola + new Vector2(7.5f, -8.5f));
+            mark.main.transform.position = at;
+            mark.label.transform.position = at;
+            _lolaMark = mark.gameObject;
 
-            _token = Sprite(Frames()[0], MapModel.Nodes[0], 9);
+            _token = Place(cat.mapToken, MapModel.Nodes[0]).main;
+            _token.sprite = Frames()[0];
         }
 
         Sprite[] Frames() => _save != null && _save.@char == "boy" ? boyFrames : girlFrames;
 
-        SpriteRenderer Rect(string name, Vector2 centerPx, Vector2 sizePx, Color c, int order)
-        {
-            var go = new GameObject(name);
-            go.transform.SetParent(_world, false);
-            go.transform.position = MapModel.ToWorld(centerPx);
-            go.transform.localScale = new Vector3(sizePx.x, sizePx.y, 1);
-            var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = white; // 1x1 px at 16 PPU: scale in pixels
-            sr.color = c;
-            sr.sortingOrder = order;
-            return sr;
-        }
-
-        SpriteRenderer Sprite(Sprite s, Vector2 bottomCenterPx, int order)
-        {
-            var go = new GameObject(s != null ? s.name : "Sprite");
-            go.transform.SetParent(_world, false);
-            go.transform.position = MapModel.ToWorld(bottomCenterPx);
-            var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = s;
-            sr.sortingOrder = order;
-            return sr;
-        }
-
-        TextMeshPro Number(string text, Vector2 centerPx)
-        {
-            var go = new GameObject("Num " + text);
-            go.transform.SetParent(_world, false);
-            go.transform.position = MapModel.ToWorld(centerPx);
-            var t = go.AddComponent<TextMeshPro>();
-            if (font != null) t.font = font;
-            t.text = text;
-            t.fontSize = 3.2f; // 8 px Press Start 2P glyphs at 16 PPU
-            t.alignment = TextAlignmentOptions.Center;
-            t.textWrappingMode = TextWrappingModes.NoWrap;
-            t.rectTransform.sizeDelta = new Vector2(2, 1);
-            t.sortingOrder = 8;
-            // a shared outline material: setting outlineWidth here would clone the material per label
-            if (UiKit.Theme.fontOutline != null) t.fontSharedMaterial = UiKit.Theme.fontOutline;
-            return t;
-        }
+        /// <summary>A map prefab placed at a map position (pixels).</summary>
+        Skp.Levels.LevelPiece Place(Skp.Levels.LevelPiece prefab, Vector2 px) => Skp.Levels.LevelPiece.Spawn(prefab, _world, MapModel.ToWorld(px));
 
         // ------------------------------------------------------------------ state
 

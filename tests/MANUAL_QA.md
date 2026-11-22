@@ -84,3 +84,6 @@ Tick each box per input method as it is verified on a real device or in the Edit
 | Screen shake and hit-stop feel punchy, not nauseating; Screen shake off removes all shake | [ ] | [ ] | [ ] | |
 | Vibration on the phone and rumble on a gamepad; Vibration off removes both | [ ] | [ ] | [ ] | |
 | Particles read at phone size (flame, fragment, veil, bolt, burnt thorns) | [ ] | [ ] | [ ] | |
+| **R1 prefabs (automated evidence: R1PrefabTests, R1PrefabBaselineTests, tests/Screenshots/r1)** | | | | |
+| Level 5: the rising flood is dark, translucent water (not a white block); lantern posts are dark wood | [ ] | [ ] | [ ] | |
+| Open a few prefabs in Assets/Prefabs/Level (lantern, a creature, the exit): change a colour, Play, and see it in the level | [ ] | [ ] | [ ] | |

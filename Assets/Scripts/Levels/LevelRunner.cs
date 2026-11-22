@@ -56,7 +56,8 @@ namespace Skp.Levels
             _gameCues = new Skp.Audio.GameCues(Session.Sim);
             player.Ticked += _gameCues.Tick;
             if (feel == null) feel = Resources.Load<FeelTuning>(FeelTuning.ResourcePath);
-            if (_fx == null) _fx = LevelFx.Create(transform, feel);
+            var catalog = view.Catalog;
+            if (_fx == null) _fx = LevelFx.Create(transform, feel, catalog != null ? catalog.fx : null);
             else _fx.Clear();
             if (_feel != null) player.Ticked -= _feel.Tick;
             _feel = new LevelFeel(Session, player, _fx, feel);
@@ -71,9 +72,10 @@ namespace Skp.Levels
             if (_bossView != null) { if (Application.isPlaying) Destroy(_bossView.gameObject); else DestroyImmediate(_bossView.gameObject); }
             if (Session.Boss != null)
             {
-                _bossView = new GameObject("Bellkeeper View").AddComponent<Skp.Enemies.BossView>();
-                _bossView.Bind(Session.Boss, view.art);
+                _bossView = Instantiate(catalog.bossView);
+                _bossView.Bind(Session.Boss, catalog);
             }
+            if (player.view != null) player.view.PrewarmBoltPool();
             if (player.cameraFollow != null) player.cameraFollow.LockTopY = null;
             if (backdrop != null && view.art != null && view.art.backdrops != null && view.art.backdrops.Length >= 3)
                 backdrop.sprite = view.art.backdrops[Mathf.Clamp(spec.act - 1, 0, 2)];

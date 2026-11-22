@@ -68,7 +68,9 @@ public static class SkpTestRoomBuilder
         wings.sortingOrder = 9;
         wings.enabled = false;
         view.glideWings = wings;
-        view.boltSprite = AssetDatabase.LoadAssetAtPath<Sprite>(SkpSkillSetup.BoltSprite);
+        // R1: bolts come from the Bolt prefab (SkpPrefabSetup also wires it after a first-time build)
+        var bolt = AssetDatabase.LoadAssetAtPath<Skp.Levels.LevelPiece>(SkpPrefabSetup.LevelDir + "/Bolt.prefab");
+        if (bolt != null) view.boltPrefab = bolt;
 
         var prefab = PrefabUtility.SaveAsPrefabAsset(root, PlayerPrefabPath);
         Object.DestroyImmediate(root);

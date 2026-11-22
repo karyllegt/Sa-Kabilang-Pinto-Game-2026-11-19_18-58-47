@@ -31,11 +31,61 @@ public static class SkpLevelShots
         EditorApplication.Exit(shots.Count >= 9 ? 0 : 3);
     }
 
+    static string _out = OutDir;
+    static bool _withLevel1;
+    public const string R1Dir = "tests/Screenshots/r1/after";
+
+    /// <summary>
+    /// R1: renders the same shots with the prefab-built views into tests/Screenshots/r1/after (plus level 1 at its first lantern),
+    /// compares each with the M7 render made before R1 (the world drawing code did not change between M7 and R1), and writes
+    /// tests/Screenshots/r1/screenshot_compare.md. Exit 0 when every pair matches within the tolerance.
+    /// </summary>
+    public static void RunR1Batch()
+    {
+        _out = R1Dir; _withLevel1 = true;
+        List<string> files;
+        try { files = Run(); }
+        finally { _out = OutDir; _withLevel1 = false; }
+        var md = new System.Text.StringBuilder("# R1 screenshots: before (M7 render) and after (prefabs)\n\n| Shot | Pixels differing | Largest channel difference | Result |\n| --- | --- | --- | --- |\n");
+        bool ok = true;
+        foreach (var after in files)
+        {
+            var name = Path.GetFileName(after);
+            if (name.StartsWith("contact_sheet")) continue;
+            var before = Path.Combine(OutDir, name);
+            if (!File.Exists(before)) { md.Append($"| {name} | no pre-R1 render | | rendered for the record |\n"); continue; }
+            var (n, max) = Diff(before, after);
+            bool pass = n == 0; // tolerance: identical pixels
+            ok &= pass;
+            md.Append($"| {name} | {n} | {max} | {(pass ? "identical" : "DIFFERENT")} |\n");
+        }
+        Directory.CreateDirectory("tests/Screenshots/r1");
+        File.WriteAllText("tests/Screenshots/r1/screenshot_compare.md", md.ToString());
+        Debug.Log("[SkpLevelShots] R1 compare:\n" + md);
+        EditorApplication.Exit(ok ? 0 : 4);
+    }
+
+    static (int count, int max) Diff(string a, string b)
+    {
+        var ta = new Texture2D(2, 2); ta.LoadImage(File.ReadAllBytes(a));
+        var tb = new Texture2D(2, 2); tb.LoadImage(File.ReadAllBytes(b));
+        if (ta.width != tb.width || ta.height != tb.height) return (-1, 255);
+        var pa = ta.GetPixels32(); var pb = tb.GetPixels32();
+        int n = 0, max = 0;
+        for (int i = 0; i < pa.Length; i++)
+        {
+            int d = Mathf.Max(Mathf.Abs(pa[i].r - pb[i].r), Mathf.Max(Mathf.Abs(pa[i].g - pb[i].g), Mathf.Abs(pa[i].b - pb[i].b)));
+            if (d > 0) { n++; if (d > max) max = d; }
+        }
+        Object.DestroyImmediate(ta); Object.DestroyImmediate(tb);
+        return (n, max);
+    }
+
     class Shot { public bool Search; public string Name; public int Level; public string[] Skills; public System.Action<LevelSession, LevelRunner> Setup; public System.Func<LevelSession, Vector2?> Focus; }
 
     public static List<string> Run()
     {
-        Directory.CreateDirectory(OutDir);
+        Directory.CreateDirectory(_out);
         var list = new List<Shot>
         {
             Obstacle("01_double_jump_climb", 3, "dj"),
@@ -56,6 +106,8 @@ public static class SkpLevelShots
             new Shot { Name = "11_bellkeeper_shockwave_bells", Level = 8, Skills = SkillIds.All, Focus = s => new Vector2(16, s.World.Arena.FloorY + 6.5f),
                        Setup = (s, r) => Boss(s, BossState.Bells) },
         };
+        if (_withLevel1)
+            list.Insert(0, new Shot { Name = "00_level1_first_lantern", Level = 0, Skills = new string[0], Focus = s => s.World.Lanterns[1] });
         var files = new List<string>();
         var tex = new List<(string, Texture2D)>();
         var tmp = Path.Combine(Path.GetTempPath(), "skp_shots_save");
@@ -92,8 +144,8 @@ public static class SkpLevelShots
             BossView bv = null;
             if (session.Boss != null && session.Boss.Active)
             {
-                bv = new GameObject("Bellkeeper View").AddComponent<BossView>();
-                bv.Bind(session.Boss, runner.view.art);
+                bv = Object.Instantiate(runner.view.Catalog.bossView);
+                bv.Bind(session.Boss, runner.view.Catalog);
             }
             // world objects follow their state (LateUpdate does not run in edit mode)
             typeof(LevelView).GetMethod("LateUpdate", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(runner.view, null);
@@ -113,7 +165,7 @@ public static class SkpLevelShots
             RenderTexture.active = null;
             cam.targetTexture = null;
             rt.Release();
-            var file = Path.Combine(OutDir, shot.Name + ".png");
+            var file = Path.Combine(_out, shot.Name + ".png");
             File.WriteAllBytes(file, t.EncodeToPNG());
             files.Add(file);
             tex.Add((shot.Name, t));
@@ -163,7 +215,7 @@ public static class SkpLevelShots
                 sheet.SetPixel(cx + x, cy + y, shots[i].tex.GetPixelBilinear((x + 0.5f) / tw, (y + 0.5f) / th));
         }
         sheet.Apply();
-        var f = Path.Combine(OutDir, "contact_sheet_m7_levels.png");
+        var f = Path.Combine(_out, "contact_sheet_m7_levels.png");
         File.WriteAllBytes(f, sheet.EncodeToPNG());
         Object.DestroyImmediate(sheet);
         files.Add(f);

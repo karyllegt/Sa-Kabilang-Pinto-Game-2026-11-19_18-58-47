@@ -1,0 +1,7 @@
+line|48|12|0.188|False
+sr|WHITE|12,95.188|0.125,14.375|Default:2|*|00|1|Simple|-
+sr|WHITE|14.75,95.188|0.125,14.375|Default:2|*|00|1|Simple|-
+sr|WHITE|16.75,95.188|0.125,14.375|Default:2|*|00|1|Simple|-
+sr|WHITE|6.625,95.188|0.125,14.375|Default:2|*|00|1|Simple|-
+sr|WHITE|9.25,95.188|0.125,14.375|Default:2|*|00|1|Simple|-
+sr|spr_boss|12.875,98.25|3,3.5|Default:8|1,1,1,1|00|1|Simple|-

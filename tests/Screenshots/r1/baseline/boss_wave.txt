@@ -1,0 +1,4 @@
+line|48|12|0.188|False
+sr|fx_shockwave_12x12|13.625,88.375|0.75,0.75|Default:9|1,1,1,1|10|1|Simple|-
+sr|fx_shockwave_12x12|13.938,88.375|0.75,0.75|Default:9|1,1,1,1|00|1|Simple|-
+sr|spr_boss|13.812,97.25|3,3.5|Default:8|1,1,1,1|00|1|Simple|-

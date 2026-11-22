@@ -1,0 +1,2 @@
+line|48|12|0.188|True
+sr|spr_boss_toll|12.562,98.125|3,3.5|Default:8|1,1,1,1|00|1|Simple|-

@@ -18,7 +18,9 @@ namespace Skp.Player
         [Tooltip("Optional ring shown while the ward pulse is active.")] public SpriteRenderer wardRing;
         [Tooltip("Purple Lambong Veil ring (flickers in its last second).")] public SpriteRenderer veilRing;
         [Tooltip("Pakpak Glide wings, shown while gliding.")] public SpriteRenderer glideWings;
-        [Tooltip("Liwanag Bolt sprite (drawn once per bolt in flight).")] public Sprite boltSprite;
+        [Tooltip("R1: the Bolt prefab (one copy per bolt in flight, pooled).")] public Skp.Levels.LevelPiece boltPrefab;
+        /// <summary>Bolts made up front when a level starts (Triple Bolt fires three; more are added only if ever needed).</summary>
+        public const int PrewarmBolts = 6;
 
         readonly List<SpriteRenderer> _bolts = new List<SpriteRenderer>();
         /// <summary>Bolt sprites currently drawn (tests).</summary>
@@ -91,19 +93,11 @@ namespace Skp.Player
                 }
             }
             int n = 0;
-            if (boltSprite != null)
+            if (boltPrefab != null)
             {
                 foreach (var b in sim.Bolts)
                 {
-                    if (n >= _bolts.Count)
-                    {
-                        var go = new GameObject("Bolt");
-                        go.transform.SetParent(transform.parent, false);
-                        var sr = go.AddComponent<SpriteRenderer>();
-                        sr.sprite = boltSprite;
-                        sr.sortingOrder = (body != null ? body.sortingOrder : 10) + 1;
-                        _bolts.Add(sr);
-                    }
+                    if (n >= _bolts.Count) AddBolt();
                     var r = _bolts[n++];
                     r.enabled = true;
                     r.flipX = b.Velocity.x < 0;
@@ -112,6 +106,20 @@ namespace Skp.Player
             }
             for (int i = n; i < _bolts.Count; i++) _bolts[i].enabled = false;
             VisibleBolts = n;
+        }
+
+        /// <summary>Makes the pooled bolts before play, so firing never creates objects (the level runner calls it).</summary>
+        public void PrewarmBoltPool()
+        {
+            while (boltPrefab != null && _bolts.Count < PrewarmBolts) AddBolt().enabled = false;
+        }
+
+        SpriteRenderer AddBolt()
+        {
+            var sr = Object.Instantiate(boltPrefab, transform.parent, false).main;
+            sr.sortingOrder = (body != null ? body.sortingOrder : 10) + 1;
+            _bolts.Add(sr);
+            return sr;
         }
 
         static float Snap(float v) => Mathf.Round(v * PlayerTuning.PxPerUnit) / PlayerTuning.PxPerUnit;

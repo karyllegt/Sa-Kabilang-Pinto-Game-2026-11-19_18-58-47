@@ -110,6 +110,7 @@ public static class SkpLevelSetup
         var runnerGo = new GameObject("Level");
         var view = runnerGo.AddComponent<LevelView>();
         view.art = AssetDatabase.LoadAssetAtPath<LevelArt>(LevelArtPath);
+        view.catalog = AssetDatabase.LoadAssetAtPath<LevelPrefabCatalog>(SkpPrefabSetup.CatalogPath);
         var runner = runnerGo.AddComponent<LevelRunner>();
         runner.levels = new LevelConfig[9];
         for (int i = 0; i < 9; i++) runner.levels[i] = AssetDatabase.LoadAssetAtPath<LevelConfig>(LevelPath(i));

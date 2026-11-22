@@ -20,11 +20,14 @@ namespace Skp.Levels
         /// <summary>Particles emitted per kind since the level began (tests).</summary>
         public int[] Emitted { get; } = new int[Kinds];
 
-        public static LevelFx Create(Transform parent, FeelTuning t)
+        /// <summary>The prefab child that holds a kind's particle system.</summary>
+        public static string ChildName(Kind k) => "Fx " + k;
+
+        /// <summary>R1: copies the Level Fx prefab (one child ParticleSystem per kind) and applies the FeelTuning numbers to it.</summary>
+        public static LevelFx Create(Transform parent, FeelTuning t, LevelFx prefab = null)
         {
-            var go = new GameObject("Level Fx");
-            go.transform.SetParent(parent, false);
-            var fx = go.AddComponent<LevelFx>();
+            if (prefab == null) { var c = LevelPrefabCatalog.Load(); prefab = c != null ? c.fx : null; }
+            var fx = Instantiate(prefab, parent, false);
             fx.Build(t);
             return fx;
         }
@@ -39,14 +42,17 @@ namespace Skp.Levels
             _burst[(int)Kind.Burnt] = _t.burnt;
             _burst[(int)Kind.Ember] = _t.ember;
             _burst[(int)Kind.Letter] = _t.letterGlow;
-            for (int i = 0; i < Kinds; i++) _ps[i] = MakeSystem(((Kind)i).ToString(), _burst[i]);
+            for (int i = 0; i < Kinds; i++)
+            {
+                var child = transform.Find(ChildName((Kind)i));
+                _ps[i] = child != null ? Configure(child.GetComponent<ParticleSystem>(), _burst[i]) : null;
+            }
         }
 
-        ParticleSystem MakeSystem(string name, FxBurst b)
+        ParticleSystem Configure(ParticleSystem ps, FxBurst b)
         {
-            var go = new GameObject("Fx " + name);
-            go.transform.SetParent(transform, false);
-            var ps = go.AddComponent<ParticleSystem>();
+            if (ps == null) return null;
+            var go = ps.gameObject;
             ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             var main = ps.main;
             main.playOnAwake = false;

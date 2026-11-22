@@ -72,14 +72,14 @@ Legend: **COPY** = the prototype file, imported as is. **DERIVED** = made by a s
 | Thing | How it is built now |
 | --- | --- |
 | Level layout (all 9 levels) | **PORT**: the prototype's seeded generator (`LevelGenerator`), plus M7 obstacle rules. No hand-made rooms, no Tilemap. |
-| Ledges, hazards, doors, items, creatures, lanterns, bells, water, decoration | **Spawned in code** by `LevelView.Build` as bare `GameObject + SpriteRenderer + DimensionMember`. **No prefabs**: an artist cannot open or edit any of them. |
-| Bolts | Spawned in code by `PlayerView`, reused afterwards |
-| Boss visuals | Spawned in code by `BossView` (body, waves, marks, toll ring) |
+| Ledges, hazards, doors, items, creatures, lanterns, bells, water, decoration | **R1 done:** prefabs in `Assets/Prefabs/Level`, chosen by `LevelPrefabCatalog`. The art inside them is still the prototype's. |
+| Bolts | **R1 done:** `Bolt` prefab, 6 pooled when a level starts |
+| Boss visuals | **R1 done:** prefabs in `Assets/Prefabs/Boss` (body with 3 states, shockwave, warning line, bell, toll ring), pooled up front |
 | Anino shadow | `ShadowView` swaps the 2 Anino frames |
-| Player | the only gameplay prefab (`Prefabs/Player/Player.prefab`), sprite swap by frame index in `PlayerView`, **no Animator** |
-| Level map | `MapController` builds the map world (nodes, dots, Lola, token) in code from the prototype's node coordinates |
+| Player | the player prefab (`Prefabs/Player/Player.prefab`), sprite swap by frame index in `PlayerView`, **no Animator** |
+| Level map | **R1 done:** prefabs in `Assets/Prefabs/Map` (dot, node shadow, plate, icon, number, Lola, her marker, token, corner), placed at the prototype's node coordinates |
 | UI screens | real prefabs (`Prefabs/UI/Screens/*`), built by `SkpUiSetup`; layout redesigned in M5, art still the prototype's PixelBox, hearts and portraits |
-| Particles | `LevelFx` builds 7 ParticleSystems in code |
+| Particles | **R1 done:** the `Level Fx` prefab (7 ParticleSystems), FeelTuning applied at runtime |
 
 ## 4. Behaviour and numbers ported from the prototype (keep these: they are the game, not placeholders)
 `PlayerSim` (run, jump, coyote, buffer, dash, ward, hurt, death, lives), `PlayerTuning`, `DifficultyTable`, dimension masks and doors, the Anino replay delay, lanterns, `LevelGenerator` (proven identical on 30 prototype layouts), `LevelSpec` rows, crumble and moving ledges, roots, the 8 skills and `SkillTuning`, the flood, manananggal, falling bells, the Bellkeeper's state machine, the map walk (`MapModel`), save rules (`ProgressRules`), the strings and story text. Art upgrades must not change these numbers: collision boxes stay the sizes in `PlayerSim`/`PlayerWorld`, so new art is drawn to fit the existing hitboxes.

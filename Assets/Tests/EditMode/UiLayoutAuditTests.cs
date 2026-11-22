@@ -10,6 +10,7 @@ namespace Skp.Tests
     public class UiLayoutAuditTests
     {
         [Test]
+        [Timeout(600000)] // renders 240 shots: it took 154 to 184 s on this machine, over the 180 s default
         public void EveryScreen_AtEveryResolution_PassesTheLayoutAudit()
         {
             var r = SkpUiAudit.Run(saveShots: true);

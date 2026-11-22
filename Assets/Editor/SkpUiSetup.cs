@@ -285,6 +285,7 @@ public static class SkpUiSetup
         mc.screen = Prefab(MapScreen.Build(safe));
         mc.dialog = Prefab(DialogBox.Build(safe));
         mc.skillsScreen = Prefab(SkillsScreen.Build(safe));
+        mc.catalog = AssetDatabase.LoadAssetAtPath<Skp.Levels.LevelPrefabCatalog>(SkpPrefabSetup.CatalogPath);
         mc.white = S(WhitePath);
         mc.star = S("Assets/Art/Items/spr_star.png");
         mc.bell = S(BellPath);

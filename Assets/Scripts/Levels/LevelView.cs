@@ -6,38 +6,49 @@ using UnityEngine;
 namespace Skp.Levels
 {
     /// <summary>
-    /// Draws a generated level from its <see cref="PlayerWorld"/>: one sprite object per ledge, hazard,
-    /// door, item, creature and lantern, built once; LateUpdate only moves or toggles them (no per-frame
-    /// allocation). Every object gets a <see cref="DimensionMember"/> so the dimension styling applies.
+    /// Draws a generated level from its <see cref="PlayerWorld"/>: one prefab instance (from the <see cref="LevelPrefabCatalog"/>)
+    /// per ledge, hazard, door, item, creature, lantern, bell and the water, built once; LateUpdate only moves, sizes, toggles
+    /// or switches their state (no per-frame allocation). Every prefab carries a <see cref="DimensionMember"/> for the
+    /// dimension styling; the view sets its mask from the level data.
     /// </summary>
     public class LevelView : MonoBehaviour
     {
+        [Tooltip("Backdrops and other level art the runner still reads.")]
         public LevelArt art;
+        [Tooltip("The prefabs every level object is made from (R1). Falls back to Resources/" + LevelPrefabCatalog.ResourcePath + ".")]
+        public LevelPrefabCatalog catalog;
         [Tooltip("1 to 3: picks the act's ledge art and decoration (set by the runner before Build).")]
         public int act = 1;
+
+        /// <summary>World units per pixel of the imported white pixel (16 PPU): scale it by pixels.</summary>
+        const float PxPerUnit = 16f;
+        /// <summary>How much nearer the camera a Home door sits than the Enter door it shares a spot with.</summary>
+        public const float HomeDoorDepth = 0.01f;
 
         PlayerWorld _world;
         PlayerSim _sim;
         readonly List<(Ledge ledge, Transform t, SpriteRenderer sr, float baseX)> _ledges = new List<(Ledge, Transform, SpriteRenderer, float)>();
-        readonly List<(Hazard h, SpriteRenderer sr)> _hazards = new List<(Hazard, SpriteRenderer)>();
-        readonly List<(Item it, Transform t, SpriteRenderer sr, Vector2 basePos, float seed)> _items = new List<(Item, Transform, SpriteRenderer, Vector2, float)>();
-        readonly List<(Enemy e, Transform t, SpriteRenderer sr)> _enemies = new List<(Enemy, Transform, SpriteRenderer)>();
+        readonly List<(Hazard h, LevelPiece p)> _hazards = new List<(Hazard, LevelPiece)>();
+        readonly List<(Item it, Transform t, Vector2 basePos, float seed)> _items = new List<(Item, Transform, Vector2, float)>();
+        readonly List<(Enemy e, Transform t, LevelPiece p)> _enemies = new List<(Enemy, Transform, LevelPiece)>();
         readonly List<SpriteRenderer> _lanterns = new List<SpriteRenderer>();
-        SpriteRenderer _exit;
+        LevelPiece _exit;
         Transform _root;
         SpriteRenderer _water, _waterTop;
         readonly List<(BellDrop b, SpriteRenderer bell, SpriteRenderer mark)> _bells = new List<(BellDrop, SpriteRenderer, SpriteRenderer)>();
         int _doorCount;
-        static Sprite _white;
 
         public int ObjectCount => _root == null ? 0 : _root.childCount;
+        public Transform Root => _root;
+
+        public LevelPrefabCatalog Catalog => catalog != null ? catalog : (catalog = LevelPrefabCatalog.Load());
 
         public void Build(PlayerWorld world, PlayerSim sim)
         {
             _world = world;
             _sim = sim;
             if (_root != null) { if (Application.isPlaying) Destroy(_root.gameObject); else DestroyImmediate(_root.gameObject); }
-            _root = new GameObject("Level Objects").transform;
+            _root = new GameObject("Level Objects").transform; // an empty folder; every drawn object below is a prefab instance
             _root.SetParent(transform, false);
             _ledges.Clear(); _hazards.Clear(); _items.Clear(); _enemies.Clear(); _lanterns.Clear(); _bells.Clear();
             _exit = null; _water = _waterTop = null;
@@ -54,34 +65,42 @@ namespace Skp.Levels
             AddDecor();
         }
 
+        // ------------------------------------------------------------ builders
+
+        LevelPiece Spawn(LevelPiece prefab, Vector2 pos, Dim mask, Dim ghostTint = Dim.Ordinary)
+        {
+            var p = LevelPiece.Spawn(prefab, _root, new Vector3(pos.x, pos.y, 0));
+            if (p.dimension != null) { p.dimension.mask = mask; p.dimension.ghostTint = ghostTint; }
+            return p;
+        }
+
         /// <summary>The black water: a dark body under a rippling surface strip (prototype drawWorld).</summary>
         void AddWater()
         {
-            _water = NewSprite("water", White(), Vector2.zero, 20, Dim.All, DimensionMember.Ghost.AlwaysVisible);
-            _water.color = new Color(6 / 255f, 12 / 255f, 20 / 255f, 0.82f);
-            if (art.waterSurface != null)
+            var c = Catalog;
+            _water = Spawn(c.waterBody, Vector2.zero, Dim.All).main;
+            if (c.waterSurface != null && c.waterSurface.main.sprite != null)
             {
-                _waterTop = NewSprite("water surface", art.waterSurface, Vector2.zero, 21, Dim.All, DimensionMember.Ghost.AlwaysVisible);
-                _waterTop.drawMode = SpriteDrawMode.Tiled;
-                _waterTop.tileMode = SpriteTileMode.Continuous;
-                _waterTop.size = new Vector2(_world.Bounds.width, art.waterSurface.bounds.size.y);
+                _waterTop = Spawn(c.waterSurface, Vector2.zero, Dim.All).main;
+                _waterTop.size = new Vector2(_world.Bounds.width, _waterTop.sprite.bounds.size.y);
             }
         }
 
         void AddBell(BellDrop b)
         {
-            var bell = NewSprite("falling bell", art.bell, new Vector2(b.X, b.TopY), 7, b.Mask, DimensionMember.Ghost.Hidden);
-            var mark = NewSprite("bell mark", White(), new Vector2(b.X, (b.TopY + b.GroundY) * 0.5f), 2, b.Mask, DimensionMember.Ghost.Hidden);
-            mark.color = new Color32(0xff, 0x5a, 0x4a, 0xa0);
-            mark.transform.localScale = new Vector3(2f / 16f, b.TopY - b.GroundY, 1);
+            var c = Catalog;
+            var bell = Spawn(c.fallingBell, new Vector2(b.X, b.TopY), b.Mask).main;
+            var mark = Spawn(c.bellMark, new Vector2(b.X, (b.TopY + b.GroundY) * 0.5f), b.Mask).main;
+            mark.transform.localScale = new Vector3(2f, (b.TopY - b.GroundY) * PxPerUnit, 1);
             _bells.Add((b, bell, mark));
         }
 
         /// <summary>Act II hanging balete roots under room floors, Act III candles on them (decoration only, fixed spots).</summary>
         void AddDecor()
         {
-            var s = act == 2 ? art.propRoots : act == 3 ? art.propCandle : null;
-            if (s == null) return;
+            var prefab = Catalog.decorByAct[Mathf.Clamp(act, 1, 3) - 1];
+            if (prefab == null || prefab.main == null || prefab.main.sprite == null) return;
+            var s = prefab.main.sprite;
             int n = 0;
             foreach (var l in _world.Ledges)
             {
@@ -90,46 +109,20 @@ namespace Skp.Levels
                 {
                     float x = l.Rect.x + fx + (n++ % 3);
                     var pos = act == 2 ? new Vector2(x, l.Rect.yMin - s.bounds.size.y * 0.5f) : new Vector2(x, l.Rect.yMax + s.bounds.size.y * 0.5f);
-                    var sr = NewSprite("decor", s, pos, -2, Dim.All, DimensionMember.Ghost.Ledge);
-                    sr.color = new Color(1, 1, 1, 0.85f);
+                    Spawn(prefab, pos, Dim.All);
                 }
             }
-        }
-
-        // ------------------------------------------------------------ builders
-
-        SpriteRenderer NewSprite(string name, Sprite s, Vector2 pos, int order, Dim mask, DimensionMember.Ghost ghost, Dim ghostTint = Dim.Ordinary)
-        {
-            var go = new GameObject(name);
-            go.transform.SetParent(_root, false);
-            go.transform.position = pos;
-            var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = s;
-            sr.sortingOrder = order;
-            var dm = go.AddComponent<DimensionMember>();
-            dm.mask = mask; dm.ghost = ghost; dm.ghostTint = ghostTint; dm.renderers = new[] { sr };
-            return sr;
         }
 
         void AddLedge(Ledge l)
         {
             var r = l.Rect;
             bool ground = l.Kind == LedgeKind.Floor && r.height > 1.5f;
-            Sprite s = ground ? art.floorBlock : l.Kind switch
-            {
-                LedgeKind.Spirit => art.spirit,
-                LedgeKind.Inverted => art.inverted,
-                LedgeKind.Crumble => art.crumble,
-                LedgeKind.Moving => art.moving,
-                _ => act == 2 && art.rootLedge != null ? art.rootLedge : act == 3 && art.stoneLedge != null ? art.stoneLedge : art.wood,
-            };
             // Ledge art is one tile tall: aligned to the top surface (to the underside for Inverted-only ledges).
             float h = ground ? r.height : 1f;
             bool hangs = l.Mask == Dim.Inverted;
             float cy = ground ? r.center.y : hangs ? r.yMin + h * 0.5f : r.yMax - h * 0.5f;
-            var sr = NewSprite("ledge", s, new Vector2(r.center.x, cy), ground ? -1 : 0, l.Mask, DimensionMember.Ghost.Ledge);
-            sr.drawMode = SpriteDrawMode.Tiled;
-            sr.tileMode = SpriteTileMode.Continuous;
+            var sr = Spawn(Catalog.Ledge(l.Kind, act, ground), new Vector2(r.center.x, cy), l.Mask).main;
             sr.size = new Vector2(r.width, h);
             sr.flipY = hangs;
             _ledges.Add((l, sr.transform, sr, sr.transform.position.x - r.x));
@@ -137,74 +130,54 @@ namespace Skp.Levels
 
         void AddHazard(Hazard h)
         {
+            var c = Catalog;
             var r = h.Rect;
-            Sprite s = h.Kind switch
+            var prefab = h.Kind switch
             {
-                HazardKind.Thorns => art.thorns,
-                HazardKind.Curtain => art.curtain != null ? art.curtain : art.thorns,
-                HazardKind.Root => art.rootDormant,
-                _ => h.Gauntlet ? art.spikeGauntlet : art.spike,
+                HazardKind.Thorns => c.thorns,
+                HazardKind.Curtain => c.curtain,
+                HazardKind.Root => c.root,
+                _ => h.Gauntlet ? c.spikeGauntlet : c.spike,
             };
-            var sr = NewSprite(h.Kind.ToString(), s, r.center, 3, h.Mask, DimensionMember.Ghost.Hazard);
+            var p = Spawn(prefab, r.center, h.Mask);
             if (h.Kind == HazardKind.Spike || h.Kind == HazardKind.Curtain)
             {
-                sr.drawMode = SpriteDrawMode.Tiled;
-                sr.tileMode = SpriteTileMode.Continuous;
-                sr.size = r.size;
-                sr.flipY = h.Hanging;
+                p.main.size = r.size;
+                p.main.flipY = h.Hanging;
             }
-            _hazards.Add((h, sr));
+            _hazards.Add((h, p));
         }
 
         void AddDoor(Door d)
         {
-            Sprite s = d.Kind == DoorKind.Exit ? art.exitLocked
-                     : d.Kind == DoorKind.Home ? art.doorHome
-                     : d.Target == Dim.Spirit ? art.doorSpirit : art.doorInvert;
-            var sr = NewSprite(d.Kind + " door", s, d.Rect.center, 1, d.Mask,
-                d.Kind == DoorKind.Exit ? DimensionMember.Ghost.AlwaysVisible : DimensionMember.Ghost.Door,
-                d.Kind == DoorKind.Enter ? d.Target : Dim.Ordinary);
-            sr.flipY = d.Hanging;
-            if (d.Kind == DoorKind.Exit) _exit = sr;
+            var c = Catalog;
+            var prefab = d.Kind == DoorKind.Exit ? c.exit
+                       : d.Kind == DoorKind.Home ? c.doorHome
+                       : d.Target == Dim.Spirit ? c.doorSpirit : c.doorInverted;
+            var p = Spawn(prefab, d.Rect.center, d.Mask, d.Kind == DoorKind.Enter ? d.Target : Dim.Ordinary);
+            p.main.flipY = d.Hanging;
+            // A room's Home door shares its spot and sorting order with the Enter door. Equal sprites sort by depth, so the Home
+            // door sits a hair nearer the camera: its ghost always draws over the Enter door, as the prototype draws them.
+            if (d.Kind == DoorKind.Home) p.transform.position += new Vector3(0, 0, -HomeDoorDepth);
+            if (d.Kind == DoorKind.Exit) _exit = p;
         }
 
         void AddItem(Item it)
         {
-            Sprite s = it.Kind == ItemKind.Shard ? art.shard : it.Kind == ItemKind.Clue ? art.clue : art.flame;
-            var sr = NewSprite(it.Kind.ToString(), s, it.Rect.center, 4, it.Mask, DimensionMember.Ghost.Hidden);
-            _items.Add((it, sr.transform, sr, it.Rect.center, it.Rect.x * 7f));
+            var c = Catalog;
+            var prefab = it.Kind == ItemKind.Shard ? c.fragment : it.Kind == ItemKind.Clue ? c.letter : c.flame;
+            var p = Spawn(prefab, it.Rect.center, it.Mask);
+            _items.Add((it, p.transform, it.Rect.center, it.Rect.x * 7f));
         }
 
         void AddEnemy(Enemy e)
         {
-            var frames = Frames(e.Kind);
-            var sr = NewSprite(e.Kind.ToString(), frames != null && frames.Length > 0 ? frames[0] : null,
-                               new Vector2(e.Center.x, e.Position.y), 6, e.Mask, DimensionMember.Ghost.Hidden);
-            _enemies.Add((e, sr.transform, sr));
+            var p = Spawn(Catalog.Creature(e.Kind), new Vector2(e.Center.x, e.Position.y), e.Mask);
+            _enemies.Add((e, p.transform, p));
         }
 
-        void AddLantern(Vector2 at)
-        {
-            // Post (dark wood, 2 x 34 px) and flame, as the prototype draws lanterns until dedicated art exists.
-            var post = NewSprite("lantern post", White(), at + new Vector2(0, 17f / 16f), 2, Dim.All, DimensionMember.Ghost.AlwaysVisible);
-            post.color = new Color32(0x3a, 0x24, 0x10, 0xff);
-            post.transform.localScale = new Vector3(2f / 16f, 34f / 16f, 1);
-            var flame = NewSprite("lantern flame", art.flame, at + new Vector2(0, 2.1f), 5, Dim.All, DimensionMember.Ghost.AlwaysVisible);
-            flame.transform.localScale = Vector3.one * 2f;
-            _lanterns.Add(flame);
-        }
-
-        Sprite[] Frames(EnemyKind k) => k == EnemyKind.Tikbalang ? art.tikbalang : k == EnemyKind.Manananggal ? art.manananggal : art.anino;
-
-        static Sprite White()
-        {
-            if (_white != null) return _white;
-            var t = new Texture2D(1, 1) { filterMode = FilterMode.Point };
-            t.SetPixel(0, 0, Color.white);
-            t.Apply();
-            _white = Sprite.Create(t, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f), 1f);
-            return _white;
-        }
+        /// <summary>The lantern prefab: a dark post and the flame on top; the flame dims until the lantern is reached.</summary>
+        void AddLantern(Vector2 at) => _lanterns.Add(Spawn(Catalog.lantern, at, Dim.All).main);
 
         // ------------------------------------------------------------ per frame
 
@@ -224,28 +197,28 @@ namespace Skp.Levels
                 }
             }
 
-            foreach (var (h, sr) in _hazards)
+            foreach (var (h, p) in _hazards)
             {
                 if (h.Kind == HazardKind.Root)
                 {
                     long c = h.BurnTicks > 0 ? 0 : (t + h.Phase) % 150;
-                    sr.sprite = c < 85 ? art.rootDormant : c < 110 ? art.rootWarning : art.rootStrike;
+                    p.SetState(c < 85 ? 0 : c < 110 ? 1 : 2); // dormant, warning, strike
                 }
-                else if (h.Kind == HazardKind.Thorns) sr.sprite = h.BurnTicks > 0 ? art.thornsBurnt : art.thorns;
+                else if (h.Kind == HazardKind.Thorns) p.SetState(h.BurnTicks > 0 ? 1 : 0);
             }
 
-            foreach (var (it, tr, sr, basePos, seed) in _items)
+            foreach (var (it, tr, basePos, seed) in _items)
             {
                 if (it.Got) { if (tr.gameObject.activeSelf) tr.gameObject.SetActive(false); continue; }
                 float bob = Mathf.Round(Mathf.Sin(t * 0.07f + seed) * 2f) / 16f;
                 tr.position = new Vector3(basePos.x, basePos.y + bob, tr.position.z);
             }
 
-            foreach (var (e, tr, sr) in _enemies)
+            foreach (var (e, tr, p) in _enemies)
             {
                 if (e.Dead) { if (tr.gameObject.activeSelf) tr.gameObject.SetActive(false); continue; }
-                var frames = Frames(e.Kind);
-                if (frames != null && frames.Length > 1 && frames[0] != null) sr.sprite = frames[(int)((t >> 4) & 1)];
+                var sr = p.main;
+                if (p.StateCount > 1) p.SetState((int)((t >> 4) & 1));
                 sr.flipX = e.Kind == EnemyKind.Manananggal ? _sim.Center.x < e.Center.x : e.Dir < 0; // the manananggal watches Tala
                 tr.position = new Vector3(Mathf.Round(e.Center.x * 16f) / 16f, Mathf.Round(e.Position.y * 16f) / 16f, tr.position.z);
                 var c = sr.color;
@@ -255,7 +228,7 @@ namespace Skp.Levels
 
             // doors added during play (the last door after the Bellkeeper falls)
             while (_doorCount < _world.Doors.Count) AddDoor(_world.Doors[_doorCount++]);
-            if (_exit != null) _exit.sprite = !_world.NeedClue || _sim.HasClue ? art.exitOpen : art.exitLocked;
+            if (_exit != null) _exit.SetState(!_world.NeedClue || _sim.HasClue ? 1 : 0); // locked, open
 
             foreach (var (b, bell, mark) in _bells)
             {
@@ -270,7 +243,7 @@ namespace Skp.Levels
                 float bottom = _world.Bounds.yMin - 3f;
                 float h = Mathf.Max(0.01f, fl.Y - bottom);
                 _water.transform.position = new Vector3(_world.Bounds.center.x, bottom + h * 0.5f, 0);
-                _water.transform.localScale = new Vector3(_world.Bounds.width, h, 1);
+                _water.transform.localScale = new Vector3(_world.Bounds.width * PxPerUnit, h * PxPerUnit, 1);
                 if (_waterTop != null)
                 {
                     float ripple = Mathf.Round(Mathf.Sin(t * 0.08f) * 1.5f) / 16f;

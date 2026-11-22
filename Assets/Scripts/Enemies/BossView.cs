@@ -5,66 +5,45 @@ using UnityEngine;
 namespace Skp.Enemies
 {
     /// <summary>
-    /// Draws the Bellkeeper like the prototype's drawBoss(): the body (stunned and tolling frames), the closing golden
-    /// toll ring, shockwaves along the arena floor, red warning lines and the falling bells. Built at runtime by the
-    /// level runner on the boss level; nothing is allocated per frame after warm-up.
+    /// Draws the Bellkeeper like the prototype's drawBoss(): the body (stunned and tolling states), the closing golden
+    /// toll ring, shockwaves along the arena floor, red warning lines and the falling bells. Every piece is a prefab from the
+    /// <see cref="LevelPrefabCatalog"/> (R1); shockwaves, marks and bells are pooled and pre-warmed when bound, so nothing
+    /// is created or allocated per frame.
     /// </summary>
     public class BossView : MonoBehaviour
     {
         const float Px = 1f / 16f;
         const int RingPoints = 48;
+        /// <summary>Pool sizes made up front (more are added only if a fight ever needs them).</summary>
+        const int PrewarmWaves = 4, PrewarmMarks = 6, PrewarmBells = 6;
 
-        public LevelArt art;
         [System.NonSerialized] public Bellkeeper boss;
-        SpriteRenderer _body;
+        LevelPrefabCatalog _catalog;
+        LevelPiece _body;
         LineRenderer _ring;
         readonly List<SpriteRenderer> _waves = new List<SpriteRenderer>(), _marks = new List<SpriteRenderer>(), _bells = new List<SpriteRenderer>();
-        static Sprite _white;
         long _t;
 
-        public SpriteRenderer Body => _body;
+        public SpriteRenderer Body => _body != null ? _body.main : null;
         public bool RingVisible => _ring != null && _ring.enabled;
 
-        public void Bind(Bellkeeper b, LevelArt levelArt)
+        public void Bind(Bellkeeper b, LevelPrefabCatalog catalog)
         {
             boss = b;
-            art = levelArt;
-            _body = Make("Bellkeeper", art.boss, 8);
-            _ring = new GameObject("Toll ring").AddComponent<LineRenderer>();
-            _ring.transform.SetParent(transform, false);
-            _ring.useWorldSpace = true;
-            _ring.loop = true;
+            _catalog = catalog != null ? catalog : LevelPrefabCatalog.Load();
+            _body = LevelPiece.Spawn(_catalog.bossBody, transform, transform.position);
+            _ring = LevelPiece.Spawn(_catalog.tollRing, transform, transform.position).line;
             _ring.positionCount = RingPoints;
-            _ring.widthMultiplier = 3 * Px;
-            _ring.sharedMaterial = _body.sharedMaterial; // the sprites' own material: drawn like the rest of the level
-            _ring.sortingOrder = 12;
             _ring.enabled = false;
+            for (int i = 0; i < PrewarmWaves; i++) Pooled(_waves, i, _catalog.shockwave).enabled = false;
+            for (int i = 0; i < PrewarmMarks; i++) Pooled(_marks, i, _catalog.bossMark).enabled = false;
+            for (int i = 0; i < PrewarmBells; i++) Pooled(_bells, i, _catalog.bossBell).enabled = false;
             Render();
         }
 
-        SpriteRenderer Make(string name, Sprite s, int order)
+        SpriteRenderer Pooled(List<SpriteRenderer> pool, int i, LevelPiece prefab)
         {
-            var go = new GameObject(name);
-            go.transform.SetParent(transform, false);
-            var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = s;
-            sr.sortingOrder = order;
-            return sr;
-        }
-
-        static Sprite White()
-        {
-            if (_white != null) return _white;
-            var t = new Texture2D(1, 1) { filterMode = FilterMode.Point };
-            t.SetPixel(0, 0, Color.white);
-            t.Apply();
-            _white = Sprite.Create(t, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f), 1f);
-            return _white;
-        }
-
-        SpriteRenderer Pooled(List<SpriteRenderer> pool, int i, Sprite s, int order)
-        {
-            while (pool.Count <= i) pool.Add(Make("fx", s, order));
+            while (pool.Count <= i) pool.Add(LevelPiece.Spawn(prefab, transform, transform.position).main);
             var r = pool[i];
             r.enabled = true;
             return r;
@@ -79,18 +58,18 @@ namespace Skp.Enemies
             if (boss == null || _body == null) return;
             _t++;
             bool show = boss.Active && !boss.Gone;
-            _body.enabled = show;
+            var body = _body.main;
+            body.enabled = show;
             if (show)
             {
-                _body.sprite = boss.State == BossState.Stun && art.bossStun != null ? art.bossStun
-                             : boss.State == BossState.Toll && art.bossToll != null ? art.bossToll : art.boss;
-                float h = _body.sprite != null ? _body.sprite.bounds.size.y : Bellkeeper.BodySize.y;
+                _body.SetState(boss.State == BossState.Stun ? 1 : boss.State == BossState.Toll ? 2 : 0); // normal, stunned, tolling
+                float h = body.sprite != null ? body.sprite.bounds.size.y : Bellkeeper.BodySize.y;
                 float jitter = boss.Dead ? ((boss.DeadTicks % 4) < 2 ? Px : -Px) : 0;
-                _body.transform.position = new Vector3(Snap(boss.X) + jitter, Snap(boss.TopY - h), 0);
+                body.transform.position = new Vector3(Snap(boss.X) + jitter, Snap(boss.TopY - h), 0);
                 var c = Color.white;
                 if (boss.Dead) c.a = Mathf.Max(0, 1f - boss.DeadTicks / 180f);
                 else if (boss.FlashTicks > 0 && boss.FlashTicks % 2 == 1) c.a = 0.5f;
-                _body.color = c;
+                body.color = c;
             }
 
             _ring.enabled = show && boss.State == BossState.Toll;
@@ -111,9 +90,8 @@ namespace Skp.Enemies
             int n = 0;
             for (int i = 0; i < boss.Waves.Count; i++)
             {
-                var w = Pooled(_waves, n++, art.shockwave != null ? art.shockwave : White(), 9);
+                var w = Pooled(_waves, n++, _catalog.shockwave);
                 w.transform.position = new Vector3(Snap(boss.Waves[i]), boss.FloorY + 6 * Px, 0);
-                if (art.shockwave == null) { w.color = new Color32(0xff, 0xd3, 0x6a, 0xff); w.transform.localScale = new Vector3(12 * Px, 12 * Px, 1); }
                 w.flipX = boss.WaveDirs[i] < 0;
             }
             for (int i = n; i < _waves.Count; i++) _waves[i].enabled = false;
@@ -122,9 +100,8 @@ namespace Skp.Enemies
             float pulse = 0.4f + 0.4f * Mathf.Sin(_t * 0.4f);
             foreach (var m in boss.Marks)
             {
-                var r = Pooled(_marks, n++, White(), 2);
+                var r = Pooled(_marks, n++, _catalog.bossMark);
                 r.color = new Color(1f, 0.35f, 0.29f, pulse);
-                r.transform.localScale = new Vector3(2 * Px, 230 * Px, 1);
                 r.transform.position = new Vector3(Snap(m.x), boss.FloorY + 115 * Px, 0);
             }
             for (int i = n; i < _marks.Count; i++) _marks[i].enabled = false;
@@ -132,7 +109,7 @@ namespace Skp.Enemies
             n = 0;
             foreach (var q in boss.Bells)
             {
-                var r = Pooled(_bells, n++, art.bell, 9);
+                var r = Pooled(_bells, n++, _catalog.bossBell);
                 r.transform.position = new Vector3(Snap(q.x), Snap(q.y - 8 * Px), 0);
             }
             for (int i = n; i < _bells.Count; i++) _bells[i].enabled = false;
