@@ -40,6 +40,9 @@ const STROKES = [
   // legs (slight stance), bare skin with shade on the far side
   [41, 19, 'ozsso.osszo'], [42, 19, 'ozsso.osszo'], [43, 19, 'ozsso.oSszo'], [44, 19, 'ozsso.oSszo'], [45, 19, 'ozsso.osszo'],
   [46, 19, 'ozszo.oszzo'], [47, 19, 'ozszo.oszzo'],
+  // detail pass: nose, hair highlight clusters, camisa folds, hem shadow
+  [15, 23, 'z'], [5, 18, 'HH'], [6, 16, 'HH'], [7, 15, 'H'], [21, 13, 'H'], [22, 14, 'HH'], [25, 12, 'H'],
+  [25, 22, 'v'], [26, 22, 'v'], [25, 25, 'v'], [26, 25, 'v'], [27, 21, 'v'], [39, 28, 'q'], [40, 27, 'Q'], [36, 28, 'q'],
   // sandals
   [48, 18, 'odLLdo.odLLLdo'], [49, 18, 'oLLLLLo.oLLLLLLo'], [50, 18, 'ooooooo.oooooooo'],
 ];
@@ -50,14 +53,19 @@ const PAROL = [
 ];
 const UNLIT = PAROL.map(r => r.replace(/Y/g, 'p').replace(/y/g, 'P').replace(/G/g, 'n'));
 
-function frame(parol) {
+const LIT_TONE = { s: 'S', z: 's', w: 'W', v: 'w', r: 'R', q: 'r', h: 'H', g: 'h' };
+function frame(parol, lit) {
   const g = Array.from({ length: 54 }, () => Array(48).fill('.'));
   for (const [row, col, str] of STROKES) [...str].forEach((c, k) => { if (c !== '.' && g[row + 3]) g[row + 3][col + k] = c; });
   parol.forEach((r, j) => [...r].forEach((c, i) => { if (c !== '.' && g[19 + 3 + j] && 34 + i < 48) g[19 + 3 + j][34 + i] = c; }));
+  if (lit) for (let y = 0; y < 54; y++) for (let x = 0; x < 34; x++) {
+    const c = g[y][x]; if (!LIT_TONE[c]) continue;
+    if (Math.hypot((x - 40) * 1.0, (y - 28) * 1.2) < 13) g[y][x] = LIT_TONE[c];
+  }
   return g;
 }
 const rgb = h => [1, 3, 5].map(k => parseInt(h.substr(k, 2), 16));
-const frames = [frame(UNLIT), frame(PAROL)];
+const frames = [frame(UNLIT, false), frame(PAROL, true)];
 const S = 6, pad = 12, PW = pad + 2 * (48 + pad) + 2 * (48 * S + pad), PH = 54 * S + pad * 2;
 const img = Buffer.alloc(PW * PH * 3);
 for (let i = 0; i < PW * PH; i++) { img[i * 3] = 0x24; img[i * 3 + 1] = 0x1a; img[i * 3 + 2] = 0x2e; }
