@@ -36,6 +36,13 @@ public static class SkpLevelShots
     public const string R1Dir = "tests/Screenshots/r1/after";
     public const string A7Dir = "tests/Screenshots/a7";
 
+    public static List<string> Presentation()
+    {
+        _out = "tests/Screenshots/presentation"; _withLevel1 = true;
+        try { return Run(); }
+        finally { _out = OutDir; _withLevel1 = false; }
+    }
+
     /// <summary>A-7: the same level shots with the hand-pixelled 48 px Tala in the world (tests/Screenshots/a7).</summary>
     public static void RunA7Batch()
     {
@@ -93,7 +100,7 @@ public static class SkpLevelShots
         return (n, max);
     }
 
-    class Shot { public bool Search; public string Name; public int Level; public string[] Skills; public System.Action<LevelSession, LevelRunner> Setup; public System.Func<LevelSession, Vector2?> Focus; }
+    class Shot { public bool Search; public string Name; public int Level; public string[] Skills; public Skp.Dimensions.Dim Dimension = Skp.Dimensions.Dim.Ordinary; public System.Action<LevelSession, LevelRunner> Setup; public System.Func<LevelSession, Vector2?> Focus; }
 
     public static List<string> Run()
     {
@@ -117,7 +124,18 @@ public static class SkpLevelShots
                        Setup = (s, r) => Boss(s, BossState.Toll) },
             new Shot { Name = "11_bellkeeper_shockwave_bells", Level = 8, Skills = SkillIds.All, Focus = s => new Vector2(16, s.World.Arena.FloorY + 6.5f),
                        Setup = (s, r) => Boss(s, BossState.Bells) },
+            new Shot { Name = "12_bellkeeper_defeated", Level = 8, Skills = SkillIds.All, Focus = s => new Vector2(16, s.World.Arena.FloorY + 6.5f),
+                       Setup = (s, r) => {
+                           Boss(s, BossState.Toll);
+                           typeof(Bellkeeper).GetMethod("Die", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(s.Boss, new object[] { s.Sim });
+                           s.Boss.DeadTicks = 40;
+                       } },
         };
+        if (_out == "tests/Screenshots/presentation")
+        {
+            list.Add(new Shot { Name = "13_spirit_shadow", Level = 2, Skills = SkillIds.All, Dimension = Skp.Dimensions.Dim.Spirit, Focus = s => s.World.Lanterns[1] });
+            list.Add(new Shot { Name = "14_inverted", Level = 2, Skills = SkillIds.All, Dimension = Skp.Dimensions.Dim.Inverted, Focus = s => s.World.Lanterns[1] });
+        }
         if (_withLevel1)
             list.Insert(0, new Shot { Name = "00_level1_first_lantern", Level = 0, Skills = new string[0], Focus = s => s.World.Lanterns[1] });
         var files = new List<string>();
@@ -152,6 +170,28 @@ public static class SkpLevelShots
             var sim = session.Sim;
             sim.Position = focus.Value + new Vector2(-3f, -1.5f);
             shot.Setup?.Invoke(session, runner);
+            if (shot.Dimension != Skp.Dimensions.Dim.Ordinary) sim.SetDimension(shot.Dimension);
+            if (shot.Dimension != Skp.Dimensions.Dim.Ordinary)
+            {
+                // These close-up inspection fixtures use an actual solid ledge in the selected
+                // dimension; placing the actor below the floor hides both the sprite and Anino.
+                var ledge = session.World.Ledges
+                    .Where(l => !l.IsGone && l.Rect.width >= 3 && Skp.Dimensions.DimensionRules.Active(l.Mask, shot.Dimension))
+                    .OrderBy(l => (l.Rect.center - focus.Value).sqrMagnitude).FirstOrDefault();
+                if (ledge != null)
+                    sim.Position = new Vector2(Mathf.Clamp(focus.Value.x - 1, ledge.Rect.xMin + 1.5f, ledge.Rect.xMax - sim.Size.x),
+                        shot.Dimension == Skp.Dimensions.Dim.Inverted ? ledge.Rect.yMin - sim.Size.y : ledge.Rect.yMax);
+            }
+            runner.player.Attach(sim);
+            runner.director.Apply(sim.Dimension, true);
+            if (shot.Dimension == Skp.Dimensions.Dim.Spirit)
+            {
+                for (int i = 0; i <= sim.Shadow.Delay; i++) sim.Shadow.Record(sim.Position - new Vector2(1.5f, 0), 1, 0);
+                var shadow = Object.FindAnyObjectByType<Skp.Dimensions.ShadowView>();
+                var flags = System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic;
+                typeof(Skp.Dimensions.ShadowView).GetMethod("Awake", flags).Invoke(shadow, null);
+                typeof(Skp.Dimensions.ShadowView).GetMethod("LateUpdate", flags).Invoke(shadow, null);
+            }
             runner.player.view.Render(sim, sim.Position, 1f);
             BossView bv = null;
             if (session.Boss != null && session.Boss.Active)
@@ -166,6 +206,12 @@ public static class SkpLevelShots
             var ppc = cam.GetComponent<UnityEngine.Rendering.Universal.PixelPerfectCamera>();
             if (ppc != null) ppc.enabled = false;
             cam.transform.position = new Vector3(focus.Value.x, focus.Value.y, -10);
+            cam.aspect = W / (float)H;
+            if (shot.Dimension != Skp.Dimensions.Dim.Ordinary)
+            {
+                cam.orthographicSize = 3.5f;
+                cam.transform.position = new Vector3(sim.Position.x, sim.Position.y + sim.Size.y * 0.5f, -10);
+            }
             foreach (var c in Object.FindObjectsByType<Canvas>(FindObjectsInactive.Include)) c.gameObject.SetActive(false); // the world only
             var rt = new RenderTexture(W, H, 24);
             cam.targetTexture = rt;

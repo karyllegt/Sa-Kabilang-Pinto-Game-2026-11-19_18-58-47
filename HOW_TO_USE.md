@@ -1,5 +1,7 @@
 # How to use these prompts
 
+**Current handoff:** the Unity game is now a working prototype baseline for Mary and Ronn. Start with `README.md` and `docs/PRESENTATION_HANDOFF.md` to play, edit and improve it within your roles. The kickoff/milestone steps below document the original prompt-kit workflow; they are reference material for future engineering work.
+
 1. Put this kit in the Unity project root so `README.md`, `CLAUDE.md`, `docs/`, `prompts/` and `reference/` sit beside `Assets/`.
 2. Open a terminal in that root and run `claude`.
 3. Paste `00_kickoff.md`. Answer its questions. Say "go M1".

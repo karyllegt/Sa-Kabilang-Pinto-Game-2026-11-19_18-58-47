@@ -22,7 +22,7 @@ using UnityEngine.UI;
 
 public static class SkpUiAudit
 {
-    public const string OutDir = "tests/Screenshots/m6"; // M5 evidence stays in tests/Screenshots/m5
+    public const string OutDir = "tests/Screenshots/presentation/ui"; // Earlier M5/M6 evidence stays intact.
 
     public struct Res
     {
@@ -212,13 +212,13 @@ public static class SkpUiAudit
 
     // ------------------------------------------------------------------ run
 
-    public static Report Run(bool saveShots)
+    public static Report Run(bool saveShots, bool previewOnly = false)
     {
         var report = new Report();
         var tmp = Path.Combine(Path.GetTempPath(), "skp_audit_save");
         var save = new SaveService(tmp);
         save.Load();
-        var states = States();
+        var states = States().Where(st => !previewOnly || st.Name == "01_title" || st.Name == "12_letter");
         var shotsByRes = new Dictionary<string, List<(string, Texture2D)>>();
         try
         {
@@ -281,8 +281,9 @@ public static class SkpUiAudit
 
         st.Setup(c);
         // as with an overlay canvas in play, the world draws under the UI: move every world renderer below the canvases
+        // Use an idempotent threshold: subtracting repeatedly can wrap a signed 16-bit sorting order.
         foreach (var wr in UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Include))
-            if (wr.GetComponentInParent<Canvas>() == null && wr.sortingOrder > -20000) wr.sortingOrder -= 20000;
+            if (wr.GetComponentInParent<Canvas>() == null && wr.sortingOrder > -10000) wr.sortingOrder -= 20000;
         // as in play: the touch buttons hide while any box or dialog is open
         var lu = UnityEngine.Object.FindAnyObjectByType<LevelUi>();
         if (lu != null && lu.touch != null && UnityEngine.Object.FindObjectsByType<UiScreen>(FindObjectsInactive.Exclude).Length > 0) lu.touch.SetPlaying(false, false);
@@ -305,6 +306,7 @@ public static class SkpUiAudit
         Relayout(canvases);
 
         Check(c, st.Name, canvases, report);
+        CheckOpaquePanels(c, st.Name, canvases, report);
         UnityEngine.Object.DestroyImmediate(_behind);
 
         cam.Render();
@@ -325,6 +327,32 @@ public static class SkpUiAudit
             report.Shots.Add(file);
         }
         return tex;
+    }
+
+    public static void RunPreviewBatch()
+    {
+        var report = Run(true, true);
+        Debug.Log($"[SkpUiAudit] preview: {report.Checks} checks, {report.Problems.Count} problems");
+        EditorApplication.Exit(report.Problems.Count == 0 ? 0 : 2);
+    }
+
+    // Geometry alone cannot prove that a canvas rendered. Check actual text-free panel pixels.
+    static void CheckOpaquePanels(Ctx c, string state, Canvas[] canvases, Report report)
+    {
+        var th = UiKit.Theme;
+        foreach (var canvas in canvases)
+            foreach (var image in canvas.GetComponentsInChildren<Image>())
+            {
+                if (!image.isActiveAndEnabled || image.sprite != th.pixelBox || image.color.a < 0.99f ||
+                    image.rectTransform.rect.width < 200 || image.rectTransform.rect.height < 100) continue;
+                var center = ScreenRect(image.rectTransform, c.Cam).center;
+                int x = Mathf.RoundToInt(center.x), y = Mathf.RoundToInt(center.y);
+                if (x < 0 || y < 0 || x >= _behind.width || y >= _behind.height) continue;
+                Color got = _behind.GetPixel(x, y), expected = th.panel * image.color;
+                float error = Mathf.Max(Mathf.Abs(got.r - expected.r), Mathf.Abs(got.g - expected.g), Mathf.Abs(got.b - expected.b));
+                report.Checks++;
+                if (error > 0.035f) report.Fail(c.Res.Name, state, $"opaque UI panel not covering the world at its center: {image.name} ({got} vs {expected})");
+            }
     }
 
     static void Relayout(Canvas[] canvases)

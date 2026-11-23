@@ -21,6 +21,6 @@ MonoBehaviour:
   type: 1
   shortLabel: BOLT
   keyHint: X
-  icon: {fileID: 21300000, guid: d9afa09ef925d50439ed05a10d3432a6, type: 3}
+  icon: {fileID: 21300000, guid: 6a2ec75cab6db2141a64580f4e43f710, type: 2}
   level: 2
   cue: skill_bolt

@@ -1,0 +1,11 @@
+{
+    "check":  "Native Windows process and graphics startup; batch mode, no interactive playthrough or listening claim",
+    "seconds":  56,
+    "stayedRunning":  true,
+    "direct3DInitialized":  true,
+    "sceneStartupLogged":  true,
+    "loggedErrors":  [
+
+                     ],
+    "log":  "Logs/PresentationWindowsPlayer.log"
+}

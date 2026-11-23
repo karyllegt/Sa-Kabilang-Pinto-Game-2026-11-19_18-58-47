@@ -14,6 +14,9 @@ namespace Skp.Audio
                             Locked = "locked", Kill = "kill", Stun = "stun", Crumble = "crumble";
 
         int _airTicks;
+        float _stepDistance;
+        int _step;
+        bool _inWater;
 
         public GameCues(PlayerSim sim)
         {
@@ -34,9 +37,26 @@ namespace Skp.Audio
             sim.EnemyKilled += _ => Sfx.Cue(Kill);
             sim.ShadowStunned += () => Sfx.Cue(Stun);
             sim.LedgeCrumbled += _ => Sfx.Cue(Crumble);
+            sim.DimensionChanged += _ => Sfx.Cue("dimension");
         }
 
         /// <summary>Per tick: counts air time so tiny hops and ledge steps do not thud.</summary>
-        public void Tick(PlayerSim sim) => _airTicks = sim.Grounded ? 0 : _airTicks + 1;
+        public void Tick(PlayerSim sim)
+        {
+            _airTicks = sim.Grounded ? 0 : _airTicks + 1;
+            bool inWater = sim.Life == PlayerLife.Playing && sim.World.Flood != null && sim.Position.y < sim.World.Flood.Y;
+            if (inWater && !_inWater) Sfx.Cue("splash");
+            _inWater = inWater;
+            if (!sim.Grounded || sim.Life != PlayerLife.Playing || sim.DashTicks > 0 ||
+                inWater)
+            { _stepDistance = 0; return; }
+            // Distance, rather than wall-clock time: no footsteps while standing still, paused or airborne.
+            // Six run frames at six ticks each have two foot plants: 0.3 s between steps at full speed.
+            _stepDistance += UnityEngine.Mathf.Abs(sim.Velocity.x) * PlayerSim.Dt;
+            float stride = UnityEngine.Mathf.Max(0.25f, sim.Tuning.runSpeed * 0.3f);
+            if (_stepDistance < stride) return;
+            _stepDistance %= stride;
+            Sfx.Cue((_step++ & 1) == 0 ? "step_left" : "step_right");
+        }
     }
 }

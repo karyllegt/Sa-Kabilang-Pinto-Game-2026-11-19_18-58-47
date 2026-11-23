@@ -1,0 +1,4331 @@
+fileFormatVersion: 2
+guid: 7dbef13f948faa7408d3e5b966550294
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -316758999064563275
+    second: HazardsAtlas_0
+  - first:
+      213: -7138640723900871213
+    second: HazardsAtlas_1
+  - first:
+      213: 9147993017191082415
+    second: HazardsAtlas_2
+  - first:
+      213: -4076346379444406900
+    second: HazardsAtlas_3
+  - first:
+      213: 3863248569735202720
+    second: HazardsAtlas_4
+  - first:
+      213: -2329945993919885454
+    second: HazardsAtlas_5
+  - first:
+      213: 8144527245801137106
+    second: HazardsAtlas_6
+  - first:
+      213: -5539718995089142937
+    second: HazardsAtlas_7
+  - first:
+      213: 1689480877582189091
+    second: HazardsAtlas_8
+  - first:
+      213: -6520124530597545252
+    second: HazardsAtlas_9
+  - first:
+      213: -2877356728669075267
+    second: HazardsAtlas_10
+  - first:
+      213: 7882812427651873435
+    second: HazardsAtlas_11
+  - first:
+      213: -5154844669127416252
+    second: HazardsAtlas_12
+  - first:
+      213: 8928093927872942051
+    second: HazardsAtlas_13
+  - first:
+      213: 420327486473266211
+    second: HazardsAtlas_14
+  - first:
+      213: -6809135030317942760
+    second: HazardsAtlas_15
+  - first:
+      213: 6638370771196784461
+    second: HazardsAtlas_16
+  - first:
+      213: -445720778010619787
+    second: HazardsAtlas_17
+  - first:
+      213: 5283347607313842550
+    second: HazardsAtlas_18
+  - first:
+      213: 534311065126640116
+    second: HazardsAtlas_19
+  - first:
+      213: 1216480625932255739
+    second: HazardsAtlas_20
+  - first:
+      213: -5567744446358271671
+    second: HazardsAtlas_21
+  - first:
+      213: -8487136835342073694
+    second: HazardsAtlas_22
+  - first:
+      213: 568731782842701822
+    second: HazardsAtlas_23
+  - first:
+      213: -8739765604379673520
+    second: HazardsAtlas_24
+  - first:
+      213: 60565518371134800
+    second: HazardsAtlas_25
+  - first:
+      213: 6270939221879355607
+    second: HazardsAtlas_26
+  - first:
+      213: 5069295995431338028
+    second: HazardsAtlas_27
+  - first:
+      213: -498929295221536475
+    second: HazardsAtlas_28
+  - first:
+      213: 2922290121422244241
+    second: HazardsAtlas_29
+  - first:
+      213: -921345644905241448
+    second: HazardsAtlas_30
+  - first:
+      213: -8008553940329000479
+    second: HazardsAtlas_31
+  - first:
+      213: -5553878296032529657
+    second: HazardsAtlas_32
+  - first:
+      213: -8692048081990362805
+    second: HazardsAtlas_33
+  - first:
+      213: 9037717295878609628
+    second: HazardsAtlas_34
+  - first:
+      213: -3728027693299263559
+    second: HazardsAtlas_35
+  - first:
+      213: -6459079341869305675
+    second: HazardsAtlas_36
+  - first:
+      213: -9129657636164825249
+    second: HazardsAtlas_37
+  - first:
+      213: 2443756189295521397
+    second: HazardsAtlas_38
+  - first:
+      213: 6807668808009526914
+    second: HazardsAtlas_39
+  - first:
+      213: 1084234831404900069
+    second: HazardsAtlas_40
+  - first:
+      213: -3300177674683276302
+    second: HazardsAtlas_41
+  - first:
+      213: 2960668449863906997
+    second: HazardsAtlas_42
+  - first:
+      213: 8643513292615744166
+    second: HazardsAtlas_43
+  - first:
+      213: 2983140718932409075
+    second: HazardsAtlas_44
+  - first:
+      213: -2350174056862664697
+    second: HazardsAtlas_45
+  - first:
+      213: -515649728662129962
+    second: HazardsAtlas_46
+  - first:
+      213: -5214732307020616307
+    second: HazardsAtlas_47
+  - first:
+      213: 2113909921441612481
+    second: HazardsAtlas_48
+  - first:
+      213: 6749389152473218871
+    second: HazardsAtlas_49
+  - first:
+      213: -5707350363178105026
+    second: HazardsAtlas_50
+  - first:
+      213: 2822685328925198763
+    second: HazardsAtlas_51
+  - first:
+      213: 1975337769307846897
+    second: HazardsAtlas_52
+  - first:
+      213: -6449622293851529904
+    second: HazardsAtlas_53
+  - first:
+      213: 7844025722204862414
+    second: HazardsAtlas_54
+  - first:
+      213: 4478713097265621653
+    second: HazardsAtlas_55
+  - first:
+      213: -7264768963225129267
+    second: HazardsAtlas_56
+  - first:
+      213: -6446221644959170686
+    second: HazardsAtlas_57
+  - first:
+      213: 6673603338902354147
+    second: HazardsAtlas_58
+  - first:
+      213: -4430727778283839921
+    second: HazardsAtlas_59
+  - first:
+      213: 6584287845650197078
+    second: HazardsAtlas_60
+  - first:
+      213: -3383534076282855028
+    second: HazardsAtlas_61
+  - first:
+      213: 7791608645849458601
+    second: HazardsAtlas_62
+  - first:
+      213: -911174550810778319
+    second: HazardsAtlas_63
+  - first:
+      213: -4191843458370474405
+    second: HazardsAtlas_64
+  - first:
+      213: -6999338625752503815
+    second: HazardsAtlas_65
+  - first:
+      213: 5283511251619500727
+    second: HazardsAtlas_66
+  - first:
+      213: -9009394953867722971
+    second: HazardsAtlas_67
+  - first:
+      213: -1720815892700608472
+    second: HazardsAtlas_68
+  - first:
+      213: 6759921887905315307
+    second: HazardsAtlas_69
+  - first:
+      213: 9169745014667146784
+    second: HazardsAtlas_70
+  - first:
+      213: 7210382404895071251
+    second: HazardsAtlas_71
+  - first:
+      213: 2292004391243113828
+    second: HazardsAtlas_72
+  - first:
+      213: -4574990123091925812
+    second: HazardsAtlas_73
+  - first:
+      213: 7275437887149465944
+    second: HazardsAtlas_74
+  - first:
+      213: -3840882908510567639
+    second: HazardsAtlas_75
+  - first:
+      213: 2916681847322052325
+    second: HazardsAtlas_76
+  - first:
+      213: 4985707108293276891
+    second: HazardsAtlas_77
+  - first:
+      213: -6885108076203244891
+    second: HazardsAtlas_78
+  - first:
+      213: 4045138315523960861
+    second: HazardsAtlas_79
+  - first:
+      213: -1320980673765092165
+    second: HazardsAtlas_80
+  - first:
+      213: 8676709839284077495
+    second: HazardsAtlas_81
+  - first:
+      213: -2527860386793665462
+    second: HazardsAtlas_82
+  - first:
+      213: -3038970174282526701
+    second: HazardsAtlas_83
+  - first:
+      213: -4710696162484570245
+    second: HazardsAtlas_84
+  - first:
+      213: -2537478420522075426
+    second: HazardsAtlas_85
+  - first:
+      213: 1544312992259866742
+    second: HazardsAtlas_86
+  - first:
+      213: -897557535684243250
+    second: HazardsAtlas_87
+  - first:
+      213: 5153691384034540608
+    second: HazardsAtlas_88
+  - first:
+      213: 8057309109875313572
+    second: HazardsAtlas_89
+  - first:
+      213: -1810037226238009343
+    second: HazardsAtlas_90
+  - first:
+      213: -1876206163094992244
+    second: HazardsAtlas_91
+  - first:
+      213: 3490569534205842054
+    second: HazardsAtlas_92
+  - first:
+      213: -2883004673801631567
+    second: HazardsAtlas_93
+  - first:
+      213: 5412824818595208849
+    second: HazardsAtlas_94
+  - first:
+      213: -8182381919346284527
+    second: HazardsAtlas_95
+  - first:
+      213: 7499871950439140539
+    second: HazardsAtlas_96
+  - first:
+      213: -904412932968197894
+    second: HazardsAtlas_97
+  - first:
+      213: 537385076270164238
+    second: HazardsAtlas_98
+  - first:
+      213: 4907716905469369919
+    second: HazardsAtlas_99
+  - first:
+      213: 394967758080737377
+    second: HazardsAtlas_100
+  - first:
+      213: -2839862440994198663
+    second: HazardsAtlas_101
+  - first:
+      213: -6305119691589939772
+    second: HazardsAtlas_102
+  - first:
+      213: -7842404694621671233
+    second: HazardsAtlas_103
+  - first:
+      213: 871743666966378204
+    second: HazardsAtlas_104
+  - first:
+      213: -4511847045496883156
+    second: HazardsAtlas_105
+  - first:
+      213: -2254300859061378564
+    second: HazardsAtlas_106
+  - first:
+      213: 7911586147859395851
+    second: HazardsAtlas_107
+  - first:
+      213: 4621583585044474898
+    second: HazardsAtlas_108
+  - first:
+      213: -3000047198509676275
+    second: HazardsAtlas_109
+  - first:
+      213: -475359633415604870
+    second: HazardsAtlas_110
+  - first:
+      213: 6680941443511221015
+    second: HazardsAtlas_111
+  - first:
+      213: -2873741458253724757
+    second: HazardsAtlas_112
+  - first:
+      213: 8180948755945703965
+    second: HazardsAtlas_113
+  - first:
+      213: -5038977766900546982
+    second: HazardsAtlas_114
+  - first:
+      213: -1832383348247990185
+    second: HazardsAtlas_115
+  - first:
+      213: -1906533745926893290
+    second: HazardsAtlas_116
+  - first:
+      213: 9102800637392390263
+    second: HazardsAtlas_117
+  - first:
+      213: -1145599166730599908
+    second: HazardsAtlas_118
+  - first:
+      213: 5819172281178783218
+    second: HazardsAtlas_119
+  - first:
+      213: -7066030911432438608
+    second: HazardsAtlas_120
+  - first:
+      213: 6898858741022411582
+    second: HazardsAtlas_121
+  - first:
+      213: 3405339490627353596
+    second: HazardsAtlas_122
+  - first:
+      213: 5298223504206444005
+    second: HazardsAtlas_123
+  - first:
+      213: -5612371315914151608
+    second: HazardsAtlas_124
+  - first:
+      213: -8270085486862082658
+    second: HazardsAtlas_125
+  - first:
+      213: -3533834059835900043
+    second: HazardsAtlas_126
+  - first:
+      213: 475624508428478670
+    second: HazardsAtlas_127
+  - first:
+      213: -1613161237313053542
+    second: HazardsAtlas_128
+  - first:
+      213: 1125920548376598184
+    second: HazardsAtlas_129
+  - first:
+      213: 8814401188952549066
+    second: HazardsAtlas_130
+  - first:
+      213: -8610378027976777930
+    second: HazardsAtlas_131
+  - first:
+      213: -1790819177512441605
+    second: HazardsAtlas_132
+  - first:
+      213: -6632795704193720033
+    second: HazardsAtlas_133
+  - first:
+      213: 1002868953860833170
+    second: HazardsAtlas_134
+  - first:
+      213: 5875461466510459043
+    second: HazardsAtlas_135
+  - first:
+      213: -6225905466485676703
+    second: HazardsAtlas_136
+  - first:
+      213: 8628541049386578267
+    second: HazardsAtlas_137
+  - first:
+      213: -2120495851655335823
+    second: HazardsAtlas_138
+  - first:
+      213: -5404625357454944474
+    second: HazardsAtlas_139
+  - first:
+      213: -4873842634121373452
+    second: HazardsAtlas_140
+  - first:
+      213: -6446060721459066035
+    second: HazardsAtlas_141
+  - first:
+      213: 38703506401920243
+    second: HazardsAtlas_142
+  - first:
+      213: 2683076850625836970
+    second: HazardsAtlas_143
+  - first:
+      213: 7941835239282330062
+    second: HazardsAtlas_144
+  - first:
+      213: 1186004823975534984
+    second: HazardsAtlas_145
+  - first:
+      213: -4663380287781346219
+    second: HazardsAtlas_146
+  - first:
+      213: -6068151090315838728
+    second: HazardsAtlas_147
+  - first:
+      213: -3899717045458866646
+    second: HazardsAtlas_148
+  - first:
+      213: -7239406172313712078
+    second: HazardsAtlas_149
+  - first:
+      213: 6036621295734943280
+    second: HazardsAtlas_150
+  - first:
+      213: 5209621731422308442
+    second: HazardsAtlas_151
+  - first:
+      213: -2201934919763367706
+    second: HazardsAtlas_152
+  - first:
+      213: 7400462056291842005
+    second: HazardsAtlas_153
+  - first:
+      213: -2649046432279210912
+    second: HazardsAtlas_154
+  - first:
+      213: 558355146669593432
+    second: HazardsAtlas_155
+  - first:
+      213: 2813891267120612881
+    second: HazardsAtlas_156
+  - first:
+      213: 3079183126626039272
+    second: HazardsAtlas_157
+  - first:
+      213: -4695466670547739274
+    second: HazardsAtlas_158
+  - first:
+      213: -5580609252603881434
+    second: HazardsAtlas_159
+  - first:
+      213: -4213415522605798113
+    second: HazardsAtlas_160
+  - first:
+      213: -8352185811517975283
+    second: HazardsAtlas_161
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 418
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HazardsAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1099
+        width: 96
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1395d5e55aa9bf0800000000000000
+      internalID: -316758999064563275
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1203
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd40c075147eec90800000000000000
+      internalID: -7138640723900871213
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1185
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9ad655e2334fe70800000000000000
+      internalID: 9147993017191082415
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1096
+        width: 83
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8534c7b098ed67c0800000000000000
+      internalID: -4076346379444406900
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1221
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a74a161b140d9530800000000000000
+      internalID: 3863248569735202720
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1108
+        width: 108
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f8f8e867e5aafd0800000000000000
+      internalID: -2329945993919885454
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1177
+        width: 136
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3a775e06c270170800000000000000
+      internalID: 8144527245801137106
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1207
+        width: 67
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b4a36bce6fe13b0800000000000000
+      internalID: -5539718995089142937
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1191
+        width: 102
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3220a1b28ed327710800000000000000
+      internalID: 1689480877582189091
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1189
+        width: 101
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda3c66d84dd385a0800000000000000
+      internalID: -6520124530597545252
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1195
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db88997dc439118d0800000000000000
+      internalID: -2877356728669075267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1114
+        width: 126
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a79355320656d60800000000000000
+      internalID: 7882812427651873435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1205
+        width: 9
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4462850c5105678b0800000000000000
+      internalID: -5154844669127416252
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1207
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef4034df16f6eb70800000000000000
+      internalID: 8928093927872942051
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1225
+        width: 90
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32462983f9d45d500800000000000000
+      internalID: 420327486473266211
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 1231
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818fa3a24c71181a0800000000000000
+      internalID: -6809135030317942760
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1230
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f25887b0b302c50800000000000000
+      internalID: 6638370771196784461
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1171
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5709aad505b70d9f0800000000000000
+      internalID: -445720778010619787
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1199
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6710ade08a8325940800000000000000
+      internalID: 5283347607313842550
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1196
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f91f6435114a6700800000000000000
+      internalID: 534311065126640116
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1175
+        width: 15
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf146d02faec1e010800000000000000
+      internalID: 1216480625932255739
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1197
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94949aadce56bb2b0800000000000000
+      internalID: -5567744446358271671
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1195
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a08d49d302a73a80800000000000000
+      internalID: -8487136835342073694
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1211
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef750d01b8a84e700800000000000000
+      internalID: 568731782842701822
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1207
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cb5c2fc7d16b680800000000000000
+      internalID: -8739765604379673520
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1181
+        width: 5
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d1620a40c27d000800000000000000
+      internalID: 60565518371134800
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1183
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8fe285ff9d60750800000000000000
+      internalID: 6270939221879355607
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1172
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20cefc79d1c95640800000000000000
+      internalID: 5069295995431338028
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1188
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 529c84e03727319f0800000000000000
+      internalID: -498929295221536475
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1156
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199810ae16f0e8820800000000000000
+      internalID: 2922290121422244241
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1189
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894e1187409b633f0800000000000000
+      internalID: -921345644905241448
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1189
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e192265f96ebd090800000000000000
+      internalID: -8008553940329000479
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1179
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703ba3f8d19ace2b0800000000000000
+      internalID: -5553878296032529657
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1175
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4959566254af5780800000000000000
+      internalID: -8692048081990362805
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1126
+        width: 100
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda9f392ffb6c6d70800000000000000
+      internalID: 9037717295878609628
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1160
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7141c9092634cc0800000000000000
+      internalID: -3728027693299263559
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1140
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0f0db6f8dbc56a0800000000000000
+      internalID: -6459079341869305675
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1108
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f867b30c0fc4180800000000000000
+      internalID: -9129657636164825249
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1148
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e2f9c7e47f9e120800000000000000
+      internalID: 2443756189295521397
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1148
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e2ae956b2b97e50800000000000000
+      internalID: 6807668808009526914
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1148
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee9efaa5d9fb0f00800000000000000
+      internalID: 1084234831404900069
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1146
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f324d4d3e96332d0800000000000000
+      internalID: -3300177674683276302
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1148
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b638d3d448661920800000000000000
+      internalID: 2960668449863906997
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1154
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa7ab95b8de3f770800000000000000
+      internalID: 8643513292615744166
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 849
+        width: 449
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa38f2bdae366920800000000000000
+      internalID: 2983140718932409075
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1156
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708bc54a521826fd0800000000000000
+      internalID: -2350174056862664697
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1138
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d23196cd4b08d8f0800000000000000
+      internalID: -515649728662129962
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1106
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d6849789c81a7b0800000000000000
+      internalID: -5214732307020616307
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_48
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1112
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c283b2afdd165d10800000000000000
+      internalID: 2113909921441612481
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_49
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1118
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f7a04aca5aaad50800000000000000
+      internalID: 6749389152473218871
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_50
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 837
+        width: 420
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e378212651b6bc0b0800000000000000
+      internalID: -5707350363178105026
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_51
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1114
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba90b47f9513c2720800000000000000
+      internalID: 2822685328925198763
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_52
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1106
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8b1034c3fc96b10800000000000000
+      internalID: 1975337769307846897
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 753
+        width: 407
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d1a8ff1b65e76a0800000000000000
+      internalID: -6449622293851529904
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_54
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1092
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec73c0db5d39bdc60800000000000000
+      internalID: 7844025722204862414
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_55
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 1091
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a286d25d5972e30800000000000000
+      internalID: 4478713097265621653
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_56
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1014
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dceeeab4e1b5e2b90800000000000000
+      internalID: -7264768963225129267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_57
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 966
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f36c4419b6a86a0800000000000000
+      internalID: -6446221644959170686
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_58
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 922
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8b223e0e66d9c50800000000000000
+      internalID: 6673603338902354147
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_59
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 929
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e9fe68f84e282c0800000000000000
+      internalID: -4430727778283839921
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_60
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 923
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ae6ea19e6106b50800000000000000
+      internalID: 6584287845650197078
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_61
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 919
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c812bb13fa54b01d0800000000000000
+      internalID: -3383534076282855028
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_62
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 933
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a728bc18ca512c60800000000000000
+      internalID: 7791608645849458601
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_63
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 910
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1352c8ad29bda53f0800000000000000
+      internalID: -911174550810778319
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_64
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 933
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e68cd759493d5c0800000000000000
+      internalID: -4191843458370474405
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_65
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 895
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9e95d9a9a5dde90800000000000000
+      internalID: -6999338625752503815
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_66
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 917
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b25f877d7dc25940800000000000000
+      internalID: 5283511251619500727
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_67
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 921
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f7485f50338f280800000000000000
+      internalID: -9009394953867722971
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_68
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 921
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828cbb7101f6e18e0800000000000000
+      internalID: -1720815892700608472
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_69
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 909
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9fbf5342110dd50800000000000000
+      internalID: 6759921887905315307
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_70
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 902
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026f428e18a714f70800000000000000
+      internalID: 9169745014667146784
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_71
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 903
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c5f72589c601460800000000000000
+      internalID: 7210382404895071251
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_72
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 900
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4656eaba9d5decf10800000000000000
+      internalID: 2292004391243113828
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_73
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 381
+        width: 311
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc46f2ee8be5280c0800000000000000
+      internalID: -4574990123091925812
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_74
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 863
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85166f0263c87f460800000000000000
+      internalID: 7275437887149465944
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_75
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 882
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923cb56385172bac0800000000000000
+      internalID: -3840882908510567639
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_76
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 885
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e60678dfa22a7820800000000000000
+      internalID: 2916681847322052325
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_77
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 873
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4f5f7133ac03540800000000000000
+      internalID: 4985707108293276891
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_78
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 841
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a28bbdfeae2370a0800000000000000
+      internalID: -6885108076203244891
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_79
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 843
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10b02cadd7332830800000000000000
+      internalID: 4045138315523960861
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_80
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 853
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb45319731feaade0800000000000000
+      internalID: -1320980673765092165
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_81
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 355
+        width: 543
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b30aada0add96870800000000000000
+      internalID: 8676709839284077495
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_82
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 867
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4cc1631f5c3becd0800000000000000
+      internalID: -2527860386793665462
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_83
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 843
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31012e64ab863d5d0800000000000000
+      internalID: -3038970174282526701
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_84
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 831
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77bf4e6cce30aeb0800000000000000
+      internalID: -4710696162484570245
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_85
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 807
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edaff8712d019ccd0800000000000000
+      internalID: -2537478420522075426
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_86
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 841
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6708badfb708e6510800000000000000
+      internalID: 1544312992259866742
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_87
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 851
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0d0104d2c3b83f0800000000000000
+      internalID: -897557535684243250
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_88
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 833
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cbe532207958740800000000000000
+      internalID: 5153691384034540608
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_89
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 843
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab03ab22ff41df60800000000000000
+      internalID: 8057309109875313572
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_90
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 813
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100a9d39bb471e6e0800000000000000
+      internalID: -1810037226238009343
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_91
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 821
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a035b6f6066f5e0800000000000000
+      internalID: -1876206163094992244
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_92
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 837
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682d32e5f7ef07030800000000000000
+      internalID: 3490569534205842054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_93
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 835
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8434426828df7d0800000000000000
+      internalID: -2883004673801631567
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_94
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 797
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e19cf7e773e1b40800000000000000
+      internalID: 5412824818595208849
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_95
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 819
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11829c81ff6527e80800000000000000
+      internalID: -8182381919346284527
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_96
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 797
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc47da8dc5e41860800000000000000
+      internalID: 7499871950439140539
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_97
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 788
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af05920ba31e273f0800000000000000
+      internalID: -904412932968197894
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_98
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 720
+        width: 75
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e09eda231ec257700800000000000000
+      internalID: 537385076270164238
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_99
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 821
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e5ea8f586bb1440800000000000000
+      internalID: 4907716905469369919
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_100
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 762
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160822655153b7500800000000000000
+      internalID: 394967758080737377
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_101
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 791
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b2199f728c698d0800000000000000
+      internalID: -2839862440994198663
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_102
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 773
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd0674eb07bf78a0800000000000000
+      internalID: -6305119691589939772
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_103
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 767
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb038382b7e2a2390800000000000000
+      internalID: -7842404694621671233
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_104
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 777
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd63ab41f3e091c00800000000000000
+      internalID: 871743666966378204
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_105
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 753
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2833445403b261c0800000000000000
+      internalID: -4511847045496883156
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_106
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 749
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1e9ceff4d17b0e0800000000000000
+      internalID: -2254300859061378564
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_107
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 453
+        width: 405
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b057f012fa99bcd60800000000000000
+      internalID: 7911586147859395851
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 730
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c2a5ec8c9232040800000000000000
+      internalID: 4621583585044474898
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_109
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 746
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09cc67c7f0bd56d0800000000000000
+      internalID: -3000047198509676275
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_110
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 745
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75f3b59eee2769f0800000000000000
+      internalID: -475359633415604870
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_111
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 714
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bfba188d877bc50800000000000000
+      internalID: 6680941443511221015
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_112
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 630
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba349749e5b6e18d0800000000000000
+      internalID: -2873741458253724757
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_113
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 594
+        width: 71
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a41db8c81988170800000000000000
+      internalID: 8180948755945703965
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_114
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 523
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a524dcc2b64f11ab0800000000000000
+      internalID: -5038977766900546982
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_115
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 483
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750765b9d011296e0800000000000000
+      internalID: -1832383348247990185
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_116
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 492
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6119bb9c8a1aa85e0800000000000000
+      internalID: -1906533745926893290
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_117
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 479
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77809f473f4a35e70800000000000000
+      internalID: 9102800637392390263
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_118
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 461
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c120a04a0a30a10f0800000000000000
+      internalID: -1145599166730599908
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_119
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 481
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdf572cb5ad1c050800000000000000
+      internalID: 5819172281178783218
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_120
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 465
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcc320d25a60fd90800000000000000
+      internalID: -7066030911432438608
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_121
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 472
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b4d36297badbf50800000000000000
+      internalID: 6898858741022411582
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_122
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 465
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbf3767932324f20800000000000000
+      internalID: 3405339490627353596
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_123
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 451
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5b9d4b432178940800000000000000
+      internalID: 5298223504206444005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 361
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8496857160adc12b0800000000000000
+      internalID: -5612371315914151608
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_125
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 385
+        width: 27
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9dd8750111ca3d80800000000000000
+      internalID: -8270085486862082658
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_126
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 491
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ffd4845ac45fec0800000000000000
+      internalID: -3533834059835900043
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_127
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 439
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8695f68f1c99600800000000000000
+      internalID: 475624508428478670
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_128
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 435
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c968cc666ec99e0800000000000000
+      internalID: -1613161237313053542
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_129
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 438
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6dc4bf5c210af00800000000000000
+      internalID: 1125920548376598184
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_130
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 433
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac62c4f3e2b035a70800000000000000
+      internalID: 8814401188952549066
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_131
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 423
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f9d94adcac18880800000000000000
+      internalID: -8610378027976777930
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_132
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 393
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8e96b327bb527e0800000000000000
+      internalID: -1790819177512441605
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_133
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 417
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11ebc7f27393f3a0800000000000000
+      internalID: -6632795704193720033
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_134
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 404
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f74270008eaed00800000000000000
+      internalID: 1002868953860833170
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312
+        width: 47
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a00ad20315d98150800000000000000
+      internalID: 5875461466510459043
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_136
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 408
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16565f8e6f32999a0800000000000000
+      internalID: -6225905466485676703
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_137
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 401
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5130925e5cbeb770800000000000000
+      internalID: 8628541049386578267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_138
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 398
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170f46ef14c7292e0800000000000000
+      internalID: -2120495851655335823
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_139
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 405
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62754d05fd9eef4b0800000000000000
+      internalID: -5404625357454944474
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_140
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 0
+        width: 394
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f89a0e62f1ac5cb0800000000000000
+      internalID: -4873842634121373452
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_141
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 391
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b85d03dedfa86a0800000000000000
+      internalID: -6446060721459066035
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_142
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 389
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f406ae42a0898000800000000000000
+      internalID: 38703506401920243
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_143
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 383
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa770aa1e243c3520800000000000000
+      internalID: 2683076850625836970
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_144
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 387
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec94a1e8211173e60800000000000000
+      internalID: 7941835239282330062
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_145
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 345
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88126fa8a19857010800000000000000
+      internalID: 1186004823975534984
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_146
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 335
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554eb3ef558584fb0800000000000000
+      internalID: -4663380287781346219
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_147
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 328
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa335adbb899cba0800000000000000
+      internalID: -6068151090315838728
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_148
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 45
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e63ec320c61e9c0800000000000000
+      internalID: -3899717045458866646
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_149
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 275
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a887a3176788b90800000000000000
+      internalID: -7239406172313712078
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_150
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 272
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ee6d7c51366c350800000000000000
+      internalID: 6036621295734943280
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_151
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 230
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58059bec5b4c4840800000000000000
+      internalID: 5209621731422308442
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_152
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 294
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8e9f85bd72171e0800000000000000
+      internalID: -2201934919763367706
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_153
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d73807e709b3b660800000000000000
+      internalID: 7400462056291842005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_154
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 111
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0645b7a1e42bc3bd0800000000000000
+      internalID: -2649046432279210912
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_155
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 113
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85390cf2c0dafb700800000000000000
+      internalID: 558355146669593432
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_156
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 97
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1164c45e233fc0720800000000000000
+      internalID: 2813891267120612881
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_157
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 84
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5fbec4db47bba20800000000000000
+      internalID: 3079183126626039272
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_158
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 84
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67dd057d0f956deb0800000000000000
+      internalID: -4695466670547739274
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_159
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 79
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628994cb371bd82b0800000000000000
+      internalID: -5580609252603881434
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_160
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 63
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1de6f3e7e0f685c0800000000000000
+      internalID: -4213415522605798113
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HazardsAtlas_161
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 39
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05d9669143171c80800000000000000
+      internalID: -8352185811517975283
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HazardsAtlas_0: -316758999064563275
+      HazardsAtlas_1: -7138640723900871213
+      HazardsAtlas_10: -2877356728669075267
+      HazardsAtlas_100: 394967758080737377
+      HazardsAtlas_101: -2839862440994198663
+      HazardsAtlas_102: -6305119691589939772
+      HazardsAtlas_103: -7842404694621671233
+      HazardsAtlas_104: 871743666966378204
+      HazardsAtlas_105: -4511847045496883156
+      HazardsAtlas_106: -2254300859061378564
+      HazardsAtlas_107: 7911586147859395851
+      HazardsAtlas_108: 4621583585044474898
+      HazardsAtlas_109: -3000047198509676275
+      HazardsAtlas_11: 7882812427651873435
+      HazardsAtlas_110: -475359633415604870
+      HazardsAtlas_111: 6680941443511221015
+      HazardsAtlas_112: -2873741458253724757
+      HazardsAtlas_113: 8180948755945703965
+      HazardsAtlas_114: -5038977766900546982
+      HazardsAtlas_115: -1832383348247990185
+      HazardsAtlas_116: -1906533745926893290
+      HazardsAtlas_117: 9102800637392390263
+      HazardsAtlas_118: -1145599166730599908
+      HazardsAtlas_119: 5819172281178783218
+      HazardsAtlas_12: -5154844669127416252
+      HazardsAtlas_120: -7066030911432438608
+      HazardsAtlas_121: 6898858741022411582
+      HazardsAtlas_122: 3405339490627353596
+      HazardsAtlas_123: 5298223504206444005
+      HazardsAtlas_124: -5612371315914151608
+      HazardsAtlas_125: -8270085486862082658
+      HazardsAtlas_126: -3533834059835900043
+      HazardsAtlas_127: 475624508428478670
+      HazardsAtlas_128: -1613161237313053542
+      HazardsAtlas_129: 1125920548376598184
+      HazardsAtlas_13: 8928093927872942051
+      HazardsAtlas_130: 8814401188952549066
+      HazardsAtlas_131: -8610378027976777930
+      HazardsAtlas_132: -1790819177512441605
+      HazardsAtlas_133: -6632795704193720033
+      HazardsAtlas_134: 1002868953860833170
+      HazardsAtlas_135: 5875461466510459043
+      HazardsAtlas_136: -6225905466485676703
+      HazardsAtlas_137: 8628541049386578267
+      HazardsAtlas_138: -2120495851655335823
+      HazardsAtlas_139: -5404625357454944474
+      HazardsAtlas_14: 420327486473266211
+      HazardsAtlas_140: -4873842634121373452
+      HazardsAtlas_141: -6446060721459066035
+      HazardsAtlas_142: 38703506401920243
+      HazardsAtlas_143: 2683076850625836970
+      HazardsAtlas_144: 7941835239282330062
+      HazardsAtlas_145: 1186004823975534984
+      HazardsAtlas_146: -4663380287781346219
+      HazardsAtlas_147: -6068151090315838728
+      HazardsAtlas_148: -3899717045458866646
+      HazardsAtlas_149: -7239406172313712078
+      HazardsAtlas_15: -6809135030317942760
+      HazardsAtlas_150: 6036621295734943280
+      HazardsAtlas_151: 5209621731422308442
+      HazardsAtlas_152: -2201934919763367706
+      HazardsAtlas_153: 7400462056291842005
+      HazardsAtlas_154: -2649046432279210912
+      HazardsAtlas_155: 558355146669593432
+      HazardsAtlas_156: 2813891267120612881
+      HazardsAtlas_157: 3079183126626039272
+      HazardsAtlas_158: -4695466670547739274
+      HazardsAtlas_159: -5580609252603881434
+      HazardsAtlas_16: 6638370771196784461
+      HazardsAtlas_160: -4213415522605798113
+      HazardsAtlas_161: -8352185811517975283
+      HazardsAtlas_17: -445720778010619787
+      HazardsAtlas_18: 5283347607313842550
+      HazardsAtlas_19: 534311065126640116
+      HazardsAtlas_2: 9147993017191082415
+      HazardsAtlas_20: 1216480625932255739
+      HazardsAtlas_21: -5567744446358271671
+      HazardsAtlas_22: -8487136835342073694
+      HazardsAtlas_23: 568731782842701822
+      HazardsAtlas_24: -8739765604379673520
+      HazardsAtlas_25: 60565518371134800
+      HazardsAtlas_26: 6270939221879355607
+      HazardsAtlas_27: 5069295995431338028
+      HazardsAtlas_28: -498929295221536475
+      HazardsAtlas_29: 2922290121422244241
+      HazardsAtlas_3: -4076346379444406900
+      HazardsAtlas_30: -921345644905241448
+      HazardsAtlas_31: -8008553940329000479
+      HazardsAtlas_32: -5553878296032529657
+      HazardsAtlas_33: -8692048081990362805
+      HazardsAtlas_34: 9037717295878609628
+      HazardsAtlas_35: -3728027693299263559
+      HazardsAtlas_36: -6459079341869305675
+      HazardsAtlas_37: -9129657636164825249
+      HazardsAtlas_38: 2443756189295521397
+      HazardsAtlas_39: 6807668808009526914
+      HazardsAtlas_4: 3863248569735202720
+      HazardsAtlas_40: 1084234831404900069
+      HazardsAtlas_41: -3300177674683276302
+      HazardsAtlas_42: 2960668449863906997
+      HazardsAtlas_43: 8643513292615744166
+      HazardsAtlas_44: 2983140718932409075
+      HazardsAtlas_45: -2350174056862664697
+      HazardsAtlas_46: -515649728662129962
+      HazardsAtlas_47: -5214732307020616307
+      HazardsAtlas_48: 2113909921441612481
+      HazardsAtlas_49: 6749389152473218871
+      HazardsAtlas_5: -2329945993919885454
+      HazardsAtlas_50: -5707350363178105026
+      HazardsAtlas_51: 2822685328925198763
+      HazardsAtlas_52: 1975337769307846897
+      HazardsAtlas_53: -6449622293851529904
+      HazardsAtlas_54: 7844025722204862414
+      HazardsAtlas_55: 4478713097265621653
+      HazardsAtlas_56: -7264768963225129267
+      HazardsAtlas_57: -6446221644959170686
+      HazardsAtlas_58: 6673603338902354147
+      HazardsAtlas_59: -4430727778283839921
+      HazardsAtlas_6: 8144527245801137106
+      HazardsAtlas_60: 6584287845650197078
+      HazardsAtlas_61: -3383534076282855028
+      HazardsAtlas_62: 7791608645849458601
+      HazardsAtlas_63: -911174550810778319
+      HazardsAtlas_64: -4191843458370474405
+      HazardsAtlas_65: -6999338625752503815
+      HazardsAtlas_66: 5283511251619500727
+      HazardsAtlas_67: -9009394953867722971
+      HazardsAtlas_68: -1720815892700608472
+      HazardsAtlas_69: 6759921887905315307
+      HazardsAtlas_7: -5539718995089142937
+      HazardsAtlas_70: 9169745014667146784
+      HazardsAtlas_71: 7210382404895071251
+      HazardsAtlas_72: 2292004391243113828
+      HazardsAtlas_73: -4574990123091925812
+      HazardsAtlas_74: 7275437887149465944
+      HazardsAtlas_75: -3840882908510567639
+      HazardsAtlas_76: 2916681847322052325
+      HazardsAtlas_77: 4985707108293276891
+      HazardsAtlas_78: -6885108076203244891
+      HazardsAtlas_79: 4045138315523960861
+      HazardsAtlas_8: 1689480877582189091
+      HazardsAtlas_80: -1320980673765092165
+      HazardsAtlas_81: 8676709839284077495
+      HazardsAtlas_82: -2527860386793665462
+      HazardsAtlas_83: -3038970174282526701
+      HazardsAtlas_84: -4710696162484570245
+      HazardsAtlas_85: -2537478420522075426
+      HazardsAtlas_86: 1544312992259866742
+      HazardsAtlas_87: -897557535684243250
+      HazardsAtlas_88: 5153691384034540608
+      HazardsAtlas_89: 8057309109875313572
+      HazardsAtlas_9: -6520124530597545252
+      HazardsAtlas_90: -1810037226238009343
+      HazardsAtlas_91: -1876206163094992244
+      HazardsAtlas_92: 3490569534205842054
+      HazardsAtlas_93: -2883004673801631567
+      HazardsAtlas_94: 5412824818595208849
+      HazardsAtlas_95: -8182381919346284527
+      HazardsAtlas_96: 7499871950439140539
+      HazardsAtlas_97: -904412932968197894
+      HazardsAtlas_98: 537385076270164238
+      HazardsAtlas_99: 4907716905469369919
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

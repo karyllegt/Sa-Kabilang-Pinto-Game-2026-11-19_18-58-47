@@ -1,5 +1,7 @@
 # Handoff: Sa Kabilang Pinto to Mary and Ronn
 
+**24 November prototype baseline update:** Read `PRESENTATION_HANDOFF.md` and the root `UPGRADE_AUDIT.md` first for active asset paths and verified evidence. The game remains a working prototype for Mary and Ronn to upgrade. Mary retains art/animation/UI/UX/audio ownership; Ronn retains level design/narrative/QA ownership. Older implementation instructions below are historical where superseded; the team's creative responsibilities remain active.
+
 From Karylle G. Torres (Game Director, Lead Programmer), 2026-11-22. Deadline: **Dec 1, 2026**.
 
 The game is on GitHub (`main`): https://github.com/karyllegt/Sa-Kabilang-Pinto-Game-2026-11-19_18-58-47

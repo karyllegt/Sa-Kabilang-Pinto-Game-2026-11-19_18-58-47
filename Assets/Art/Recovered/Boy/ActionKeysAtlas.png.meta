@@ -1,0 +1,3194 @@
+fileFormatVersion: 2
+guid: 2dd94ee5275774e4cb74c25bff4e9f11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5264487857170358727
+    second: ActionKeysAtlas_0
+  - first:
+      213: -4894801036001959073
+    second: ActionKeysAtlas_1
+  - first:
+      213: 6255276310690777529
+    second: ActionKeysAtlas_2
+  - first:
+      213: -6110701425697911724
+    second: ActionKeysAtlas_3
+  - first:
+      213: -6186942029740938860
+    second: ActionKeysAtlas_4
+  - first:
+      213: 2655390326770546370
+    second: ActionKeysAtlas_5
+  - first:
+      213: 7646306357878194329
+    second: ActionKeysAtlas_6
+  - first:
+      213: -9028809842849617401
+    second: ActionKeysAtlas_7
+  - first:
+      213: -6531814535963677688
+    second: ActionKeysAtlas_8
+  - first:
+      213: -657994791706078162
+    second: ActionKeysAtlas_9
+  - first:
+      213: -4128105886824114080
+    second: ActionKeysAtlas_10
+  - first:
+      213: 1519346552806917438
+    second: ActionKeysAtlas_11
+  - first:
+      213: -6731607162681727054
+    second: ActionKeysAtlas_12
+  - first:
+      213: -6358722649792322885
+    second: ActionKeysAtlas_13
+  - first:
+      213: -3118734320562512258
+    second: ActionKeysAtlas_14
+  - first:
+      213: -7565171205556783598
+    second: ActionKeysAtlas_15
+  - first:
+      213: -4458374330518522525
+    second: ActionKeysAtlas_16
+  - first:
+      213: 547361712526891993
+    second: ActionKeysAtlas_17
+  - first:
+      213: 8501514602904859927
+    second: ActionKeysAtlas_18
+  - first:
+      213: -3852519717974322575
+    second: ActionKeysAtlas_19
+  - first:
+      213: 948149320529165093
+    second: ActionKeysAtlas_20
+  - first:
+      213: -1381001504725997426
+    second: ActionKeysAtlas_21
+  - first:
+      213: -8664019259740158343
+    second: ActionKeysAtlas_22
+  - first:
+      213: -2795420713966792968
+    second: ActionKeysAtlas_23
+  - first:
+      213: 854068819732419964
+    second: ActionKeysAtlas_24
+  - first:
+      213: -4179828690672595186
+    second: ActionKeysAtlas_25
+  - first:
+      213: 3624946919698864267
+    second: ActionKeysAtlas_26
+  - first:
+      213: 2275619063646926675
+    second: ActionKeysAtlas_27
+  - first:
+      213: -4573043888301090589
+    second: ActionKeysAtlas_28
+  - first:
+      213: -925974044315970289
+    second: ActionKeysAtlas_29
+  - first:
+      213: -6483122726229148580
+    second: ActionKeysAtlas_30
+  - first:
+      213: 3853897876421727117
+    second: ActionKeysAtlas_31
+  - first:
+      213: 8286280560216186492
+    second: ActionKeysAtlas_32
+  - first:
+      213: -164582869507885361
+    second: ActionKeysAtlas_33
+  - first:
+      213: 6933101752337871416
+    second: ActionKeysAtlas_34
+  - first:
+      213: 1361922056675619043
+    second: ActionKeysAtlas_35
+  - first:
+      213: -3706212251008753827
+    second: ActionKeysAtlas_36
+  - first:
+      213: -5325431215062943528
+    second: ActionKeysAtlas_37
+  - first:
+      213: -150616174888107265
+    second: ActionKeysAtlas_38
+  - first:
+      213: 2974787454805186537
+    second: ActionKeysAtlas_39
+  - first:
+      213: 5652496920090590671
+    second: ActionKeysAtlas_40
+  - first:
+      213: -1519632722092028220
+    second: ActionKeysAtlas_41
+  - first:
+      213: 1840974745490503065
+    second: ActionKeysAtlas_42
+  - first:
+      213: 1715945924271161746
+    second: ActionKeysAtlas_43
+  - first:
+      213: -4460077496179642871
+    second: ActionKeysAtlas_44
+  - first:
+      213: -8315898123870480617
+    second: ActionKeysAtlas_45
+  - first:
+      213: -2932414011271201664
+    second: ActionKeysAtlas_46
+  - first:
+      213: 3125641987887577685
+    second: ActionKeysAtlas_47
+  - first:
+      213: -7999957895001721740
+    second: ActionKeysAtlas_48
+  - first:
+      213: -1183422002567301453
+    second: ActionKeysAtlas_49
+  - first:
+      213: -5365881090984588758
+    second: ActionKeysAtlas_50
+  - first:
+      213: 6575843582981658728
+    second: ActionKeysAtlas_51
+  - first:
+      213: -6374179461150755231
+    second: ActionKeysAtlas_52
+  - first:
+      213: 2786641422631021699
+    second: ActionKeysAtlas_53
+  - first:
+      213: 1655088715081606177
+    second: ActionKeysAtlas_54
+  - first:
+      213: 8050320058851461893
+    second: ActionKeysAtlas_55
+  - first:
+      213: 5125781907512889520
+    second: ActionKeysAtlas_56
+  - first:
+      213: 1221107177557217701
+    second: ActionKeysAtlas_57
+  - first:
+      213: 8815993910357632697
+    second: ActionKeysAtlas_58
+  - first:
+      213: -2683862509585492710
+    second: ActionKeysAtlas_59
+  - first:
+      213: -1350873637037318555
+    second: ActionKeysAtlas_60
+  - first:
+      213: -360869447096362340
+    second: ActionKeysAtlas_61
+  - first:
+      213: 4935061108785517347
+    second: ActionKeysAtlas_62
+  - first:
+      213: 7683487951326000190
+    second: ActionKeysAtlas_63
+  - first:
+      213: 4440771070310249537
+    second: ActionKeysAtlas_64
+  - first:
+      213: -5409573239127766577
+    second: ActionKeysAtlas_65
+  - first:
+      213: -8587763056939371245
+    second: ActionKeysAtlas_66
+  - first:
+      213: 6347304552084938056
+    second: ActionKeysAtlas_67
+  - first:
+      213: 6318385443520915532
+    second: ActionKeysAtlas_68
+  - first:
+      213: -1667706493097381967
+    second: ActionKeysAtlas_69
+  - first:
+      213: 4758638453377313175
+    second: ActionKeysAtlas_70
+  - first:
+      213: -7389604401529448808
+    second: ActionKeysAtlas_71
+  - first:
+      213: 6287334911121896318
+    second: ActionKeysAtlas_72
+  - first:
+      213: -1664433601335832469
+    second: ActionKeysAtlas_73
+  - first:
+      213: 6377765538125034898
+    second: ActionKeysAtlas_74
+  - first:
+      213: -6741612047625284282
+    second: ActionKeysAtlas_75
+  - first:
+      213: -8435807933017647131
+    second: ActionKeysAtlas_76
+  - first:
+      213: -6889131046822551466
+    second: ActionKeysAtlas_77
+  - first:
+      213: -8835666522381226169
+    second: ActionKeysAtlas_78
+  - first:
+      213: -2776342426291148054
+    second: ActionKeysAtlas_79
+  - first:
+      213: 3565070398658661403
+    second: ActionKeysAtlas_80
+  - first:
+      213: -7107195996626746105
+    second: ActionKeysAtlas_81
+  - first:
+      213: -7276117268673342566
+    second: ActionKeysAtlas_82
+  - first:
+      213: 481073251390211253
+    second: ActionKeysAtlas_83
+  - first:
+      213: 8506893120103014238
+    second: ActionKeysAtlas_84
+  - first:
+      213: -8370594693253175185
+    second: ActionKeysAtlas_85
+  - first:
+      213: -6255628837343083618
+    second: ActionKeysAtlas_86
+  - first:
+      213: -9107679502238966355
+    second: ActionKeysAtlas_87
+  - first:
+      213: 760177472257447427
+    second: ActionKeysAtlas_88
+  - first:
+      213: 9151857337108006790
+    second: ActionKeysAtlas_89
+  - first:
+      213: -4465256638054290209
+    second: ActionKeysAtlas_90
+  - first:
+      213: 886161543039110631
+    second: ActionKeysAtlas_91
+  - first:
+      213: 18637119356545916
+    second: ActionKeysAtlas_92
+  - first:
+      213: 6696204537742853128
+    second: ActionKeysAtlas_93
+  - first:
+      213: -5385948875301414187
+    second: ActionKeysAtlas_94
+  - first:
+      213: -5304730550286942219
+    second: ActionKeysAtlas_95
+  - first:
+      213: 4870884247011882039
+    second: ActionKeysAtlas_96
+  - first:
+      213: -7772800548311351971
+    second: ActionKeysAtlas_97
+  - first:
+      213: 7853722847450997756
+    second: ActionKeysAtlas_98
+  - first:
+      213: 7368794882903535157
+    second: ActionKeysAtlas_99
+  - first:
+      213: -2117914147470973402
+    second: ActionKeysAtlas_100
+  - first:
+      213: 3209605555709785879
+    second: ActionKeysAtlas_101
+  - first:
+      213: 5186084523934585349
+    second: ActionKeysAtlas_102
+  - first:
+      213: -4269311211007291726
+    second: ActionKeysAtlas_103
+  - first:
+      213: 1112735406662859223
+    second: ActionKeysAtlas_104
+  - first:
+      213: 1623866210832961922
+    second: ActionKeysAtlas_105
+  - first:
+      213: -1657343251057789154
+    second: ActionKeysAtlas_106
+  - first:
+      213: 6674905677416707114
+    second: ActionKeysAtlas_107
+  - first:
+      213: 7927664127568898307
+    second: ActionKeysAtlas_108
+  - first:
+      213: 132421460991766551
+    second: ActionKeysAtlas_109
+  - first:
+      213: -7815351332187331724
+    second: ActionKeysAtlas_110
+  - first:
+      213: -7356229699227744729
+    second: ActionKeysAtlas_111
+  - first:
+      213: -5290392631614102276
+    second: ActionKeysAtlas_112
+  - first:
+      213: 7928778226479775321
+    second: ActionKeysAtlas_113
+  - first:
+      213: -6811887661647604904
+    second: ActionKeysAtlas_114
+  - first:
+      213: 7898135151035987127
+    second: ActionKeysAtlas_115
+  - first:
+      213: -7890166326761339324
+    second: ActionKeysAtlas_116
+  - first:
+      213: 363944805317890012
+    second: ActionKeysAtlas_117
+  - first:
+      213: 8391499536569090133
+    second: ActionKeysAtlas_118
+  - first:
+      213: 9026698593929170835
+    second: ActionKeysAtlas_119
+  - first:
+      213: -8913855574027111613
+    second: ActionKeysAtlas_120
+  - first:
+      213: -976966738164790289
+    second: ActionKeysAtlas_121
+  - first:
+      213: 7840920652940236531
+    second: ActionKeysAtlas_122
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 394.22223
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ActionKeysAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 859
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ed005bf28c0f6b0800000000000000
+      internalID: -5264487857170358727
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 846
+        width: 66
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53a3ea346c221cb0800000000000000
+      internalID: -4894801036001959073
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 873
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9c3a6a9a43fc650800000000000000
+      internalID: 6255276310690777529
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 856
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c8dc0ed6d623ba0800000000000000
+      internalID: -6110701425697911724
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 876
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4996b57f001932aa0800000000000000
+      internalID: -6186942029740938860
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 807
+        width: 140
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6ba2fee67d9d420800000000000000
+      internalID: 2655390326770546370
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 0
+        width: 485
+        height: 873
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9900421ee132d1a60800000000000000
+      internalID: 7646306357878194329
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 853
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ae56cd84933b280800000000000000
+      internalID: -9028809842849617401
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 872
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ce62d59455a55a0800000000000000
+      internalID: -6531814535963677688
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 870
+        width: 70
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e245d4029355ed6f0800000000000000
+      internalID: -657994791706078162
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 856
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06856ac419506b6c0800000000000000
+      internalID: -4128105886824114080
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 860
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3545c2d3adc51510800000000000000
+      internalID: 1519346552806917438
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 751
+        width: 65
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b761ec73f68492a0800000000000000
+      internalID: -6731607162681727054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 346
+        width: 467
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2e5e1a07741c7a0800000000000000
+      internalID: -6358722649792322885
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 338
+        width: 456
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e5d02c8a708b4d0800000000000000
+      internalID: -3118734320562512258
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 823
+        width: 8
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21636cbdedc130790800000000000000
+      internalID: -7565171205556783598
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 825
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36539b9fa2ca022c0800000000000000
+      internalID: -4458374330518522525
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 856
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db90d6d39e989700800000000000000
+      internalID: 547361712526891993
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 840
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715b0f60d727bf570800000000000000
+      internalID: 8501514602904859927
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 840
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 172d3ff5ab9198ac0800000000000000
+      internalID: -3852519717974322575
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 829
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b3b2498c0882d00800000000000000
+      internalID: 948149320529165093
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 821
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88e684c272b5dce0800000000000000
+      internalID: -1381001504725997426
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 811
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9768b00236833c780800000000000000
+      internalID: -8664019259740158343
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 817
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe8d32ebaba439d0800000000000000
+      internalID: -2795420713966792968
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 356
+        width: 457
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7553e501134adb00800000000000000
+      internalID: 854068819732419964
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 489
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f497693f34ef5c0800000000000000
+      internalID: -4179828690672595186
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 650
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b881c4684066e4230800000000000000
+      internalID: 3624946919698864267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 561
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35738cc4b7f949f10800000000000000
+      internalID: 2275619063646926675
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 628
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8da8700d84980c0800000000000000
+      internalID: -4573043888301090589
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 590
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05905143874623f0800000000000000
+      internalID: -925974044315970289
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 529
+        width: 51
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c79d3ca325706a0800000000000000
+      internalID: -6483122726229148580
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 513
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83dfb423bbcb7530800000000000000
+      internalID: 3853897876421727117
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 499
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e19e45448cef270800000000000000
+      internalID: 8286280560216186492
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 686
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc63ede80c847bdf0800000000000000
+      internalID: -164582869507885361
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 527
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832bcb38f43573060800000000000000
+      internalID: 6933101752337871416
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 533
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e07bef05e486e210800000000000000
+      internalID: 1361922056675619043
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 612
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f1c641893e09cc0800000000000000
+      internalID: -3706212251008753827
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 708
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8756676844816b0800000000000000
+      internalID: -5325431215062943528
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 571
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2cd5e0367e8edf0800000000000000
+      internalID: -150616174888107265
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 575
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e793f5dd61984920800000000000000
+      internalID: 2974787454805186537
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 561
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd3df72004b17e40800000000000000
+      internalID: 5652496920090590671
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 529
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce05a2371e29eae0800000000000000
+      internalID: -1519632722092028220
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 535
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9953d61f6c47c8910800000000000000
+      internalID: 1840974745490503065
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 560
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29146f50ab340d710800000000000000
+      internalID: 1715945924271161746
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 600
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90eaf71d52f9a12c0800000000000000
+      internalID: -4460077496179642871
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 450
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717dc5247bef79c80800000000000000
+      internalID: -8315898123870480617
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 457
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c3dcb4ef8fd47d0800000000000000
+      internalID: -2932414011271201664
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 420
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ab51fd3d2806b20800000000000000
+      internalID: 3125641987887577685
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_48
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 448
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474375a1ea07af090800000000000000
+      internalID: -7999957895001721740
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_49
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 426
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6389d65f3a39fe0800000000000000
+      internalID: -1183422002567301453
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_50
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 432
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ac0e0d39f8885b0800000000000000
+      internalID: -5365881090984588758
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_51
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 391
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868572ef5e6124b50800000000000000
+      internalID: 6575843582981658728
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_52
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 0
+        width: 273
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166b48b4d8d5a87a0800000000000000
+      internalID: -6374179461150755231
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_53
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 435
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38caf401c932ca620800000000000000
+      internalID: 2786641422631021699
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_54
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 434
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1246236da6e08f610800000000000000
+      internalID: 1655088715081606177
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_55
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 434
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b0b0ce07b78bf60800000000000000
+      internalID: 8050320058851461893
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_56
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 380
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b01e61cc7f622740800000000000000
+      internalID: 5125781907512889520
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_57
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 418
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a15afe128e32f010800000000000000
+      internalID: 1221107177557217701
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_58
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 418
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6afd890c3b85a70800000000000000
+      internalID: 8815993910357632697
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_59
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 416
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a151b2a644101cad0800000000000000
+      internalID: -2683862509585492710
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_60
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 420
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e53f7959bb04de0800000000000000
+      internalID: -1350873637037318555
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_61
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 410
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a978b562fedfaf0800000000000000
+      internalID: -360869447096362340
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_62
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 388
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323910e6eebdc7440800000000000000
+      internalID: 4935061108785517347
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_63
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 400
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34b7c6359b31aa60800000000000000
+      internalID: 7683487951326000190
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_64
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 383
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1447cae92c9c0ad30800000000000000
+      internalID: 4440771070310249537
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_65
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 386
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc98457dcc55de4b0800000000000000
+      internalID: -5409573239127766577
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_66
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 386
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315f7e7eff222d880800000000000000
+      internalID: -8587763056939371245
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_67
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 380
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d1e345cd7261850800000000000000
+      internalID: 6347304552084938056
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_68
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 374
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48201ba51a6fa750800000000000000
+      internalID: 6318385443520915532
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_69
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 392
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf6159c7cd1bd8e0800000000000000
+      internalID: -1667706493097381967
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_70
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 386
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799a11406741a0240800000000000000
+      internalID: 4758638453377313175
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_71
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 354
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8969c28d2f9d27990800000000000000
+      internalID: -7389604401529448808
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_72
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 352
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7335593ac9114750800000000000000
+      internalID: 6287334911121896318
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_73
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 368
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b605728457eb6e8e0800000000000000
+      internalID: -1664433601335832469
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_74
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 370
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295bba057ff528850800000000000000
+      internalID: 6377765538125034898
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_75
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 358
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6451dcfaf8bf072a0800000000000000
+      internalID: -6741612047625284282
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 493
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e79f07316dfdea80800000000000000
+      internalID: -8435807933017647131
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_77
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 350
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650e60720d3e460a0800000000000000
+      internalID: -6889131046822551466
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_78
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 0
+        width: 517
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fe7ab7c18616580800000000000000
+      internalID: -8835666522381226169
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_79
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 354
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeae112e5437879d0800000000000000
+      internalID: -2776342426291148054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_80
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 354
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c4f4793aca97130800000000000000
+      internalID: 3565070398658661403
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_81
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 319
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7050cf785ea2e5d90800000000000000
+      internalID: -7107195996626746105
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_82
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 313
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93d3a805e9060b90800000000000000
+      internalID: -7276117268673342566
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_83
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 170
+        width: 70
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b44e04c29d1da600800000000000000
+      internalID: 481073251390211253
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_84
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 275
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f54f5a83e8e0670800000000000000
+      internalID: 8506893120103014238
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_85
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 307
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68efddc97ca5db80800000000000000
+      internalID: -8370594693253175185
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_86
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 215
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93c97757ba8f29a0800000000000000
+      internalID: -6255628837343083618
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_87
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 240
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad90fc4fb50b9180800000000000000
+      internalID: -9107679502238966355
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_88
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 241
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 306d8282261bc8a00800000000000000
+      internalID: 760177472257447427
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_89
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 201
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687006d62cde10f70800000000000000
+      internalID: 9151857337108006790
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_90
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 167
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdca1d1eeb83802c0800000000000000
+      internalID: -4465256638054290209
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_91
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 158
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed45727a374c4c00800000000000000
+      internalID: 886161543039110631
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_92
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 182
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b22ee7c56324000800000000000000
+      internalID: 18637119356545916
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_93
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 149
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804858f8c82bdec50800000000000000
+      internalID: 6696204537742853128
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_94
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 142
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da9e3da8044145b0800000000000000
+      internalID: -5385948875301414187
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_95
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 98
+        width: 28
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fffbf09bafc166b0800000000000000
+      internalID: -5304730550286942219
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_96
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 148
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73470356a6bd89340800000000000000
+      internalID: 4870884247011882039
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_97
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 152
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5db0f75517712490800000000000000
+      internalID: -7772800548311351971
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_98
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 150
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3afa6a1570efc60800000000000000
+      internalID: 7853722847450997756
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_99
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 138
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e6e2a87e7334660800000000000000
+      internalID: 7368794882903535157
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_100
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 140
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626e737dd48ab92e0800000000000000
+      internalID: -2117914147470973402
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_101
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 100
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717b3396f3fca8c20800000000000000
+      internalID: 3209605555709785879
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_102
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 114
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5029540c56ca8f740800000000000000
+      internalID: 5186084523934585349
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_103
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 117
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be4158c21c50c4c0800000000000000
+      internalID: -4269311211007291726
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_104
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 120
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9b323f4fa317f00800000000000000
+      internalID: 1112735406662859223
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_105
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 87
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281557317b1298610800000000000000
+      internalID: 1623866210832961922
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_106
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 84
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e173fc9181feff8e0800000000000000
+      internalID: -1657343251057789154
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_107
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 80
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2439a3395702ac50800000000000000
+      internalID: 6674905677416707114
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_108
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 84
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309e95e7588b40e60800000000000000
+      internalID: 7927664127568898307
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_109
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 73
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7107d0ffd9476d100800000000000000
+      internalID: 132421460991766551
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_110
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 69
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4732912fe5b4a8390800000000000000
+      internalID: -7815351332187331724
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_111
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 19
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7260a53401c69e990800000000000000
+      internalID: -7356229699227744729
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_112
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 52
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf42c466eefb496b0800000000000000
+      internalID: -5290392631614102276
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_113
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 45
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ebd2cd9cda80e60800000000000000
+      internalID: 7928778226479775321
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_114
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 45
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853d0ad33405771a0800000000000000
+      internalID: -6811887661647604904
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_115
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 19
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4b681e210db9d60800000000000000
+      internalID: 7898135151035987127
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_116
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 45
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44644aa978f708290800000000000000
+      internalID: -7890166326761339324
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_117
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 7
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf42d64fddfc0500800000000000000
+      internalID: 363944805317890012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_118
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 0
+        width: 159
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5504e025e58947470800000000000000
+      internalID: 8391499536569090133
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_119
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 0
+        width: 53
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f8aa1bb86454d70800000000000000
+      internalID: 9026698593929170835
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_120
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 0
+        width: 59
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3437af2459f9b4480800000000000000
+      internalID: -8913855574027111613
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_121
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 15
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: febc0568ded1172f0800000000000000
+      internalID: -976966738164790289
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ActionKeysAtlas_122
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 0
+        width: 46
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6d6867acb80dc60800000000000000
+      internalID: 7840920652940236531
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

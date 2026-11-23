@@ -1,0 +1,28 @@
+Additional field recordings:
+
+Church Bell by Ulrich Metzner, copyright 2008-2010; submitted/cut/faded by Iwan "qubodup" Gabovitch.
+https://opengameart.org/content/church-bell
+Original file: https://opengameart.org/sites/default/files/churchbell.flac
+Creative Commons Attribution-ShareAlike 3.0 Unported:
+https://creativecommons.org/licenses/by-sa/3.0/
+Our church_bell.wav converts the existing cut/faded FLAC from 24-bit to 16-bit stereo PCM.
+This WAV and adaptations of this recording remain under CC BY-SA 3.0. This media licence does not relicense the game's unrelated code/assets.
+
+Fire Crackling by AntumDeluge, CC0 1.0.
+https://opengameart.org/content/fire-crackling/
+https://opengameart.org/sites/default/files/fire-1.wav
+https://creativecommons.org/publicdomain/zero/1.0/
+Copied without synthesis as fire_crackle.wav.
+
+Water Splash and sand footsteps by Peludo, CC0 1.0.
+https://opengameart.org/content/water-splash-and-sand-footsteps
+https://opengameart.org/sites/default/files/splash1_0.wav
+https://creativecommons.org/publicdomain/zero/1.0/
+The author describes a webcam, bucket of water and tapioca bag recording.
+Copied without synthesis as water_splash.wav. Author credit and source retained here and in-game.
+
+Crickets Ambient Noise - loopable by Wolfgang_ (optional credit Ted Kerr), CC0 1.0.
+https://opengameart.org/content/crickets-ambient-noise-loopable
+https://opengameart.org/sites/default/files/crickets_1.mp3
+https://creativecommons.org/publicdomain/zero/1.0/
+Copied without synthesis as night_crickets.mp3. Quiet outdoor night bed for Acts I and II only.

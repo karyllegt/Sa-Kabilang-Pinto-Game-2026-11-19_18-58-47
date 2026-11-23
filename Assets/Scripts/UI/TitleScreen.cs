@@ -26,7 +26,8 @@ namespace Skp.UI
             var crt = (RectTransform)col.transform;
             UiKit.Place(crt, new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(48, 10), new Vector2(420, 400));
             UiKit.Fit(col);
-            var logo = UiKit.Text(col.transform, "Logo", Loc.Get("title.logo").Replace("\n", " "), 24, th.text, TextAlignmentOptions.Left);
+            var logo = UiKit.Text(col.transform, "Logo", Loc.Get("title.logo"), 24, th.text, TextAlignmentOptions.Left);
+            logo.lineSpacing = 16f;
             logo.textWrappingMode = TextWrappingModes.NoWrap;
             UiKit.Text(col.transform, "Tagline", Loc.Get("title.tagline"), th.smallSize, th.gold, TextAlignmentOptions.Left);
 
@@ -48,8 +49,8 @@ namespace Skp.UI
             s.howToPlay = Row("title.how");
             s.credits = Row("title.credits");
 
-            s.art = UiKit.Picture(root, "TitleArt", th.titleArt, new Vector2(256, 256));
-            UiKit.Place(s.art.rectTransform, new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-56, 10), new Vector2(256, 256));
+            s.art = UiKit.Picture(root, "TitleArt", th.titleArt, new Vector2(280, 360));
+            UiKit.Place(s.art.rectTransform, new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-56, 10), new Vector2(280, 360));
             Object.DestroyImmediate(s.art.GetComponent<LayoutElement>());
 
             var foot = UiKit.Label(root, "Footer", Loc.Get("title.footer"), th.tinySize, th.textDim, TextAlignmentOptions.Center, false);

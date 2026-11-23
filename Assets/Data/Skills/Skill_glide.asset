@@ -20,7 +20,7 @@ MonoBehaviour:
   color: {r: 0.56078434, g: 0.827451, b: 1, a: 1}
   type: 0
   shortLabel: GL
-  keyHint: 
-  icon: {fileID: 21300000, guid: d4c66b61f1495f24cbba59760f31c036, type: 3}
+  keyHint:
+  icon: {fileID: 21300000, guid: ed812ccedbf801143942dff6e8a7fe28, type: 2}
   level: 7
   cue: skill_glide

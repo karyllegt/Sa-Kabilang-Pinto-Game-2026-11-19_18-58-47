@@ -11,8 +11,8 @@ using UnityEngine.TestTools;
 namespace Skp.Tests
 {
     /// <summary>
-    /// R1: every level (1 to 9), the Bellkeeper in its toll and bell phases, and the level map draw exactly what they drew before
-    /// the views moved to prefabs. The first run writes the baseline (tests/Screenshots/r1/baseline); later runs compare to it.
+    /// Every level, the Bellkeeper and map retain the reviewed presentation snapshot. The intentional art overhaul
+    /// uses tests/Screenshots/presentation/baseline; historical pre-overhaul R1 snapshots are preserved separately.
     /// </summary>
     public class R1PrefabBaselineTests
     {
@@ -38,11 +38,11 @@ namespace Skp.Tests
         {
             var diff = R1Capture.CompareOrWrite(name, lines, out bool wrote);
             if (wrote) { Debug.Log($"[R1] baseline written: {name} ({lines.Count} lines)"); return; }
-            Assert.IsEmpty(diff, name + " differs from the pre-R1 baseline:\n" + string.Join("\n", diff.GetRange(0, Mathf.Min(diff.Count, 30))));
+            Assert.IsEmpty(diff, name + " differs from the reviewed presentation baseline:\n" + string.Join("\n", diff.GetRange(0, Mathf.Min(diff.Count, 30))));
         }
 
         [UnityTest]
-        public IEnumerator Levels1To9_And_TheBellkeeper_DrawExactlyAsBeforeR1()
+        public IEnumerator Levels1To9_And_TheBellkeeper_MatchPresentationBaseline()
         {
             UseTempSave();
             GameSession.Pending = new LevelRequest { Level = 0, Difficulty = "standard" };
@@ -101,7 +101,7 @@ namespace Skp.Tests
         }
 
         [UnityTest]
-        public IEnumerator TheLevelMap_DrawsExactlyAsBeforeR1()
+        public IEnumerator TheLevelMap_MatchesPresentationBaseline()
         {
             UseTempSave();
             GameRoot.Instance.Save.Data.unlocked = 5;

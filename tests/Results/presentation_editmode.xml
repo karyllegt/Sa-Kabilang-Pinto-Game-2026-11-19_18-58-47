@@ -1,0 +1,1394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="177" result="Failed(Child)" total="177" passed="175" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:56:32Z" duration="1574.5953579">
+  <test-suite type="TestSuite" id="1000" name="Sa-Kabilang-Pinto" fullname="Sa-Kabilang-Pinto" runstate="Runnable" testcasecount="177" result="Failed" site="Child" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:56:32Z" duration="1574.595358" total="177" passed="175" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1205" name="Skp.Tests.EditMode.dll" fullname="D:/CSEL-Final-Project/Sa-Kabilang-Pinto/Library/ScriptAssemblies/Skp.Tests.EditMode.dll" runstate="Runnable" testcasecount="177" result="Failed" site="Child" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:56:32Z" duration="1574.470572" total="177" passed="175" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="15064" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1206" name="Skp" fullname="Skp" runstate="Runnable" testcasecount="177" result="Failed" site="Child" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:56:32Z" duration="1574.464086" total="177" passed="175" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1207" name="Tests" fullname="Skp.Tests" runstate="Runnable" testcasecount="177" result="Failed" site="Child" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:56:32Z" duration="1574.456234" total="177" passed="175" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1001" name="ArtRulesTests" fullname="Skp.Tests.ArtRulesTests" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:30:21Z" duration="2.786716" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1006" name="CharacterArt_GetsTheBottomCentrePivot" fullname="Skp.Tests.ArtRulesTests.CharacterArt_GetsTheBottomCentrePivot" methodname="CharacterArt_GetsTheBottomCentrePivot" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" seed="1575322028" result="Passed" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:30:18Z" duration="0.305144" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="Cleanup_Trims_SnapsToThePalette_ClearsStrays_AndFitsTheCanvas" fullname="Skp.Tests.ArtRulesTests.Cleanup_Trims_SnapsToThePalette_ClearsStrays_AndFitsTheCanvas" methodname="Cleanup_Trims_SnapsToThePalette_ClearsStrays_AndFitsTheCanvas" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" seed="1235734879" result="Passed" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:30:18Z" duration="0.089869" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="EveryGamePng_FollowsTheArtBible" fullname="Skp.Tests.ArtRulesTests.EveryGamePng_FollowsTheArtBible" methodname="EveryGamePng_FollowsTheArtBible" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" seed="747702858" result="Passed" start-time="2026-11-23 15:30:18Z" end-time="2026-11-23 15:30:21Z" duration="2.222155" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="Palette_HasTheBibleColours_WithUniqueSymbols" fullname="Skp.Tests.ArtRulesTests.Palette_HasTheBibleColours_WithUniqueSymbols" methodname="Palette_HasTheBibleColours_WithUniqueSymbols" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" seed="1419168187" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.010458" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="TextGrid_BuildsExactPixels_AndRejectsBadGrids" fullname="Skp.Tests.ArtRulesTests.TextGrid_BuildsExactPixels_AndRejectsBadGrids" methodname="TextGrid_BuildsExactPixels_AndRejectsBadGrids" classname="Skp.Tests.ArtRulesTests" runstate="Runnable" seed="1648991945" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.067062" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1007" name="DimensionTests" fullname="Skp.Tests.DimensionTests" classname="Skp.Tests.DimensionTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.700094" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1009" name="DimensionMember_GhostsOrHidesOutsideItsMask" fullname="Skp.Tests.DimensionTests.DimensionMember_GhostsOrHidesOutsideItsMask" methodname="DimensionMember_GhostsOrHidesOutsideItsMask" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="621189222" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.031518" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="Door_WithArrival_Teleports_AndExitOnlyRequestsTheExit" fullname="Skp.Tests.DimensionTests.Door_WithArrival_Teleports_AndExitOnlyRequestsTheExit" methodname="Door_WithArrival_Teleports_AndExitOnlyRequestsTheExit" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="893898623" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.097420" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="Doors_SwitchDimension_AndOnlyWorkInTheirOwnDimension" fullname="Skp.Tests.DimensionTests.Doors_SwitchDimension_AndOnlyWorkInTheirOwnDimension" methodname="Doors_SwitchDimension_AndOnlyWorkInTheirOwnDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="906433560" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.006845" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1016" name="Hazard_HarmsOnlyInItsDimension" fullname="Skp.Tests.DimensionTests.Hazard_HarmsOnlyInItsDimension" methodname="Hazard_HarmsOnlyInItsDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1367752340" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.007913" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1017" name="Inverted_FallsUp_LandsOnUnderside_JumpMirrors" fullname="Skp.Tests.DimensionTests.Inverted_FallsUp_LandsOnUnderside_JumpMirrors" methodname="Inverted_FallsUp_LandsOnUnderside_JumpMirrors" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1504103346" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.005392" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="Inverted_KnockbackPushesAgainstGravity" fullname="Skp.Tests.DimensionTests.Inverted_KnockbackPushesAgainstGravity" methodname="Inverted_KnockbackPushesAgainstGravity" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1705399173" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.002230" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="Lantern_ReturnsToOrdinary_ButNotFromInverted" fullname="Skp.Tests.DimensionTests.Lantern_ReturnsToOrdinary_ButNotFromInverted" methodname="Lantern_ReturnsToOrdinary_ButNotFromInverted" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1910319528" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.004037" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1015" name="Ledge_IsSolidOnlyInItsDimension" fullname="Skp.Tests.DimensionTests.Ledge_IsSolidOnlyInItsDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.029510" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1012" name="Ledge_IsSolidOnlyInItsDimension(Ordinary,0.0f)" fullname="Skp.Tests.DimensionTests.Ledge_IsSolidOnlyInItsDimension(Ordinary,0.0f)" methodname="Ledge_IsSolidOnlyInItsDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="785007077" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.002850" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="Ledge_IsSolidOnlyInItsDimension(Spirit,3.0f)" fullname="Skp.Tests.DimensionTests.Ledge_IsSolidOnlyInItsDimension(Spirit,3.0f)" methodname="Ledge_IsSolidOnlyInItsDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1855889606" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.001028" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="Ledge_IsSolidOnlyInItsDimension(Inverted,-999.0f)" fullname="Skp.Tests.DimensionTests.Ledge_IsSolidOnlyInItsDimension(Inverted,-999.0f)" methodname="Ledge_IsSolidOnlyInItsDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="526338682" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.002732" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1008" name="MaskLogic_EveryMaskInEveryDimension" fullname="Skp.Tests.DimensionTests.MaskLogic_EveryMaskInEveryDimension" methodname="MaskLogic_EveryMaskInEveryDimension" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="778867921" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.007795" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1035" name="NoDimensionStateLeaks_AfterDeathAndRespawn" fullname="Skp.Tests.DimensionTests.NoDimensionStateLeaks_AfterDeathAndRespawn" classname="Skp.Tests.DimensionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.009456" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1033" name="NoDimensionStateLeaks_AfterDeathAndRespawn(Spirit)" fullname="Skp.Tests.DimensionTests.NoDimensionStateLeaks_AfterDeathAndRespawn(Spirit)" methodname="NoDimensionStateLeaks_AfterDeathAndRespawn" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1407878968" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.006439" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="NoDimensionStateLeaks_AfterDeathAndRespawn(Inverted)" fullname="Skp.Tests.DimensionTests.NoDimensionStateLeaks_AfterDeathAndRespawn(Inverted)" methodname="NoDimensionStateLeaks_AfterDeathAndRespawn" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="151415726" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.001104" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1031" name="Shadow_ExistsOnlyInSpirit_AndForgetsItsTrailOnDimensionChange" fullname="Skp.Tests.DimensionTests.Shadow_ExistsOnlyInSpirit_AndForgetsItsTrailOnDimensionChange" methodname="Shadow_ExistsOnlyInSpirit_AndForgetsItsTrailOnDimensionChange" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1267381734" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.001551" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1028" name="Shadow_HurtsOnContact_ThroughCanBeHurt" fullname="Skp.Tests.DimensionTests.Shadow_HurtsOnContact_ThroughCanBeHurt" methodname="Shadow_HurtsOnContact_ThroughCanBeHurt" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1877654693" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.003083" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1027" name="Shadow_ReplaysThePath_ExactlyNTicksLate" fullname="Skp.Tests.DimensionTests.Shadow_ReplaysThePath_ExactlyNTicksLate" classname="Skp.Tests.DimensionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.020515" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1025" name="Shadow_ReplaysThePath_ExactlyNTicksLate(30)" fullname="Skp.Tests.DimensionTests.Shadow_ReplaysThePath_ExactlyNTicksLate(30)" methodname="Shadow_ReplaysThePath_ExactlyNTicksLate" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1148374319" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.013433" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="Shadow_ReplaysThePath_ExactlyNTicksLate(100)" fullname="Skp.Tests.DimensionTests.Shadow_ReplaysThePath_ExactlyNTicksLate(100)" methodname="Shadow_ReplaysThePath_ExactlyNTicksLate" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="285870321" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.004027" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1023" name="ShadowDelay_ComesFromTheDifficultyTable" fullname="Skp.Tests.DimensionTests.ShadowDelay_ComesFromTheDifficultyTable" classname="Skp.Tests.DimensionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.258431" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1019" name="ShadowDelay_ComesFromTheDifficultyTable(Story,300)" fullname="Skp.Tests.DimensionTests.ShadowDelay_ComesFromTheDifficultyTable(Story,300)" methodname="ShadowDelay_ComesFromTheDifficultyTable" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="64243137" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.001677" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="ShadowDelay_ComesFromTheDifficultyTable(Standard,240)" fullname="Skp.Tests.DimensionTests.ShadowDelay_ComesFromTheDifficultyTable(Standard,240)" methodname="ShadowDelay_ComesFromTheDifficultyTable" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1067420486" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.001356" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="ShadowDelay_ComesFromTheDifficultyTable(Nightmare,180)" fullname="Skp.Tests.DimensionTests.ShadowDelay_ComesFromTheDifficultyTable(Nightmare,180)" methodname="ShadowDelay_ComesFromTheDifficultyTable" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="2023671071" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.000998" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="ShadowDelay_ComesFromTheDifficultyTable(Endless,200)" fullname="Skp.Tests.DimensionTests.ShadowDelay_ComesFromTheDifficultyTable(Endless,200)" methodname="ShadowDelay_ComesFromTheDifficultyTable" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="1049873314" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.000984" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1024" name="ShadowDelay_ShortensPerLevel_WithAFloor" fullname="Skp.Tests.DimensionTests.ShadowDelay_ShortensPerLevel_WithAFloor" methodname="ShadowDelay_ShortensPerLevel_WithAFloor" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="513987389" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.002798" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1030" name="Ward_OutOfReach_DoesNotStun_BoltHookStuns140" fullname="Skp.Tests.DimensionTests.Ward_OutOfReach_DoesNotStun_BoltHookStuns140" methodname="Ward_OutOfReach_DoesNotStun_BoltHookStuns140" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="875778613" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.003864" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="Ward_StunsTheShadowFor190Ticks_NoDamageMeanwhile" fullname="Skp.Tests.DimensionTests.Ward_StunsTheShadowFor190Ticks_NoDamageMeanwhile" methodname="Ward_StunsTheShadowFor190Ticks_NoDamageMeanwhile" classname="Skp.Tests.DimensionTests" runstate="Runnable" seed="526819219" result="Passed" start-time="2026-11-23 15:30:21Z" end-time="2026-11-23 15:30:21Z" duration="0.007869" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1036" name="LevelGeneratorTests" fullname="Skp.Tests.LevelGeneratorTests" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.734878" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1037" name="Fixture_Has30Layouts" fullname="Skp.Tests.LevelGeneratorTests.Fixture_Has30Layouts" methodname="Fixture_Has30Layouts" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="1386073683" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.214040" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1039" name="Generation_IsDeterministic" fullname="Skp.Tests.LevelGeneratorTests.Generation_IsDeterministic" methodname="Generation_IsDeterministic" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="1778973567" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.195801" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1038" name="Generator_MatchesPrototype_Exactly_ForEveryFixtureLayout" fullname="Skp.Tests.LevelGeneratorTests.Generator_MatchesPrototype_Exactly_ForEveryFixtureLayout" methodname="Generator_MatchesPrototype_Exactly_ForEveryFixtureLayout" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="1830615234" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.147998" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1043" name="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit" fullname="Skp.Tests.LevelGeneratorTests.Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.150002" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1040" name="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(0,4,False)" fullname="Skp.Tests.LevelGeneratorTests.Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(0,4,False)" methodname="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="676467155" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.107839" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1041" name="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(1,5,False)" fullname="Skp.Tests.LevelGeneratorTests.Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(1,5,False)" methodname="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="552633938" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.001326" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(2,5,True)" fullname="Skp.Tests.LevelGeneratorTests.Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit(2,5,True)" methodname="Levels1to3_EveryRoomHasStartLedge_OrdinaryAndSpiritRoutes_Lantern_AndOneExit" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="1222233903" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.014576" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1044" name="WorldConversion_FloorAtZero_YUp_DoorArrivalOnLantern" fullname="Skp.Tests.LevelGeneratorTests.WorldConversion_FloorAtZero_YUp_DoorArrivalOnLantern" methodname="WorldConversion_FloorAtZero_YUp_DoorArrivalOnLantern" classname="Skp.Tests.LevelGeneratorTests" runstate="Runnable" seed="2097693831" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.016977" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1045" name="LevelSessionTests" fullname="Skp.Tests.LevelSessionTests" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:33:17Z" duration="174.551857" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1055" name="Anino_Patrols_BouncesAtEdges_HurtsOnContact_WardKillsIt" fullname="Skp.Tests.LevelSessionTests.Anino_Patrols_BouncesAtEdges_HurtsOnContact_WardKillsIt" methodname="Anino_Patrols_BouncesAtEdges_HurtsOnContact_WardKillsIt" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="530122957" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:30:22Z" duration="0.081327" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1060" name="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit" fullname="Skp.Tests.LevelSessionTests.Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:33:17Z" duration="174.299446" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1057" name="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(0)" fullname="Skp.Tests.LevelSessionTests.Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(0)" methodname="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1015132149" result="Passed" start-time="2026-11-23 15:30:22Z" end-time="2026-11-23 15:31:06Z" duration="43.595087" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Level 1: clue True exit True exitAfterClue True lanterns 1,1,1,1,1 states 2529 macros 81114 hits to letter 0, letter to exit total 0 in 43306 ms
+]]></output>
+              </test-case>
+              <test-case id="1058" name="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(1)" fullname="Skp.Tests.LevelSessionTests.Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(1)" methodname="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="947158184" result="Passed" start-time="2026-11-23 15:31:06Z" end-time="2026-11-23 15:32:00Z" duration="53.902892" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Level 2: clue True exit True exitAfterClue True lanterns 1,1,1,1,1,1 states 3575 macros 113025 hits to letter 0, letter to exit total 0 in 53897 ms
+]]></output>
+              </test-case>
+              <test-case id="1059" name="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(2)" fullname="Skp.Tests.LevelSessionTests.Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit(2)" methodname="Bot_CompletesLevel_FromSpawn_OnStandard_WithTheBaseKit" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1016351634" result="Passed" start-time="2026-11-23 15:32:00Z" end-time="2026-11-23 15:33:17Z" duration="76.794482" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Level 3: clue True exit True exitAfterClue True lanterns 1,1,1,1,1,1 states 3886 macros 121770 hits to letter 0, letter to exit total 0 in 76791 ms
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-case id="1052" name="CrumblingLedge_Falls42TicksAfterLanding_ReturnsAfter220" fullname="Skp.Tests.LevelSessionTests.CrumblingLedge_Falls42TicksAfterLanding_ReturnsAfter220" methodname="CrumblingLedge_Falls42TicksAfterLanding_ReturnsAfter220" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="93245960" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.005043" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1049" name="Death_RespawnsAtTheLastLantern" fullname="Skp.Tests.LevelSessionTests.Death_RespawnsAtTheLastLantern" methodname="Death_RespawnsAtTheLastLantern" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1138350866" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.017833" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1047" name="Exit_StaysLocked_UntilTheLetter_ThenCompletes" fullname="Skp.Tests.LevelSessionTests.Exit_StaysLocked_UntilTheLetter_ThenCompletes" methodname="Exit_StaysLocked_UntilTheLetter_ThenCompletes" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1609427765" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.045194" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1051" name="FinalLevel_SetsCleared_AndClearsContinue" fullname="Skp.Tests.LevelSessionTests.FinalLevel_SetsCleared_AndClearsContinue" methodname="FinalLevel_SetsCleared_AndClearsContinue" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="4485614" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.010821" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1050" name="GameOver_ClearsTheResumePoint" fullname="Skp.Tests.LevelSessionTests.GameOver_ClearsTheResumePoint" methodname="GameOver_ClearsTheResumePoint" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1759528977" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.036897" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1048" name="Lantern_SavesCheckpoint_AndContinueResumesThere" fullname="Skp.Tests.LevelSessionTests.Lantern_SavesCheckpoint_AndContinueResumesThere" methodname="Lantern_SavesCheckpoint_AndContinueResumesThere" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1136093529" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.027488" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1053" name="MovingLedge_CarriesTala" fullname="Skp.Tests.LevelSessionTests.MovingLedge_CarriesTala" methodname="MovingLedge_CarriesTala" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="100197524" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.005243" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1054" name="Pickups_Flame_Fragment_Letter" fullname="Skp.Tests.LevelSessionTests.Pickups_Flame_Fragment_Letter" methodname="Pickups_Flame_Fragment_Letter" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="786828390" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.005563" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1056" name="Root_StrikesOnlyInItsWindow_Thorns_BlockUntilBurnt" fullname="Skp.Tests.LevelSessionTests.Root_StrikesOnlyInItsWindow_Thorns_BlockUntilBurnt" methodname="Root_StrikesOnlyInItsWindow_Thorns_BlockUntilBurnt" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1903349275" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.004887" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1046" name="Start_AtSpawnLantern_WithDifficultyRamp" fullname="Skp.Tests.LevelSessionTests.Start_AtSpawnLantern_WithDifficultyRamp" methodname="Start_AtSpawnLantern_WithDifficultyRamp" classname="Skp.Tests.LevelSessionTests" runstate="Runnable" seed="1860908680" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:17Z" duration="0.003738" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1061" name="M7Tests" fullname="Skp.Tests.M7Tests" classname="Skp.Tests.M7Tests" runstate="Runnable" testcasecount="22" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:50:42Z" duration="1045.211188" total="22" passed="22" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1080" name="ActIII_Bells_WarnThenFall_Hurt_AndTheVeilBlocksThem" fullname="Skp.Tests.M7Tests.ActIII_Bells_WarnThenFall_Hurt_AndTheVeilBlocksThem" methodname="ActIII_Bells_WarnThenFall_Hurt_AndTheVeilBlocksThem" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1204064107" result="Passed" start-time="2026-11-23 15:33:17Z" end-time="2026-11-23 15:33:18Z" duration="0.174660" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1082" name="Bellkeeper_CyclesWaveBellsToll_TheTollHurtsUnlessParried_AndTheVeilBlocksItsBlows" fullname="Skp.Tests.M7Tests.Bellkeeper_CyclesWaveBellsToll_TheTollHurtsUnlessParried_AndTheVeilBlocksItsBlows" methodname="Bellkeeper_CyclesWaveBellsToll_TheTollHurtsUnlessParried_AndTheVeilBlocksItsBlows" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="784090672" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:33:18Z" duration="0.061238" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1083" name="Bellkeeper_ParryStuns_WardAndBoltHurtOnlyWhileStunned_BarToZero_LastDoor_Cleared" fullname="Skp.Tests.M7Tests.Bellkeeper_ParryStuns_WardAndBoltHurtOnlyWhileStunned_BarToZero_LastDoor_Cleared" methodname="Bellkeeper_ParryStuns_WardAndBoltHurtOnlyWhileStunned_BarToZero_LastDoor_Cleared" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1706013136" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:33:18Z" duration="0.093178" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1084" name="Bellkeeper_WakesAtOnce_WhenContinuingFromTheArenaLantern" fullname="Skp.Tests.M7Tests.Bellkeeper_WakesAtOnce_WhenContinuingFromTheArenaLantern" methodname="Bellkeeper_WakesAtOnce_WhenContinuingFromTheArenaLantern" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1202505161" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:33:18Z" duration="0.005786" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1077" name="DifficultyModes_Vitality_6_4_3_4_Lives_AndBossHealth" fullname="Skp.Tests.M7Tests.DifficultyModes_Vitality_6_4_3_4_Lives_AndBossHealth" methodname="DifficultyModes_Vitality_6_4_3_4_Lives_AndBossHealth" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="705683322" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:33:18Z" duration="0.020441" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1076" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:45:21Z" duration="723.205778" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties>
+                <property name="Timeout" value="900000" />
+              </properties>
+              <test-case id="1067" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(0)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(0)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="947149851" result="Passed" start-time="2026-11-23 15:33:18Z" end-time="2026-11-23 15:34:11Z" duration="53.673861" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1068" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(1)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(1)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="485991934" result="Passed" start-time="2026-11-23 15:34:11Z" end-time="2026-11-23 15:35:11Z" duration="59.317487" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(2)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(2)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1317419116" result="Passed" start-time="2026-11-23 15:35:11Z" end-time="2026-11-23 15:36:23Z" duration="72.660565" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1070" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(3)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(3)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1625293357" result="Passed" start-time="2026-11-23 15:36:23Z" end-time="2026-11-23 15:37:42Z" duration="78.297862" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1071" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(4)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(4)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1662239321" result="Passed" start-time="2026-11-23 15:37:42Z" end-time="2026-11-23 15:39:08Z" duration="86.129555" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1072" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(5)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(5)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1119329662" result="Passed" start-time="2026-11-23 15:39:08Z" end-time="2026-11-23 15:40:56Z" duration="107.700698" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1073" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(6)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(6)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="2069983030" result="Passed" start-time="2026-11-23 15:40:56Z" end-time="2026-11-23 15:42:41Z" duration="105.500134" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1074" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(7)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(7)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="2088616569" result="Passed" start-time="2026-11-23 15:42:41Z" end-time="2026-11-23 15:44:28Z" duration="107.334061" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1075" name="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(8)" fullname="Skp.Tests.M7Tests.EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback(8)" methodname="EveryLevel_CompletableWithTheBaseKitOnStory_WithAllSkills_AndAllSkillLevelsStillHaveTheBaseKitFallback" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="112344069" result="Passed" start-time="2026-11-23 15:44:28Z" end-time="2026-11-23 15:45:21Z" duration="52.574216" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1066" name="EverySkillObstacle_CrossedWithItsSkill_BlockedWithout" fullname="Skp.Tests.M7Tests.EverySkillObstacle_CrossedWithItsSkill_BlockedWithout" methodname="EverySkillObstacle_CrossedWithItsSkill_BlockedWithout" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="415463436" result="Passed" start-time="2026-11-23 15:45:21Z" end-time="2026-11-23 15:50:42Z" duration="320.863864" asserts="0">
+              <properties>
+                <property name="Timeout" value="1200000" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[# M7 skill obstacles
+
+Generated by `SkpObstacleReport` (2026-11-23 23:50). Levels 1 to 9 on Standard (obstacle geometry does not depend on the difficulty), with the skills a normal run owns there and with all eight.
+Each obstacle on its own (its ledges and hazards): crossed = the bot reaches the way on without a hit using the skill; blocked = it cannot without that skill (other skills kept). The last column searches the whole room without the skill and counts how often another ordinary path leads up anyway (informational; the Spirit and Inverted routes are the intended fallback).
+
+| Obstacle | Generated | Crossed with the skill | Blocked without it | Both | Rate | Required | Room offers another way (no skill) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| bolt | 15 | 15 | 15 | 15 | 100 % | 100 % | 15 |
+| dash | 12 | 12 | 12 | 12 | 100 % | 95 % | 12 |
+| dj | 180 | 180 | 179 | 179 | 99 % | 95 % | 1 |
+| glide | 16 | 16 | 16 | 16 | 100 % | 95 % | 15 |
+| pack | 5 | 5 | 5 | 5 | 100 % | 95 % | 0 |
+| veil | 8 | 8 | 8 | 8 | 100 % | 100 % | 0 |
+
+## Failures (1)
+- dj L4 standard room 6 at (16.0, 116.8): crossed True, blocked without False, room bypass True (with: reached with 0 hits (1 states); without: reached with 0 hits (1 states))
+
+]]></output>
+            </test-case>
+            <test-case id="1078" name="Flood_RisesFasterEachLevel_BurnsEvery36Ticks_ThroughTheVeilGate_AndResetsOnRespawn" fullname="Skp.Tests.M7Tests.Flood_RisesFasterEachLevel_BurnsEvery36Ticks_ThroughTheVeilGate_AndResetsOnRespawn" methodname="Flood_RisesFasterEachLevel_BurnsEvery36Ticks_ThroughTheVeilGate_AndResetsOnRespawn" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1379727932" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.009189" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1064" name="HazardsAndEnemies_RiseRoomToRoom_AndLevelToLevel_OnAverage" fullname="Skp.Tests.M7Tests.HazardsAndEnemies_RiseRoomToRoom_AndLevelToLevel_OnAverage" methodname="HazardsAndEnemies_RiseRoomToRoom_AndLevelToLevel_OnAverage" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="396723718" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.087565" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[L1: hazards + creatures per ledge, by room 0.52, 0.58, 0.27, 0.34, slope -0.08
+L2: hazards + creatures per ledge, by room 0.47, 0.44, 0.66, 0.53, 0.34, slope -0.02
+L3: hazards + creatures per ledge, by room 0.54, 0.63, 0.64, 0.54, 0.43, slope -0.03
+L4: hazards + creatures per ledge, by room 0.67, 0.71, 0.54, 0.66, 0.50, 0.59, slope -0.03
+L5: hazards + creatures per ledge, by room 0.63, 0.50, 0.38, 0.43, 0.50, 0.57, slope -0.01
+L6: hazards + creatures per ledge, by room 0.57, 0.58, 0.63, 0.28, 0.57, 0.71, 0.71, slope 0.02
+L7: hazards + creatures per ledge, by room 0.74, 0.50, 0.67, 0.40, 0.67, 0.71, 0.75, slope 0.02
+L8: hazards + creatures per ledge, by room 0.96, 0.57, 1.05, 1.06, 0.50, 0.83, 0.93, 0.83, slope 0.00
+hazards + creatures per ordinary ledge, levels 1-8: 0.43, 0.49, 0.55, 0.61, 0.50, 0.58, 0.63, 0.84
+average room-to-room slope over 128 layouts: 0.047
+]]></output>
+            </test-case>
+            <test-case id="1079" name="Manananggal_Hovers_DivesAtTala_FliesBack_AndIsStunnedByWardAndBolt" fullname="Skp.Tests.M7Tests.Manananggal_Hovers_DivesAtTala_FliesBack_AndIsStunnedByWardAndBolt" methodname="Manananggal_Hovers_DivesAtTala_FliesBack_AndIsStunnedByWardAndBolt" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1125824344" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.006538" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1063" name="Multipliers_FollowTheCurve_RiseRoomToRoom_AndNeverPassTheirCaps" fullname="Skp.Tests.M7Tests.Multipliers_FollowTheCurve_RiseRoomToRoom_AndNeverPassTheirCaps" methodname="Multipliers_FollowTheCurve_RiseRoomToRoom_AndNeverPassTheirCaps" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="950703933" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.034125" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1065" name="Obstacles_AppearOnlyFromTheirLevel_NeverInTheLetterRoom_AndGrowDenser" fullname="Skp.Tests.M7Tests.Obstacles_AppearOnlyFromTheirLevel_NeverInTheLetterRoom_AndGrowDenser" methodname="Obstacles_AppearOnlyFromTheirLevel_NeverInTheLetterRoom_AndGrowDenser" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="308287496" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.077884" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[skill obstacles per room, levels 1-9: 0.00, 1.00, 1.40, 2.33, 2.25, 3.04, 2.93, 2.72, 3.00
+]]></output>
+            </test-case>
+            <test-case id="1062" name="RoomsPerLevel_Are_4_5_5_6_6_7_7_8_ThenTheBossArena" fullname="Skp.Tests.M7Tests.RoomsPerLevel_Are_4_5_5_6_6_7_7_8_ThenTheBossArena" methodname="RoomsPerLevel_Are_4_5_5_6_6_7_7_8_ThenTheBossArena" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1284349153" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.010966" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1081" name="ThornWalls_AreSolid_EvenToADash_UntilABoltBurnsThem" fullname="Skp.Tests.M7Tests.ThornWalls_AreSolid_EvenToADash_UntilABoltBurnsThem" methodname="ThornWalls_AreSolid_EvenToADash_UntilABoltBurnsThem" classname="Skp.Tests.M7Tests" runstate="Runnable" seed="1173503790" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.001894" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1085" name="M8AudioFeelTests" fullname="Skp.Tests.M8AudioFeelTests" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:51:09Z" duration="26.549989" total="16" passed="15" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1101" name="Credits_ListTheAudioAndItsLicences" fullname="Skp.Tests.M8AudioFeelTests.Credits_ListTheAudioAndItsLicences" methodname="Credits_ListTheAudioAndItsLicences" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="71341542" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.017169" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1091" name="CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" fullname="Skp.Tests.M8AudioFeelTests.CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" methodname="CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="259876674" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:42Z" duration="0.004055" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1092" name="DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" fullname="Skp.Tests.M8AudioFeelTests.DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" methodname="DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1384289323" result="Passed" start-time="2026-11-23 15:50:42Z" end-time="2026-11-23 15:50:43Z" duration="1.172246" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1099" name="HitStop_IsShort_AndNeverStacks" fullname="Skp.Tests.M8AudioFeelTests.HitStop_IsShort_AndNeverStacks" methodname="HitStop_IsShort_AndNeverStacks" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1749405877" result="Passed" start-time="2026-11-23 15:50:43Z" end-time="2026-11-23 15:50:43Z" duration="0.038541" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1097" name="Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" fullname="Skp.Tests.M8AudioFeelTests.Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" methodname="Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1837157339" result="Passed" start-time="2026-11-23 15:50:43Z" end-time="2026-11-23 15:50:46Z" duration="3.135258" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1098" name="Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" fullname="Skp.Tests.M8AudioFeelTests.Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" methodname="Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="276218285" result="Passed" start-time="2026-11-23 15:50:46Z" end-time="2026-11-23 15:50:46Z" duration="0.010074" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1086" name="Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" fullname="Skp.Tests.M8AudioFeelTests.Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" methodname="Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="363426353" result="Passed" start-time="2026-11-23 15:50:46Z" end-time="2026-11-23 15:50:46Z" duration="0.067549" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1087" name="Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" fullname="Skp.Tests.M8AudioFeelTests.Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" methodname="Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1267834129" result="Passed" start-time="2026-11-23 15:50:46Z" end-time="2026-11-23 15:50:47Z" duration="0.031562" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1090" name="MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" fullname="Skp.Tests.M8AudioFeelTests.MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" methodname="MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="282868105" result="Failed" start-time="2026-11-23 15:50:47Z" end-time="2026-11-23 15:50:54Z" duration="7.234808" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  a2: loudness either side of the seam (0.011 vs 0.000)
+  Expected: less than 6.0f
+  But was:  28.1826572f
+]]></message>
+                <stack-trace><![CDATA[at Skp.Tests.M8AudioFeelTests.MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide () [0x00127] in D:\CSEL-Final-Project\Sa-Kabilang-Pinto\Assets\Tests\EditMode\M8AudioFeelTests.cs:145
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1089" name="NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" fullname="Skp.Tests.M8AudioFeelTests.NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" methodname="NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1766057386" result="Passed" start-time="2026-11-23 15:50:54Z" end-time="2026-11-23 15:51:08Z" duration="14.278861" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1100" name="Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" fullname="Skp.Tests.M8AudioFeelTests.Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" methodname="Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="2127499522" result="Passed" start-time="2026-11-23 15:51:08Z" end-time="2026-11-23 15:51:09Z" duration="0.495545" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1093" name="ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" methodname="ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="629910307" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.036268" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1094" name="ScreenShake_Off_NothingMoves" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_Off_NothingMoves" methodname="ScreenShake_Off_NothingMoves" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1452628885" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002001" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1095" name="ScreenShake_TurnedOffMidShake_StopsAtOnce" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_TurnedOffMidShake_StopsAtOnce" methodname="ScreenShake_TurnedOffMidShake_StopsAtOnce" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1487766946" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001639" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1088" name="SfxBank_HasEveryCueTheGameUses" fullname="Skp.Tests.M8AudioFeelTests.SfxBank_HasEveryCueTheGameUses" methodname="SfxBank_HasEveryCueTheGameUses" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1093714795" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002694" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1096" name="Vibration_RespectsTheSetting" fullname="Skp.Tests.M8AudioFeelTests.Vibration_RespectsTheSetting" methodname="Vibration_RespectsTheSetting" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1803079128" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001556" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1102" name="PlayerSimTests" fullname="Skp.Tests.PlayerSimTests" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" testcasecount="22" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.187996" total="22" passed="22" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1108" name="BufferedJump_PressUpTo5TicksBeforeLanding_JumpsTheTickAfter" fullname="Skp.Tests.PlayerSimTests.BufferedJump_PressUpTo5TicksBeforeLanding_JumpsTheTickAfter" methodname="BufferedJump_PressUpTo5TicksBeforeLanding_JumpsTheTickAfter" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1552576706" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.073796" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1116" name="CanBeHurt_TruthTable" fullname="Skp.Tests.PlayerSimTests.CanBeHurt_TruthTable" methodname="CanBeHurt_TruthTable" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1146533580" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002139" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1107" name="CoyoteJump_WorksFor5TicksAfterLeavingALedge_NotOn6th" fullname="Skp.Tests.PlayerSimTests.CoyoteJump_WorksFor5TicksAfterLeavingALedge_NotOn6th" methodname="CoyoteJump_WorksFor5TicksAfterLeavingALedge_NotOn6th" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1991901191" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002163" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1109" name="Dash_Covers59p4Px_Costs20Flame_UntouchableFor10Ticks" fullname="Skp.Tests.PlayerSimTests.Dash_Covers59p4Px_Costs20Flame_UntouchableFor10Ticks" methodname="Dash_Covers59p4Px_Costs20Flame_UntouchableFor10Ticks" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="467169927" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001426" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1110" name="Dash_RespectsCooldown_AndNeedsEnoughFlame" fullname="Skp.Tests.PlayerSimTests.Dash_RespectsCooldown_AndNeedsEnoughFlame" methodname="Dash_RespectsCooldown_AndNeedsEnoughFlame" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="660490163" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001645" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1120" name="DifficultyTable_Vitality_6_4_3_4" fullname="Skp.Tests.PlayerSimTests.DifficultyTable_Vitality_6_4_3_4" methodname="DifficultyTable_Vitality_6_4_3_4" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1919015577" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001413" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1121" name="Flame_Regenerates1Every90Ticks" fullname="Skp.Tests.PlayerSimTests.Flame_Regenerates1Every90Ticks" methodname="Flame_Regenerates1Every90Ticks" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1857926241" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001480" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1103" name="FullHoldJump_Apex3p9Tiles_AtTick16_LandsAtTick34" fullname="Skp.Tests.PlayerSimTests.FullHoldJump_Apex3p9Tiles_AtTick16_LandsAtTick34" methodname="FullHoldJump_Apex3p9Tiles_AtTick16_LandsAtTick34" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1837750869" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001632" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1115" name="Invulnerability_LastsExactly" fullname="Skp.Tests.PlayerSimTests.Invulnerability_LastsExactly" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.007928" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1113" name="Invulnerability_LastsExactly(Standard,85)" fullname="Skp.Tests.PlayerSimTests.Invulnerability_LastsExactly(Standard,85)" methodname="Invulnerability_LastsExactly" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1195424191" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002137" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1114" name="Invulnerability_LastsExactly(Story,110)" fullname="Skp.Tests.PlayerSimTests.Invulnerability_LastsExactly(Story,110)" methodname="Invulnerability_LastsExactly" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="872334246" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001327" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1112" name="Knockback_PushesAwayFromTheSource_AndUp" fullname="Skp.Tests.PlayerSimTests.Knockback_PushesAwayFromTheSource_AndUp" methodname="Knockback_PushesAwayFromTheSource_AndUp" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1702878986" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001790" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1118" name="Lantern_LightsOnce_GivesFlameAndHeart_BecomesRespawnPoint" fullname="Skp.Tests.PlayerSimTests.Lantern_LightsOnce_GivesFlameAndHeart_BecomesRespawnPoint" methodname="Lantern_LightsOnce_GivesFlameAndHeart_BecomesRespawnPoint" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="95599384" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002422" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1119" name="Lives_Standard5_Nightmare3_GameOverAfterTheLast_StoryNever" fullname="Skp.Tests.PlayerSimTests.Lives_Standard5_Nightmare3_GameOverAfterTheLast_StoryNever" methodname="Lives_Standard5_Nightmare3_GameOverAfterTheLast_StoryNever" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1550969259" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002914" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1106" name="ReleasingEarly_GivesALowerJump" fullname="Skp.Tests.PlayerSimTests.ReleasingEarly_GivesALowerJump" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.003412" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1104" name="ReleasingEarly_GivesALowerJump(1,19.3f)" fullname="Skp.Tests.PlayerSimTests.ReleasingEarly_GivesALowerJump(1,19.3f)" methodname="ReleasingEarly_GivesALowerJump" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="383604825" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001177" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1105" name="ReleasingEarly_GivesALowerJump(6,42.025f)" fullname="Skp.Tests.PlayerSimTests.ReleasingEarly_GivesALowerJump(6,42.025f)" methodname="ReleasingEarly_GivesALowerJump" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="282066334" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.000769" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1122" name="Run_ReachesButNeverExceedsMaxSpeed" fullname="Skp.Tests.PlayerSimTests.Run_ReachesButNeverExceedsMaxSpeed" methodname="Run_ReachesButNeverExceedsMaxSpeed" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="183850169" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001640" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1127" name="SameJump_AtAnyFrameRate" fullname="Skp.Tests.PlayerSimTests.SameJump_AtAnyFrameRate" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.011130" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1123" name="SameJump_AtAnyFrameRate(30)" fullname="Skp.Tests.PlayerSimTests.SameJump_AtAnyFrameRate(30)" methodname="SameJump_AtAnyFrameRate" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="386558217" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.003688" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1124" name="SameJump_AtAnyFrameRate(60)" fullname="Skp.Tests.PlayerSimTests.SameJump_AtAnyFrameRate(60)" methodname="SameJump_AtAnyFrameRate" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1508853926" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.000940" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1125" name="SameJump_AtAnyFrameRate(144)" fullname="Skp.Tests.PlayerSimTests.SameJump_AtAnyFrameRate(144)" methodname="SameJump_AtAnyFrameRate" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="941083504" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001232" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1126" name="SameJump_AtAnyFrameRate(37)" fullname="Skp.Tests.PlayerSimTests.SameJump_AtAnyFrameRate(37)" methodname="SameJump_AtAnyFrameRate" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1666098464" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001659" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1117" name="Spikes_HurtOnContact_ThroughCanBeHurt" fullname="Skp.Tests.PlayerSimTests.Spikes_HurtOnContact_ThroughCanBeHurt" methodname="Spikes_HurtOnContact_ThroughCanBeHurt" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="2009004789" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.002681" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1111" name="Ward_PulsesWith46PxRadius_Cooldown72Ticks" fullname="Skp.Tests.PlayerSimTests.Ward_PulsesWith46PxRadius_Cooldown72Ticks" methodname="Ward_PulsesWith46PxRadius_Cooldown72Ticks" classname="Skp.Tests.PlayerSimTests" runstate="Runnable" seed="1096005451" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:09Z" duration="0.001990" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1128" name="PresentationUpgradeTests" fullname="Skp.Tests.PresentationUpgradeTests" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:17Z" duration="8.219383" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1129" name="ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" fullname="Skp.Tests.PresentationUpgradeTests.ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" methodname="ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="893894659" result="Passed" start-time="2026-11-23 15:51:09Z" end-time="2026-11-23 15:51:17Z" duration="8.157196" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1132" name="EditingExistingString_InvalidatesTheLookupCache" fullname="Skp.Tests.PresentationUpgradeTests.EditingExistingString_InvalidatesTheLookupCache" methodname="EditingExistingString_InvalidatesTheLookupCache" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="899577339" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.015869" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1130" name="FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" fullname="Skp.Tests.PresentationUpgradeTests.FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" methodname="FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="1008413144" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.021108" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1131" name="FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" fullname="Skp.Tests.PresentationUpgradeTests.FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" methodname="FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="629213663" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.015963" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1133" name="ProgressRulesTests" fullname="Skp.Tests.ProgressRulesTests" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.059770" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1136" name="AddSkill_NoDuplicates" fullname="Skp.Tests.ProgressRulesTests.AddSkill_NoDuplicates" methodname="AddSkill_NoDuplicates" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" seed="1347543104" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.002097" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1135" name="Cleared_OnlySetByFinishingTheFinalLevel" fullname="Skp.Tests.ProgressRulesTests.Cleared_OnlySetByFinishingTheFinalLevel" methodname="Cleared_OnlySetByFinishingTheFinalLevel" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" seed="578667595" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.001142" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1137" name="NodeStates_MatchSpec_ForEveryUnlockCount" fullname="Skp.Tests.ProgressRulesTests.NodeStates_MatchSpec_ForEveryUnlockCount" methodname="NodeStates_MatchSpec_ForEveryUnlockCount" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" seed="1012738325" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.008154" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1138" name="Sanitize_FixesNullsAndBadValues" fullname="Skp.Tests.ProgressRulesTests.Sanitize_FixesNullsAndBadValues" methodname="Sanitize_FixesNullsAndBadValues" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" seed="2067384499" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.001061" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1134" name="Unlock_IgnoresLowerValues_AndClamps" fullname="Skp.Tests.ProgressRulesTests.Unlock_IgnoresLowerValues_AndClamps" methodname="Unlock_IgnoresLowerValues_AndClamps" classname="Skp.Tests.ProgressRulesTests" runstate="Runnable" seed="1091921667" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.000685" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1139" name="ProjectSetupTests" fullname="Skp.Tests.ProjectSetupTests" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:25Z" duration="7.853678" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1148" name="BuildSettings_AreBootTitleMapLevel_InOrder" fullname="Skp.Tests.ProjectSetupTests.BuildSettings_AreBootTitleMapLevel_InOrder" methodname="BuildSettings_AreBootTitleMapLevel_InOrder" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1779367638" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.004214" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1142" name="CharacterPivots_AreBottomCenter_PortraitsCentered" fullname="Skp.Tests.ProjectSetupTests.CharacterPivots_AreBottomCenter_PortraitsCentered" methodname="CharacterPivots_AreBottomCenter_PortraitsCentered" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1547780284" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.001660" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1151" name="DataAssets_Exist_WithPrototypeNumbers" fullname="Skp.Tests.ProjectSetupTests.DataAssets_Exist_WithPrototypeNumbers" methodname="DataAssets_Exist_WithPrototypeNumbers" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="577659609" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:17Z" duration="0.001234" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1140" name="EveryArtTexture_IsPointFilteredUncompressedSprite_WithCalibratedScale" fullname="Skp.Tests.ProjectSetupTests.EveryArtTexture_IsPointFilteredUncompressedSprite_WithCalibratedScale" methodname="EveryArtTexture_IsPointFilteredUncompressedSprite_WithCalibratedScale" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1512295027" result="Passed" start-time="2026-11-23 15:51:17Z" end-time="2026-11-23 15:51:19Z" duration="1.587200" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1143" name="EveryAudioClip_IsImported" fullname="Skp.Tests.ProjectSetupTests.EveryAudioClip_IsImported" methodname="EveryAudioClip_IsImported" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1317088676" result="Passed" start-time="2026-11-23 15:51:19Z" end-time="2026-11-23 15:51:19Z" duration="0.014028" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1145" name="EveryGameplayAction_HasKeyboardAndGamepadBindings" fullname="Skp.Tests.ProjectSetupTests.EveryGameplayAction_HasKeyboardAndGamepadBindings" methodname="EveryGameplayAction_HasKeyboardAndGamepadBindings" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1313330067" result="Passed" start-time="2026-11-23 15:51:19Z" end-time="2026-11-23 15:51:19Z" duration="0.248535" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1149" name="EveryScene_HasPixelPerfectCamera_1440x810_48ppu" fullname="Skp.Tests.ProjectSetupTests.EveryScene_HasPixelPerfectCamera_1440x810_48ppu" methodname="EveryScene_HasPixelPerfectCamera_1440x810_48ppu" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1780759706" result="Passed" start-time="2026-11-23 15:51:19Z" end-time="2026-11-23 15:51:22Z" duration="3.195027" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1150" name="LandscapeOnly" fullname="Skp.Tests.ProjectSetupTests.LandscapeOnly" methodname="LandscapeOnly" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1887648831" result="Passed" start-time="2026-11-23 15:51:22Z" end-time="2026-11-23 15:51:22Z" duration="0.004013" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1147" name="NoLegacyInputApi_InGameCode" fullname="Skp.Tests.ProjectSetupTests.NoLegacyInputApi_InGameCode" methodname="NoLegacyInputApi_InGameCode" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1394160207" result="Passed" start-time="2026-11-23 15:51:22Z" end-time="2026-11-23 15:51:25Z" duration="2.648706" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1141" name="PixelBox_Has6pxNineSliceBorder_AndLedgesRepeatTheirMiddle" fullname="Skp.Tests.ProjectSetupTests.PixelBox_Has6pxNineSliceBorder_AndLedgesRepeatTheirMiddle" methodname="PixelBox_Has6pxNineSliceBorder_AndLedgesRepeatTheirMiddle" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="2041974204" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.009382" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1154" name="PixelFont_AssetExists_InResources" fullname="Skp.Tests.ProjectSetupTests.PixelFont_AssetExists_InResources" methodname="PixelFont_AssetExists_InResources" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="331617303" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.000835" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1152" name="PlayerPrefab_HasBothCharactersFourFrames" fullname="Skp.Tests.ProjectSetupTests.PlayerPrefab_HasBothCharactersFourFrames" methodname="PlayerPrefab_HasBothCharactersFourFrames" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="796100354" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.004837" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1144" name="ProjectWideActions_AreSkpControls" fullname="Skp.Tests.ProjectSetupTests.ProjectWideActions_AreSkpControls" methodname="ProjectWideActions_AreSkpControls" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="430799064" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.002058" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1153" name="TestRoom_HasLedgesAt1To4Tiles_SpikesAndLanterns" fullname="Skp.Tests.ProjectSetupTests.TestRoom_HasLedgesAt1To4Tiles_SpikesAndLanterns" methodname="TestRoom_HasLedgesAt1To4Tiles_SpikesAndLanterns" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="187936832" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.108575" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1146" name="TouchButtons_DriveBoundGamepadControls" fullname="Skp.Tests.ProjectSetupTests.TouchButtons_DriveBoundGamepadControls" methodname="TouchButtons_DriveBoundGamepadControls" classname="Skp.Tests.ProjectSetupTests" runstate="Runnable" seed="1452730185" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.008403" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1155" name="R1PrefabTests" fullname="Skp.Tests.R1PrefabTests" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.167058" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1161" name="Bolts_ComeFromAPrewarmedPool_FiringMakesNoNewObjects" fullname="Skp.Tests.R1PrefabTests.Bolts_ComeFromAPrewarmedPool_FiringMakesNoNewObjects" methodname="Bolts_ComeFromAPrewarmedPool_FiringMakesNoNewObjects" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="1355627044" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.030354" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1156" name="Catalog_IsInResources_AndEveryEntryIsAPrefab" fullname="Skp.Tests.R1PrefabTests.Catalog_IsInResources_AndEveryEntryIsAPrefab" methodname="Catalog_IsInResources_AndEveryEntryIsAPrefab" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="236411578" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.009726" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1157" name="EveryPiece_HasTheRenderersAndStatesItsViewDrives" fullname="Skp.Tests.R1PrefabTests.EveryPiece_HasTheRenderersAndStatesItsViewDrives" methodname="EveryPiece_HasTheRenderersAndStatesItsViewDrives" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="1798303927" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.019662" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1158" name="LevelPieces_FollowTheDimensionRules_BossAndMapPiecesDoNot" fullname="Skp.Tests.R1PrefabTests.LevelPieces_FollowTheDimensionRules_BossAndMapPiecesDoNot" methodname="LevelPieces_FollowTheDimensionRules_BossAndMapPiecesDoNot" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="122619226" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.005628" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1159" name="Prefabs_CarryTheLookTheViewsUsedToSetInCode" fullname="Skp.Tests.R1PrefabTests.Prefabs_CarryTheLookTheViewsUsedToSetInCode" methodname="Prefabs_CarryTheLookTheViewsUsedToSetInCode" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="1825217829" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.006710" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1160" name="Views_DoNotBuildDrawnObjectsInCode" fullname="Skp.Tests.R1PrefabTests.Views_DoNotBuildDrawnObjectsInCode" methodname="Views_DoNotBuildDrawnObjectsInCode" classname="Skp.Tests.R1PrefabTests" runstate="Runnable" seed="1565051907" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.006709" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1162" name="R3TalaAnimTests" fullname="Skp.Tests.R3TalaAnimTests" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.069763" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1165" name="AnimSets_HaveEveryAnimation_ForBothCharacters_InTheTala48Frames_WithBottomPivot" fullname="Skp.Tests.R3TalaAnimTests.AnimSets_HaveEveryAnimation_ForBothCharacters_InTheTala48Frames_WithBottomPivot" methodname="AnimSets_HaveEveryAnimation_ForBothCharacters_InTheTala48Frames_WithBottomPivot" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" seed="352975622" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.030858" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1163" name="EverySimState_MapsToItsAnimation" fullname="Skp.Tests.R3TalaAnimTests.EverySimState_MapsToItsAnimation" methodname="EverySimState_MapsToItsAnimation" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" seed="690499169" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.014592" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1167" name="OneShotLengths_MatchTheirClips" fullname="Skp.Tests.R3TalaAnimTests.OneShotLengths_MatchTheirClips" methodname="OneShotLengths_MatchTheirClips" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" seed="1525169055" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.001475" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1164" name="OneShots_StartFromSimEvents_AndEnd" fullname="Skp.Tests.R3TalaAnimTests.OneShots_StartFromSimEvents_AndEnd" methodname="OneShots_StartFromSimEvents_AndEnd" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" seed="833739038" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.003805" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1166" name="PlayerPrefab_UsesBothSets_AndKeepsThePrototypeFallback" fullname="Skp.Tests.R3TalaAnimTests.PlayerPrefab_UsesBothSets_AndKeepsThePrototypeFallback" methodname="PlayerPrefab_UsesBothSets_AndKeepsThePrototypeFallback" classname="Skp.Tests.R3TalaAnimTests" runstate="Runnable" seed="746096263" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.001845" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1168" name="SaveServiceTests" fullname="Skp.Tests.SaveServiceTests" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:26Z" duration="1.102608" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1177" name="Cleared_NeverRevertsOnSave" fullname="Skp.Tests.SaveServiceTests.Cleared_NeverRevertsOnSave" methodname="Cleared_NeverRevertsOnSave" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="21266926" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.034903" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1171" name="CorruptFile_NoBackup_RecoversToDefaults_AndKeepsBrokenFile" fullname="Skp.Tests.SaveServiceTests.CorruptFile_NoBackup_RecoversToDefaults_AndKeepsBrokenFile" methodname="CorruptFile_NoBackup_RecoversToDefaults_AndKeepsBrokenFile" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1342784279" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.104787" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Save] Save file was unreadable; CorruptReset. Kept the broken file at C:\Users\Karylle\AppData\Local\Temp\skp_save_tests_5e2572a21bdb492fb2d51f6971bce9cd\skp_save.json.corrupt
+]]></output>
+            </test-case>
+            <test-case id="1172" name="CorruptFile_WithBackup_RecoversFromBak_AndBakSurvives" fullname="Skp.Tests.SaveServiceTests.CorruptFile_WithBackup_RecoversFromBak_AndBakSurvives" methodname="CorruptFile_WithBackup_RecoversFromBak_AndBakSurvives" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="947859414" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.156376" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Save] Save file was unreadable; RecoveredFromBackup. Kept the broken file at C:\Users\Karylle\AppData\Local\Temp\skp_save_tests_aa30ceeafe3447adaabb2c041028b36b\skp_save.json.corrupt
+]]></output>
+            </test-case>
+            <test-case id="1179" name="Delete_RemovesEverything_AndResetsProgress" fullname="Skp.Tests.SaveServiceTests.Delete_RemovesEverything_AndResetsProgress" methodname="Delete_RemovesEverything_AndResetsProgress" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1914809046" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.030480" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1173" name="EmptyFile_IsTreatedAsCorrupt" fullname="Skp.Tests.SaveServiceTests.EmptyFile_IsTreatedAsCorrupt" methodname="EmptyFile_IsTreatedAsCorrupt" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1371269470" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:25Z" duration="0.008800" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Save] Save file was unreadable; CorruptReset. Kept the broken file at C:\Users\Karylle\AppData\Local\Temp\skp_save_tests_58837971f40948b2821ca301d41ad28f\skp_save.json.corrupt
+]]></output>
+            </test-case>
+            <test-case id="1174" name="LeftoverTempFile_IsIgnored_MainFileWins" fullname="Skp.Tests.SaveServiceTests.LeftoverTempFile_IsIgnored_MainFileWins" methodname="LeftoverTempFile_IsIgnored_MainFileWins" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1618692663" result="Passed" start-time="2026-11-23 15:51:25Z" end-time="2026-11-23 15:51:26Z" duration="0.036082" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1170" name="MissingFile_GivesDefaults" fullname="Skp.Tests.SaveServiceTests.MissingFile_GivesDefaults" methodname="MissingFile_GivesDefaults" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="547205990" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.004259" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1169" name="RoundTrip_PreservesEveryField" fullname="Skp.Tests.SaveServiceTests.RoundTrip_PreservesEveryField" methodname="RoundTrip_PreservesEveryField" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="585037943" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.106478" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1178" name="Skills_NeverDuplicate_AndAreNeverRemovedBySave" fullname="Skp.Tests.SaveServiceTests.Skills_NeverDuplicate_AndAreNeverRemovedBySave" methodname="Skills_NeverDuplicate_AndAreNeverRemovedBySave" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1261199194" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.048842" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1176" name="UnlockCount_NeverDecreases_EvenWhenAStaleCopyIsSaved" fullname="Skp.Tests.SaveServiceTests.UnlockCount_NeverDecreases_EvenWhenAStaleCopyIsSaved" methodname="UnlockCount_NeverDecreases_EvenWhenAStaleCopyIsSaved" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1285007504" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.029767" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1175" name="VersionMigration_V0PrototypeSave_LoadsAndUpgrades" fullname="Skp.Tests.SaveServiceTests.VersionMigration_V0PrototypeSave_LoadsAndUpgrades" methodname="VersionMigration_V0PrototypeSave_LoadsAndUpgrades" classname="Skp.Tests.SaveServiceTests" runstate="Runnable" seed="1229294148" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.529755" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1180" name="SkillTests" fullname="Skp.Tests.SkillTests" classname="Skp.Tests.SkillTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.105695" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1189" name="CanBeHurt_TruthTable_ForEveryDamageSource" fullname="Skp.Tests.SkillTests.CanBeHurt_TruthTable_ForEveryDamageSource" classname="Skp.Tests.SkillTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.016324" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1185" name="CanBeHurt_TruthTable_ForEveryDamageSource(&quot;veil&quot;)" fullname="Skp.Tests.SkillTests.CanBeHurt_TruthTable_ForEveryDamageSource(&quot;veil&quot;)" methodname="CanBeHurt_TruthTable_ForEveryDamageSource" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="588059844" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.005023" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1186" name="CanBeHurt_TruthTable_ForEveryDamageSource(&quot;dash&quot;)" fullname="Skp.Tests.SkillTests.CanBeHurt_TruthTable_ForEveryDamageSource(&quot;dash&quot;)" methodname="CanBeHurt_TruthTable_ForEveryDamageSource" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="1493059722" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.004094" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1187" name="CanBeHurt_TruthTable_ForEveryDamageSource(&quot;invulnerable&quot;)" fullname="Skp.Tests.SkillTests.CanBeHurt_TruthTable_ForEveryDamageSource(&quot;invulnerable&quot;)" methodname="CanBeHurt_TruthTable_ForEveryDamageSource" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="488705431" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.002116" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1188" name="CanBeHurt_TruthTable_ForEveryDamageSource(&quot;none&quot;)" fullname="Skp.Tests.SkillTests.CanBeHurt_TruthTable_ForEveryDamageSource(&quot;none&quot;)" methodname="CanBeHurt_TruthTable_ForEveryDamageSource" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="502705030" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.002064" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1182" name="Definitions_AllEight_InTeachingOrder_WiredToTheirLevels" fullname="Skp.Tests.SkillTests.Definitions_AllEight_InTeachingOrder_WiredToTheirLevels" methodname="Definitions_AllEight_InTeachingOrder_WiredToTheirLevels" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="950911823" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.004689" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1190" name="EveryWorldDamagePath_GoesThroughTryHurt" fullname="Skp.Tests.SkillTests.EveryWorldDamagePath_GoesThroughTryHurt" methodname="EveryWorldDamagePath_GoesThroughTryHurt" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="1284489388" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.010293" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1183" name="SfxBank_HasADistinctCueForEverySkill_AndTheFanfare" fullname="Skp.Tests.SkillTests.SfxBank_HasADistinctCueForEverySkill_AndTheFanfare" methodname="SfxBank_HasADistinctCueForEverySkill_AndTheFanfare" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="1318327440" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.003894" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1184" name="SkillService_Persists_Reloads_NeverDuplicates_NeverRemoves" fullname="Skp.Tests.SkillTests.SkillService_Persists_Reloads_NeverDuplicates_NeverRemoves" methodname="SkillService_Persists_Reloads_NeverDuplicates_NeverRemoves" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="1948412234" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.059757" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1181" name="TuningAsset_LoadsAndMatchesTheSpecTable" fullname="Skp.Tests.SkillTests.TuningAsset_LoadsAndMatchesTheSpecTable" methodname="TuningAsset_LoadsAndMatchesTheSpecTable" classname="Skp.Tests.SkillTests" runstate="Runnable" seed="1247963072" result="Passed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:51:26Z" duration="0.003191" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1191" name="UiLayoutAuditTests" fullname="Skp.Tests.UiLayoutAuditTests" classname="Skp.Tests.UiLayoutAuditTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:56:09Z" duration="282.196611" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1192" name="EveryScreen_AtEveryResolution_PassesTheLayoutAudit" fullname="Skp.Tests.UiLayoutAuditTests.EveryScreen_AtEveryResolution_PassesTheLayoutAudit" methodname="EveryScreen_AtEveryResolution_PassesTheLayoutAudit" classname="Skp.Tests.UiLayoutAuditTests" runstate="Runnable" seed="1024061409" result="Failed" start-time="2026-11-23 15:51:26Z" end-time="2026-11-23 15:56:09Z" duration="282.190494" asserts="0">
+              <properties>
+                <property name="Timeout" value="600000" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  [2340x1080_notch] 01_title: text outside the safe area: SafeArea/TitleScreen/Column/Logo "SA KABILANG PINTO"
+[1280x720] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10b_gameplay_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10b_gameplay_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10b_gameplay_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10b_gameplay_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10b_gameplay_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10c_hud_2_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10c_hud_2_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10c_hud_2_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10c_hud_2_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10c_hud_2_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10d_hud_2_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10d_hud_2_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10d_hud_2_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10d_hud_2_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10d_hud_2_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10e_hud_8_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10e_hud_8_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10e_hud_8_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10e_hud_8_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10e_hud_8_skills: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10f_hud_8_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10f_hud_8_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10f_hud_8_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10f_hud_8_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10f_hud_8_skills_lefthanded: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10g_hud_8_skills_keyboard: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10g_hud_8_skills_keyboard: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10g_hud_8_skills_keyboard: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10g_hud_8_skills_keyboard: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10g_hud_8_skills_keyboard: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10h_hud_8_skills_spirit_toast: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10h_hud_8_skills_spirit_toast: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10h_hud_8_skills_spirit_toast: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10h_hud_8_skills_spirit_toast: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10h_hud_8_skills_spirit_toast: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_1_dj_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_1_dj_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_1_dj_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_1_dj_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_1_dj_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_1_dj_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_1_dj_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_1_dj_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_1_dj_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_1_dj_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_2_veil_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_2_veil_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_2_veil_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_2_veil_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_2_veil_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_2_veil_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_2_veil_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_2_veil_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_2_veil_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_2_veil_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_3_bolt_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_3_bolt_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_3_bolt_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_3_bolt_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_3_bolt_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_3_bolt_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_3_bolt_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_3_bolt_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_3_bolt_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_3_bolt_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_4_swift_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_4_swift_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_4_swift_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_4_swift_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_4_swift_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_4_swift_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_4_swift_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_4_swift_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_4_swift_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_4_swift_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_5_heart_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_5_heart_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_5_heart_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_5_heart_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_5_heart_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_5_heart_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_5_heart_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_5_heart_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_5_heart_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_5_heart_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_6_spread_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_6_spread_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_6_spread_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_6_spread_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_6_spread_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_6_spread_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_6_spread_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_6_spread_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_6_spread_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_6_spread_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_7_veil2_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_7_veil2_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_7_veil2_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_7_veil2_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_7_veil2_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_7_veil2_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_7_veil2_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_7_veil2_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_7_veil2_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_7_veil2_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12s_8_glide_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12s_8_glide_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12s_8_glide_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12s_8_glide_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12s_8_glide_letter: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12t_8_glide_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12t_8_glide_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12t_8_glide_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12t_8_glide_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12t_8_glide_new_skill: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 12u_skill_known: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 12u_skill_known: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 12u_skill_known: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 12u_skill_known: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 12u_skill_known: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1280x720] 10i_boss_hud: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 10i_boss_hud: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 10i_boss_hud: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 10i_boss_hud: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 10i_boss_hud: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2400x1080] 14_pause: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[2340x1080_notch] 14_pause: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[1024x768] 14_pause: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+[800x480] 14_pause: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"
+  Expected: <empty>
+  But was:  < "[2340x1080_notch] 01_title: text outside the safe area: SafeArea/TitleScreen/Column/Logo "SA KABILANG PINTO"", "[1280x720] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[2400x1080] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[2340x1080_notch] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[1024x768] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[800x480] 09_before_stage: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[1280x720] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[2400x1080] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[2340x1080_notch] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100"", "[1024x768] 10_gameplay: contrast 1.9:1 below 7:1 for SafeArea/Hud/Center/FlameBar/Text "FLAME 100""... >
+]]></message>
+                <stack-trace><![CDATA[at Skp.Tests.UiLayoutAuditTests.EveryScreen_AtEveryResolution_PassesTheLayoutAudit () [0x0004a] in D:\CSEL-Final-Project\Sa-Kabilang-Pinto\Assets\Tests\EditMode\UiLayoutAuditTests.cs:19
+]]></stack-trace>
+              </failure>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1193" name="UiModelTests" fullname="Skp.Tests.UiModelTests" classname="Skp.Tests.UiModelTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-11-23 15:56:09Z" end-time="2026-11-23 15:56:32Z" duration="23.883873" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1203" name="DialogTexts_FitTheBox_AtTheNarrowestScreen" fullname="Skp.Tests.UiModelTests.DialogTexts_FitTheBox_AtTheNarrowestScreen" methodname="DialogTexts_FitTheBox_AtTheNarrowestScreen" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="685353958" result="Passed" start-time="2026-11-23 15:56:15Z" end-time="2026-11-23 15:56:29Z" duration="13.809777" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1197" name="LockedNode_IsPeekedNotEntered" fullname="Skp.Tests.UiModelTests.LockedNode_IsPeekedNotEntered" methodname="LockedNode_IsPeekedNotEntered" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="1226591565" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.041430" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1199" name="Lola_FirstMeetingThenProgressLines_AndMarker" fullname="Skp.Tests.UiModelTests.Lola_FirstMeetingThenProgressLines_AndMarker" methodname="Lola_FirstMeetingThenProgressLines_AndMarker" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="1991156594" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.001454" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1195" name="Map_OpensOnNewestNode_AndFromALevel_WalksToTheNext" fullname="Skp.Tests.UiModelTests.Map_OpensOnNewestNode_AndFromALevel_WalksToTheNext" methodname="Map_OpensOnNewestNode_AndFromALevel_WalksToTheNext" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="1814185883" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.003218" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1198" name="NodeAt_FindsTapTargets" fullname="Skp.Tests.UiModelTests.NodeAt_FindsTapTargets" methodname="NodeAt_FindsTapTargets" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="614049113" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.139162" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1194" name="NodeStates_FollowTheUnlockRule" fullname="Skp.Tests.UiModelTests.NodeStates_FollowTheUnlockRule" methodname="NodeStates_FollowTheUnlockRule" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="1590752809" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.001465" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1204" name="Objective_FollowsThePrototype" fullname="Skp.Tests.UiModelTests.Objective_FollowsThePrototype" methodname="Objective_FollowsThePrototype" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="878467296" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.066225" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1202" name="Palette_MeetsContrast" fullname="Skp.Tests.UiModelTests.Palette_MeetsContrast" methodname="Palette_MeetsContrast" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="839910657" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.028362" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1196" name="Select_WalksNodeByNode_AndClampsToUnlocked" fullname="Skp.Tests.UiModelTests.Select_WalksNodeByNode_AndClampsToUnlocked" methodname="Select_WalksNodeByNode_AndClampsToUnlocked" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="983355632" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:29Z" duration="0.099410" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1201" name="Settings_RoundTrip_AndCorruptFileFallsBack" fullname="Skp.Tests.UiModelTests.Settings_RoundTrip_AndCorruptFileFallsBack" methodname="Settings_RoundTrip_AndCorruptFileFallsBack" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="376588252" result="Passed" start-time="2026-11-23 15:56:29Z" end-time="2026-11-23 15:56:30Z" duration="0.327294" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Settings] unreadable settings file, using defaults: JSON parse error: Missing a name for object member.
+]]></output>
+            </test-case>
+            <test-case id="1200" name="StringTable_HasEveryKey_AndNoScreenUsesAMissingOne" fullname="Skp.Tests.UiModelTests.StringTable_HasEveryKey_AndNoScreenUsesAMissingOne" methodname="StringTable_HasEveryKey_AndNoScreenUsesAMissingOne" classname="Skp.Tests.UiModelTests" runstate="Runnable" seed="1326354567" result="Passed" start-time="2026-11-23 15:56:30Z" end-time="2026-11-23 15:56:32Z" duration="2.924938" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Karylle/AppData/LocalLow/DefaultCompany/Sa-Kabilang-Pinto\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

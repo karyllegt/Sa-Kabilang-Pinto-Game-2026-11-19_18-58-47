@@ -87,21 +87,21 @@ MonoBehaviour:
     speed: 3.5
     life: 0.5
     rise: 3
-    sprite: {fileID: 21300000, guid: 1f13264321606e2448adeabf1c3f9e35, type: 3}
+    sprite: {fileID: 21300000, guid: c29452a557ac8994d8a43fff2703fdf1, type: 2}
   fragment:
     count: 14
     color: {r: 0.25, g: 0.88, b: 0.82, a: 1}
     speed: 4
     life: 0.7
     rise: 1.5
-    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+    sprite: {fileID: 21300000, guid: da95f9dc8581e8648be32f9c9a370835, type: 2}
   veil:
     count: 16
     color: {r: 0.75, g: 0.49, b: 1, a: 1}
     speed: 2.5
     life: 0.6
     rise: 0.5
-    sprite: {fileID: 21300000, guid: 114b67a8e5c54db4ead86791dc80237f, type: 3}
+    sprite: {fileID: 21300000, guid: da95f9dc8581e8648be32f9c9a370835, type: 2}
   veilTrickleTicks: 5
   bolt:
     count: 8
@@ -109,27 +109,27 @@ MonoBehaviour:
     speed: 5
     life: 0.3
     rise: 0
-    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+    sprite: {fileID: 21300000, guid: da95f9dc8581e8648be32f9c9a370835, type: 2}
   burnt:
     count: 18
     color: {r: 0.45, g: 0.4, b: 0.42, a: 1}
     speed: 2.5
     life: 1
     rise: 2
-    sprite: {fileID: 21300000, guid: 29caedb7c1f75854bb22c94e69a616f4, type: 3}
+    sprite: {fileID: 21300000, guid: da95f9dc8581e8648be32f9c9a370835, type: 2}
   ember:
     count: 10
     color: {r: 1, g: 0.35, b: 0.29, a: 1}
     speed: 3
     life: 0.6
     rise: 2.5
-    sprite: {fileID: 21300000, guid: 114b67a8e5c54db4ead86791dc80237f, type: 3}
+    sprite: {fileID: 21300000, guid: c29452a557ac8994d8a43fff2703fdf1, type: 2}
   letterGlow:
     count: 16
     color: {r: 0.96, g: 0.9, b: 0.76, a: 1}
     speed: 3
     life: 0.8
     rise: 1
-    sprite: {fileID: 21300000, guid: 98ba9a38df1d0eb439ac155a501b55ea, type: 3}
+    sprite: {fileID: 21300000, guid: da95f9dc8581e8648be32f9c9a370835, type: 2}
   particleMaterial: {fileID: 2100000, guid: 4e91b09251707b5449516f5979d1bb5b, type: 2}
   maxParticles: 128

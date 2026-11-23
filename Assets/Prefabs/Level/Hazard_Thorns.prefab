@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24749896, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: ea4881dbabd5df04690e6f495f440ddc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcee4d341df23b448bc9ed131ff701fd, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,13 +104,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea54ec7753bf0943a021f2791f04732, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelPiece
   main: {fileID: 4314071565480485525}
   extra: []
   states:
-  - {fileID: 21300000, guid: ea4881dbabd5df04690e6f495f440ddc, type: 3}
-  - {fileID: 21300000, guid: e109c3d834f8a6c419042d38ae3c19ed, type: 3}
+  - {fileID: 21300000, guid: bcee4d341df23b448bc9ed131ff701fd, type: 2}
+  - {fileID: 21300000, guid: 8427e09a07bc3634fb4f90153160f3a8, type: 2}
+  artFacesLeft: 0
+  presentationWidth: 1
   dimension: {fileID: 3384287298101391196}
   label: {fileID: 0}
   line: {fileID: 0}
@@ -124,7 +126,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de053a7661f61a489f04ca9d985b349, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Dimensions.DimensionMember
   mask: 7
   ghost: 3

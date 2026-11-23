@@ -19,6 +19,7 @@ namespace Skp.Audio
         public AudioClip PlayingClip => _sources[_active].clip;
 
         AudioSource[] _sources;
+        AudioSource _ambience;
         int _active;
         float _fade = 1f; // 0 to 1 toward _active
         MusicTrack _track = MusicTrack.None;
@@ -46,6 +47,12 @@ namespace Skp.Audio
             }
             _cutoff = Tuning.openCutoffHz;
             _pitch = 1f;
+            var ambienceRoot = new GameObject("Recorded outdoor ambience");
+            ambienceRoot.transform.SetParent(transform, false);
+            _ambience = ambienceRoot.AddComponent<AudioSource>();
+            _ambience.playOnAwake = false; _ambience.loop = true; _ambience.spatialBlend = 0;
+            _ambience.outputAudioMixerGroup = Tuning.gameGroup;
+            _ambience.clip = Tuning.nightAmbience; _ambience.volume = 0;
         }
 
         void OnDestroy() { if (Instance == this) Instance = null; }
@@ -72,6 +79,11 @@ namespace Skp.Audio
             var t = Tuning;
 
             if (Music.Current != _track) StartTrack(Music.Current);
+            bool outdoors = _track == MusicTrack.Act1 || _track == MusicTrack.Act2;
+            float ambienceTarget = outdoors ? t.ambienceVolume * (Music.Dimension == Skp.Dimensions.Dim.Spirit ? 0.35f : 1f) : 0;
+            _ambience.volume = Mathf.MoveTowards(_ambience.volume, ambienceTarget, dt * 0.12f);
+            if (_ambience.clip != null && outdoors && !_ambience.isPlaying) _ambience.Play();
+            if (!outdoors && _ambience.volume <= 0 && _ambience.isPlaying) _ambience.Stop();
             if (_fade < 1f)
             {
                 _fade = t.trackCrossfadeSeconds > 0 ? Mathf.Min(1f, _fade + dt / t.trackCrossfadeSeconds) : 1f;

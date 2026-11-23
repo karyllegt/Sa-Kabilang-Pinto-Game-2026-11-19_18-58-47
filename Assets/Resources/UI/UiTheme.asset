@@ -15,19 +15,19 @@ MonoBehaviour:
   font: {fileID: 11400000, guid: 7f135bff4d565e8438fd1c6901985ce6, type: 2}
   fontOutline: {fileID: 2100000, guid: d01592e2fd8ae244588d14a6bddf2113, type: 2}
   pixelBox: {fileID: 21300000, guid: 41725864a9169f34da8af369ede02d53, type: 3}
-  heartFull: {fileID: 21300000, guid: dc7c3321b8cdb084e977ab2213921f5b, type: 3}
-  heartEmpty: {fileID: 21300000, guid: 6b4aa32737c916a41be347dfd214918e, type: 3}
+  heartFull: {fileID: 21300000, guid: 7b4b47728f3297246a00a73077aeddf7, type: 2}
+  heartEmpty: {fileID: 21300000, guid: b5336b32220860c4f9c163286c2f5087, type: 2}
   white: {fileID: 21300000, guid: c433f5ffedf1ba649b521d0ea4c4fea3, type: 3}
-  portraitLola: {fileID: 21300000, guid: 5b2dfae45023c214392702445e316076, type: 3}
-  portraitBoy: {fileID: 21300000, guid: 96cda4c26be5dc04db1c416d47ce66b2, type: 3}
-  portraitGirl: {fileID: 21300000, guid: 9cd4f39ee7eb50741b1af3904e9ce8d2, type: 3}
-  portraitClue: {fileID: 21300000, guid: fd0d2609235f56541971edc557db8e38, type: 3}
-  portraitAnino: {fileID: 21300000, guid: 36ae2721965d4294f864e344270533f2, type: 3}
-  portraitBoss: {fileID: 21300000, guid: 6736bdf4648f8cc44a73108f2bde67c3, type: 3}
-  titleArt: {fileID: 21300000, guid: a0f6d99bf06ca774593c1318d1cff477, type: 3}
-  cardBoy: {fileID: 21300000, guid: 5d0f79aab7f9ab744a04c65fc66db1a5, type: 3}
-  cardGirl: {fileID: 21300000, guid: ece0095e38846c7428ff358721bd1913, type: 3}
-  menuBackdrop: {fileID: 21300000, guid: 20f2ab52dd6c72448a0c3b43ae8c7bde, type: 3}
+  portraitLola: {fileID: 21300000, guid: 2b00185d0abbec94793e7cf2a7f12051, type: 2}
+  portraitBoy: {fileID: 21300000, guid: ec728e5ed4db9ca4ea567c6557e829b4, type: 2}
+  portraitGirl: {fileID: 21300000, guid: 9c64ed6625d389741b2f3e83bbe4f18e, type: 2}
+  portraitClue: {fileID: 21300000, guid: 51c33f58458293a44973b052676ffab4, type: 2}
+  portraitAnino: {fileID: 21300000, guid: dbcac092b40fc9246b291297f9f74111, type: 3}
+  portraitBoss: {fileID: 21300000, guid: bc8ec7ad360034d49bd08a303b38a4ba, type: 2}
+  titleArt: {fileID: 21300000, guid: c531b3c0dae997c41a17a8da4ed4c870, type: 3}
+  cardBoy: {fileID: 21300000, guid: 2e3ca4df31fbbe847b41d87f8307a46b, type: 3}
+  cardGirl: {fileID: 21300000, guid: ee01abfc2163b4e4fbf8d79b7c614b2c, type: 3}
+  menuBackdrop: {fileID: 21300000, guid: 7c01578e97642e94284889cb6c6ba4c3, type: 3}
   panel: {r: 0.078431375, g: 0.0627451, b: 0.10980392, a: 1}
   gold: {r: 0.9098039, g: 0.72156864, b: 0.3529412, a: 1}
   goldBright: {r: 1, g: 0.827451, b: 0.41568628, a: 1}

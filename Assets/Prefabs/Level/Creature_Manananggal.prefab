@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: fe760d8b0e577764598f88ab3e743910, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b1625ddcba272b4c94d7b91e3d554bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,13 +104,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea54ec7753bf0943a021f2791f04732, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelPiece
   main: {fileID: 1809006843518039765}
   extra: []
   states:
-  - {fileID: 21300000, guid: fe760d8b0e577764598f88ab3e743910, type: 3}
-  - {fileID: 21300000, guid: 65ff21f0bca6d3d4a90f3ec55ecf0b66, type: 3}
+  - {fileID: 21300000, guid: 6b1625ddcba272b4c94d7b91e3d554bd, type: 3}
+  - {fileID: 21300000, guid: 9131fd867c1ee3e4d91ff12a3b6cb5bf, type: 3}
+  - {fileID: 21300000, guid: 02de51db08573a64ea4cbd137d14fabd, type: 3}
+  - {fileID: 21300000, guid: 15950ba142cf55846bf3483ff9ad3deb, type: 3}
+  artFacesLeft: 1
+  presentationWidth: 0
   dimension: {fileID: 3743105197241906413}
   label: {fileID: 0}
   line: {fileID: 0}
@@ -124,7 +128,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de053a7661f61a489f04ca9d985b349, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Dimensions.DimensionMember
   mask: 7
   ghost: 0

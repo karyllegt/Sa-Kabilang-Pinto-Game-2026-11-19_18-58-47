@@ -1,0 +1,7 @@
+Music by Kevin MacLeod (incompetech.com).
+Ghost Story; Darkest Child; Ossuary 6 - Air; The House of Leaves; Evening Fall (Harp).
+Licensed under Creative Commons Attribution 4.0:
+https://creativecommons.org/licenses/by/4.0/
+https://incompetech.com/music/royalty-free/licenses/
+
+See AUDIO_SOURCES.md in the project root for individual source URLs, game use and edits.

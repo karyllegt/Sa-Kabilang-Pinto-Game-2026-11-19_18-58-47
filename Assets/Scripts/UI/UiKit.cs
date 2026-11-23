@@ -52,6 +52,15 @@ namespace Skp.UI
             img.type = Image.Type.Sliced;
             img.pixelsPerUnitMultiplier = scale > 0 ? scale : Theme.boxScale;
             img.color = Color.white;
+            // A restrained brass inlay gives every panel the same crafted frame, including modals and HUD cards.
+            var inlay = Fill(rt, "BrassInlay", new Color(Theme.gold.r, Theme.gold.g, Theme.gold.b, 0.65f));
+            inlay.rectTransform.anchorMin = new Vector2(0, 1);
+            inlay.rectTransform.anchorMax = new Vector2(1, 1);
+            inlay.rectTransform.pivot = new Vector2(0.5f, 1);
+            inlay.rectTransform.offsetMin = new Vector2(14, -7);
+            inlay.rectTransform.offsetMax = new Vector2(-14, -6);
+            var layout = inlay.gameObject.AddComponent<LayoutElement>();
+            layout.ignoreLayout = true;
             return img;
         }
 

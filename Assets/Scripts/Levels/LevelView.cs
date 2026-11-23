@@ -218,8 +218,14 @@ namespace Skp.Levels
             {
                 if (e.Dead) { if (tr.gameObject.activeSelf) tr.gameObject.SetActive(false); continue; }
                 var sr = p.main;
-                if (p.StateCount > 1) p.SetState((int)((t >> 4) & 1));
-                sr.flipX = e.Kind == EnemyKind.Manananggal ? _sim.Center.x < e.Center.x : e.Dir < 0; // the manananggal watches Tala
+                if (p.StateCount > 1) p.SetState((int)((t / 15) % p.StateCount)); // 4 fps on the 60 Hz simulation clock
+                bool facesLeft = e.Kind == EnemyKind.Manananggal ? _sim.Center.x < e.Center.x : e.Dir < 0;
+                sr.flipX = facesLeft ^ p.artFacesLeft;
+                if (e.Kind == EnemyKind.Anino && p.extra != null && p.extra.Length == 2)
+                {
+                    p.extra[0].transform.localPosition = new Vector3(0, 0.7f, 0);
+                    p.extra[1].transform.localPosition = new Vector3(facesLeft ? -0.06f : 0.06f, 0.7f, 0);
+                }
                 tr.position = new Vector3(Mathf.Round(e.Center.x * 16f) / 16f, Mathf.Round(e.Position.y * 16f) / 16f, tr.position.z);
                 var c = sr.color;
                 c.a = e.Stun > 0 ? 0.6f + Mathf.Sin(t * 0.5f) * 0.2f : (DimensionRules.Active(e.Mask, _sim.Dimension) ? 1f : c.a);
@@ -228,7 +234,13 @@ namespace Skp.Levels
 
             // doors added during play (the last door after the Bellkeeper falls)
             while (_doorCount < _world.Doors.Count) AddDoor(_world.Doors[_doorCount++]);
-            if (_exit != null) _exit.SetState(!_world.NeedClue || _sim.HasClue ? 1 : 0); // locked, open
+            if (_exit != null)
+            {
+                bool open = !_world.NeedClue || _sim.HasClue;
+                _exit.SetState(open ? 1 : 0);
+                // Detailed architecture stays readable; its illumination communicates the lock state.
+                _exit.main.color = open ? Color.white : new Color(0.42f, 0.39f, 0.48f, 1f);
+            }
 
             foreach (var (b, bell, mark) in _bells)
             {

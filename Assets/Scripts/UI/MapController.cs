@@ -45,6 +45,7 @@ namespace Skp.UI
         readonly List<SpriteRenderer> _dots = new List<SpriteRenderer>();
         readonly List<int> _dotSegment = new List<int>();
         readonly List<Transform> _corners = new List<Transform>();
+        public Sprite[] lolaFrames = new Sprite[0];
         SpriteRenderer _token, _lola;
         GameObject _lolaMark;
         Transform _world;
@@ -219,6 +220,11 @@ namespace Skp.UI
         void Update()
         {
             _t += Time.unscaledDeltaTime;
+            if (_lola != null && lolaFrames != null && lolaFrames.Length >= 4)
+            {
+                int frame = dialog != null && dialog.IsOpen ? 1 + ((int)(_t * 3) % 3) : ((int)(_t * 0.5f) % 4 == 3 ? 2 : 0);
+                _lola.sprite = lolaFrames[frame];
+            }
             Model.Step(Time.unscaledDeltaTime);
             float target = TargetCameraX();
             CameraX += (target - CameraX) * (1 - Mathf.Pow(1 - 0.12f, Time.unscaledDeltaTime * 60f));

@@ -16,7 +16,8 @@ namespace Skp.Tests
     /// </summary>
     public static class R1Capture
     {
-        public static string Dir => Path.GetFullPath(Path.Combine(Application.dataPath, "../tests/Screenshots/r1/baseline"));
+        // The intentional 2026-11-23 art overhaul has its own baseline; pre-overhaul R1 records remain intact.
+        public static string Dir => Path.GetFullPath(Path.Combine(Application.dataPath, "../tests/Screenshots/presentation/baseline"));
 
         static string F(float v) => (Mathf.Round(v * 1000f) / 1000f).ToString("0.###", CultureInfo.InvariantCulture);
         static string V(Vector2 v) => F(v.x) + "," + F(v.y);

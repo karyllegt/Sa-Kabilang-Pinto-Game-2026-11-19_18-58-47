@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2000e3fd28a8f6c449fe5421e321141b, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.MapController
   screen: {fileID: 2715985563796296329}
   dialog: {fileID: 4679562520009524318}
@@ -156,18 +156,18 @@ MonoBehaviour:
   white: {fileID: 21300000, guid: c433f5ffedf1ba649b521d0ea4c4fea3, type: 3}
   star: {fileID: 21300000, guid: 2e367109d61c8e943996c153aa3f2306, type: 3}
   bell: {fileID: 21300000, guid: 3678cd0f12aa5614e9bef61e875328bb, type: 3}
-  lola: {fileID: 21300000, guid: 9a0514692757ea1409680251e780d2b3, type: 3}
+  lola: {fileID: 21300000, guid: abf3ff01e811f6145aa53c51f3618d42, type: 2}
   skillsScreen: {fileID: 2344643969513195833}
   boyFrames:
-  - {fileID: 21300000, guid: 94ba743c6bf020645924d2429123518f, type: 3}
-  - {fileID: 21300000, guid: 65c344cd1b25dfd43af4451cc349ed88, type: 3}
-  - {fileID: 21300000, guid: b0272b5cf60996b43b90be3333ed44bf, type: 3}
-  - {fileID: 21300000, guid: 1b4e42bbe3539a24cafd92cfdd0dd867, type: 3}
+  - {fileID: 21300000, guid: 2e3ca4df31fbbe847b41d87f8307a46b, type: 3}
+  - {fileID: 21300000, guid: ae0f38ab8bf6c484386373011e2d4848, type: 3}
+  - {fileID: 21300000, guid: f52eee4d9c8b16f43b341cd45ad9f404, type: 3}
+  - {fileID: 21300000, guid: f98f0b58d13162141a73707e9ca90005, type: 3}
   girlFrames:
-  - {fileID: 21300000, guid: 129a8bf35097a3b40bb73491d08538eb, type: 3}
-  - {fileID: 21300000, guid: 3c67debc195add343a7e5028d426df89, type: 3}
-  - {fileID: 21300000, guid: e504a08cb7cb4c24a8f0e4726e49ca2b, type: 3}
-  - {fileID: 21300000, guid: c8d7830cbc82a744886c59596fefaa99, type: 3}
+  - {fileID: 21300000, guid: ee01abfc2163b4e4fbf8d79b7c614b2c, type: 3}
+  - {fileID: 21300000, guid: a5c9e53e0d0111b4988615f2abeac446, type: 3}
+  - {fileID: 21300000, guid: 8b69fe87de7761b489157dcbaf1d6602, type: 3}
+  - {fileID: 21300000, guid: 6fe38e6c0d815c8488da48e9872b71e6, type: 3}
   font: {fileID: 11400000, guid: 7f135bff4d565e8438fd1c6901985ce6, type: 2}
   levels:
   - {fileID: 11400000, guid: a2ae10fc88ca45f4894526a7b2d11379, type: 2}
@@ -179,6 +179,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a65fc7e28c9d654ebf80e2def671fad, type: 2}
   - {fileID: 11400000, guid: 0f9c940bdfdb63b4abfdca57f6a12ec5, type: 2}
   - {fileID: 11400000, guid: 3b79116b402b25e46843cfe0d4e3bb0b, type: 2}
+  lolaFrames:
+  - {fileID: 21300000, guid: abf3ff01e811f6145aa53c51f3618d42, type: 2}
+  - {fileID: 21300000, guid: 12465abe47ea32f42915315764c957bb, type: 2}
+  - {fileID: 21300000, guid: 934e9b7764353f843aa979373d2d2e62, type: 2}
+  - {fileID: 21300000, guid: e18ab20657ddbdc4297fac2c7832005d, type: 2}
 --- !u!4 &408502728
 Transform:
   m_ObjectHideFlags: 0
@@ -222,7 +227,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -253,7 +258,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -353,11 +358,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: dd24a97457bfb4443b0f70ae127e53b7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0caf76f0bcb2d314c94bdc18ccac6c3e, type: 3}
+  m_Color: {r: 0.7, g: 0.7, b: 0.78, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 90, y: 16.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -456,7 +461,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -473,7 +478,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 16
@@ -601,7 +606,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d044f793c0116fe4082719de45e60333, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.SafeAreaFitter
 --- !u!1 &2036754704
 GameObject:
@@ -683,7 +688,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
   m_AssetsPPU: 48
@@ -707,7 +712,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
@@ -866,7 +871,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7514b0b6148d81948b05ea6e0138f25d, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.SkillsScreen
 --- !u!224 &2344643969513195834 stripped
 RectTransform:
@@ -984,7 +989,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96cf7e4ac9cec4044b5bd41c4a429886, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.MapScreen
 --- !u!1001 &4679562520009524316
 PrefabInstance:
@@ -1101,7 +1106,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c17ea9b7b5c206409157ef9fcd15209, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.DialogBox
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

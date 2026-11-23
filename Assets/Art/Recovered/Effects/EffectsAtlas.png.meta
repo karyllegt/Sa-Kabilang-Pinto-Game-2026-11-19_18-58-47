@@ -1,0 +1,4069 @@
+fileFormatVersion: 2
+guid: 48da8eddc4faba849967b9f84506ec1c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -528681623525789503
+    second: EffectsAtlas_0
+  - first:
+      213: 824546467032499056
+    second: EffectsAtlas_1
+  - first:
+      213: 1660800307015263706
+    second: EffectsAtlas_2
+  - first:
+      213: 2788738308369631112
+    second: EffectsAtlas_3
+  - first:
+      213: -8890093541294976689
+    second: EffectsAtlas_4
+  - first:
+      213: -6607696384862393345
+    second: EffectsAtlas_5
+  - first:
+      213: -2208924993130163659
+    second: EffectsAtlas_6
+  - first:
+      213: 611584130931981519
+    second: EffectsAtlas_7
+  - first:
+      213: 8782063200069204177
+    second: EffectsAtlas_8
+  - first:
+      213: 294405831802829522
+    second: EffectsAtlas_9
+  - first:
+      213: -7124962935617618706
+    second: EffectsAtlas_10
+  - first:
+      213: 3227471358819118918
+    second: EffectsAtlas_11
+  - first:
+      213: 6824419696086898817
+    second: EffectsAtlas_12
+  - first:
+      213: 4679137182525992005
+    second: EffectsAtlas_13
+  - first:
+      213: 2510305929797466259
+    second: EffectsAtlas_14
+  - first:
+      213: 4026341321427882698
+    second: EffectsAtlas_15
+  - first:
+      213: 8148672113659595473
+    second: EffectsAtlas_16
+  - first:
+      213: -259652255663730372
+    second: EffectsAtlas_17
+  - first:
+      213: -3732245580060049027
+    second: EffectsAtlas_18
+  - first:
+      213: -194202765745911563
+    second: EffectsAtlas_19
+  - first:
+      213: -2925534740344870349
+    second: EffectsAtlas_20
+  - first:
+      213: -7604720912399559557
+    second: EffectsAtlas_21
+  - first:
+      213: 7935850318199284957
+    second: EffectsAtlas_22
+  - first:
+      213: -77115756022247382
+    second: EffectsAtlas_23
+  - first:
+      213: -7312412269654709214
+    second: EffectsAtlas_24
+  - first:
+      213: 5485193084422987601
+    second: EffectsAtlas_25
+  - first:
+      213: -5185145057168925037
+    second: EffectsAtlas_26
+  - first:
+      213: -8760310081032139337
+    second: EffectsAtlas_27
+  - first:
+      213: -7704469931082929357
+    second: EffectsAtlas_28
+  - first:
+      213: 2383035226686456062
+    second: EffectsAtlas_29
+  - first:
+      213: -2789127165648635195
+    second: EffectsAtlas_30
+  - first:
+      213: -7320765687475865749
+    second: EffectsAtlas_31
+  - first:
+      213: -3889075889196826806
+    second: EffectsAtlas_32
+  - first:
+      213: 4220155397833304509
+    second: EffectsAtlas_33
+  - first:
+      213: 4067947868449535472
+    second: EffectsAtlas_34
+  - first:
+      213: -5970323244612389567
+    second: EffectsAtlas_35
+  - first:
+      213: 7695021373255734791
+    second: EffectsAtlas_36
+  - first:
+      213: -7748942675744699017
+    second: EffectsAtlas_37
+  - first:
+      213: 3110447135197374555
+    second: EffectsAtlas_38
+  - first:
+      213: -14986880131332749
+    second: EffectsAtlas_39
+  - first:
+      213: -7234944774885322753
+    second: EffectsAtlas_40
+  - first:
+      213: 5674562200994562424
+    second: EffectsAtlas_41
+  - first:
+      213: -4168641863079282039
+    second: EffectsAtlas_42
+  - first:
+      213: 5732002067869251443
+    second: EffectsAtlas_43
+  - first:
+      213: -2195420776893353392
+    second: EffectsAtlas_44
+  - first:
+      213: -5902830055135846660
+    second: EffectsAtlas_45
+  - first:
+      213: -8484982476605674948
+    second: EffectsAtlas_46
+  - first:
+      213: -3023650680773038437
+    second: EffectsAtlas_47
+  - first:
+      213: -1347295968065471917
+    second: EffectsAtlas_48
+  - first:
+      213: -7329561328348691726
+    second: EffectsAtlas_49
+  - first:
+      213: 5028200739350701425
+    second: EffectsAtlas_50
+  - first:
+      213: 1032452831378032981
+    second: EffectsAtlas_51
+  - first:
+      213: -9066254625845604272
+    second: EffectsAtlas_52
+  - first:
+      213: -1747784155590898579
+    second: EffectsAtlas_53
+  - first:
+      213: 8951736936986371651
+    second: EffectsAtlas_54
+  - first:
+      213: -8599730288290207396
+    second: EffectsAtlas_55
+  - first:
+      213: -8834427666494482055
+    second: EffectsAtlas_56
+  - first:
+      213: 2163123062156498132
+    second: EffectsAtlas_57
+  - first:
+      213: 7787563574553284405
+    second: EffectsAtlas_58
+  - first:
+      213: 710130152463911755
+    second: EffectsAtlas_59
+  - first:
+      213: 2614155397480115328
+    second: EffectsAtlas_60
+  - first:
+      213: -5876687993003364082
+    second: EffectsAtlas_61
+  - first:
+      213: 1888722434180437453
+    second: EffectsAtlas_62
+  - first:
+      213: -64705355989326061
+    second: EffectsAtlas_63
+  - first:
+      213: -7622602625300021178
+    second: EffectsAtlas_64
+  - first:
+      213: 6203816546087225979
+    second: EffectsAtlas_65
+  - first:
+      213: 5874257676893116125
+    second: EffectsAtlas_66
+  - first:
+      213: -4404124052802172435
+    second: EffectsAtlas_67
+  - first:
+      213: 5070246720799589064
+    second: EffectsAtlas_68
+  - first:
+      213: -1895232658584634632
+    second: EffectsAtlas_69
+  - first:
+      213: -9108508197082542711
+    second: EffectsAtlas_70
+  - first:
+      213: -4945088567961339507
+    second: EffectsAtlas_71
+  - first:
+      213: -5886771146582554855
+    second: EffectsAtlas_72
+  - first:
+      213: 8024288112275138076
+    second: EffectsAtlas_73
+  - first:
+      213: 623350449722879981
+    second: EffectsAtlas_74
+  - first:
+      213: -967716730878553068
+    second: EffectsAtlas_75
+  - first:
+      213: -6374120177427388961
+    second: EffectsAtlas_76
+  - first:
+      213: -2104477426257227789
+    second: EffectsAtlas_77
+  - first:
+      213: -6274238459134214914
+    second: EffectsAtlas_78
+  - first:
+      213: 1756234389488164392
+    second: EffectsAtlas_79
+  - first:
+      213: -2296259954600589485
+    second: EffectsAtlas_80
+  - first:
+      213: -8849911716082903266
+    second: EffectsAtlas_81
+  - first:
+      213: 4106402043176187560
+    second: EffectsAtlas_82
+  - first:
+      213: 6820549874710615846
+    second: EffectsAtlas_83
+  - first:
+      213: -4038558152721595559
+    second: EffectsAtlas_84
+  - first:
+      213: -3151328756474788506
+    second: EffectsAtlas_85
+  - first:
+      213: 3186084083972452875
+    second: EffectsAtlas_86
+  - first:
+      213: -1780402854656514239
+    second: EffectsAtlas_87
+  - first:
+      213: -4948728032841089446
+    second: EffectsAtlas_88
+  - first:
+      213: -2750250406584057764
+    second: EffectsAtlas_89
+  - first:
+      213: 3596687301119260479
+    second: EffectsAtlas_90
+  - first:
+      213: -4867046301737171084
+    second: EffectsAtlas_91
+  - first:
+      213: -5564721348777338209
+    second: EffectsAtlas_92
+  - first:
+      213: 3100781293606990490
+    second: EffectsAtlas_93
+  - first:
+      213: 1147119836386751955
+    second: EffectsAtlas_94
+  - first:
+      213: -3756844992949162188
+    second: EffectsAtlas_95
+  - first:
+      213: 7805371699118003629
+    second: EffectsAtlas_96
+  - first:
+      213: 2211075345533207813
+    second: EffectsAtlas_97
+  - first:
+      213: 5081093957665575556
+    second: EffectsAtlas_98
+  - first:
+      213: 1896595756940915636
+    second: EffectsAtlas_99
+  - first:
+      213: 1428246604910453426
+    second: EffectsAtlas_100
+  - first:
+      213: 3464139455387580946
+    second: EffectsAtlas_101
+  - first:
+      213: 8284142635001574405
+    second: EffectsAtlas_102
+  - first:
+      213: 2096710071968714882
+    second: EffectsAtlas_103
+  - first:
+      213: -5843064346353985529
+    second: EffectsAtlas_104
+  - first:
+      213: 381101884298138163
+    second: EffectsAtlas_105
+  - first:
+      213: 1659018633238153032
+    second: EffectsAtlas_106
+  - first:
+      213: -8528229846747809916
+    second: EffectsAtlas_107
+  - first:
+      213: -8283603677776686266
+    second: EffectsAtlas_108
+  - first:
+      213: -2321664651356670416
+    second: EffectsAtlas_109
+  - first:
+      213: 6867838278230262304
+    second: EffectsAtlas_110
+  - first:
+      213: 2784136885637797687
+    second: EffectsAtlas_111
+  - first:
+      213: 879472541742373061
+    second: EffectsAtlas_112
+  - first:
+      213: -1163180779395960199
+    second: EffectsAtlas_113
+  - first:
+      213: -3923127524446924197
+    second: EffectsAtlas_114
+  - first:
+      213: -5522826746026501568
+    second: EffectsAtlas_115
+  - first:
+      213: -3630736241063049475
+    second: EffectsAtlas_116
+  - first:
+      213: 2443213672783462791
+    second: EffectsAtlas_117
+  - first:
+      213: -5481180511719235784
+    second: EffectsAtlas_118
+  - first:
+      213: 228612331951204114
+    second: EffectsAtlas_119
+  - first:
+      213: 5952150408947383389
+    second: EffectsAtlas_120
+  - first:
+      213: 518246213773926831
+    second: EffectsAtlas_121
+  - first:
+      213: 1111184962759684410
+    second: EffectsAtlas_122
+  - first:
+      213: -4937705050290241536
+    second: EffectsAtlas_123
+  - first:
+      213: 6116046371025364399
+    second: EffectsAtlas_124
+  - first:
+      213: 6965422874956657758
+    second: EffectsAtlas_125
+  - first:
+      213: -3392809320300598917
+    second: EffectsAtlas_126
+  - first:
+      213: -4159279007568908195
+    second: EffectsAtlas_127
+  - first:
+      213: -2601150177096322229
+    second: EffectsAtlas_128
+  - first:
+      213: 1713443741639185611
+    second: EffectsAtlas_129
+  - first:
+      213: 2834818268717469900
+    second: EffectsAtlas_130
+  - first:
+      213: -5803691889334903607
+    second: EffectsAtlas_131
+  - first:
+      213: -8463597491715692195
+    second: EffectsAtlas_132
+  - first:
+      213: -6516191601238134653
+    second: EffectsAtlas_133
+  - first:
+      213: 2001969093858465904
+    second: EffectsAtlas_134
+  - first:
+      213: -3622525346525515874
+    second: EffectsAtlas_135
+  - first:
+      213: -6231270483965893036
+    second: EffectsAtlas_136
+  - first:
+      213: 8569840288908750672
+    second: EffectsAtlas_137
+  - first:
+      213: 961995980837302977
+    second: EffectsAtlas_138
+  - first:
+      213: 5571370204436496663
+    second: EffectsAtlas_139
+  - first:
+      213: 4509695338129498306
+    second: EffectsAtlas_140
+  - first:
+      213: 4228261253256520179
+    second: EffectsAtlas_141
+  - first:
+      213: -1944753326746930804
+    second: EffectsAtlas_142
+  - first:
+      213: -8152797529452572490
+    second: EffectsAtlas_143
+  - first:
+      213: 4959510951981399821
+    second: EffectsAtlas_144
+  - first:
+      213: -2939548362211260671
+    second: EffectsAtlas_145
+  - first:
+      213: -8563739834633159938
+    second: EffectsAtlas_146
+  - first:
+      213: 4655852288651067241
+    second: EffectsAtlas_147
+  - first:
+      213: 7361471932996186872
+    second: EffectsAtlas_148
+  - first:
+      213: -1926190122340745481
+    second: EffectsAtlas_149
+  - first:
+      213: 4039837558590104099
+    second: EffectsAtlas_150
+  - first:
+      213: 9048391509042370950
+    second: EffectsAtlas_151
+  - first:
+      213: 2719921454440524300
+    second: EffectsAtlas_152
+  - first:
+      213: -7729424403667229039
+    second: EffectsAtlas_153
+  - first:
+      213: -7204717833733846333
+    second: EffectsAtlas_154
+  - first:
+      213: -7331059232872091547
+    second: EffectsAtlas_155
+  - first:
+      213: -7065106063433409713
+    second: EffectsAtlas_156
+  - first:
+      213: 6834855976141643521
+    second: EffectsAtlas_157
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 362
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EffectsAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 740
+        width: 349
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0f77e4ddeb9a8f0800000000000000
+      internalID: -528681623525789503
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 726
+        width: 377
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0738644a4a0617b00800000000000000
+      internalID: 824546467032499056
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1047
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5218674195c0710800000000000000
+      internalID: 1660800307015263706
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1020
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88745e157b693b620800000000000000
+      internalID: 2788738308369631112
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1010
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f415e13a60b00a480800000000000000
+      internalID: -8890093541294976689
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 1044
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbe4a4a52fbc44a0800000000000000
+      internalID: -6607696384862393345
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1035
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5329ef01c625851e0800000000000000
+      internalID: -2208924993130163659
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1035
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc777ad688cc7800800000000000000
+      internalID: 611584130931981519
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1018
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8b72b73f720e970800000000000000
+      internalID: 8782063200069204177
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 1014
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da39605b80f51400800000000000000
+      internalID: 294405831802829522
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1012
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecffa0b5fb0f1d90800000000000000
+      internalID: -7124962935617618706
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 297
+        width: 400
+        height: 789
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f2929d9184acc20800000000000000
+      internalID: 3227471358819118918
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1012
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18850776e8535be50800000000000000
+      internalID: 6824419696086898817
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 743
+        width: 389
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ca8c3f972afe040800000000000000
+      internalID: 4679137182525992005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1022
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398722761f566d220800000000000000
+      internalID: 2510305929797466259
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 1034
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac29f20791070e730800000000000000
+      internalID: 4026341321427882698
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1012
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dacfc52d16e51170800000000000000
+      internalID: 8148672113659595473
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 970
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31d80036a7856cf0800000000000000
+      internalID: -259652255663730372
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1004
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71cff15b66643cc0800000000000000
+      internalID: -3732245580060049027
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 955
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8015d0d9d0e4df0800000000000000
+      internalID: -194202765745911563
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 945
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33aedaf57a96667d0800000000000000
+      internalID: -2925534740344870349
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 915
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7490782f9a967690800000000000000
+      internalID: -7604720912399559557
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 929
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd460f681ddc12e60800000000000000
+      internalID: 7935850318199284957
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 923
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2055b3e0a70eeef0800000000000000
+      internalID: -77115756022247382
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 874
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ce50898c7158a90800000000000000
+      internalID: -7312412269654709214
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 822
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f16796c025f1c40800000000000000
+      internalID: 5485193084422987601
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 826
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ed296ea0aaa08b0800000000000000
+      internalID: -5185145057168925037
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 822
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd4ec935602d6680800000000000000
+      internalID: -8760310081032139337
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 816
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33baf1fea69341590800000000000000
+      internalID: -7704469931082929357
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 783
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef083eda9ed321120800000000000000
+      internalID: 2383035226686456062
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 810
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cafe1ace970b49d0800000000000000
+      internalID: -2789127165648635195
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 793
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67f122f46a676a90800000000000000
+      internalID: -7320765687475865749
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 795
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ff2ef751a370ac0800000000000000
+      internalID: -3889075889196826806
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 791
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db92dc899f0019a30800000000000000
+      internalID: 4220155397833304509
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 793
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5fdbf8801447830800000000000000
+      internalID: 4067947868449535472
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 777
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145fe9224a6252da0800000000000000
+      internalID: -5970323244612389567
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 783
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70652f34b253aca60800000000000000
+      internalID: 7695021373255734791
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 771
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d4f5b21b9367490800000000000000
+      internalID: -7748942675744699017
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 755
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58221a80378a2b20800000000000000
+      internalID: 3110447135197374555
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 765
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3750b7d0381cacff0800000000000000
+      internalID: -14986880131332749
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 759
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff44634f00589b90800000000000000
+      internalID: -7234944774885322753
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 761
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871c326b14810ce40800000000000000
+      internalID: 5674562200994562424
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 757
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a365bdf420626c0800000000000000
+      internalID: -4168641863079282039
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 745
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377b623e2892c8f40800000000000000
+      internalID: 5732002067869251443
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 763
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05272cc6f6c4881e0800000000000000
+      internalID: -2195420776893353392
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 1133
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfed022e65fe41ea0800000000000000
+      internalID: -5902830055135846660
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 736
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a218494694f3a80800000000000000
+      internalID: -8484982476605674948
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 722
+        width: 56
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ea7afc9b5d906d0800000000000000
+      internalID: -3023650680773038437
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_48
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 739
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a342094717d4de0800000000000000
+      internalID: -1347295968065471917
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_49
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 618
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f206583eca284a90800000000000000
+      internalID: -7329561328348691726
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 417
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175ea509ee1c7c540800000000000000
+      internalID: 5028200739350701425
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_51
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 303
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55942a54162045e00800000000000000
+      internalID: 1032452831378032981
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_52
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 301
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0501b3fe3713e2280800000000000000
+      internalID: -9066254625845604272
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_53
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 301
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cc2f5129f9eb7e0800000000000000
+      internalID: -1747784155590898579
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_54
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 293
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346e0dbd055fa3c70800000000000000
+      internalID: 8951736936986371651
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_55
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 23
+        width: 231
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c596b4abdde97a880800000000000000
+      internalID: -8599730288290207396
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_56
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 303
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97996b818dec56580800000000000000
+      internalID: -8834427666494482055
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_57
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 254
+        width: 84
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d41b4dd6f4f40e10800000000000000
+      internalID: 2163123062156498132
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_58
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 251
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f050f8fcbf21c60800000000000000
+      internalID: 7787563574553284405
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_59
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 293
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bc7e97c93ead900800000000000000
+      internalID: 710130152463911755
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_60
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 199
+        width: 180
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ce87ecb78574420800000000000000
+      internalID: 2614155397480115328
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_61
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 279
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e013b39086fc17ea0800000000000000
+      internalID: -5876687993003364082
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_62
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 264
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5d2a80c07163a10800000000000000
+      internalID: 1888722434180437453
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_63
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 224
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317e03152de1a1ff0800000000000000
+      internalID: -64705355989326061
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_64
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 0
+        width: 193
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640480f6c43173690800000000000000
+      internalID: -7622602625300021178
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_65
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 256
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a48398742681650800000000000000
+      internalID: 6203816546087225979
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_66
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 258
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd65356eb3e858150800000000000000
+      internalID: 5874257676893116125
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_67
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 228
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de909fd028861e2c0800000000000000
+      internalID: -4404124052802172435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_68
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 252
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c249dc77822d5640800000000000000
+      internalID: 5070246720799589064
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_69
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 236
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faf75a30f7c2b5e0800000000000000
+      internalID: -1895232658584634632
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_70
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 238
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d492fbd04189180800000000000000
+      internalID: -9108508197082542711
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_71
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 228
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89b1dbc5248f5bb0800000000000000
+      internalID: -4945088567961339507
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_72
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 182
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9178de5e4dcfd4ea0800000000000000
+      internalID: -5886771146582554855
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_73
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 0
+        width: 75
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16ac8b068ffb5f60800000000000000
+      internalID: 8024288112275138076
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_74
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 199
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defef4e6ee596a800800000000000000
+      internalID: 623350449722879981
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_75
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 19
+        width: 107
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41418cca2caf192f0800000000000000
+      internalID: -967716730878553068
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_76
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 248
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd56acc58739a87a0800000000000000
+      internalID: -6374120177427388961
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_77
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 46
+        width: 74
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff0c1a4ee46bc2e0800000000000000
+      internalID: -2104477426257227789
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_78
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 177
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efcf53f1d5d6de8a0800000000000000
+      internalID: -6274238459134214914
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_79
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 142
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e54cf4fd56f5810800000000000000
+      internalID: 1756234389488164392
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_80
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 140
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357c316ccbb0220e0800000000000000
+      internalID: -2296259954600589485
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_81
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 161
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e179f4dde2cce2580800000000000000
+      internalID: -8849911716082903266
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_82
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 111
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a67470d6eedcf830800000000000000
+      internalID: 4106402043176187560
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_83
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 129
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62716f669f577ae50800000000000000
+      internalID: 6820549874710615846
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_84
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 127
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953854ed1c824f7c0800000000000000
+      internalID: -4038558152721595559
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_85
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 0
+        width: 110
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665c8d3413b3444d0800000000000000
+      internalID: -3151328756474788506
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_86
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 92
+        width: 7
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0234b1089e373c20800000000000000
+      internalID: 3186084083972452875
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_87
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 86
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1476b13690dba47e0800000000000000
+      internalID: -1780402854656514239
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_88
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 108
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e3d78d216925bb0800000000000000
+      internalID: -4948728032841089446
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_89
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 110
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c500f20a3d525d9d0800000000000000
+      internalID: -2750250406584057764
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_90
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 118
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f373f575b000ae130800000000000000
+      internalID: 3596687301119260479
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_91
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 112
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477c39fdc27c47cb0800000000000000
+      internalID: -4867046301737171084
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_92
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 126
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a181c9a6326c2b0800000000000000
+      internalID: -5564721348777338209
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_93
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 82
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92fe9b6820380b20800000000000000
+      internalID: 3100781293606990490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_94
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 80
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5f2aad9636bef00800000000000000
+      internalID: 1147119836386751955
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_95
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 68
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f6f0f22610ddbc0800000000000000
+      internalID: -3756844992949162188
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_96
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 82
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5d0d9a430425c60800000000000000
+      internalID: 7805371699118003629
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_97
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 54
+        width: 30
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505812edf415fae10800000000000000
+      internalID: 2211075345533207813
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_98
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 88
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4825a01a80ca38640800000000000000
+      internalID: 5081093957665575556
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_99
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 80
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3f9f6dacf025a10800000000000000
+      internalID: 1896595756940915636
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_100
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 95
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2685158b622d310800000000000000
+      internalID: 1428246604910453426
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_101
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 31
+        width: 38
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21abaca1b78131030800000000000000
+      internalID: 3464139455387580946
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_102
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 50
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504ffe3d5df27f270800000000000000
+      internalID: 8284142635001574405
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_103
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 66
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280ddac93b2091d10800000000000000
+      internalID: 2096710071968714882
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_104
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 72
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70812d35fe349eea0800000000000000
+      internalID: -5843064346353985529
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_105
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 76
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33292d40522f94500800000000000000
+      internalID: 381101884298138163
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_106
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 80
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8470ae538a4060710800000000000000
+      internalID: 1659018633238153032
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_107
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48776bd8324a5a980800000000000000
+      internalID: -8528229846747809916
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_108
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 62
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 643500ee75aba0d80800000000000000
+      internalID: -8283603677776686266
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_109
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 70
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036fd40ec4ac7cfd0800000000000000
+      internalID: -2321664651356670416
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_110
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 64
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022ceb4d6867f4f50800000000000000
+      internalID: 6867838278230262304
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_111
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 60
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737d08a1fbd33a620800000000000000
+      internalID: 2784136885637797687
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_112
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 48
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c89348fd93843c00800000000000000
+      internalID: 879472541742373061
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_113
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 39
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972ba827e3d8bdfe0800000000000000
+      internalID: -1163180779395960199
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_114
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 74
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5298c85d404e89c0800000000000000
+      internalID: -3923127524446924197
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_115
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 48
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a501fe55afa53b0800000000000000
+      internalID: -5522826746026501568
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_116
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 27
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6cc4e00a80d9dc0800000000000000
+      internalID: -3630736241063049475
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_117
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 58
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781c2a404e908e120800000000000000
+      internalID: 2443213672783462791
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_118
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 58
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f5e297d5feee3b0800000000000000
+      internalID: -5481180511719235784
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_119
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 66
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217a93564b13c2300800000000000000
+      internalID: 228612331951204114
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_120
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 34
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c3107d2494a9250800000000000000
+      internalID: 5952150408947383389
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_121
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 29
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1af268f2e213700800000000000000
+      internalID: 518246213773926831
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_122
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 19
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31fb0916d8bb6f00800000000000000
+      internalID: 1111184962759684410
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_123
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 13
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0004cc7fa6fb97bb0800000000000000
+      internalID: -4937705050290241536
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_124
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 39
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5a8ce25cf80e450800000000000000
+      internalID: 6116046371025364399
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_125
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 43
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54fb2c43372aa060800000000000000
+      internalID: 6965422874956657758
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_126
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 17
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7929d826e15ae0d0800000000000000
+      internalID: -3392809320300598917
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_127
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 52
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50bd1887c54746c0800000000000000
+      internalID: -4159279007568908195
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_128
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 13
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43bab602bbd6ebd0800000000000000
+      internalID: -2601150177096322229
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_129
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 48
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4150b310067c710800000000000000
+      internalID: 1713443741639185611
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_130
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 50
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc051b5223c475720800000000000000
+      internalID: 2834818268717469900
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_131
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 33
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc9066d9f4257fa0800000000000000
+      internalID: -5803691889334903607
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_132
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 11
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5926606ce24b8a80800000000000000
+      internalID: -8463597491715692195
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_133
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 42
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38031df4346d195a0800000000000000
+      internalID: -6516191601238134653
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_134
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0789eb2b84c68cb10800000000000000
+      internalID: 2001969093858465904
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_135
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 37
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f6f7ae3643abdc0800000000000000
+      internalID: -3622525346525515874
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_136
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 21
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45626df62841689a0800000000000000
+      internalID: -6231270483965893036
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_137
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 42
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fac3a76503ee670800000000000000
+      internalID: 8569840288908750672
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_138
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 29
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c239296f32b95d00800000000000000
+      internalID: 961995980837302977
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_139
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 33
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71102abbeab715d40800000000000000
+      internalID: 5571370204436496663
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_140
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 19
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0a1724408a59e30800000000000000
+      internalID: 4509695338129498306
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_141
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 41
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f127e1253dcdaa30800000000000000
+      internalID: 4228261253256520179
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_142
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 30
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c817d7f2729d205e0800000000000000
+      internalID: -1944753326746930804
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_143
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 33
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b01c43a7d17bde80800000000000000
+      internalID: -8152797529452572490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_144
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 40
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fb2882fe8b3d440800000000000000
+      internalID: 4959510951981399821
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_145
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 35
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1070156c650a437d0800000000000000
+      internalID: -2939548362211260671
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_146
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 21
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efaf3d73efb772980800000000000000
+      internalID: -8563739834633159938
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_147
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 27
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f7cbf1df8ec9040800000000000000
+      internalID: 4655852288651067241
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_148
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 23
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2fe3668b3392660800000000000000
+      internalID: 7361471932996186872
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_149
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 29
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe73040a4cc445e0800000000000000
+      internalID: -1926190122340745481
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_150
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 9
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3226b060bd2601830800000000000000
+      internalID: 4039837558590104099
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_151
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 33
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68991251328529d70800000000000000
+      internalID: 9048391509042370950
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_152
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 13
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a24ece62a1fb520800000000000000
+      internalID: 2719921454440524300
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_153
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 18
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196ed2505719bb490800000000000000
+      internalID: -7729424403667229039
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_154
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 9
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca4f5d6d43b30c90800000000000000
+      internalID: -7204717833733846333
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_155
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 0
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560bf452878d24a90800000000000000
+      internalID: -7331059232872091547
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_156
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 54
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bd794c773b3fd90800000000000000
+      internalID: -7065106063433409713
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EffectsAtlas_157
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 0
+        width: 102
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fd0e43c494ade50800000000000000
+      internalID: 6834855976141643521
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

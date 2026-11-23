@@ -138,7 +138,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -297,7 +297,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -364,7 +364,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58b5e8d9f94fa1f4a9b8900bd0b411de, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.LevelUi
   hud: {fileID: 5083137053616571936}
   toast: {fileID: 1683400190419413273}
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 16
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ead4ed101f57227459b4e99ae4eb70a4, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Dimensions.DimensionDirector
   player: {fileID: 1606234652}
   screenTint: {fileID: 151974549}
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48a9e48b8cafdc24fa5641f9288acd52, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Core.CameraFollow
   cam: {fileID: 748527063}
   bounds:
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
   m_AssetsPPU: 48
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d044f793c0116fe4082719de45e60333, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.SafeAreaFitter
 --- !u!1 &941295019
 GameObject:
@@ -927,7 +927,7 @@ SpriteRenderer:
   m_SortingOrder: -100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 38a65d3a54133924ea053f851cb39f58, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.48, g: 0.46, b: 0.55, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -971,7 +971,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54755b6c95bf71a44bf73cfc8f62b1b9, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.TouchControls
 --- !u!1 &1288437691
 GameObject:
@@ -1234,13 +1234,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57e111228ee102c4985e0d2899fb9972, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Dimensions.ShadowView
   player: {fileID: 1606234652}
   body: {fileID: 1288437693}
   frames:
   - {fileID: 21300000, guid: be9d1da3b1eaf664e9676fd983c65e51, type: 3}
   - {fileID: 21300000, guid: ad9b3982468e08d4bbeb3a72c50d6451, type: 3}
+  silhouetteMaterial: {fileID: 2100000, guid: df1e169595f4f604392c5a7550a8425b, type: 2}
+  eyeSprite: {fileID: 21300000, guid: c433f5ffedf1ba649b521d0ea4c4fea3, type: 3}
 --- !u!212 &1288437693
 SpriteRenderer:
   serializedVersion: 3
@@ -1363,7 +1365,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1430,7 +1432,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1542,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4991395257949325382, guid: 6699fc1ea5032884fabf377b858d26c7, type: 3}
       propertyPath: cameraFollow
-      value: 
+      value:
       objectReference: {fileID: 748527062}
     - target: {fileID: 6580779507260698138, guid: 6699fc1ea5032884fabf377b858d26c7, type: 3}
       propertyPath: m_Name
@@ -1562,7 +1564,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b88241ddfd2300141931547f1fc26856, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Player.PlayerController
 --- !u!21 &1616312422
 Material:
@@ -1583,7 +1585,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1650,7 +1652,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1717,7 +1719,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1784,7 +1786,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1851,7 +1853,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -1927,7 +1929,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9abe1b71e33998408d737b789a5c397, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelRunner
   levels:
   - {fileID: 11400000, guid: a2ae10fc88ca45f4894526a7b2d11379, type: 2}
@@ -1958,7 +1960,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a13f7b73138335a469d4c18d5e96ddee, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelView
   art: {fileID: 11400000, guid: dfc9561ba7d0b994093c19661e49d22f, type: 2}
   catalog: {fileID: 0}
@@ -2093,7 +2095,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8341cd2b428b1644acc78a018d24214, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.SettingsScreen
 --- !u!1001 &1496374156930133877
 PrefabInstance:
@@ -2210,7 +2212,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f271901f5380e8949964c762676b8102, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.GameOverScreen
 --- !u!1001 &1683400190419413271
 PrefabInstance:
@@ -2323,7 +2325,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b28a2e86adda0b4fa1a88ba53d75718, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.Toast
 --- !u!1001 &5083137053616571934
 PrefabInstance:
@@ -2335,43 +2337,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 280324893737700462, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1616312422}
     - target: {fileID: 280324893737700462, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1616312422}
     - target: {fileID: 532390552674946348, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 72675858}
     - target: {fileID: 532390552674946348, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 72675858}
     - target: {fileID: 1268438233070905748, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1928225328}
     - target: {fileID: 1268438233070905748, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1928225328}
     - target: {fileID: 1680529785194435478, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1650841178}
     - target: {fileID: 1680529785194435478, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1650841178}
     - target: {fileID: 1797183621699638835, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1396168352}
     - target: {fileID: 1797183621699638835, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1396168352}
     - target: {fileID: 3015556476079524765, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_Pivot.x
@@ -2459,51 +2461,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3521120086689593577, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 230273050}
     - target: {fileID: 3521120086689593577, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 230273050}
     - target: {fileID: 4243681636659296341, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1875498528}
     - target: {fileID: 4243681636659296341, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1875498528}
     - target: {fileID: 5445832007863587089, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1417551335}
     - target: {fileID: 5445832007863587089, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1417551335}
     - target: {fileID: 6135667466052291619, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 1996647554}
     - target: {fileID: 6135667466052291619, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 1996647554}
     - target: {fileID: 7605073842420152067, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 206027903}
     - target: {fileID: 7605073842420152067, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 206027903}
     - target: {fileID: 7740899389390939502, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_fontMaterial
-      value: 
+      value:
       objectReference: {fileID: 999930541}
     - target: {fileID: 7740899389390939502, guid: 140bcfe0f99797943a59ca08b85abbba, type: 3}
       propertyPath: m_sharedMaterial
-      value: 
+      value:
       objectReference: {fileID: 999930541}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2524,7 +2526,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfdf00ee0c44b4e89c89be7490f52f, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.HudView
 --- !u!1001 &5560995487602717091
 PrefabInstance:
@@ -2641,7 +2643,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c17ea9b7b5c206409157ef9fcd15209, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.DialogBox
 --- !u!1001 &5633630838077631269
 PrefabInstance:
@@ -2758,7 +2760,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3c078f647e0ed545a93ab135d976e30, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.PauseScreen
 --- !u!1001 &6442185396925499017
 PrefabInstance:
@@ -2870,7 +2872,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30524935d501daa4dade64e6d3f604d7, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.EndingScreen
 --- !u!224 &6442185396925499019 stripped
 RectTransform:
@@ -2992,7 +2994,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3c51f0d3a752b144ae7541a89c881d6, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Skp.Runtime::Skp.UI.LevelClearScreen
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

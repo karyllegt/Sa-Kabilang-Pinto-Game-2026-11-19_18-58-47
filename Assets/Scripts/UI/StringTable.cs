@@ -26,6 +26,14 @@ namespace Skp.UI
 
         Dictionary<string, string> _map;
 
+        public void Set(string key, string text)
+        {
+            int index = entries.FindIndex(e => e.key == key);
+            var entry = new Entry { key = key, text = text };
+            if (index >= 0) entries[index] = entry; else entries.Add(entry);
+            _map = null;
+        }
+
         public string Get(string key)
         {
             if (_map == null || _map.Count != entries.Count)

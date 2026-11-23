@@ -18,6 +18,19 @@ public class SkpAssetImportSettings : AssetPostprocessor
     {
         if (!assetPath.StartsWith("Assets/Art/")) return;
         var ti = (TextureImporter)assetImporter;
+        // Keep source-specific PPU/pivots while applying the shared sampling rules, including unused source references.
+        if (assetPath.StartsWith("Assets/Art/Recovered/"))
+        {
+            ti.textureType = TextureImporterType.Sprite;
+            ti.spriteImportMode = SpriteImportMode.Single;
+            ti.filterMode = FilterMode.Point;
+            ti.textureCompression = TextureImporterCompression.Uncompressed;
+            ti.mipmapEnabled = false;
+            ti.alphaIsTransparency = true;
+            ti.npotScale = TextureImporterNPOTScale.None;
+            ti.maxTextureSize = 4096;
+            return;
+        }
         ti.textureType = TextureImporterType.Sprite;
         ti.spriteImportMode = SpriteImportMode.Single;
         ti.spritePixelsPerUnit = IsHiDetail(assetPath) ? HiDetailPPU : PixelsPerUnit;
@@ -62,11 +75,11 @@ public class SkpAssetImportSettings : AssetPostprocessor
         if (!assetPath.StartsWith("Assets/Audio/")) return;
         var ai = (AudioImporter)assetImporter;
         var s = ai.defaultSampleSettings;
-        bool music = System.IO.Path.GetFileName(assetPath).StartsWith("mus_");
+        bool music = System.IO.Path.GetFileName(assetPath).StartsWith("mus_") || assetPath.Contains("/Music/");
         s.loadType = music ? AudioClipLoadType.Streaming : AudioClipLoadType.DecompressOnLoad;
         s.compressionFormat = AudioCompressionFormat.Vorbis;
         s.quality = music ? 0.5f : 0.7f;
         ai.defaultSampleSettings = s;
-        ai.forceToMono = true;
+        ai.forceToMono = !music;
     }
 }

@@ -20,7 +20,7 @@ MonoBehaviour:
   color: {r: 1, g: 0.827451, b: 0.41568628, a: 1}
   type: 2
   shortLabel: 3X
-  keyHint: 
-  icon: {fileID: 21300000, guid: ad9b1c8d17f136d4891cbdeeb377066d, type: 3}
+  keyHint:
+  icon: {fileID: 21300000, guid: 93678a2f615216b4d88c1258f0aa0c1d, type: 2}
   level: 5
   cue: skill_bolt3

@@ -122,6 +122,7 @@ public static class SkpPrefabSetup
         var p = go.AddComponent<LevelPiece>();
         p.main = sr;
         p.states = states != null ? (Sprite[])states.Clone() : new Sprite[0];
+        p.artFacesLeft = s != null && AssetDatabase.GetAssetPath(s).StartsWith("Assets/Art/Recovered/") && name.StartsWith("Creature_");
         if (ghost.HasValue) p.dimension = Member(go, ghost.Value, sr);
         return Save(go, dir, name);
     }

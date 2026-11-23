@@ -17,6 +17,10 @@ namespace Skp.Levels
         public SpriteRenderer[] extra = new SpriteRenderer[0];
         [Tooltip("Sprites per state, in the order the view documents (frames, phases, locked/open...).")]
         public Sprite[] states = new Sprite[0];
+        [Tooltip("Source frames face left rather than the default right.")]
+        public bool artFacesLeft;
+        [Tooltip("Optional presentation width in world units, independent of simulation geometry.")]
+        public float presentationWidth;
         [Tooltip("Set when this piece follows the dimension rules.")]
         public DimensionMember dimension;
         [Tooltip("Text, for map labels.")]
@@ -32,6 +36,12 @@ namespace Skp.Levels
             if (main == null || states == null || i < 0 || i >= states.Length) return;
             var s = states[i];
             if (s != null && main.sprite != s) main.sprite = s;
+            if (s != null && presentationWidth > 0 && s.bounds.size.x > 0)
+            {
+                var scale = main.transform.localScale;
+                scale.x = presentationWidth / s.bounds.size.x;
+                main.transform.localScale = scale;
+            }
         }
 
         /// <summary>Creates a copy of a prefab under a parent at a world position.</summary>

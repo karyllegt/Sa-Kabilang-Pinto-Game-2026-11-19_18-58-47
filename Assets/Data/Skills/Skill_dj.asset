@@ -20,7 +20,7 @@ MonoBehaviour:
   color: {r: 0.56078434, g: 0.827451, b: 1, a: 1}
   type: 0
   shortLabel: 2J
-  keyHint: 
-  icon: {fileID: 21300000, guid: d9804cc6e8d8b9c49b5912cfa9972053, type: 3}
+  keyHint:
+  icon: {fileID: 21300000, guid: 328003b20ae61e342bea4044daa25fba, type: 2}
   level: 0
   cue: skill_dj

@@ -20,6 +20,7 @@ namespace Skp.Tests
     {
         static AudioTuning Tuning => AssetDatabase.LoadAssetAtPath<AudioTuning>(SkpAudioSetup.TuningPath);
         static FeelTuning Feel => AssetDatabase.LoadAssetAtPath<FeelTuning>(SkpAudioSetup.FeelPath);
+        static string CurrentLoopPath(string track) => AssetDatabase.GetAssetPath(track == "menu" ? Tuning.menu : track == "a1" ? Tuning.act1 : track == "a2" ? Tuning.act2 : track == "a3" ? Tuning.act3 : Tuning.boss);
 
         string _dir;
 
@@ -73,7 +74,7 @@ namespace Skp.Tests
                 var c = t.Track(tr);
                 Assert.IsNotNull(c, tr + " clip");
                 string path = AssetDatabase.GetAssetPath(c);
-                StringAssert.StartsWith(SkpAudioSetup.LoopDir, path, tr + " uses the seamless loop");
+                StringAssert.StartsWith(SkpPresentationUpgrade.MusicDir + "Loops/", path, tr + " uses a crossfaded licensed recording");
                 var ai = (AudioImporter)AssetImporter.GetAtPath(path);
                 Assert.AreEqual(AudioClipLoadType.Streaming, ai.defaultSampleSettings.loadType, tr + " streamed");
                 Assert.AreEqual(AudioCompressionFormat.Vorbis, ai.defaultSampleSettings.compressionFormat, tr + " ships as Vorbis (OGG)");
@@ -112,7 +113,7 @@ namespace Skp.Tests
             }
             foreach (var tr in SkpAudioSetup.Tracks)
             {
-                var wav = ReadWav(SkpAudioSetup.LoopPath(tr), out _);
+                var wav = ReadWav(CurrentLoopPath(tr), out _);
                 Assert.LessOrEqual(wav.Max(Mathf.Abs), SkpAudioSetup.MusicPeak + 0.01f, tr + " loop peak");
             }
             var t = Tuning;
@@ -127,17 +128,22 @@ namespace Skp.Tests
         {
             foreach (var tr in SkpAudioSetup.Tracks)
             {
-                var d = ReadWav(SkpAudioSetup.LoopPath(tr), out int rate);
+                for (int channel = 0; channel < 2; channel++)
+                {
+                var d = ReadWav(CurrentLoopPath(tr), out int rate, channel);
                 // the jump from the last sample to the first is no bigger than the track's ordinary sample-to-sample steps
                 float seam = Mathf.Abs(d[d.Length - 1] - d[0]);
-                var steps = new float[d.Length - 1];
-                for (int i = 1; i < d.Length; i++) steps[i - 1] = Mathf.Abs(d[i] - d[i - 1]);
-                Array.Sort(steps);
-                float p999 = steps[(int)(steps.Length * 0.999f)];
+                // Histogram bounds the percentile to within 1/2048 without sorting minutes of stereo PCM.
+                var steps = new int[4097];
+                for (int i = 1; i < d.Length; i++) steps[Mathf.Min(4096, Mathf.CeilToInt(Mathf.Abs(d[i] - d[i - 1]) * 2048))]++;
+                int target = (int)((d.Length - 1) * 0.999f), seen = 0, bin = 0;
+                for (; bin < steps.Length - 1; bin++) { seen += steps[bin]; if (seen > target) break; }
+                float p999 = bin / 2048f;
                 Assert.LessOrEqual(seam, Mathf.Max(0.02f, p999), $"{tr}: seam step {seam:0.000} vs 99.9th percentile step {p999:0.000}");
                 int w = rate / 4;
                 float head = Rms(d, 0, w), tail = Rms(d, d.Length - w, w);
                 Assert.Less(Mathf.Abs(20f * Mathf.Log10((head + 1e-4f) / (tail + 1e-4f))), 6f, $"{tr}: loudness either side of the seam ({head:0.000} vs {tail:0.000})");
+                }
             }
         }
 
@@ -161,13 +167,14 @@ namespace Skp.Tests
             return (float)Math.Sqrt(s / len);
         }
 
-        static float[] ReadWav(string path, out int rate)
+        static float[] ReadWav(string path, out int rate, int channel = -1)
         {
             var b = File.ReadAllBytes(path);
             rate = BitConverter.ToInt32(b, 24);
             int dataLen = BitConverter.ToInt32(b, 40);
-            var o = new float[dataLen / 2];
-            for (int i = 0; i < o.Length; i++) o[i] = BitConverter.ToInt16(b, 44 + i * 2) / 32768f;
+            int channels = BitConverter.ToInt16(b, 22);
+            var o = new float[dataLen / 2 / (channel < 0 ? 1 : channels)];
+            for (int i = 0; i < o.Length; i++) o[i] = BitConverter.ToInt16(b, 44 + (channel < 0 ? i : i * channels + Mathf.Min(channel, channels - 1)) * 2) / 32768f;
             return o;
         }
 
@@ -356,10 +363,10 @@ namespace Skp.Tests
         {
             string all = Skp.UI.StringDefaults.En["credits.body"];
             StringAssert.Contains("Press Start 2P", all);
-            StringAssert.Contains("SIL Open Font License", all);
+            StringAssert.Contains("SIL OFL", all);
             StringAssert.Contains("Music", all);
-            StringAssert.Contains("Sound effects", all);
-            StringAssert.Contains("original", all);
+            StringAssert.Contains("Kenney", all);
+            StringAssert.Contains("Creative Commons Attribution 4.0", all);
         }
     }
 }

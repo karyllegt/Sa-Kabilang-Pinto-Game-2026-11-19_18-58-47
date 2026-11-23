@@ -1,0 +1,925 @@
+fileFormatVersion: 2
+guid: 7733a633f657f9f4d9a166d9ac0a60fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 226642087788441495
+    second: LolaAtlas_0
+  - first:
+      213: -79195032102747604
+    second: LolaAtlas_1
+  - first:
+      213: 8453398231460922362
+    second: LolaAtlas_2
+  - first:
+      213: 4151436528044904873
+    second: LolaAtlas_3
+  - first:
+      213: -9174101777793337961
+    second: LolaAtlas_4
+  - first:
+      213: -370835854841370033
+    second: LolaAtlas_5
+  - first:
+      213: -6062772506523432358
+    second: LolaAtlas_6
+  - first:
+      213: 2491452532268623099
+    second: LolaAtlas_7
+  - first:
+      213: 4172688997982039047
+    second: LolaAtlas_8
+  - first:
+      213: 560093090340286318
+    second: LolaAtlas_9
+  - first:
+      213: 1200900557914270700
+    second: LolaAtlas_10
+  - first:
+      213: -1335071911545917097
+    second: LolaAtlas_11
+  - first:
+      213: -309676654265730201
+    second: LolaAtlas_12
+  - first:
+      213: 5768923019160400682
+    second: LolaAtlas_13
+  - first:
+      213: 7415788096886315580
+    second: LolaAtlas_14
+  - first:
+      213: 5046132193159039830
+    second: LolaAtlas_15
+  - first:
+      213: -230550030580016298
+    second: LolaAtlas_16
+  - first:
+      213: -2323989189506812101
+    second: LolaAtlas_17
+  - first:
+      213: -3405044606320329369
+    second: LolaAtlas_18
+  - first:
+      213: -2577573515427058486
+    second: LolaAtlas_19
+  - first:
+      213: -7730306284466158977
+    second: LolaAtlas_20
+  - first:
+      213: -8662256787072281661
+    second: LolaAtlas_21
+  - first:
+      213: -1672813758761837443
+    second: LolaAtlas_22
+  - first:
+      213: -1664881585661513264
+    second: LolaAtlas_23
+  - first:
+      213: -3388858914452667324
+    second: LolaAtlas_24
+  - first:
+      213: -7673835909714038263
+    second: LolaAtlas_25
+  - first:
+      213: -8544570200113439498
+    second: LolaAtlas_26
+  - first:
+      213: -8332052052552065698
+    second: LolaAtlas_27
+  - first:
+      213: -8024299713864750705
+    second: LolaAtlas_28
+  - first:
+      213: 4820301581395727528
+    second: LolaAtlas_29
+  - first:
+      213: 5386048052155677490
+    second: LolaAtlas_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 501.6
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LolaAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 728
+        width: 59
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f68cd27c1352300800000000000000
+      internalID: 226642087788441495
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 621
+        width: 35
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c224a83b984a6eef0800000000000000
+      internalID: -79195032102747604
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 576
+        width: 358
+        height: 646
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3c42b47e0805570800000000000000
+      internalID: 8453398231460922362
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 660
+        width: 257
+        height: 536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a192b9e68ddc9930800000000000000
+      internalID: 4151436528044904873
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 1090
+        width: 75
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79539512a0b0fa080800000000000000
+      internalID: -9174101777793337961
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 710
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4aa33a31c68adaf0800000000000000
+      internalID: -370835854841370033
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 861
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a8aaaf684bcdba0800000000000000
+      internalID: -6062772506523432358
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 817
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf46e98b0ea639220800000000000000
+      internalID: 2491452532268623099
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1156
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70c66ea298e58e930800000000000000
+      internalID: 4172688997982039047
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 326
+        width: 568
+        height: 895
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f22eab2b9d5c700800000000000000
+      internalID: 560093090340286318
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 690
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb6c0dd1b47aa010800000000000000
+      internalID: 1200900557914270700
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 683
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75134b28b2fd87de0800000000000000
+      internalID: -1335071911545917097
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 610
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b724349bec3bbf0800000000000000
+      internalID: -309676654265730201
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 25
+        width: 538
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2331adbbe45f0050800000000000000
+      internalID: 5768923019160400682
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 536
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a9a7ccbfb2ae660800000000000000
+      internalID: 7415788096886315580
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 584
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b48ee7e76770640800000000000000
+      internalID: 5046132193159039830
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 578
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b925cf7fbecccf0800000000000000
+      internalID: -230550030580016298
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 562
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37399925288fbfd0800000000000000
+      internalID: -2323989189506812101
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 0
+        width: 398
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dbae3a8f9deb0d0800000000000000
+      internalID: -3405044606320329369
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 540
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acce3865b8e9a3cd0800000000000000
+      internalID: -2577573515427058486
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 511
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72cc65246f68b490800000000000000
+      internalID: -7730306284466158977
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 497
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c31755c85b79c780800000000000000
+      internalID: -8662256787072281661
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 467
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c5d95dfb8f8c8e0800000000000000
+      internalID: -1672813758761837443
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 361
+        width: 117
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d17e8dc40725e8e0800000000000000
+      internalID: -1664881585661513264
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 274
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4440222b5ca58f0d0800000000000000
+      internalID: -3388858914452667324
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 208
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902bbd8d5ee018590800000000000000
+      internalID: -7673835909714038263
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 172
+        width: 102
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc99df8ca69b6980800000000000000
+      internalID: -8544570200113439498
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 101
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dd195adca9e5c80800000000000000
+      internalID: -8332052052552065698
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 95
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89a2dfbce5f3a090800000000000000
+      internalID: -8024299713864750705
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 0
+        width: 137
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4985dcfb625e240800000000000000
+      internalID: 4820301581395727528
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolaAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 81
+        width: 37
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b7cebba261fba40800000000000000
+      internalID: 5386048052155677490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LolaAtlas_0: 226642087788441495
+      LolaAtlas_1: -79195032102747604
+      LolaAtlas_10: 1200900557914270700
+      LolaAtlas_11: -1335071911545917097
+      LolaAtlas_12: -309676654265730201
+      LolaAtlas_13: 5768923019160400682
+      LolaAtlas_14: 7415788096886315580
+      LolaAtlas_15: 5046132193159039830
+      LolaAtlas_16: -230550030580016298
+      LolaAtlas_17: -2323989189506812101
+      LolaAtlas_18: -3405044606320329369
+      LolaAtlas_19: -2577573515427058486
+      LolaAtlas_2: 8453398231460922362
+      LolaAtlas_20: -7730306284466158977
+      LolaAtlas_21: -8662256787072281661
+      LolaAtlas_22: -1672813758761837443
+      LolaAtlas_23: -1664881585661513264
+      LolaAtlas_24: -3388858914452667324
+      LolaAtlas_25: -7673835909714038263
+      LolaAtlas_26: -8544570200113439498
+      LolaAtlas_27: -8332052052552065698
+      LolaAtlas_28: -8024299713864750705
+      LolaAtlas_29: 4820301581395727528
+      LolaAtlas_3: 4151436528044904873
+      LolaAtlas_30: 5386048052155677490
+      LolaAtlas_4: -9174101777793337961
+      LolaAtlas_5: -370835854841370033
+      LolaAtlas_6: -6062772506523432358
+      LolaAtlas_7: 2491452532268623099
+      LolaAtlas_8: 4172688997982039047
+      LolaAtlas_9: 560093090340286318
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

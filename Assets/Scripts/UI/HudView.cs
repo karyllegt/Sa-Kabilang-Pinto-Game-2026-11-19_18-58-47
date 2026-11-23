@@ -108,6 +108,9 @@ namespace Skp.UI
             var frt = h.flameFill.rectTransform;
             frt.anchorMin = new Vector2(0, 0); frt.anchorMax = new Vector2(1, 1);
             frt.offsetMin = new Vector2(2, 2); frt.offsetMax = new Vector2(-2, -2);
+            // Keep the number readable against both the amber fill and the low-flame red state.
+            var numberBack = UiKit.Fill(bar.transform, "NumberBack", th.panel);
+            UiKit.Place(numberBack.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(110, 14));
             h.flameText = UiKit.Label(bar.transform, "Text", "FLAME 100", th.tinySize, th.text, TextAlignmentOptions.Center, false);
             UiKit.Stretch(h.flameText.rectTransform);
             h.flameText.outlineWidth = 0.2f;

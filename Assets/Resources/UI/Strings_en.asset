@@ -135,18 +135,40 @@ MonoBehaviour:
   - key: credits.title
     text: CREDITS
   - key: credits.body
-    text: 'Game concept: Karylle G. Torres and Pangkat Parol (CSEL).
+    text: 'PANGKAT PAROL / CSEL
 
-      Built by Karylle G. Torres.
+      Karylle G. Torres: direction and programming
 
+      Mary Rose G. Balcarse: art, UI and audio
 
-      Inspired by Filipino folklore: the Anino, Tikbalang, Manananggal and the balete tree.
-
-
-      Font: Press Start 2P by CodeMan38, SIL Open Font License 1.1.
+      Ronn Lester T. Esquierda: levels, narrative and QA
 
 
-      Art and sound are original to Sa Kabilang Pinto.'
+      Art: project originals, recovered and AI-assisted art.
+
+      Press Start 2P / CodeMan38 / SIL OFL 1.1.
+
+      Foley: Kenney (kenney.nl), CC0.
+
+      Fire: AntumDeluge; water: Peludo, CC0 (OpenGameArt).
+
+      Church Bell: Ulrich Metzner; cut/fades: qubodup.
+
+      CC BY-SA 3.0 / creativecommons.org/licenses/by-sa/3.0/
+
+      Music: Kevin MacLeod (incompetech.com):
+
+      Ghost Story; Darkest Child; Ossuary 6 - Air;
+
+      The House of Leaves; Evening Fall (Harp).
+
+      Creative Commons Attribution 4.0:
+
+      creativecommons.org/licenses/by/4.0/
+
+      Audio edits: conversion, loop crossfades, in-game mix.
+
+      Full sources and licences: AUDIO_SOURCES.md.'
   - key: map.talk
     text: TALK
   - key: map.enter
@@ -186,7 +208,7 @@ MonoBehaviour:
   - key: lola.act2b
     text: A tikbalang laughs to pull you off the path. Do not follow it. Use your ward, then slip past. Something with wings hunts above the corridor, so keep your flame close.
   - key: lola.act3
-    text: The Bellkeeper only listens to its own toll. Use your ward when the golden ring closes on you.
+    text: The Bellkeeper only listens to its own toll. Use your ward when the closing ring closes on you.
   - key: level.node
     text: '{0}. {1}'
   - key: level.endless.sub
@@ -352,7 +374,7 @@ MonoBehaviour:
   - key: boss.awakens
     text: THE BELLKEEPER AWAKENS
   - key: boss.howto
-    text: WARD when the golden ring closes on the Bellkeeper
+    text: WARD when the closing ring closes on the Bellkeeper
   - key: boss.toll
     text: WARD NOW when the ring closes!
   - key: boss.parry

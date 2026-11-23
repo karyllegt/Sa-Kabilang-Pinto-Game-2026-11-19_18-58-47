@@ -56,8 +56,8 @@ namespace Skp.UI
             session.Sim.LanternLit += k => { if (k > 0) toast.Show(Loc.Get("toast.lantern"), 1.8f); };
             session.Sim.ItemCollected += it => { if (it.Kind == ItemKind.Shard) toast.Show(Loc.Get("toast.fragment"), 2f); };
             session.Sim.NotEnoughFlame += () => toast.Show(Loc.Get("toast.noflame"), 1.5f);
-            session.Sim.WaterTouched += () => { Skp.Audio.Sfx.Cue("splash"); if (_hinted.Add("hint.water")) toast.Show(Loc.Get("hint.water"), 2.2f); };
-            session.Sim.BellLanded += _ => Skp.Audio.Sfx.Cue("crumble");
+            session.Sim.WaterTouched += () => { if (_hinted.Add("hint.water")) toast.Show(Loc.Get("hint.water"), 2.2f); };
+            session.Sim.BellLanded += _ => Skp.Audio.Sfx.Cue("bell");
             var boss = session.Boss;
             if (boss != null)
             {

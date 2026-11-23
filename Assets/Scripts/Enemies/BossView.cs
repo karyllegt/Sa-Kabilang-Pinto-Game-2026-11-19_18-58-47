@@ -62,7 +62,7 @@ namespace Skp.Enemies
             body.enabled = show;
             if (show)
             {
-                _body.SetState(boss.State == BossState.Stun ? 1 : boss.State == BossState.Toll ? 2 : 0); // normal, stunned, tolling
+                _body.SetState(boss.Dead && _body.StateCount > 3 ? 3 : boss.State == BossState.Stun ? 1 : boss.State == BossState.Toll ? 2 : 0);
                 float h = body.sprite != null ? body.sprite.bounds.size.y : Bellkeeper.BodySize.y;
                 float jitter = boss.Dead ? ((boss.DeadTicks % 4) < 2 ? Px : -Px) : 0;
                 body.transform.position = new Vector3(Snap(boss.X) + jitter, Snap(boss.TopY - h), 0);
@@ -76,7 +76,7 @@ namespace Skp.Enemies
             if (_ring.enabled)
             {
                 float k = Mathf.Min(1f, boss.TollTicks / (float)Bellkeeper.TollTicksToClose);
-                Color col = k > 0.8f ? Color.white : (Color)new Color32(0xff, 0xd3, 0x6a, 0xff);
+                Color col = k > 0.8f ? new Color(1, 0.68f, 0.62f, 1) : (Color)new Color32(0xff, 0x5a, 0x4a, 0xff);
                 _ring.startColor = _ring.endColor = col;
                 float r = boss.RingRadius;
                 var o = boss.Core;

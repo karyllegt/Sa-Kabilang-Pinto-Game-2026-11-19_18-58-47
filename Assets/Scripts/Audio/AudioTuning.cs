@@ -24,6 +24,9 @@ namespace Skp.Audio
         [Header("Music (looped, see SkpAudioSetup)")]
         public AudioClip menu;
         public AudioClip act1, act2, act3, boss;
+        [Header("Recorded outdoor ambience")]
+        public AudioClip nightAmbience;
+        [Range(0, 1)] public float ambienceVolume = 0.13f;
 
         [Header("Levels (dB)")]
         [Tooltip("Music group level. Headroom keeps music plus a burst of effects under full scale.")]

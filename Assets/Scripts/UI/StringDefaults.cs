@@ -71,7 +71,7 @@ namespace Skp.UI
 
             // credits
             ["credits.title"] = "CREDITS",
-            ["credits.body"] = "Game concept: Karylle G. Torres and Pangkat Parol (CSEL).\nBuilt by Karylle G. Torres.\n\nInspired by Filipino folklore: the Anino, Tikbalang, Manananggal and the balete tree.\n\nFont: Press Start 2P by CodeMan38, SIL Open Font License 1.1.\n\nMusic: original prototype tracks, looped for the game. Sound effects: original, from the prototype or synthesized for it. All art and audio are original to Sa Kabilang Pinto.",
+            ["credits.body"] = "PANGKAT PAROL / CSEL\nKarylle G. Torres: direction and programming\nMary Rose G. Balcarse: art, UI and audio\nRonn Lester T. Esquierda: levels, narrative and QA\n\nArt: project originals, recovered and AI-assisted art.\nPress Start 2P / CodeMan38 / SIL OFL 1.1.\nFoley: Kenney (kenney.nl), CC0.\nFire: AntumDeluge; water: Peludo, CC0 (OpenGameArt).\nChurch Bell: Ulrich Metzner; cut/fades: qubodup.\nCC BY-SA 3.0 / creativecommons.org/licenses/by-sa/3.0/\nMusic: Kevin MacLeod (incompetech.com):\nGhost Story; Darkest Child; Ossuary 6 - Air;\nThe House of Leaves; Evening Fall (Harp).\nCreative Commons Attribution 4.0:\ncreativecommons.org/licenses/by/4.0/\nAudio edits: conversion, loop crossfades, in-game mix.\nFull sources and licences: AUDIO_SOURCES.md.",
 
             // map
             ["map.talk"] = "TALK",
@@ -108,7 +108,7 @@ namespace Skp.UI
             ["obj.boss"] = "DEFEAT THE BELLKEEPER - WARD when the ring closes",
             ["obj.lastdoor"] = "ENTER THE LAST DOOR",
             ["boss.awakens"] = "THE BELLKEEPER AWAKENS",
-            ["boss.howto"] = "WARD when the golden ring closes on the Bellkeeper",
+            ["boss.howto"] = "WARD when the closing ring reaches the Bellkeeper",
             ["boss.toll"] = "WARD NOW when the ring closes!",
             ["boss.parry"] = "PARRY! The Bellkeeper falls. Strike it with WARD",
             ["boss.lastdoor"] = "THE LAST DOOR OPENS",
@@ -125,7 +125,7 @@ namespace Skp.UI
             ["lola.act1"] = "The house wakes slowly. Stay near the gold light. When your shadow starts to follow, any door is a place to rest.",
             ["lola.act2a"] = "The roots flash before they strike, apo. Count the flash, then move. And the black water rises faster than you think.",
             ["lola.act2b"] = "A tikbalang laughs to pull you off the path. Do not follow it. Use your ward, then slip past. Something with wings hunts above the corridor, so keep your flame close.",
-            ["lola.act3"] = "The Bellkeeper only listens to its own toll. Use your ward when the golden ring closes on you.",
+            ["lola.act3"] = "The Bellkeeper only listens to its own toll. Use your ward when the closing ring reaches you.",
 
             // level dialogs
             ["level.node"] = "{0}. {1}",

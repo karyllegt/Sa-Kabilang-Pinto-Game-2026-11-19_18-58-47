@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="21" result="Passed" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-23 16:16:37Z" end-time="2026-11-23 16:22:55Z" duration="377.5472345">
+  <test-suite type="TestSuite" id="1000" name="Sa-Kabilang-Pinto" fullname="Sa-Kabilang-Pinto" runstate="Runnable" testcasecount="177" result="Passed" start-time="2026-11-23 16:16:37Z" end-time="2026-11-23 16:22:55Z" duration="377.547235" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1205" name="Skp.Tests.EditMode.dll" fullname="D:/CSEL-Final-Project/Sa-Kabilang-Pinto/Library/ScriptAssemblies/Skp.Tests.EditMode.dll" runstate="Runnable" testcasecount="177" result="Passed" start-time="2026-11-23 16:16:37Z" end-time="2026-11-23 16:22:55Z" duration="377.425456" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="15868" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1206" name="Skp" fullname="Skp" runstate="Runnable" testcasecount="177" result="Passed" start-time="2026-11-23 16:16:37Z" end-time="2026-11-23 16:22:55Z" duration="377.319258" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1207" name="Tests" fullname="Skp.Tests" runstate="Runnable" testcasecount="177" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:22:55Z" duration="377.293912" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1085" name="M8AudioFeelTests" fullname="Skp.Tests.M8AudioFeelTests" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:17:18Z" duration="40.665863" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1101" name="Credits_ListTheAudioAndItsLicences" fullname="Skp.Tests.M8AudioFeelTests.Credits_ListTheAudioAndItsLicences" methodname="Credits_ListTheAudioAndItsLicences" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1943293042" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:16:38Z" duration="0.127775" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1091" name="CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" fullname="Skp.Tests.M8AudioFeelTests.CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" methodname="CrossfadeLoop_JoinsTailIntoHead_ContinuousForAnySignal" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1442887316" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:16:38Z" duration="0.075389" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1092" name="DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" fullname="Skp.Tests.M8AudioFeelTests.DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" methodname="DimensionSound_SpiritIsMuffled_InvertedIsPitchedDown_OrdinaryIsOpen" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="570559514" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:16:38Z" duration="0.340181" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1099" name="HitStop_IsShort_AndNeverStacks" fullname="Skp.Tests.M8AudioFeelTests.HitStop_IsShort_AndNeverStacks" methodname="HitStop_IsShort_AndNeverStacks" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1209631473" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:16:38Z" duration="0.330636" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1097" name="Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" fullname="Skp.Tests.M8AudioFeelTests.Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" methodname="Hurt_Shakes_HitStops_Vibrates_AndSounds_WhenTheSettingsAllowIt" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="794372315" result="Passed" start-time="2026-11-23 16:16:38Z" end-time="2026-11-23 16:16:41Z" duration="2.977619" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1098" name="Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" fullname="Skp.Tests.M8AudioFeelTests.Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" methodname="Hurt_WithShakeAndVibrationOff_NeitherHappens_ButHitStopAndSoundStill" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="208645349" result="Passed" start-time="2026-11-23 16:16:41Z" end-time="2026-11-23 16:16:42Z" duration="0.104490" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1086" name="Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" fullname="Skp.Tests.M8AudioFeelTests.Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" methodname="Mixer_HasMusicAndSfxGroups_WithGameAndUiUnderSfx_AndTheExposedParameters" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="255230657" result="Passed" start-time="2026-11-23 16:16:42Z" end-time="2026-11-23 16:16:42Z" duration="0.070258" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1087" name="Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" fullname="Skp.Tests.M8AudioFeelTests.Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" methodname="Music_OneLoopPerActPlusMenuAndBoss_AllStreamedVorbis_AndTheProvidedOggsUntouched" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="19147055" result="Passed" start-time="2026-11-23 16:16:42Z" end-time="2026-11-23 16:16:42Z" duration="0.087756" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1090" name="MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" fullname="Skp.Tests.M8AudioFeelTests.MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" methodname="MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1507659029" result="Passed" start-time="2026-11-23 16:16:42Z" end-time="2026-11-23 16:16:57Z" duration="15.285900" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1089" name="NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" fullname="Skp.Tests.M8AudioFeelTests.NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" methodname="NoClipping_EveryEffectPeaksUnder0_71_TheMusicUnder0_86_AndTheGroupsLeaveHeadroom" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="839237581" result="Passed" start-time="2026-11-23 16:16:57Z" end-time="2026-11-23 16:17:18Z" duration="20.853886" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1100" name="Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" fullname="Skp.Tests.M8AudioFeelTests.Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" methodname="Particles_FlameFragmentVeilBoltAndBurntThorns_Emit" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="537465197" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.284989" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1093" name="ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" methodname="ScreenShake_MovesThenSettles_PixelSnapped_AndTheFollowIsUntouched" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1428173569" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.036693" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1094" name="ScreenShake_Off_NothingMoves" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_Off_NothingMoves" methodname="ScreenShake_Off_NothingMoves" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1106990914" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.002643" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1095" name="ScreenShake_TurnedOffMidShake_StopsAtOnce" fullname="Skp.Tests.M8AudioFeelTests.ScreenShake_TurnedOffMidShake_StopsAtOnce" methodname="ScreenShake_TurnedOffMidShake_StopsAtOnce" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1740446626" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.003706" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1088" name="SfxBank_HasEveryCueTheGameUses" fullname="Skp.Tests.M8AudioFeelTests.SfxBank_HasEveryCueTheGameUses" methodname="SfxBank_HasEveryCueTheGameUses" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1532810070" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.002592" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1096" name="Vibration_RespectsTheSetting" fullname="Skp.Tests.M8AudioFeelTests.Vibration_RespectsTheSetting" methodname="Vibration_RespectsTheSetting" classname="Skp.Tests.M8AudioFeelTests" runstate="Runnable" seed="1126615288" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:18Z" duration="0.001891" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1128" name="PresentationUpgradeTests" fullname="Skp.Tests.PresentationUpgradeTests" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:29Z" duration="11.174027" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1129" name="ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" fullname="Skp.Tests.PresentationUpgradeTests.ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" methodname="ActivePlayerArt_CoversEveryState_WithoutChangingWorldHeightOrShotTiming" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="1588213744" result="Passed" start-time="2026-11-23 16:17:18Z" end-time="2026-11-23 16:17:29Z" duration="10.816093" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1132" name="EditingExistingString_InvalidatesTheLookupCache" fullname="Skp.Tests.PresentationUpgradeTests.EditingExistingString_InvalidatesTheLookupCache" methodname="EditingExistingString_InvalidatesTheLookupCache" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="223150657" result="Passed" start-time="2026-11-23 16:17:29Z" end-time="2026-11-23 16:17:29Z" duration="0.006631" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1130" name="FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" fullname="Skp.Tests.PresentationUpgradeTests.FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" methodname="FoleySources_AreWiredToPhysicalActions_AndMusicUsesLicensedTracks" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="138277729" result="Passed" start-time="2026-11-23 16:17:29Z" end-time="2026-11-23 16:17:29Z" duration="0.070476" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1131" name="FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" fullname="Skp.Tests.PresentationUpgradeTests.FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" methodname="FootstepsRequireGroundedTravel_AndStopInAirDashAndAtRest" classname="Skp.Tests.PresentationUpgradeTests" runstate="Runnable" seed="1299433588" result="Passed" start-time="2026-11-23 16:17:29Z" end-time="2026-11-23 16:17:29Z" duration="0.136033" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1191" name="UiLayoutAuditTests" fullname="Skp.Tests.UiLayoutAuditTests" classname="Skp.Tests.UiLayoutAuditTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-23 16:17:29Z" end-time="2026-11-23 16:22:55Z" duration="325.398912" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1192" name="EveryScreen_AtEveryResolution_PassesTheLayoutAudit" fullname="Skp.Tests.UiLayoutAuditTests.EveryScreen_AtEveryResolution_PassesTheLayoutAudit" methodname="EveryScreen_AtEveryResolution_PassesTheLayoutAudit" classname="Skp.Tests.UiLayoutAuditTests" runstate="Runnable" seed="2082764639" result="Passed" start-time="2026-11-23 16:17:29Z" end-time="2026-11-23 16:22:54Z" duration="325.087142" asserts="0">
+              <properties>
+                <property name="Timeout" value="600000" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Karylle/AppData/LocalLow/DefaultCompany/Sa-Kabilang-Pinto\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

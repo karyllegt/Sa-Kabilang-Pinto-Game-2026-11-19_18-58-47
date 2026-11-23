@@ -20,7 +20,7 @@ MonoBehaviour:
   color: {r: 1, g: 0.6039216, b: 0.3529412, a: 1}
   type: 2
   shortLabel: DSH
-  keyHint: 
-  icon: {fileID: 21300000, guid: 67239dd63db92bf4a8f979097ba49fb0, type: 3}
+  keyHint:
+  icon: {fileID: 21300000, guid: e3af5a29655892145993f5637693ea08, type: 2}
   level: 3
-  cue: 
+  cue:

@@ -2,6 +2,8 @@
 
 2D pixel-art Filipino-folklore platformer for Android, made in Unity 6 (6000.6.6f1) by **Pangkat Parol** for the CSEL course. Real deadline: **Dec 1, 2026**. Repo: https://github.com/karyllegt/Sa-Kabilang-Pinto-Game-2026-11-19_18-58-47
 
+**Project status: working prototype baseline for Mary and Ronn.** This handoff gives the team an integrated starting point to play, review and improve. Mary continues ownership of art, animation, UI/UX and audio; Ronn continues ownership of level design, narrative and QA. They can replace and enhance the baseline within their roles while preserving working gameplay and documenting changes. Build/test results describe this snapshot; final creative polish and acceptance remain team work.
+
 ## Team
 
 | Member | Role | Owns |
@@ -13,6 +15,8 @@
 Nash Abrenica is no longer in the group; his roles are split as above.
 
 ## Mary and Ronn: start here
+
+The current prototype baseline replaces the active character/world art, portraits, effects and skill icons; rebuilds the shared screens; and uses licensed recorded foley, ambience and human-composed music. Gameplay, progression and save identity are retained. Start with [Prototype baseline handoff](docs/PRESENTATION_HANDOFF.md), [verification evidence](docs/PRESENTATION_VERIFICATION.md) and the persistent [upgrade audit](UPGRADE_AUDIT.md). The active asset locations and verification records supersede older implementation details; Mary and Ronn retain their full creative and improvement responsibilities. Local playable packages are under `Builds/Presentation`; build archives are ignored by Git and must be shared separately from a source clone.
 
 1. **`docs/HANDOFF_MARY_RONN.md`**: setup (Git LFS, Unity version), your task lists in order, how to test without opening Unity, the Git branch and Pull Request workflow.
 2. **`docs/PROGRESS_AUDIT.md`**: what is done, partial and not started, with evidence and the owner of each remaining item.
@@ -30,18 +34,18 @@ Nash Abrenica is no longer in the group; his roles are split as above.
 | Menus, Lola's lines, toasts, the Ending (Ronn) | `Assets/Resources/UI/Strings_en.asset` (defaults in `Assets/Scripts/UI/StringDefaults.cs`) |
 | Player feel and skill numbers | `Assets/Data/PlayerTuning.asset`, skill assets made by **Sa Kabilang Pinto > Setup** |
 | Art rules and palette (Mary) | `docs/06_ART_BIBLE.md`, `Assets/Art/Source/palette.txt`, `docs/ART_MANIFEST.md` (every art file and its source) |
-| New game art (Mary) | `Assets/Art/Game/` (in the game), `Assets/Art/Source/` (text-grid sources); the prototype art in the other `Assets/Art/` folders is the fallback |
+| Active game art (Mary) | `Assets/Art/Recovered/`; native Sprite regions and provenance in `docs/PRESENTATION_ART_MANIFEST.md`. Earlier `Assets/Art/Game/` and text-grid sources remain preserved fallbacks. |
 | Art tools (Mary) | `tools/tala_hand/` (the 48x54 Tala: hero grids `tala_hero3.js`, every animation `tala_anim.js`), `tools/tala_frames/` (old 16x18 Tala, fallback), `tools/creature_frames/` (R4 key frames), **Sa Kabilang Pinto > Art** menu |
-| Tala's animations | frames `Assets/Art/Game/Characters48/` (48x54, 48 PPU), sets `Assets/Data/Player/TalaAnims_girl.asset`, `TalaAnims_boy.asset` (rebuild: **Setup > Tala 48 and 3x Camera (A-7)**), preview `tests/Screenshots/r3/tala48_all_animations.png` |
+| Active Tala animations | `Assets/Data/Player/TalaRecovered_girl.asset`, `TalaRecovered_boy.asset`; actual state/alignment previews in `tests/Screenshots/presentation/`. Both avatars retain 13 state mappings. |
 | Level, boss and map objects | `Assets/Prefabs/Level`, `Boss`, `Map` (listed in `Assets/Resources/Level/LevelPrefabCatalog.asset`), player in `Assets/Prefabs/Player`, UI in `Assets/Prefabs/UI` |
-| Music and sounds (Mary) | `Assets/Audio/`, the mixer and `AudioTuning`/`FeelTuning` assets (rebuild: **Setup > Run M8 Audio Setup**) |
+| Music and sounds (Mary) | `Assets/Audio/Licensed/`, the mixer and tuning assets; `AUDIO_SOURCES.md` records every source and loop processing. `SkpPresentationUpgrade.RunBatch` reapplies the active integration. |
 | Tests | `Assets/Tests/EditMode`, `Assets/Tests/PlayMode`, the progress video in `Assets/Tests/Video` |
 | Manual QA checklist (Ronn) | `tests/MANUAL_QA.md` |
 | Screenshots per milestone | `tests/Screenshots/<milestone>/` (layout audit: `m6`, levels: `m7`, art: `r2`, `r3`, `r4`) |
 | Milestone and task prompts | `prompts/` (M1 to M11), `prompts/12_real_assets/` (R1 to R9), `prompts/FULL_GAME_PROMPT.md` (the whole game in one prompt) |
 | Original design and story | `docs/00_PROJECT_CONTEXT.md`, `docs/03_ORIGINAL_PROPOSAL.md`, the browser prototype `reference/prototype/index.html` |
 
-**Current art direction (2026-11-23):** new art is drawn at **3x detail (48 pixels per unit)** so it matches the quality bar of the detailed prototype sprites; the camera is now **1440x810 at 48 PPU** (same world view as before, gameplay sizes unchanged). **Tala is done at 3x** (hand-pixelled, all 13 animations, girl and boy, in the game); everything else still uses the prototype art and must be brought to her level in the **2 to 3 day sprint to the Play Store** (`docs/HANDOFF_MARY_RONN.md` section 0). No paid or generated art: every sprite is made by our own tools or by hand. See `DECISIONS.md` A-1 to A-7.
+**Current presentation direction (2026-11-24):** detailed recovered character/environment artwork, documented AI-assisted supporting atlases, consistent brass-framed UI and real recorded/human-composed audio are integrated. Presentation scales and pivots preserve gameplay geometry. The older Tala48 and no-generated-art directions are historical; current scope, provenance, acceptance evidence and remaining hardware/listening checks are in `UPGRADE_AUDIT.md` and `docs/PRESENTATION_HANDOFF.md`.
 
 ## For Claude Code (the engineer)
 

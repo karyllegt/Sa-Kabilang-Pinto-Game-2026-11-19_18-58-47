@@ -118,3 +118,7 @@ tests/Video/
 
 # Local test run output (EditMode/PlayMode XML, batch logs); the counts go into docs/PROGRESS_AUDIT.md
 tests/Results/
+
+# Download cache and local media conversion executable; keep scripts and shipped source credits.
+reference/licensed-audio/
+tools/media-codec/package/

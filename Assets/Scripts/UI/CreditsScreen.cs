@@ -21,7 +21,7 @@ namespace Skp.UI
             v.padding = UiKit.Pad(22, 18);
             v.childControlWidth = v.childControlHeight = true;
             UiKit.Size(card, 760);
-            UiKit.Text(card.transform, "Body", Loc.Get("credits.body"), th.bodySize, th.text, TextAlignmentOptions.TopLeft);
+            UiKit.Text(card.transform, "Body", Loc.Get("credits.body"), th.smallSize, th.text, TextAlignmentOptions.TopLeft);
             s.firstSelected = s.back;
             root.gameObject.SetActive(false);
             return s;

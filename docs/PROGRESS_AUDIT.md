@@ -1,5 +1,7 @@
 # Progress audit: Sa Kabilang Pinto
 
+**Working prototype baseline:** This milestone snapshot is historical. Current active assets, regression/build evidence and open hardware/listening checks are recorded in `PRESENTATION_HANDOFF.md`, `PRESENTATION_VERIFICATION.md` and the root `UPGRADE_AUDIT.md`. Mary continues art/animation/UI/UX/audio upgrades; Ronn continues level design/narrative/QA upgrades. The baseline supplies working examples and technical checks while their creative responsibilities remain active. Earlier asset paths and implementation details are superseded where the current handoff says so.
+
 Snapshot of 2026-11-22, made at the handoff from Karylle to Mary and Ronn; updated 2026-11-23 for Tala 48 and the Play Store sprint (`docs/HANDOFF_MARY_RONN.md` section 0) (`docs/HANDOFF_MARY_RONN.md`). Evidence is in the repo (tests, screenshots, git log). Deadline: Dec 1, 2026.
 
 Legend: **Done** = built, tested and committed. **Partial** = some of it works, the rest is listed. **Not started** = nothing built yet.

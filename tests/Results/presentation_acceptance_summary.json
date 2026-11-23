@@ -1,0 +1,33 @@
+{
+  "description": "Full suites plus targeted repairs; the full expensive EditMode suite was not repeated after UI/audio-only repairs.",
+  "fullEditMode": {
+    "initiallyPassed": 175,
+    "total": 177,
+    "repairedFailures": [
+      "Skp.Tests.M8AudioFeelTests.MusicLoops_AreSeamless_NoClickAtTheSeam_AndTheSameLoudnessEitherSide",
+      "Skp.Tests.UiLayoutAuditTests.EveryScreen_AtEveryResolution_PassesTheLayoutAudit"
+    ]
+  },
+  "fullPlayMode": {
+    "failed": 0,
+    "passed": 48,
+    "skipped": 1
+  },
+  "repairedEditMode": {
+    "failed": 0,
+    "passed": 21
+  },
+  "baselineComparison": {
+    "failed": 0,
+    "passed": 2
+  },
+  "finalUiCapture": {
+    "failed": 0,
+    "passed": 1
+  },
+  "unverified": [
+    "Physical Android device: performance, touch, safe areas, app-kill persistence",
+    "Headphone and phone-speaker listening acceptance",
+    "Physical gamepad acceptance"
+  ]
+}

@@ -21,7 +21,7 @@ namespace Skp.Tests
         // ------------------------------------------------------------ imports
 
         [Test]
-        public void EveryArtTexture_IsPointFilteredUncompressedSprite_16PpuOr48PpuFor3x()
+        public void EveryArtTexture_IsPointFilteredUncompressedSprite_WithCalibratedScale()
         {
             var guids = AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets/Art" });
             Assert.GreaterOrEqual(guids.Length, 56, "all provided sprites imported");
@@ -33,7 +33,9 @@ namespace Skp.Tests
                 Assert.AreEqual(TextureImporterType.Sprite, ti.textureType, path);
                 Assert.AreEqual(FilterMode.Point, ti.filterMode, path);
                 // A-7: 3x art in Characters48 is 48 PPU (same world size); everything else stays 16 PPU
-                Assert.AreEqual(SkpAssetImportSettings.IsHiDetail(path) ? 48f : 16f, ti.spritePixelsPerUnit, path);
+                if (path.StartsWith("Assets/Art/Recovered/"))
+                    Assert.Greater(ti.spritePixelsPerUnit, 0, path + " calibrated source; active player world size is checked separately");
+                else Assert.AreEqual(SkpAssetImportSettings.IsHiDetail(path) ? 48f : 16f, ti.spritePixelsPerUnit, path);
                 Assert.AreEqual(TextureImporterCompression.Uncompressed, ti.textureCompression, path);
                 Assert.IsFalse(ti.mipmapEnabled, path);
             }

@@ -55,6 +55,11 @@ public static class SkpProjectSetup
         SkpPrefabSetup.CreateAll();      // R1: level, boss and map prefabs and their catalog (the scenes reference it)
         SkpTalaAnimSetup.Run();          // R3: Tala's animation sets on the Player prefab
         BuildScenes(font, touch);
+        if (File.Exists("Assets/Art/Recovered/Girl/00.png"))
+        {
+            SkpRecoveredArtSetup.Run();
+            SkpPresentationUpgrade.Run();
+        }
         AssetDatabase.SaveAssets();
         foreach (var o in AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset"))
             AssetDatabase.SaveAssetIfDirty(o);

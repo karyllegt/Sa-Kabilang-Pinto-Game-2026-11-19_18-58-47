@@ -47,7 +47,7 @@ namespace Skp.Tests
             Assert.AreEqual(2, c.exit.StateCount, "exit: locked, open");
             Assert.AreEqual(3, c.root.StateCount, "root: dormant, warning, strike");
             Assert.AreEqual(2, c.thorns.StateCount, "thorns: whole, burnt");
-            Assert.AreEqual(3, c.bossBody.StateCount, "Bellkeeper: normal, stunned, tolling");
+            Assert.AreEqual(4, c.bossBody.StateCount, "Bellkeeper: normal, stunned, tolling, defeated");
             Assert.AreEqual(2, c.mapNodeIcon.StateCount, "map node: star, bell");
             foreach (var cr in new[] { c.anino, c.tikbalang, c.manananggal }) Assert.GreaterOrEqual(cr.StateCount, 2, cr.name + " frames");
             Assert.AreEqual(2, c.lantern.extra.Length + 1, "lantern: post and flame");
@@ -83,7 +83,7 @@ namespace Skp.Tests
             var c = Catalog;
             Assert.AreEqual(SpriteDrawMode.Tiled, c.ledgeByAct[0].main.drawMode, "ledges tile their middle");
             Assert.AreEqual(SpriteDrawMode.Tiled, c.spike.main.drawMode);
-            Assert.AreEqual(SpriteDrawMode.Tiled, c.curtain.main.drawMode);
+            Assert.AreEqual(SpriteDrawMode.Sliced, c.curtain.main.drawMode, "one continuous drape across its existing hazard rectangle");
             Assert.AreEqual(-1, c.groundBlock.main.sortingOrder);
             Assert.AreEqual(0, c.ledgeSpirit.main.sortingOrder);
             Assert.AreEqual(3, c.thorns.main.sortingOrder);

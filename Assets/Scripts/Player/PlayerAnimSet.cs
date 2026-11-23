@@ -46,6 +46,7 @@ namespace Skp.Player
             return c.frames[i];
         }
 
-        void OnValidate() => _byAnim = null;
+        public void InvalidateCache() => _byAnim = null;
+        void OnValidate() => InvalidateCache();
     }
 }

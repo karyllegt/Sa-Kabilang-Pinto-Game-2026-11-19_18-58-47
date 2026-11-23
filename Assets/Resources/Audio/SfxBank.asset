@@ -14,98 +14,107 @@ MonoBehaviour:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Audio.SfxBank
   entries:
   - cue: bell
-    clip: {fileID: 8300000, guid: 5f3b97c2514aa3342bfa086d039c693f, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: c6c1a3609da88c847b333d75355cbb58, type: 3}
+    volume: 0.65
   - cue: bolt_hit
-    clip: {fileID: 8300000, guid: 6ba9ec7942832bd4781cc086af45a10b, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 01552a33d4b009645be465aed825b09b, type: 3}
+    volume: 0.65
   - cue: burn
-    clip: {fileID: 8300000, guid: 83c8dc762b07f3449b6b477961c22061, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: f9220e81819f46944a965ae19c05193b, type: 3}
+    volume: 0.65
   - cue: clue
-    clip: {fileID: 8300000, guid: c20737853bcb38241a3148e86f4932fa, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: a0f1c92f31940614d8c5bf74d03fd3ec, type: 3}
+    volume: 0.65
   - cue: crumble
-    clip: {fileID: 8300000, guid: 2e98df22897ca354fadb4c588a47990c, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 18c4ec7e63100d547bc9b041164d3f53, type: 3}
+    volume: 0.65
   - cue: dash
-    clip: {fileID: 8300000, guid: b92039f63b536164a9409789d860904a, type: 3}
-    volume: 0.7966934
+    clip: {fileID: 8300000, guid: a4275a51459fd074585430cce784da4b, type: 3}
+    volume: 0.65
   - cue: die
-    clip: {fileID: 8300000, guid: 710b2340c5cf11f4c8edd81cb36a2682, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 594793b967f8ec54d81a53787cf08e9b, type: 3}
+    volume: 0.65
   - cue: door
-    clip: {fileID: 8300000, guid: 3e17842ce0b696644b8dd9fcc98912cd, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 7bb9ed15d60a33446b464d1c4eb56c55, type: 3}
+    volume: 0.65
   - cue: flame
-    clip: {fileID: 8300000, guid: f53cb2be68a22224e9ab311a924cc4b0, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: d97a6acd66c735f45b886a07aff6e44b, type: 3}
+    volume: 0.65
   - cue: hurt
-    clip: {fileID: 8300000, guid: f9e54dc1b5d16a740afea441d4d661f4, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 594793b967f8ec54d81a53787cf08e9b, type: 3}
+    volume: 0.65
   - cue: jump
-    clip: {fileID: 8300000, guid: f1713602b7a20114698c7c3de225f01f, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 13d3af272d887c143af70122592f2e34, type: 3}
+    volume: 0.65
   - cue: kill
-    clip: {fileID: 8300000, guid: c0b3c7c3472fcf8438e01ecd14f363b6, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 66f48ad2925c4644da0c86d80efea35d, type: 3}
+    volume: 0.65
   - cue: land
-    clip: {fileID: 8300000, guid: 55bde2ccb59b8654d9124b5031cb0bde, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 36b64ce67416a344db0bab66f066043e, type: 3}
+    volume: 0.65
   - cue: lantern
-    clip: {fileID: 8300000, guid: 07d288b359769f44e8c2823fe4f11c87, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 01552a33d4b009645be465aed825b09b, type: 3}
+    volume: 0.65
   - cue: letter
-    clip: {fileID: 8300000, guid: b5208864321bd3c448bbf8b7989b731e, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: eb114f875d518234cae480602ec4f85e, type: 3}
+    volume: 0.65
   - cue: locked
-    clip: {fileID: 8300000, guid: 360224780028fdd43a7ba2d68dbe3f00, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 83a5b6fcb32628949b1089f51550431e, type: 3}
+    volume: 0.65
   - cue: parry
-    clip: {fileID: 8300000, guid: ce382c96ed6c75c4ab2764ebe15a51e0, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: f7564f36e38c6ee4b99375494a4b5a1f, type: 3}
+    volume: 0.65
   - cue: select
-    clip: {fileID: 8300000, guid: f8fc00049e9765440b8515b9ae99c21d, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 01552a33d4b009645be465aed825b09b, type: 3}
+    volume: 0.35
   - cue: shard
-    clip: {fileID: 8300000, guid: e26b35bf8669cbc4299abd1467c564ec, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: da7aaa8caac8cee45bb0e428bca82051, type: 3}
+    volume: 0.65
   - cue: skill_bolt
-    clip: {fileID: 8300000, guid: 6f2b7759e3ad1924796a7e1aa9cd73b4, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 226d8ac6e5e401a4aac8694beb580151, type: 3}
+    volume: 0.65
   - cue: skill_bolt3
-    clip: {fileID: 8300000, guid: 5a83f5d93f9d2f648be081a9d47f1985, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: d90284b42082baa46a9cc441bf41b9f2, type: 3}
+    volume: 0.65
   - cue: skill_dj
-    clip: {fileID: 8300000, guid: d8dbc8051e97ba34f94aec4094e2b611, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 219f0e32c5f18db4d96d046edae2d8bc, type: 3}
+    volume: 0.65
   - cue: skill_glide
-    clip: {fileID: 8300000, guid: 17d4ea45965a05e4ea6f4f3bae4be8a2, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 5bc94cff06454f044b13976b4fec92f8, type: 3}
+    volume: 0.65
   - cue: skill_known
-    clip: {fileID: 8300000, guid: ad514a55b7e5a7945b14d1d694de4857, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 73bb9a97e48e98c488f9e2c17cdfaa33, type: 3}
+    volume: 0.65
   - cue: skill_learned
-    clip: {fileID: 8300000, guid: b0a85b49b4f257347a8767977a0aabc6, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: da7aaa8caac8cee45bb0e428bca82051, type: 3}
+    volume: 0.65
   - cue: skill_veil
-    clip: {fileID: 8300000, guid: 43a5c3e289429cf4aa8a3d2f418c4289, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 37a76d2a7f69a9f4fa4549d12a4c2946, type: 3}
+    volume: 0.65
   - cue: skill_veil_end
-    clip: {fileID: 8300000, guid: 8fd0ec75c44e2c84795b2cf211936ce7, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 5f04dedde0e8d564889b5a6e7111432e, type: 3}
+    volume: 0.65
   - cue: splash
-    clip: {fileID: 8300000, guid: dfb4dd2e207084646b28598fd34bce2b, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 11a59b8c5f1796e46a4b0e16acb1afd7, type: 3}
+    volume: 0.65
   - cue: stun
-    clip: {fileID: 8300000, guid: 757f42d3deae56b4190a5f3406fdf207, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 33b8b52f5f7c145489ce9ea38bb3e321, type: 3}
+    volume: 0.65
   - cue: toll
-    clip: {fileID: 8300000, guid: c33e96bc6594c5147915bd0be8e5f243, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: c6c1a3609da88c847b333d75355cbb58, type: 3}
+    volume: 0.65
   - cue: ward
-    clip: {fileID: 8300000, guid: 5381229ac0416244e9ca5864ab0b71b3, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: 06f2122f8432152498c311f4bfdc6f03, type: 3}
+    volume: 0.65
   - cue: win
-    clip: {fileID: 8300000, guid: 47260e7135b324c4292979eb71205d5d, type: 3}
-    volume: 0.8
+    clip: {fileID: 8300000, guid: da7aaa8caac8cee45bb0e428bca82051, type: 3}
+    volume: 0.65
+  - cue: dimension
+    clip: {fileID: 8300000, guid: 31b2dc27f4b9db64d9d4ae4eebde54a5, type: 3}
+    volume: 0.65
+  - cue: step_left
+    clip: {fileID: 8300000, guid: d9d539211e6f254419c8588cf280fcd4, type: 3}
+    volume: 0.26
+  - cue: step_right
+    clip: {fileID: 8300000, guid: 26f38020536135443b6b8b9d99bffbcf, type: 3}
+    volume: 0.26

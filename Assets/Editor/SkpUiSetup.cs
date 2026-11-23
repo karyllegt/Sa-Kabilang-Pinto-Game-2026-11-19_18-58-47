@@ -243,6 +243,20 @@ public static class SkpUiSetup
         return screen;
     }
 
+    public static void RebuildSharedScreens()
+    {
+        var root = new GameObject("Presentation UI rebuild", typeof(RectTransform));
+        try
+        {
+            var parent = root.transform;
+            Prefab(MapScreen.Build(parent)); Prefab(DialogBox.Build(parent)); Prefab(SkillsScreen.Build(parent));
+            Prefab(HudView.Build(parent)); Prefab(Toast.Build(parent)); Prefab(PauseScreen.Build(parent));
+            Prefab(SettingsScreen.Build(parent)); Prefab(LevelClearScreen.Build(parent));
+            Prefab(GameOverScreen.Build(parent)); Prefab(EndingScreen.Build(parent));
+        }
+        finally { Object.DestroyImmediate(root); }
+    }
+
     static SpriteRenderer Backdrop(string spritePath, Vector3 pos)
     {
         var bg = new GameObject("Background").AddComponent<SpriteRenderer>();
@@ -259,7 +273,15 @@ public static class SkpUiSetup
         var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
         var cam = SkpProjectSetup.CreatePixelCamera();
         // dimmed so text placed straight on the backdrop (headings, descriptions, footer) keeps its contrast
-        Backdrop("Assets/Art/Backgrounds/spr_menubg.png", Vector3.zero).color = new Color(0.42f, 0.42f, 0.42f, 1);
+        var menuBackground = Backdrop("Assets/Art/Backgrounds/spr_menubg.png", Vector3.zero);
+        var theme = UiTheme.Load();
+        if (theme.menuBackdrop != null)
+        {
+            menuBackground.sprite = theme.menuBackdrop;
+            menuBackground.drawMode = SpriteDrawMode.Tiled;
+            menuBackground.size = new Vector2(60, 34);
+        }
+        menuBackground.color = new Color(0.24f, 0.24f, 0.3f, 1);
         var (canvas, safe) = UiCanvas("MenuCanvas", 0);
         var flow = canvas.AddComponent<TitleFlow>();
         flow.title = Prefab(TitleScreen.Build(safe));
