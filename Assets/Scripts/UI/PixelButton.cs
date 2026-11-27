@@ -12,7 +12,7 @@ namespace Skp.UI
     /// <see cref="UiGate.Blocked"/> (wipes), so double taps and key spam never fire twice.
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class PixelButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler
+    public class PixelButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler
     {
         public Button button;
         public Image frame;
@@ -29,6 +29,17 @@ namespace Skp.UI
 
         bool _interactable = true;
         bool _wired;
+        bool _pressed;
+        UiTheme _lanternTheme;
+        Color _restingFace;
+        internal Image selectionMark;
+
+        public void UseLanternFace(UiTheme theme)
+        {
+            _lanternTheme = theme;
+            _restingFace = frame != null ? frame.color : Color.white;
+            Refresh();
+        }
 
         public bool Interactable
         {
@@ -69,13 +80,49 @@ namespace Skp.UI
             Highlighted = on;
             if (highlight != null) highlight.enabled = on;
             if (arrow != null) arrow.enabled = on;
+            if (_lanternTheme != null) Refresh();
         }
 
         void Refresh()
         {
             var th = UiTheme.Load();
             if (label != null) label.color = _interactable ? th.text : th.textDisabled;
+            if (_lanternTheme != null)
+            {
+                th = _lanternTheme;
+                if (label != null) label.color = _interactable ? th.text : th.textDisabled;
+                if (frame != null) frame.color = _restingFace * (!_interactable ? th.disabledFace :
+                    _pressed ? th.pressedFace : Color.white);
+                if (highlight != null)
+                {
+                    highlight.enabled = _interactable && (Highlighted || _pressed);
+                    highlight.color = _pressed ? new Color32(0x65, 0x42, 0x32, 0xff) : th.highlight;
+                }
+                if (arrow != null) arrow.enabled = Highlighted && _interactable;
+                if (selectionMark != null) selectionMark.enabled = Highlighted && _interactable;
+            }
             // disabled buttons stay selectable for navigation (Continue is greyed, not hidden)
+        }
+
+        public void OnPointerDown(PointerEventData e)
+        {
+            if (_lanternTheme == null || e.button != PointerEventData.InputButton.Left) return;
+            _pressed = true;
+            Refresh();
+        }
+
+        public void OnPointerUp(PointerEventData e)
+        {
+            if (!_pressed || e.button != PointerEventData.InputButton.Left) return;
+            _pressed = false;
+            Refresh();
+        }
+
+        void OnDisable()
+        {
+            if (!_pressed) return;
+            _pressed = false;
+            Refresh();
         }
 
         public void OnSelect(BaseEventData e) => SetHighlighted(true);

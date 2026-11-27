@@ -4,6 +4,12 @@ using Skp.Skills;
 
 namespace Skp.UI
 {
+    public enum LanternMark
+    {
+        Left, Right, Jump, Dash, Ward, Bolt, Veil, Door,
+        Parol, Capiz, Weave, Locked, Cleared, Flame, Trim, HalfHeart
+    }
+
     /// <summary>
     /// The one visual language of every screen: the pixel font, the shared PixelBox 9-slice, hearts,
     /// portraits and the palette (docs/04_ASSET_GUIDE.md). Created by the setup at
@@ -20,6 +26,32 @@ namespace Skp.UI
         [Tooltip("ui_pixelbox_9slice_border6: the only panel and button frame.")]
         public Sprite pixelBox;
         public Sprite heartFull, heartEmpty;
+        public Texture2D lanternMarks;
+        public TMP_FontAsset displayFont;
+        public Color pressedFace = new Color32(0xff, 0xd7, 0xa5, 0xff);
+        public Color disabledFace = new Color32(0xbe, 0xb0, 0xc9, 0xff);
+
+        Sprite[] _marks;
+
+        public Sprite Mark(LanternMark mark)
+        {
+            if (lanternMarks == null) return null;
+            _marks ??= new Sprite[16];
+            int index = (int)mark;
+            if (_marks[index] == null)
+            {
+                const int cell = 64;
+                const int padding = 2;
+                int x = index % 4 * cell + padding;
+                int y = (3 - index / 4) * cell + padding;
+                _marks[index] = Sprite.Create(lanternMarks,
+                    new Rect(x, y, cell - 2 * padding, cell - 2 * padding),
+                    new Vector2(0.5f, 0.5f), cell, 0, SpriteMeshType.FullRect);
+                _marks[index].name = mark.ToString();
+                _marks[index].hideFlags = HideFlags.HideAndDontSave;
+            }
+            return _marks[index];
+        }
         public Sprite white;
         public Sprite portraitLola, portraitBoy, portraitGirl, portraitClue, portraitAnino, portraitBoss;
         public Sprite titleArt, cardBoy, cardGirl, menuBackdrop;
