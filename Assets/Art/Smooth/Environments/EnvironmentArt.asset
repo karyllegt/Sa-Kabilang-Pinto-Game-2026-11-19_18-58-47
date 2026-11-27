@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1f2002087fff4d94ee2da1c23803b, type: 3}
+  m_Name: EnvironmentArt
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelArt
+  wood: {fileID: 21300000, guid: 3f357ca918615af468aa2edebd43ddb7, type: 2}
+  spirit: {fileID: 21300000, guid: 86d441c0794dc9e41af58cad855f23ad, type: 2}
+  inverted: {fileID: 21300000, guid: 72c7518350dee1b41bd05df60dae1f8c, type: 2}
+  crumble: {fileID: 21300000, guid: e14f888ae679cfc489082446f7347d44, type: 2}
+  moving: {fileID: 21300000, guid: 690c06617f1c9bf468ac84b0672c75ce, type: 2}
+  floorBlock: {fileID: 21300000, guid: 58512c95e346a9d4083922fac4fa6716, type: 2}
+  doorSpirit: {fileID: 21300000, guid: 6269815208d7e9c449da05e949049ecf, type: 3}
+  doorInvert: {fileID: 21300000, guid: a5855f6bdbcdf9148bbe7906bc1d6349, type: 3}
+  doorHome: {fileID: 21300000, guid: c531b3c0dae997c41a17a8da4ed4c870, type: 3}
+  exitLocked: {fileID: 21300000, guid: c531b3c0dae997c41a17a8da4ed4c870, type: 3}
+  exitOpen: {fileID: 21300000, guid: c531b3c0dae997c41a17a8da4ed4c870, type: 3}
+  spike: {fileID: 21300000, guid: 0c7859621c229214ea98f6ba2450e112, type: 2}
+  spikeGauntlet: {fileID: 21300000, guid: 4a47742b9defe054ba1b61ccf148e00d, type: 2}
+  thorns: {fileID: 21300000, guid: bcee4d341df23b448bc9ed131ff701fd, type: 2}
+  thornsBurnt: {fileID: 21300000, guid: 8427e09a07bc3634fb4f90153160f3a8, type: 2}
+  rootDormant: {fileID: 21300000, guid: 8f4405e07c554dc4784f56636a8b77d0, type: 2}
+  rootWarning: {fileID: 21300000, guid: a8c5291ec5b70e74385718208241ea43, type: 2}
+  rootStrike: {fileID: 21300000, guid: f015e29c6118a194eb47bee935e0202a, type: 2}
+  flame: {fileID: 21300000, guid: d8c5d7ea352bb6746a92f762c5ce8981, type: 2}
+  shard: {fileID: 21300000, guid: b15f9a020527c8448bb11c16f828032c, type: 3}
+  clue: {fileID: 21300000, guid: 51c33f58458293a44973b052676ffab4, type: 2}
+  anino:
+  - {fileID: 21300000, guid: a5c9e53e0d0111b4988615f2abeac446, type: 3}
+  - {fileID: 21300000, guid: 6fefb69ba55156c4d843fef1208e135f, type: 3}
+  - {fileID: 21300000, guid: 2129823fb39b12c4cba2cea782a048c2, type: 3}
+  - {fileID: 21300000, guid: 8b69fe87de7761b489157dcbaf1d6602, type: 3}
+  tikbalang:
+  - {fileID: 21300000, guid: 06513a0ddc8e91644a25be12524009a8, type: 3}
+  - {fileID: 21300000, guid: 5788c6a9ac3ec294cb415a3b90535481, type: 3}
+  - {fileID: 21300000, guid: 4590e48c30cfb7242b0dd081f1e6a030, type: 3}
+  - {fileID: 21300000, guid: bc2bb877dba14d64380607b3f046a6b6, type: 3}
+  manananggal:
+  - {fileID: 21300000, guid: 6b1625ddcba272b4c94d7b91e3d554bd, type: 3}
+  - {fileID: 21300000, guid: 9131fd867c1ee3e4d91ff12a3b6cb5bf, type: 3}
+  - {fileID: 21300000, guid: 02de51db08573a64ea4cbd137d14fabd, type: 3}
+  - {fileID: 21300000, guid: 15950ba142cf55846bf3483ff9ad3deb, type: 3}
+  rootLedge: {fileID: 21300000, guid: f026a295e820fd14eb212398d30f926c, type: 2}
+  stoneLedge: {fileID: 21300000, guid: b5fa2fb2d9ddff7409557b93cd3bef6e, type: 2}
+  waterSurface: {fileID: 21300000, guid: 68e8b3c0a94e3c74099654b3845769f0, type: 2}
+  bell: {fileID: 21300000, guid: 390113a3f29523744ac57a19cbafce9d, type: 2}
+  curtain: {fileID: 21300000, guid: f00f7b34921af2045b2cf4c6f11877ab, type: 2}
+  propRoots: {fileID: 21300000, guid: 59c2ca82f02c2eb42b23e644c91c2558, type: 2}
+  propCandle: {fileID: 21300000, guid: f4c960598718e5e4098222a5441b7f66, type: 2}
+  boss: {fileID: 21300000, guid: 4ace65d5d79beca4da504a5a5a4842fd, type: 2}
+  bossStun: {fileID: 21300000, guid: 4db50610d0cb3594d8a158aaaa4d0a5c, type: 2}
+  bossToll: {fileID: 21300000, guid: 1766a1ab65a6a924ea9143cb40895834, type: 2}
+  shockwave: {fileID: 21300000, guid: 264c64ea5627dea4abeea9fcf948c5f6, type: 2}
+  backdrops:
+  - {fileID: 21300000, guid: e2b80d75247b4ecc98c95c74b5f9c65d, type: 3}
+  - {fileID: 21300000, guid: eb2a907a950e4f6e86897ecc871336ba, type: 3}
+  - {fileID: 21300000, guid: 7d8abdd9bd764d2f9c2cdab394e4c71d, type: 3}

@@ -18,6 +18,7 @@ namespace Skp.Core
         public InputReader Input { get; private set; }
         public SceneLoader Loader { get; private set; }
         public SettingsStore Settings { get; private set; }
+        public CampaignPresentation Presentation { get; private set; }
         /// <summary>The circle wipe used by the loader and by in-scene transitions.</summary>
         public Skp.UI.CircleWipe Wipe { get; private set; }
 
@@ -45,6 +46,7 @@ namespace Skp.Core
 
             Loader = gameObject.AddComponent<SceneLoader>();
             Wipe = Skp.UI.CircleWipe.Create(transform);
+            Presentation = new CampaignPresentation(this);
             Loader.Wipe = Wipe;
             Skp.UI.UiGate.BlockedWhen = () => Loader.IsBusy || Wipe.Busy;
             Loader.SceneLoaded += _ => Time.timeScale = 1f;
@@ -86,6 +88,7 @@ namespace Skp.Core
         {
             if (Instance == this)
             {
+                Presentation?.Dispose();
                 Input?.Disable();
                 Instance = null;
             }

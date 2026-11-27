@@ -66,7 +66,7 @@ namespace Skp.UI
                 back.Clicked += () => { if (BackRequested != null) BackRequested(); else Close(); };
             }
             var th = UiKit.Theme;
-            var lib = SkillLibrary.Load();
+            var lib = UiKit.SkillArt;
             for (int i = 0; i < SkillIds.All.Length; i++)
             {
                 string id = SkillIds.All[i];

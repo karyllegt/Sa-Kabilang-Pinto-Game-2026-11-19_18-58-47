@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2c25609f2e487aa1bb09d1ccf462d2, type: 3}
+  m_Name: SmoothUiArt
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Preview.SmoothUiArt
+  theme: {fileID: 11400000, guid: 288d4ec40cee015bca67cdc7146d6e03, type: 2}
+  mapBackdrop: {fileID: 21300000, guid: 20601a8338ca0c84b9fbd80bf20bfaab, type: 3}
+  hudFade: {fileID: 21300000, guid: 33b23f6cf40884ea984dc0db1804d146, type: 3}
+  mapCatalog: {fileID: 11400000, guid: 019ec3e1cc478158738b724033c6341b, type: 2}
+  girl: {fileID: 11400000, guid: ef874a3d1e164b758bd9688a0ebe9221, type: 2}
+  boy: {fileID: 11400000, guid: d7945335b7b84b26bd90ba6a3861571f, type: 2}
+  lolaFrames:
+  - {fileID: 21300000, guid: 83b670ae415046e6ae7589f9414e6655, type: 3}
+  - {fileID: 21300000, guid: 73ae0a9a435346b59cf34bc0bb035f41, type: 3}
+  - {fileID: 21300000, guid: 834288efd9f448a9a28443bff092dcb4, type: 3}
+  - {fileID: 21300000, guid: c155791b5dc146ed883f1ab2d2711dc0, type: 3}
+  environment: {fileID: 11400000, guid: a8e216531f464f90bbb62aafe0429022, type: 2}
+  levels:
+  - {fileID: 11400000, guid: 1df80d3d162044c816e9e9e52dc6dcef, type: 2}
+  - {fileID: 11400000, guid: e14245bc2514348ef575670cafb6322b, type: 2}
+  - {fileID: 11400000, guid: 0e303c51e098f50b337049dbfae0e9aa, type: 2}
+  ward: {fileID: 21300000, guid: cf470ae81c96cf0ae3f6d8226bffaa30, type: 3}
+  veil: {fileID: 21300000, guid: 60df90ef40bbc40abef06ac9e6e15cfa, type: 3}
+  spiritScenery: {fileID: 21300000, guid: cd3b69b9f9e149df98a425ed92d9369b, type: 3}
+  invertedScenery: {fileID: 21300000, guid: 03d547238b784965909a54c359655185, type: 3}

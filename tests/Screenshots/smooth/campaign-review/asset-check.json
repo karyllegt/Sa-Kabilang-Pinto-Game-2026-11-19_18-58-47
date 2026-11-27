@@ -1,0 +1,16 @@
+{
+  "animationStates": 26,
+  "pairedFrames": 76,
+  "uniqueFrames": 39,
+  "levelArtCount": 37,
+  "filters": 86,
+  "neutralMaterials": [
+    "Assets/Art/UI/ui_white.png"
+  ],
+  "hidden": [
+    "c216e94663daaa14589945e0b5a7cb6e"
+  ],
+  "textures": 86,
+  "allSmoothPngs": 134,
+  "allRgbaMiB": 204
+}

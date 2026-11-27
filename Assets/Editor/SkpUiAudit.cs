@@ -23,6 +23,123 @@ using UnityEngine.UI;
 public static class SkpUiAudit
 {
     public const string OutDir = "tests/Screenshots/presentation/ui"; // Earlier M5/M6 evidence stays intact.
+    const string SmoothOutDir = "tests/Screenshots/smooth/ui";
+    const string CampaignOutDir = "tests/Screenshots/smooth/campaign";
+
+    [MenuItem("Sa Kabilang Pinto/Smooth Art/UI/Open UI Journey")]
+    static void OpenSmoothUi()
+    {
+        if (!EditorApplication.isPlayingOrWillChangePlaymode && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            EditorSceneManager.OpenScene(Skp.Preview.SmoothUiPreview.ScenePath);
+    }
+
+    [MenuItem("Sa Kabilang Pinto/Smooth Art/UI/Capture Phone Screens")]
+    static void CaptureSmoothUi()
+    {
+        if (EditorApplication.isPlayingOrWillChangePlaymode || !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+        var previous = EditorSceneManager.GetSceneManagerSetup();
+        try { RunSmoothBatch(); }
+        finally { EditorSceneManager.RestoreSceneManagerSetup(previous); }
+    }
+
+    public static void RunSmoothBatch()
+        => RunSmoothBatch(false);
+
+    [MenuItem("Sa Kabilang Pinto/Smooth Art/Campaign/Capture Before and After")]
+    static void CaptureCampaignMenu()
+    {
+        if (EditorApplication.isPlayingOrWillChangePlaymode || !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+        var previous = EditorSceneManager.GetSceneManagerSetup();
+        try { RunCampaignComparison(); }
+        finally { EditorSceneManager.RestoreSceneManagerSetup(previous); }
+    }
+
+    public static void RunCampaignComparison() => RunSmoothBatch(true);
+
+    [MenuItem("Sa Kabilang Pinto/Smooth Art/Campaign/Use Smooth Art")]
+    static void UseSmoothArt() => SetCampaignArt(true);
+
+    [MenuItem("Sa Kabilang Pinto/Smooth Art/Campaign/Restore Previous Art")]
+    static void RestorePreviousArt() => SetCampaignArt(false);
+
+    static void SetCampaignArt(bool smooth)
+    {
+        var profile = AssetDatabase.LoadAssetAtPath<CampaignArtSelection>(CampaignArtSelection.AssetPath);
+        if (profile == null) throw new InvalidOperationException("Campaign art profile is missing.");
+        Undo.RecordObject(profile, "Switch campaign art");
+        profile.useSmoothArt = smooth;
+        EditorUtility.SetDirty(profile);
+        AssetDatabase.SaveAssetIfDirty(profile);
+        Debug.Log(smooth ? "Smooth art is selected for the next game session." : "Previous art is selected for the next game session.");
+    }
+
+    static void RunSmoothBatch(bool comparison)
+    {
+        var profile = comparison ? AssetDatabase.LoadAssetAtPath<CampaignArt>(CampaignArt.AssetPath) : null;
+        var art = comparison ? profile?.ui : AssetDatabase.LoadAssetAtPath<Skp.Preview.SmoothUiArt>(Skp.Preview.SmoothUiPreview.ArtPath);
+        if (art == null) throw new InvalidOperationException("Smooth UI art asset is missing.");
+        var targetStates = new Dictionary<string, int>
+        {
+            ["01_title"] = 0,
+            ["07_level_map"] = 0,
+            ["10e_hud_8_skills"] = 7,
+            ["14_pause"] = 3,
+            ["08_lola_dialog"] = 0,
+            ["13b_level_clear_new_skill"] = 2,
+        };
+        var report = new Report();
+        var save = new SaveService(Skp.Preview.SmoothActIPreview.NewSaveDirectory());
+        var output = comparison ? CampaignOutDir : SmoothOutDir;
+        var samples = States().Where(s => targetStates.ContainsKey(s.Name)).ToList();
+        if (comparison)
+        {
+            AddCheckpoint("gameplay_act_i", 2);
+            AddCheckpoint("gameplay_act_ii", 4);
+            AddCheckpoint("gameplay_act_iii", 6);
+        }
+        void AddCheckpoint(string name, int index)
+        {
+            targetStates[name] = index;
+            samples.Add(new State
+            {
+                Scene = SceneNames.Level, Name = name,
+                Setup = c => LevelState(c, index, true, skills: SkillIds.All.Take(index).ToArray(), checkpoint: 1),
+            });
+        }
+        try
+        {
+            foreach (bool smooth in comparison ? new[] { false, true } : new[] { true })
+            {
+                if (smooth) art.Activate(); else art.Deactivate();
+                foreach (var res in Resolutions.Where(r => r.Name == "2340x1080_notch" || r.Name == "800x480"))
+                foreach (var state in samples)
+                {
+                    EditorSceneManager.OpenScene($"Assets/Scenes/{state.Scene}.unity", OpenSceneMode.Single);
+                    var ctx = new Ctx
+                    {
+                        Res = res, Save = save, Cam = Camera.main,
+                        Map = UnityEngine.Object.FindAnyObjectByType<MapController>(),
+                        Title = UnityEngine.Object.FindAnyObjectByType<TitleFlow>(),
+                    };
+                    var sample = state;
+                    if (sample.Name == "14_pause")
+                        sample.Setup = c => { LevelState(c, 3, true); c.Ui.pause.Open(); };
+                    var stateOutput = comparison ? Path.Combine(output, smooth ? "after" : "before") : output;
+                    var shot = Capture(ctx, sample, report, true, stateOutput, smooth ? art : null, targetStates[state.Name]);
+                    UnityEngine.Object.DestroyImmediate(shot);
+                }
+            }
+            Directory.CreateDirectory(output);
+            File.WriteAllLines(Path.Combine(output, "audit.txt"),
+                new[] { $"{report.Checks} checks, {report.Shots.Count} screens, {report.Problems.Count} findings" }.Concat(report.Problems));
+            Debug.Log($"[Smooth UI] {report.Checks} layout checks, {report.Problems.Count} findings, {report.Shots.Count} screenshots under {output}");
+        }
+        finally
+        {
+            art.Deactivate();
+            SafeAreaFitter.Simulated = null;
+        }
+    }
 
     public struct Res
     {
@@ -182,15 +299,21 @@ public static class SkpUiAudit
         c.Map.screen.Open();
     }
 
-    static void LevelState(Ctx c, int level, bool playing, bool leftHanded = false, string[] skills = null, bool touch = true)
+    static void LevelState(Ctx c, int level, bool playing, bool leftHanded = false, string[] skills = null, bool touch = true,
+        int checkpoint = 0)
     {
         var runner = UnityEngine.Object.FindAnyObjectByType<LevelRunner>();
         c.Save.Data.unlocked = 9;
         c.Save.Data.skills = skills ?? new string[0];
-        c.Session = new LevelSession(runner.levels[level].spec, new LevelRequest { Level = level, Difficulty = "standard" },
+        var spec = runner.levels[level].spec;
+        var request = new LevelRequest { Level = level, Difficulty = "standard" };
+        if (checkpoint > 0)
+            request.Resume = new ResumeState { active = true, lv = level, cp = checkpoint, vit = 99, flame = 100, lives = 3 };
+        c.Session = new LevelSession(spec, request,
                                      runner.tuning, runner.difficulties, runner.curve, c.Save);
+        runner.view.act = spec.act;
         runner.view.Build(c.Session.World, c.Session.Sim);
-        runner.backdrop.sprite = runner.view.art.backdrops[runner.levels[level].spec.act - 1];
+        runner.backdrop.sprite = runner.view.art.backdrops[spec.act - 1];
         runner.director.Refresh();
         if (runner.director.screenTint != null && runner.director.screenTint.sprite == null)
             runner.director.screenTint.sprite = Skp.Dimensions.DimensionDirector.WhiteSprite();
@@ -199,6 +322,12 @@ public static class SkpUiAudit
         follow.bounds = c.Session.World.Bounds;
         var t = follow.Target(c.Session.Sim.Center, 1);
         c.Cam.transform.position = new Vector3(t.x, t.y, -10);
+        if (checkpoint > 0)
+        {
+            runner.view.SendMessage("LateUpdate");
+            if (c.Session.World.Flood != null)
+                c.Cam.transform.position = new Vector3(t.x, c.Session.Sim.Center.y - 3.15f, -10f);
+        }
         c.Ui = runner.ui;
         c.Ui.Bind(runner, c.Session, false);
         if (!playing) { }
@@ -259,7 +388,8 @@ public static class SkpUiAudit
         return report;
     }
 
-    static Texture2D Capture(Ctx c, State st, Report report, bool save)
+    static Texture2D Capture(Ctx c, State st, Report report, bool save, string output = OutDir,
+        Skp.Preview.SmoothUiArt art = null, int levelIndex = 0)
     {
         var res = c.Res;
         SafeAreaFitter.Simulated = res.Safe;
@@ -279,7 +409,18 @@ public static class SkpUiAudit
             k.planeDistance = 1 + (100 - k.sortingOrder) * 0.01f;
         }
 
+        cam.aspect = res.W / (float)res.H;
+        if (art != null)
+        {
+            art.Apply(cam.gameObject.scene, levelIndex, cam.aspect);
+        }
         st.Setup(c);
+        if (art != null && c.Session != null)
+        {
+            var runner = UnityEngine.Object.FindAnyObjectByType<LevelRunner>();
+            SpriteRenderer scenery = null;
+            CampaignLevelBackdrop.DrawScenery(art, c.Session.Sim.Dimension, runner.backdrop, cam, ref scenery);
+        }
         // as with an overlay canvas in play, the world draws under the UI: move every world renderer below the canvases
         // Use an idempotent threshold: subtracting repeatedly can wrap a signed 16-bit sorting order.
         foreach (var wr in UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Include))
@@ -320,7 +461,7 @@ public static class SkpUiAudit
         rt.Release();
         if (save)
         {
-            var dir = Path.Combine(OutDir, res.Name);
+            var dir = Path.Combine(output, res.Name);
             Directory.CreateDirectory(dir);
             var file = Path.Combine(dir, st.Name + ".png");
             File.WriteAllBytes(file, tex.EncodeToPNG());

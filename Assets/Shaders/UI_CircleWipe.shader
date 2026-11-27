@@ -35,8 +35,16 @@ Shader "Skp/UI/CircleWipe"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 p = i.screen.xy / i.screen.w * _ScreenParams.xy;
-                p = floor(p / _Pixel) * _Pixel + _Pixel * 0.5;
-                float inside = step(distance(p, _Center.xy), _Radius);
+                float inside;
+                if (_Pixel > 0)
+                {
+                    p = floor(p / _Pixel) * _Pixel + _Pixel * 0.5;
+                    inside = step(distance(p, _Center.xy), _Radius);
+                }
+                else
+                {
+                    inside = 1 - smoothstep(_Radius - 0.75, _Radius + 0.75, distance(p, _Center.xy));
+                }
                 return fixed4(_Color.rgb, _Color.a * i.color.a * (1 - inside));
             }
             ENDCG

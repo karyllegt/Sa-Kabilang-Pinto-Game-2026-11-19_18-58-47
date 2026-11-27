@@ -212,7 +212,7 @@ namespace Skp.UI
                     Button = Loc.Get("common.continue"),
                 },
             };
-            var def = string.IsNullOrEmpty(skillId) ? null : SkillLibrary.Find(skillId);
+            var def = string.IsNullOrEmpty(skillId) ? null : UiKit.SkillArt?.Get(skillId);
             if (def != null)
             {
                 lines.Add(new DialogLine
@@ -273,7 +273,7 @@ namespace Skp.UI
                            Loc.Get("clear.nextloop"), Loc.Get("clear.menu"));
             else
                 clear.Fill(Loc.Format("clear.title", s.Level + 1), s.Spec.name, Loc.Format("clear.seconds", secs), sim.Score.ToString(), sim.Shards + "/3",
-                           s.Spec.clue, Loc.Get("clear.next"), Loc.Get("clear.map"), SkillLibrary.Find(s.LearnedThisRun));
+                           s.Spec.clue, Loc.Get("clear.next"), Loc.Get("clear.map"), UiKit.SkillArt?.Get(s.LearnedThisRun));
             clear.Open();
         }
 

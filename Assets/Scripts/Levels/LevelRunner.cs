@@ -46,7 +46,9 @@ namespace Skp.Levels
             var root = GameRoot.Instance;
             Request = req;
             var spec = req.Level >= 0 ? levels[Mathf.Clamp(req.Level, 0, levels.Length - 1)].spec : LevelCatalog.Endless(req.Loop);
+            root.Presentation?.ConfigureLevel(this, spec.act);
             Session = new LevelSession(spec, req, tuning, difficulties, curve, root.Save);
+            if (TryGetComponent(out CampaignLevelBackdrop artBackdrop)) artBackdrop.Bind(Session.Sim);
 
             player.Attach(Session.Sim);
             if (_cues != null) player.Ticked -= _cues.Tick;

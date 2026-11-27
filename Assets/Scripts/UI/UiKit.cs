@@ -1,4 +1,5 @@
 using TMPro;
+using Skp.Skills;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace Skp.UI
         public const float MinTarget = 56f;
 
         public static UiTheme Theme => UiTheme.Load();
+        public static SkillLibrary SkillArt => Theme.skillArt != null ? Theme.skillArt : SkillLibrary.Load();
 
         public static RectTransform Rect(Transform parent, string name)
         {

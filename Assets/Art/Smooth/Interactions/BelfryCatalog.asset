@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16cfdaaefc1dac4fb2fc4fe824aaa3d, type: 3}
+  m_Name: BelfryCatalog
+  m_EditorClassIdentifier: Skp.Runtime::Skp.Levels.LevelPrefabCatalog
+  ledgeByAct:
+  - {fileID: 8151493441560344308, guid: cd6ea4f520664d929d17eb629455687b, type: 3}
+  - {fileID: 3342360897668112408, guid: 169fdceac2be495fa9e609407f5150c9, type: 3}
+  - {fileID: 7165045416053497517, guid: bf259dc7901d43dfa890ade230d76e76, type: 3}
+  ledgeSpirit: {fileID: 6405715222610274638, guid: 68ef41a802ee4502877e868818e1cf18, type: 3}
+  ledgeInverted: {fileID: 1615668976178494093, guid: 292846cce37942ebbc00c2e73172701f, type: 3}
+  ledgeCrumble: {fileID: 3202140912187744228, guid: 537d8c5a424b497b9e7b8aa202543afb, type: 3}
+  ledgeMoving: {fileID: 6476015930583680127, guid: 41f8f6a807c74f599f0d0bdda84db4ec, type: 3}
+  groundBlock: {fileID: 7835834548985251422, guid: c75a42ebad274dc1b12366bb23c03869, type: 3}
+  doorSpirit: {fileID: 7570940892815565412, guid: 64604586e73ef4cf84779479045c9eaa, type: 3}
+  doorInverted: {fileID: 1661427747999171131, guid: 150c6df8e8103a561d74dc38cccfd7d6, type: 3}
+  doorHome: {fileID: 1281179457102767175, guid: 4d454d04d9b9b1c1f02286201572217e, type: 3}
+  exit: {fileID: 5712264163946320600, guid: 5f546ca7380f40c0f1d526644e2175f9, type: 3}
+  spike: {fileID: 511410419286716347, guid: 7484d5837ba1c6d20f7852024207e69d, type: 3}
+  spikeGauntlet: {fileID: 1002024473648163454, guid: 711e041e9f1103a24728a0feda48a641, type: 3}
+  root: {fileID: 9214434804050667802, guid: a634c29d403fb677fd7e79b261c6fead, type: 3}
+  thorns: {fileID: 2848098196908838162, guid: c6ce325a224cfda68d8f5661ee3fea41, type: 3}
+  curtain: {fileID: 2614211924683616267, guid: 797d5aca6467efed09904c638930a64d, type: 3}
+  flame: {fileID: 7687297596389007910, guid: 0bba6063ecf8ea895133a894fbc71c44, type: 3}
+  fragment: {fileID: 8516747065897443868, guid: fc0d84d585e00fdfb1a7a09c3c8cd22a, type: 3}
+  letter: {fileID: 363842170710957021, guid: c87d28bac9ea996539ded48ebe558427, type: 3}
+  lantern: {fileID: 7579280676167958141, guid: bd40311a5de2cf3eaecb5e02022ab87a, type: 3}
+  anino: {fileID: 5950004378652166863, guid: 68c4ae9e4230472ea86fe35cf814cac7, type: 3}
+  tikbalang: {fileID: 5500796684637891377, guid: 22049e1ed6e44c8eaef1b7c90b66e597, type: 3}
+  manananggal: {fileID: 7080979282271911991, guid: 00c50fd31ea44855a3de88000f8cc841, type: 3}
+  fallingBell: {fileID: 6124898464579345227, guid: 9ed5ca8547b5fd92d743fe274822617d, type: 3}
+  bellMark: {fileID: 7869803150169031651, guid: 4dfd9b1ee5cdb24b70e40bf4c5255c31, type: 3}
+  waterBody: {fileID: 2527154661891246135, guid: 6d542c29273c4552adb313e8e6259d84, type: 3}
+  waterSurface: {fileID: 2381606393429500789, guid: 9a4ccbe69917464fb60828dd109e20db, type: 3}
+  decorByAct:
+  - {fileID: 0}
+  - {fileID: 7927642073676008965, guid: c2495daa2a7a4ca2b1bee5978e1bef36, type: 3}
+  - {fileID: 8251112616297982234, guid: b89768e5337b46bf821f3fb5fbb0883f, type: 3}
+  bolt: {fileID: 6257659950813512575, guid: 83513e0a43a389f5af08f70a3548d1e1, type: 3}
+  fx: {fileID: 5163262162988964887, guid: 689393029637fd549a3f75e44b1e90c4, type: 3}
+  bossView: {fileID: 8121724293398704461, guid: 65e42a0c9933e4741b371cb55dbec96e, type: 3}
+  bossBody: {fileID: 3454279849956826881, guid: c8b0b41d3fbf415dbbb6dfc2f0e6035e, type: 3}
+  shockwave: {fileID: 706433671158027220, guid: 454687462bd8907a32c97a6113b63c58, type: 3}
+  bossMark: {fileID: 836457705779289264, guid: 901b4376df59823d46f81e0e875c646c, type: 3}
+  bossBell: {fileID: 6249310889590695109, guid: c13c7fe19d970b8f39216510a35e753c, type: 3}
+  tollRing: {fileID: 5117310775319592404, guid: 187b762d2e1031441a0b2f2b73a21ef9, type: 3}
+  mapDot: {fileID: 2076604492512486049, guid: 715d913280cb90440b77b3fddb2f50d4, type: 3}
+  mapNodeShadow: {fileID: 7466110549983745646, guid: 8e68755b88d03dd408d26d7e6f021f58, type: 3}
+  mapNodePlate: {fileID: 3319882470446926607, guid: 6ab1748f116031044a0425c049460d2b, type: 3}
+  mapNodeIcon: {fileID: 1970380133677757613, guid: 89618156a499a024994d2f19b10b6964, type: 3}
+  mapNumber: {fileID: 854117603510611550, guid: 6ebd0521f527cfb41af0d1746449310b, type: 3}
+  mapLola: {fileID: 5254688082185156840, guid: 83c3c6e9ebfc482d8cc9b1772c75b6f6, type: 3}
+  mapLolaMark: {fileID: 7745055935595293901, guid: d21f26ebd1517054dba05ac2b07dcaf7, type: 3}
+  mapToken: {fileID: 8825940201650864542, guid: 99823dea0e0a9d042a6a0ed91a7a0d8c, type: 3}
+  mapCorner: {fileID: 898685518472677389, guid: f34fbae191cc3334495ae398c2239970, type: 3}

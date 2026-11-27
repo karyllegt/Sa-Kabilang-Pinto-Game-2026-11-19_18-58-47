@@ -77,7 +77,7 @@ namespace Skp.UI
             gl.startCorner = GridLayoutGroup.Corner.UpperLeft;
             gl.childAlignment = TextAnchor.UpperLeft;
             UiKit.Fit(gl);
-            var lib = SkillLibrary.Load();
+            var lib = UiKit.SkillArt;
             var list = new List<SkillChip>();
             foreach (var id in SkillIds.All)
             {

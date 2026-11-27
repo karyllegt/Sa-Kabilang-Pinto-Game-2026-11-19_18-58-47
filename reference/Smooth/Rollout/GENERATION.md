@@ -1,0 +1,17 @@
+# Smooth campaign rollout provenance
+
+The campaign profile selects the reviewed artwork from the [Tala](../Tala/GENERATION.md), [creature](../Creatures/GENERATION.md), [environment](../Environments/GENERATION.md), [interaction](../Interactions/GENERATION.md), and [UI](../UI/GENERATION.md) stages. Act I uses part of the [first prototype](../ActI/GENERATION.md) for the regular wooden ledge and shared Tala frames. Earlier staged previews retain their asset references.
+
+## `glide-shockwave-atlas.png`
+
+Built-in OpenAI ImageGen, AI-assisted. The two source halves were cropped and fitted to the original Sprite rectangles, pixels per unit and normalized pivots for the glide renderer and the boss wave prefab. The boss wave derivative uses neutral values so the existing red renderer tint controls its warning color. Collision shape, sorting and transform remain on the original prefab and simulation.
+
+> Two separate transparent 2D sprite assets in one equal two-column atlas for Sa Kabilang Pinto, an original smoothly inked Filipino folklore storybook platformer. Left half only: symmetrically paired outstretched small bird wings for a child adventurer’s magic glide, cream gold capiz-like feathers edged warm amber, wide low profile 3.3 to 1, central notch and no body. Right half only: side-view ground-hugging tapered pressure shockwave from an old haunted church bell, sharp broad crimson magical crescent surges to the right with two very clear simple red contours and embers restricted to the shape, wide low 3 to 1 aspect, lowest points rest on a flat baseline. The first is unmistakably warm gold, the second unmistakably crimson danger. Clean dark ink strokes, smooth shapes, restrained cel shade, clear at 16 px tall, zero exterior glow. Large genuine transparent gutters. No background, no characters, no decoration, no text, no labels. Entire silhouettes within their halves.
+
+## `phone-readable-spikes.png`
+
+Built-in OpenAI ImageGen, AI-assisted. The brighter three-tip strip replaces the previous Smooth spike artwork for the regular and gauntlet prefab variants. Both derivatives keep the previous Smooth canvas dimensions, GUIDs, import measurements, and tiled borders. Original legacy textures remain available.
+
+> Create a transparent isolated game hazard sprite strip for a smooth Filipino folklore storybook platformer, viewed perfectly side-on. One single horizontal row of exactly three solid forged iron spikes, each a simple bold triangular silhouette with a broad triangular bright saturated vermilion tip covering the top half and a dark crimson lower half. Low flat straight horizontal dark metal base, with a thin solid scarlet red horizontal safety-warning highlight along its upper lip, solid painted outlines. Strong immediate readability when the whole final strip is only 24 pixels wide and 8 pixels tall. Overall silhouette 3:1 aspect, solid centered composition with transparent edges, tips exactly vertically aligned, equal sharp but thick peaks. No decoration, no artifacts, no gradients outside the silhouette, no glow, no labels, no background. Smooth cel shading. Sea of empty transparent space outside the rectangular row. Palette vivid #FC5348 red tips, deep oxblood red and near black ink contours.
+
+The campaign circle wipe keeps the existing material and timing with an antialiased edge when Smooth is selected. The previous stepped edge returns with the legacy art. The app launcher icon is still the separately managed legacy brand asset.

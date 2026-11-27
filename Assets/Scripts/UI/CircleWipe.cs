@@ -16,6 +16,7 @@ namespace Skp.UI
     {
         public const string MaterialResource = "UI/CircleWipe";
         public float closeSeconds = 0.35f, openSeconds = 0.35f;
+        public bool SmoothEdge { get; set; }
 
         Image _image;
         Material _mat;
@@ -59,7 +60,7 @@ namespace Skp.UI
             // ease in-out so the circle reads as a deliberate close
             float e = Closed * Closed * (3 - 2 * Closed);
             _mat.SetFloat(RadiusId, r * (1 - e) - 1);
-            _mat.SetFloat(PixelId, Mathf.Max(1, Mathf.Round(Screen.height / 270f)));
+            _mat.SetFloat(PixelId, SmoothEdge ? 0f : Mathf.Max(1, Mathf.Round(Screen.height / 270f)));
         }
 
         void SetFocus(Vector2 focus)

@@ -38,3 +38,23 @@ The Android build setup supplies adaptive and round icon slots through Unity's p
 ## Acceptance follow-up
 
 Actual world/action and UI review is recorded in `PRESENTATION_VERIFICATION.md`. Continue physical-device performance and headphone/phone-speaker acceptance. An atlas preview alone is not a gameplay screenshot or proof that its consuming prefab is correct.
+
+## Smooth folklore cast preview
+
+The creature pass adds illustrated Tikbalang, Manananggal, Lola and Bellkeeper poses, three dialogue portraits, and an Anino patrol sourced from the smooth Tala animation. The source sheets use the built-in ImageGen tool and are AI-assisted. The patrol and Spirit chase retain their existing silhouette material and eye renderers. The smooth assets are wired to two isolated preview scenes. See the [generation and derivation record](../reference/Smooth/Creatures/GENERATION.md) and [preview guide](SMOOTH_CREATURE_PREVIEW.md).
+
+## Smooth environment previews
+
+Three isolated scenes add AI-assisted backgrounds, wooden, root and stone surfaces, dimension-specific ledges and scenery, flood water, and foreground details. They draw the existing campaign room layouts and collision geometry through the original level renderer. See the [generation and derivation record](../reference/Smooth/Environments/GENERATION.md) and [preview guide](SMOOTH_ENVIRONMENT_PREVIEW.md).
+
+## Smooth interaction previews
+
+The interaction pass adds illustrated doors, checkpoints, pickups, hazard states, and ability and dimension effects to three isolated scenes. The preview catalogs reuse the smooth blackwater art. See the [art source and derivation record](../reference/Smooth/Interactions/GENERATION.md) and [preview guide](SMOOTH_INTERACTION_PREVIEW.md).
+
+## Smooth UI preview
+
+The UI pass adds an illustrated title and map, talk portraits, skill icons, new panel art and a smoother text treatment. The isolated journey applies the theme through the existing screen controllers. See the [art provenance record](../reference/Smooth/UI/GENERATION.md) and [preview guide](SMOOTH_UI_PREVIEW.md).
+
+## Smooth campaign art
+
+The production Title, Map and Level scenes use the Smooth art selection by default. The campaign profile draws from the existing review stages and adds smooth glide wings and a Bellkeeper floor shockwave. The legacy scenes, theme and catalog remain the fallback. See the [active art guide](SMOOTH_ART_GUIDE.md) and [rollout provenance](../reference/Smooth/Rollout/GENERATION.md).

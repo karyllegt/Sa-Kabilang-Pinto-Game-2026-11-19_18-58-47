@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Skp.Skills;
 
 namespace Skp.UI
 {
@@ -22,6 +23,8 @@ namespace Skp.UI
         public Sprite white;
         public Sprite portraitLola, portraitBoy, portraitGirl, portraitClue, portraitAnino, portraitBoss;
         public Sprite titleArt, cardBoy, cardGirl, menuBackdrop;
+        [Tooltip("Optional display definitions for this theme. Gameplay tuning is still read from the gameplay library.")]
+        public SkillLibrary skillArt;
 
         [Header("Palette")]
         public Color panel = new Color32(0x14, 0x10, 0x1c, 0xff);
@@ -50,12 +53,15 @@ namespace Skp.UI
         public float minTouchDp = 48;
 
         static UiTheme _cached;
+        internal static UiTheme Override { get; set; }
 
         /// <summary>Forget the cached theme (the setup calls this after creating or editing the asset).</summary>
         public static void ClearCache() => _cached = null;
 
         /// <summary>The theme asset (Resources), or built-in defaults when it is missing (tests).</summary>
-        public static UiTheme Load()
+        public static UiTheme Load() => Override != null ? Override : LoadDefault();
+
+        internal static UiTheme LoadDefault()
         {
             if (_cached != null) return _cached;
             _cached = Resources.Load<UiTheme>(ResourcePath);

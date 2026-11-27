@@ -16,7 +16,7 @@ public class SkpAssetImportSettings : AssetPostprocessor
 
     void OnPreprocessTexture()
     {
-        if (!assetPath.StartsWith("Assets/Art/")) return;
+        if (!assetPath.StartsWith("Assets/Art/") || assetPath.StartsWith("Assets/Art/Smooth/")) return;
         var ti = (TextureImporter)assetImporter;
         // Keep source-specific PPU/pivots while applying the shared sampling rules, including unused source references.
         if (assetPath.StartsWith("Assets/Art/Recovered/"))
