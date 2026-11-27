@@ -25,6 +25,19 @@ public static class SkpUiAudit
     public const string OutDir = "tests/Screenshots/presentation/ui"; // Earlier M5/M6 evidence stays intact.
     const string SmoothOutDir = "tests/Screenshots/smooth/ui";
     const string CampaignOutDir = "tests/Screenshots/smooth/campaign";
+    const string CampaignReviewDir = "tests/Screenshots/smooth/campaign-review";
+    const string ComparisonResolution = "2340x1080_notch";
+
+    static readonly (string Key, string Label)[] CampaignScreens =
+    {
+        ("01_title", "TITLE"),
+        ("07_level_map", "LEVEL MAP"),
+        ("10e_hud_8_skills", "GAMEPLAY HUD"),
+        ("14_pause", "PAUSE"),
+        ("08_lola_dialog", "LOLA DIALOGUE"),
+        ("09_before_stage", "BEFORE STAGE"),
+        ("13b_level_clear_new_skill", "LEVEL CLEAR"),
+    };
 
     [MenuItem("Sa Kabilang Pinto/Smooth Art/UI/Open UI Journey")]
     static void OpenSmoothUi()
@@ -75,9 +88,13 @@ public static class SkpUiAudit
 
     static void RunSmoothBatch(bool comparison)
     {
-        var profile = comparison ? AssetDatabase.LoadAssetAtPath<CampaignArt>(CampaignArt.AssetPath) : null;
-        var art = comparison ? profile?.ui : AssetDatabase.LoadAssetAtPath<Skp.Preview.SmoothUiArt>(Skp.Preview.SmoothUiPreview.ArtPath);
-        if (art == null) throw new InvalidOperationException("Smooth UI art asset is missing.");
+        Skp.Preview.SmoothUiArt LoadArt()
+        {
+            var art = comparison ? AssetDatabase.LoadAssetAtPath<CampaignArt>(CampaignArt.AssetPath)?.ui :
+                AssetDatabase.LoadAssetAtPath<Skp.Preview.SmoothUiArt>(Skp.Preview.SmoothUiPreview.ArtPath);
+            if (art == null) throw new InvalidOperationException("Smooth UI art asset is missing.");
+            return art;
+        }
         var targetStates = new Dictionary<string, int>
         {
             ["01_title"] = 0,
@@ -85,9 +102,11 @@ public static class SkpUiAudit
             ["10e_hud_8_skills"] = 7,
             ["14_pause"] = 3,
             ["08_lola_dialog"] = 0,
+            ["09_before_stage"] = 3,
             ["13b_level_clear_new_skill"] = 2,
         };
         var report = new Report();
+        var previousReport = new Report();
         var save = new SaveService(Skp.Preview.SmoothActIPreview.NewSaveDirectory());
         var output = comparison ? CampaignOutDir : SmoothOutDir;
         var samples = States().Where(s => targetStates.ContainsKey(s.Name)).ToList();
@@ -110,8 +129,7 @@ public static class SkpUiAudit
         {
             foreach (bool smooth in comparison ? new[] { false, true } : new[] { true })
             {
-                if (smooth) art.Activate(); else art.Deactivate();
-                foreach (var res in Resolutions.Where(r => r.Name == "2340x1080_notch" || r.Name == "800x480"))
+                foreach (var res in Resolutions.Where(r => r.Name == ComparisonResolution || r.Name == "800x480"))
                 foreach (var state in samples)
                 {
                     EditorSceneManager.OpenScene($"Assets/Scenes/{state.Scene}.unity", OpenSceneMode.Single);
@@ -125,20 +143,85 @@ public static class SkpUiAudit
                     if (sample.Name == "14_pause")
                         sample.Setup = c => { LevelState(c, 3, true); c.Ui.pause.Open(); };
                     var stateOutput = comparison ? Path.Combine(output, smooth ? "after" : "before") : output;
-                    var shot = Capture(ctx, sample, report, true, stateOutput, smooth ? art : null, targetStates[state.Name]);
-                    UnityEngine.Object.DestroyImmediate(shot);
+                    // Opening a scene in the editor can unload art held only by a local reference.
+                    var art = smooth ? LoadArt() : null;
+                    art?.Activate();
+                    try
+                    {
+                        var shot = Capture(ctx, sample, smooth ? report : previousReport,
+                            true, stateOutput, art, targetStates[state.Name]);
+                        UnityEngine.Object.DestroyImmediate(shot);
+                    }
+                    finally
+                    {
+                        art?.Deactivate();
+                    }
                 }
             }
             Directory.CreateDirectory(output);
-            File.WriteAllLines(Path.Combine(output, "audit.txt"),
-                new[] { $"{report.Checks} checks, {report.Shots.Count} screens, {report.Problems.Count} findings" }.Concat(report.Problems));
+            ReportCapture(Path.Combine(output, "audit.txt"), report);
+            if (comparison)
+            {
+                ReportCapture(Path.Combine(output, "audit-previous.txt"), previousReport);
+                Directory.CreateDirectory(CampaignReviewDir);
+                ReportCapture(Path.Combine(CampaignReviewDir, "ui-polish-audit.txt"), report);
+                WriteCampaignSheet(output);
+            }
             Debug.Log($"[Smooth UI] {report.Checks} layout checks, {report.Problems.Count} findings, {report.Shots.Count} screenshots under {output}");
         }
         finally
         {
-            art.Deactivate();
             SafeAreaFitter.Simulated = null;
         }
+    }
+
+    static void ReportCapture(string file, Report report)
+    {
+        File.WriteAllLines(file, new[] {
+            $"{report.Checks} checks, {report.Shots.Count} screens, {report.Problems.Count} findings",
+            $"Minimum measured contrast {report.MinContrast:0.00}:1",
+            $"Smallest visible button side {report.MinTargetPixels:0.0} px",
+            $"Smallest visible font {report.MinFontPixels:0.0} px"
+        }.Concat(report.Problems));
+    }
+
+    static void WriteCampaignSheet(string captureDir)
+    {
+        const int width = 1440, tileWidth = 684, pad = 24, heading = 106, rowLabel = 30;
+        int tileHeight = Mathf.RoundToInt(tileWidth * 1080f / 2340f);
+        int height = heading + (tileHeight + rowLabel + pad) * CampaignScreens.Length;
+        var sheet = new Texture2D(width, height, TextureFormat.RGB24, false);
+        sheet.SetPixels32(Enumerable.Repeat(new Color32(20, 16, 28, 255), width * height).ToArray());
+        var gold = new Color32(241, 199, 119, 255);
+        var cream = new Color32(255, 241, 218, 255);
+        MiniFont.Draw(sheet, pad, height - 19, "CAMPAIGN SCREEN COMPARISON", gold, 4);
+        MiniFont.Draw(sheet, pad, height - 47, "UNITY CAPTURES AT 2340 X 1080 WITH SIMULATED NOTCH", cream, 2);
+        MiniFont.Draw(sheet, pad, height - 79, "PREVIOUS ART", cream, 3);
+        MiniFont.Draw(sheet, 2 * pad + tileWidth, height - 79, "SMOOTH ART POLISH", cream, 3);
+
+        var source = new Texture2D(2, 2, TextureFormat.RGB24, false);
+        for (int row = 0; row < CampaignScreens.Length; row++)
+        {
+            var screen = CampaignScreens[row];
+            int top = height - heading - row * (tileHeight + rowLabel + pad);
+            MiniFont.Draw(sheet, pad, top, screen.Label, gold, 3);
+            for (int column = 0; column < 2; column++)
+            {
+                string file = Path.Combine(captureDir, column == 0 ? "before" : "after", ComparisonResolution, screen.Key + ".png");
+                if (!source.LoadImage(File.ReadAllBytes(file)))
+                    throw new IOException($"Could not load comparison capture {file}.");
+                int left = pad + column * (tileWidth + pad);
+                int bottom = top - rowLabel - tileHeight;
+                for (int y = 0; y < tileHeight; y++)
+                    for (int x = 0; x < tileWidth; x++)
+                        sheet.SetPixel(left + x, bottom + y, source.GetPixelBilinear(
+                            (x + 0.5f) / tileWidth, (y + 0.5f) / tileHeight));
+            }
+        }
+        sheet.Apply();
+        File.WriteAllBytes(Path.Combine(CampaignReviewDir, "screens-before-after.png"), sheet.EncodeToPNG());
+        UnityEngine.Object.DestroyImmediate(source);
+        UnityEngine.Object.DestroyImmediate(sheet);
     }
 
     public struct Res
@@ -168,6 +251,9 @@ public static class SkpUiAudit
         public readonly List<string> Problems = new List<string>();
         public readonly List<string> Shots = new List<string>();
         public int Checks;
+        public float MinContrast = float.PositiveInfinity;
+        public float MinTargetPixels = float.PositiveInfinity;
+        public float MinFontPixels = float.PositiveInfinity;
         public void Fail(string res, string state, string msg) => Problems.Add($"[{res}] {state}: {msg}");
     }
 
@@ -324,7 +410,7 @@ public static class SkpUiAudit
         c.Cam.transform.position = new Vector3(t.x, t.y, -10);
         if (checkpoint > 0)
         {
-            runner.view.SendMessage("LateUpdate");
+            runner.view.DrawCurrentState();
             if (c.Session.World.Flood != null)
                 c.Cam.transform.position = new Vector3(t.x, c.Session.Sim.Center.y - 3.15f, -10f);
         }
@@ -427,6 +513,7 @@ public static class SkpUiAudit
             if (wr.GetComponentInParent<Canvas>() == null && wr.sortingOrder > -10000) wr.sortingOrder -= 20000;
         // as in play: the touch buttons hide while any box or dialog is open
         var lu = UnityEngine.Object.FindAnyObjectByType<LevelUi>();
+        if (lu != null) lu.PaintLanternHud();
         if (lu != null && lu.touch != null && UnityEngine.Object.FindObjectsByType<UiScreen>(FindObjectsInactive.Exclude).Length > 0) lu.touch.SetPlaying(false, false);
         foreach (var f in UnityEngine.Object.FindObjectsByType<SafeAreaFitter>(FindObjectsInactive.Include)) f.Apply();
         Relayout(canvases);
@@ -447,6 +534,7 @@ public static class SkpUiAudit
         Relayout(canvases);
 
         Check(c, st.Name, canvases, report);
+        if (art != null && c.Map != null) CheckMapLabels(c, st.Name, report);
         CheckOpaquePanels(c, st.Name, canvases, report);
         UnityEngine.Object.DestroyImmediate(_behind);
 
@@ -567,6 +655,7 @@ public static class SkpUiAudit
         foreach (var (rt, layer) in live)
         {
             var sr = ScreenRect(rt, cam);
+            r.MinTargetPixels = Mathf.Min(r.MinTargetPixels, sr.width, sr.height);
             r.Checks++;
             if (sr.width < minPx - 0.5f || sr.height < minPx - 0.5f)
                 r.Fail(rn, state, $"target {PathOf(rt)} is {sr.width:0}x{sr.height:0} px, below 48 dp ({minPx:0} px)");
@@ -664,8 +753,12 @@ public static class SkpUiAudit
             if (t.GetComponentInParent<CircleWipe>() != null) continue;
             string p = PathOf(t.transform);
             var tr = ScreenRect(t.rectTransform, cam);
+            bool visible = !modal || t.transform.IsChildOf(top.transform);
+            if (visible && t.rectTransform.rect.height > 0)
+                r.MinFontPixels = Mathf.Min(r.MinFontPixels, t.fontSize * tr.height / t.rectTransform.rect.height);
             r.Checks++;
-            if (t.fontSize < th.tinySize - 0.01f) r.Fail(rn, state, $"text {p} is {t.fontSize}px, below 10 px");
+            if (t.fontSize < th.tinySize - 0.01f)
+                r.Fail(rn, state, $"text {p} is {t.fontSize:0.0} at reference size, below {th.tinySize:0.0}");
             var b = t.textBounds;
             if (b.size.x > 0)
             {
@@ -685,8 +778,38 @@ public static class SkpUiAudit
                     if (!Inside(ink, ScreenRect(panel.rectTransform, cam), 2f)) r.Fail(rn, state, $"text clipped by its panel: {p} \"{Short(t.text)}\"");
                 }
                 // text under a modal scrim is not meant to be read; touch labels sit on their own buttons
-                if (!inTouch && (!modal || t.transform.IsChildOf(top.transform))) ContrastCheck(t, ink, th, r, rn, state, p);
+                if (visible && (!inTouch || th.lanternMarks != null)) ContrastCheck(t, ink, th, r, rn, state, p);
             }
+        }
+    }
+
+    static void CheckMapLabels(Ctx c, string state, Report report)
+    {
+        var cam = c.Cam;
+        var viewport = new Rect(0, 0, c.Res.W, c.Res.H);
+        var occluders = new List<Rect> { ScreenRect(c.Map.screen.topBar, cam) };
+        if (c.Map.screen.infoPanel.gameObject.activeInHierarchy)
+            occluders.Add(ScreenRect(c.Map.screen.infoPanel, cam));
+        if (c.Map.dialog.IsOpen) occluders.Add(ScreenRect(c.Map.dialog.box, cam));
+        foreach (var label in c.Map.GetComponentsInChildren<TextMeshPro>())
+        {
+            if (!label.isActiveAndEnabled || string.IsNullOrWhiteSpace(label.text)) continue;
+            label.ForceMeshUpdate();
+            var bounds = label.textBounds;
+            var lo = cam.WorldToScreenPoint(label.transform.TransformPoint(bounds.min));
+            var hi = cam.WorldToScreenPoint(label.transform.TransformPoint(bounds.max));
+            var ink = Rect.MinMaxRect(lo.x, lo.y, hi.x, hi.y);
+            if (!Inside(ink, viewport, 0) || occluders.Any(rect => Overlaps(rect, ink))) continue;
+
+            // World space TMP uses one tenth of a world unit per point.
+            var em = cam.WorldToScreenPoint(label.transform.TransformPoint(Vector3.up * label.fontSize / 10f));
+            var origin = cam.WorldToScreenPoint(label.transform.position);
+            float fontPixels = Mathf.Abs(em.y - origin.y);
+            report.MinFontPixels = Mathf.Min(report.MinFontPixels, fontPixels);
+            report.Checks++;
+            if (fontPixels < 12.8f)
+                report.Fail(c.Res.Name, state, $"map label {label.text} is {fontPixels:0.0} px, below 12.8 px");
+            ContrastCheck(label, ink, UiKit.Theme, report, c.Res.Name, state, PathOf(label.transform));
         }
     }
 
@@ -724,13 +847,15 @@ public static class SkpUiAudit
     static void ContrastCheck(TMP_Text t, Rect ink, UiTheme th, Report r, string rn, string state, string p)
     {
         // disabled labels are exempt (WCAG 1.4.3), outlined text sits on its own black outline
-        if (ApproximatelyEqual(t.color, th.textDisabled)) return;
+        bool disabled = ApproximatelyEqual(t.color, th.textDisabled);
+        if (disabled && th.lanternMarks == null) return;
         // outlined text carries its own black edge; everything else is measured against what is really behind it
         Color bg = t.outlineWidth >= 0.2f ? Color.black : Behind(ink);
         bool gold = ApproximatelyEqual(t.color, th.gold) || ApproximatelyEqual(t.color, th.goldBright);
         bool heading = t.fontSize >= th.headingSize - 4.01f;
-        float need = gold || heading ? 4.5f : 7f;
+        float need = gold || heading || disabled ? 4.5f : 7f;
         float got = UiTheme.Contrast(Blend(t.color, bg), bg);
+        r.MinContrast = Mathf.Min(r.MinContrast, got);
         r.Checks++;
         if (got < need) r.Fail(rn, state, $"contrast {got:0.0}:1 below {need}:1 for {p} \"{Short(t.text)}\"");
     }

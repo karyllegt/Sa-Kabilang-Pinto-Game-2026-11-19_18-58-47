@@ -27,6 +27,7 @@ namespace Skp.UI
         public SkillsScreen skillsScreen;
         public Sprite[] boyFrames = new Sprite[4], girlFrames = new Sprite[4];
         public TMP_FontAsset font;
+        internal UiTheme lanternTheme;
         [Tooltip("Level names come from the level data assets.")]
         public Skp.Levels.LevelConfig[] levels = new Skp.Levels.LevelConfig[9];
 
@@ -39,6 +40,7 @@ namespace Skp.UI
         static readonly string[] DiffCycle = { "story", "standard", "nightmare" };
         const float FirstMeetingDelay = 0.7f;
 
+        readonly List<Sprite> _landmarks = new List<Sprite>();
         readonly List<SpriteRenderer> _nodeIcons = new List<SpriteRenderer>();
         readonly List<SpriteRenderer> _nodePlates = new List<SpriteRenderer>();
         readonly List<TextMeshPro> _nodeNumbers = new List<TextMeshPro>();
@@ -103,6 +105,7 @@ namespace Skp.UI
             if (_world != null) DestroyImmediate(_world.gameObject);
             _world = new GameObject("MapWorld").transform; // an empty folder; everything drawn below is a prefab instance
             _world.SetParent(transform, false);
+            _landmarks.Clear();
             _nodeIcons.Clear(); _nodePlates.Clear(); _nodeNumbers.Clear(); _dots.Clear(); _dotSegment.Clear(); _corners.Clear();
             var cat = Catalog;
 
@@ -115,6 +118,7 @@ namespace Skp.UI
                 {
                     var p = Vector2.Lerp(a, b, k / (float)n);
                     _dots.Add(Place(cat.mapDot, p + new Vector2(1.5f, 1)).main);
+                    if (lanternTheme != null) _dots[_dots.Count - 1].transform.localScale *= 1.55f;
                     _dotSegment.Add(i);
                 }
             }
@@ -126,8 +130,25 @@ namespace Skp.UI
                 var icon = Place(cat.mapNodeIcon, p + new Vector2(0, i == 8 ? -10 : -11));
                 icon.SetState(i == 8 ? 1 : 0); // flame star, the last node's bell
                 _nodeIcons.Add(icon.main);
+                _landmarks.Add(icon.main.sprite);
+                if (lanternTheme != null)
+                {
+                    icon.main.transform.localScale *= 1.5f;
+                    _nodePlates[i].transform.localScale *= 1.18f;
+                }
                 // the number sits ABOVE the node so the info panel never hides it (docs/04 issue 3)
-                var num = Place(cat.mapNumber, p + new Vector2(0, -27)).label;
+                var num = Place(cat.mapNumber, p + new Vector2(0, lanternTheme != null ? -29 : -27)).label;
+                if (lanternTheme != null)
+                {
+                    num.fontSize = 5.5f;
+                    var plate = new GameObject("Node number ink").AddComponent<SpriteRenderer>();
+                    plate.transform.SetParent(num.transform, false);
+                    plate.sprite = lanternTheme.pixelBox;
+                    plate.drawMode = SpriteDrawMode.Sliced;
+                    plate.size = new Vector2(1.1f, 0.85f);
+                    plate.sortingLayerID = num.renderer.sortingLayerID;
+                    plate.sortingOrder = num.renderer.sortingOrder - 1;
+                }
                 num.text = (i + 1).ToString();
                 _nodeNumbers.Add(num);
             }
@@ -139,9 +160,15 @@ namespace Skp.UI
             mark.main.transform.position = at;
             mark.label.transform.position = at;
             _lolaMark = mark.gameObject;
+            if (lanternTheme != null)
+            {
+                mark.label.fontSize = 5.5f;
+                mark.main.transform.localScale *= 1.2f;
+            }
 
             _token = Place(cat.mapToken, MapModel.Nodes[0]).main;
             _token.sprite = Frames()[0];
+            if (lanternTheme != null) _token.transform.localScale *= 1.16f;
         }
 
         Sprite[] Frames() => _save != null && _save.@char == "boy" ? boyFrames : girlFrames;
@@ -160,11 +187,23 @@ namespace Skp.UI
                 _nodePlates[i].color = st == NodeState.Cleared ? th.gold : st == NodeState.Ready ? new Color32(0xc2, 0x8a, 0x4a, 0xff) : new Color32(0x3a, 0x33, 0x40, 0xff);
                 _nodeIcons[i].color = st == NodeState.Locked ? new Color(0.45f, 0.42f, 0.5f, 0.5f) : Color.white;
                 _nodeNumbers[i].color = st == NodeState.Locked ? (Color)new Color32(0x9a, 0x90, 0xa8, 0xff) : th.text;
+                if (lanternTheme == null) continue;
+                var icon = _nodeIcons[i];
+                bool current = i == Model.Selected;
+                _nodePlates[i].color = current ? th.text : st == NodeState.Cleared ? th.teal :
+                    st == NodeState.Ready ? th.goldBright : th.textDisabled;
+                icon.sprite = st == NodeState.Locked ? th.Mark(LanternMark.Locked) : current ?
+                    th.Mark(LanternMark.Parol) : st == NodeState.Cleared ?
+                    th.Mark(LanternMark.Cleared) : _landmarks[i];
+                icon.color = Color.white;
+                _nodeNumbers[i].color = st == NodeState.Locked ? th.textDisabled : th.text;
             }
             for (int d = 0; d < _dots.Count; d++)
             {
                 bool lit = _dotSegment[d] + 1 < _save.unlocked;
                 _dots[d].color = lit ? th.gold : new Color32(0x4a, 0x3a, 0x4a, 0xff);
+                if (lanternTheme != null)
+                    _dots[d].color = lit ? th.goldBright : new Color(0.78f, 0.71f, 0.86f, 0.8f);
             }
             _lolaMark.SetActive(Model.LolaHasNews);
 

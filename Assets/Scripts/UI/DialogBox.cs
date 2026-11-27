@@ -40,6 +40,7 @@ namespace Skp.UI
         public TextMeshProUGUI sub, speaker, body;
         public PixelButton next;
         public RectTransform box;
+        internal GameObject coveredCard;
 
         public bool IsTyping { get; private set; }
         public int LineIndex { get; private set; }
@@ -96,6 +97,18 @@ namespace Skp.UI
             d.firstSelected = d.next;
             root.gameObject.SetActive(false);
             return d;
+        }
+
+        public override void Open()
+        {
+            if (coveredCard != null) coveredCard.SetActive(false);
+            base.Open();
+        }
+
+        public override void Close()
+        {
+            base.Close();
+            if (coveredCard != null) coveredCard.SetActive(true);
         }
 
         void Wire()

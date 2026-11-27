@@ -20,7 +20,7 @@ The menu only saves `Assets/Resources/Presentation/CampaignArtSelection.asset`. 
 | Act III | Church stone, dim candles, warning marks and bronze bells. The final boss uses the Smooth Bellkeeper and floor shockwave. |
 | Spirit and Inverted | Teal and violet ledges and decorative backdrop overlays. The original dimension masks still decide which objects collide. |
 | Doors, hazards and skills | Interaction catalogs select the door, item, hazard and effect art. The Smooth profile supplies the original-timing particle tune with new textures and the new glide sprite. Reduced Flash suppresses the added dimension flare and softens the dash trail. |
-| UI and map | Smooth UI theme, Liberation Sans SDF, illustrated title and map, Tala and character portraits, new hearts, eight skill icons and existing navigation and touch layouts. |
+| UI and map | The [campaign UI polish](SMOOTH_UI_POLISH.md) uses Press Start 2P and Liberation Sans, illustrated title and map art, Tala and character portraits, heart and skill icons, and the existing navigation and touch layouts. |
 
 Gold identifies safe or interactive objects, teal identifies Spirit, violet identifies Inverted and red identifies danger. Use flat dark surfaces behind small text. Keep cel shading and contours crisp at phone size. Decorative depth stays behind the playable geometry.
 

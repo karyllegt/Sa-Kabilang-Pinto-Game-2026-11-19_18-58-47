@@ -30,6 +30,16 @@ namespace Skp.UI
         LevelRunner _runner;
         LevelSession _session;
         bool _playing, _wired, _lineHooked;
+        bool _lanternHud;
+
+        public void UseLanternHud() => _lanternHud = true;
+
+        public void PaintLanternHud()
+        {
+            if (!_lanternHud) return;
+            bool visible = !Paused && !pause.IsOpen && !clear.IsOpen;
+            if (hud.gameObject.activeSelf != visible) hud.gameObject.SetActive(visible);
+        }
 
         public bool Paused { get; private set; }
         public bool Playing => _playing;
@@ -302,7 +312,9 @@ namespace Skp.UI
             {
                 touch.SetSkills(sim.Has(SkillIds.Veil), sim.Has(SkillIds.Bolt));
                 touch.SetPlaying(!frozen, sim.NearDoor >= 0);
+                touch.PaintLanternAvailability(sim);
             }
+            PaintLanternHud();
             if (!frozen) Hints(sim);
         }
 

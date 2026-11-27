@@ -181,7 +181,10 @@ namespace Skp.Levels
 
         // ------------------------------------------------------------ per frame
 
-        void LateUpdate()
+        void LateUpdate() => DrawCurrentState();
+
+        /// <summary>Draws the current view state, including when the editor captures a still frame.</summary>
+        public void DrawCurrentState()
         {
             if (_sim == null) return;
             long t = _sim.Tick;

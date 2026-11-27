@@ -35,6 +35,26 @@ namespace Skp.Player
         /// <summary>Bolt sprites currently drawn (tests).</summary>
         public int VisibleBolts { get; private set; }
 
+        readonly SpriteRenderer[] _rim = new SpriteRenderer[4];
+
+        public void UseLanternRim()
+        {
+            if (body == null || _rim[0] != null) return;
+            var offsets = new[] { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
+            // A narrow rim follows the animated silhouette and the existing feet anchor.
+            body.transform.localScale *= 1.08f;
+            for (int i = 0; i < _rim.Length; i++)
+            {
+                var edge = new GameObject("Tala silhouette rim").AddComponent<SpriteRenderer>();
+                edge.transform.SetParent(body.transform, false);
+                edge.transform.localPosition = offsets[i] * 0.035f;
+                edge.sharedMaterial = body.sharedMaterial;
+                edge.sortingLayerID = body.sortingLayerID;
+                edge.sortingOrder = body.sortingOrder - 1;
+                _rim[i] = edge;
+            }
+        }
+
         public int CurrentFrame { get; private set; }
 
         public void Render(PlayerSim sim, Vector2 previousPosition, float alpha)
@@ -61,6 +81,20 @@ namespace Skp.Player
             body.flipX = sim.Facing < 0;
             body.flipY = sim.GravitySign < 0;
             var c = body.color; c.a = sim.DashTicks > 0 ? 0.7f : 1f; body.color = c;
+
+            if (_rim[0] != null)
+            {
+                var tint = sim.Dimension == Skp.Dimensions.Dim.Spirit ?
+                    new Color(0.66f, 0.98f, 0.9f, c.a * 0.53f) : new Color(1f, 0.82f, 0.53f, c.a * 0.57f);
+                foreach (var edge in _rim)
+                {
+                    edge.sprite = body.sprite;
+                    edge.flipX = body.flipX;
+                    edge.flipY = body.flipY;
+                    edge.enabled = body.enabled;
+                    edge.color = tint;
+                }
+            }
 
             // Sprite pivot is bottom-center; in Inverted gravity the feet are at the hitbox top.
             Vector2 pos = Vector2.Lerp(previousPosition, sim.Position, Mathf.Clamp01(alpha));

@@ -1,5 +1,7 @@
 using System;
 using Skp.Save;
+using Skp.Player;
+using Skp.Skills;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,6 +32,35 @@ namespace Skp.UI
         [Tooltip("Skill buttons, shown once the skill is learned.")]
         public GameObject veil, bolt;
         public bool forceShow;
+
+        LanternTouchFace _dashFace, _wardFace, _veilFace, _boltFace;
+
+        internal void CacheLanternFaces()
+        {
+            foreach (var slot in slots)
+            {
+                if (slot.rect == null || !slot.rect.TryGetComponent(out LanternTouchFace face)) continue;
+                switch (slot.rect.name)
+                {
+                    case "Dash": _dashFace = face; break;
+                    case "Ward": _wardFace = face; break;
+                    case "Veil": _veilFace = face; break;
+                    case "Bolt": _boltFace = face; break;
+                }
+            }
+        }
+
+        internal void PaintLanternAvailability(PlayerSim sim)
+        {
+            if (_dashFace == null) return;
+            var tuning = sim.SkillTuning ?? SkillTuning.Default;
+            int dashCost = sim.Has(SkillIds.Swift) ? tuning.swiftDashFlameCost : sim.Tuning.dashFlameCost;
+            int boltCost = sim.Has(SkillIds.TripleBolt) ? tuning.tripleBoltFlameCost : tuning.boltFlameCost;
+            _dashFace.SetAvailable(sim.DashTicks == 0 && sim.DashCooldown == 0 && sim.Flame >= dashCost);
+            _wardFace?.SetAvailable(sim.WardCooldown == 0);
+            _veilFace?.SetAvailable(sim.VeilCooldown == 0);
+            _boltFace?.SetAvailable(sim.BoltCooldown == 0 && sim.Flame >= boltCost);
+        }
 
         TouchMode _mode = TouchMode.Auto;
         bool _left;

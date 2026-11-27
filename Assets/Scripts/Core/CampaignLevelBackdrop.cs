@@ -59,6 +59,10 @@ namespace Skp.Core
             if (backdrop.drawMode != SpriteDrawMode.Sliced) backdrop.drawMode = SpriteDrawMode.Sliced;
             var backdropSize = new Vector2(width, width / sourceAspect);
             if (backdrop.size != backdropSize) backdrop.size = backdropSize;
+            // Separate foreground hazards from large scenic silhouettes in every realm.
+            backdrop.color = dimension == Dim.Spirit ? new Color(0.57f, 0.69f, 0.69f) :
+                dimension == Dim.Inverted ? new Color(0.68f, 0.59f, 0.72f) :
+                new Color(0.76f, 0.73f, 0.79f);
             var sprite = art.Scenery(dimension);
             if (sprite != null && scenery == null)
             {
