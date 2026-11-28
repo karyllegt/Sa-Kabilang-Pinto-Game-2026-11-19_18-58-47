@@ -17,6 +17,7 @@ namespace Skp.Preview
         const string HudShadeName = "HUD contrast gradient";
         [SerializeField] UiTheme theme;
         [SerializeField] Material sceneryGrade;
+        [SerializeField] SpriteRenderer talaRim, mapLabelBacking;
         [SerializeField] Sprite mapBackdrop, hudFade;
         [SerializeField] LevelPrefabCatalog mapCatalog;
         [SerializeField] PlayerAnimSet girl, boy;
@@ -169,6 +170,7 @@ namespace Skp.Preview
             map.catalog = mapCatalog;
             map.font = theme.font;
             map.lanternTheme = theme;
+            map.lanternLabelBacking = mapLabelBacking;
             map.dialog.coveredCard = map.screen.infoPanel.gameObject;
             map.screen.skills.Text = Loc.Get("skills.title");
             var header = UiKit.Box(map.screen.transform, "Map header frame", 1.15f);
@@ -212,7 +214,7 @@ namespace Skp.Preview
             var player = runner.player.view;
             player.girlAnims = girl;
             player.boyAnims = boy;
-            player.UseLanternRim();
+            player.UseLanternRim(talaRim);
             player.wardRing.sprite = ward;
             player.veilRing.sprite = veil;
             player.boltPrefab = runner.view.catalog.bolt;

@@ -37,16 +37,15 @@ namespace Skp.Player
 
         readonly SpriteRenderer[] _rim = new SpriteRenderer[4];
 
-        public void UseLanternRim()
+        public void UseLanternRim(SpriteRenderer rim)
         {
-            if (body == null || _rim[0] != null) return;
+            if (body == null || rim == null || _rim[0] != null) return;
             var offsets = new[] { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
             // A narrow rim follows the animated silhouette and the existing feet anchor.
             body.transform.localScale *= 1.08f;
             for (int i = 0; i < _rim.Length; i++)
             {
-                var edge = new GameObject("Tala silhouette rim").AddComponent<SpriteRenderer>();
-                edge.transform.SetParent(body.transform, false);
+                var edge = Instantiate(rim, body.transform, false);
                 edge.transform.localPosition = offsets[i] * 0.035f;
                 edge.sharedMaterial = body.sharedMaterial;
                 edge.sortingLayerID = body.sortingLayerID;

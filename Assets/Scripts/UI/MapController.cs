@@ -28,6 +28,7 @@ namespace Skp.UI
         public Sprite[] boyFrames = new Sprite[4], girlFrames = new Sprite[4];
         public TMP_FontAsset font;
         internal UiTheme lanternTheme;
+        internal SpriteRenderer lanternLabelBacking;
         [Tooltip("Level names come from the level data assets.")]
         public Skp.Levels.LevelConfig[] levels = new Skp.Levels.LevelConfig[9];
 
@@ -165,14 +166,12 @@ namespace Skp.UI
         {
             label.fontSize = 5.5f;
             label.color = lanternTheme.text;
+            if (lanternLabelBacking == null) return;
             label.ForceMeshUpdate(true);
             var ink = label.textBounds;
-            var backing = new GameObject("Map label ink").AddComponent<SpriteRenderer>();
-            backing.transform.SetParent(label.transform, false);
+            var backing = Instantiate(lanternLabelBacking, label.transform, false);
             backing.transform.localPosition = ink.center;
-            backing.sprite = lanternTheme.white;
             backing.color = lanternTheme.panel;
-            backing.drawMode = SpriteDrawMode.Sliced;
             backing.size = new Vector2(ink.size.x + 0.24f, ink.size.y + 0.2f);
             backing.sortingLayerID = label.renderer.sortingLayerID;
             backing.sortingOrder = 9;

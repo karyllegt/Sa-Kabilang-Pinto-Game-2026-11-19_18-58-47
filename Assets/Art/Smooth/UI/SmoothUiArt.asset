@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Skp.Runtime::Skp.Preview.SmoothUiArt
   theme: {fileID: 11400000, guid: 288d4ec40cee015bca67cdc7146d6e03, type: 2}
   sceneryGrade: {fileID: 2100000, guid: c703deef5182424cb1da7445a606da0f, type: 2}
+  talaRim: {fileID: 3758835819668146078, guid: 0dc3e7287af643818f09f34dc4c74b096, type: 3}
+  mapLabelBacking: {fileID: 3758835819668146078, guid: bdbf14d96f0041428ce58807d4f2fb740, type: 3}
   mapBackdrop: {fileID: 21300000, guid: 20601a8338ca0c84b9fbd80bf20bfaab, type: 3}
   hudFade: {fileID: 21300000, guid: 33b23f6cf40884ea984dc0db1804d146, type: 3}
   mapCatalog: {fileID: 11400000, guid: 019ec3e1cc478158738b724033c6341b, type: 2}

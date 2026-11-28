@@ -38,6 +38,7 @@ Cream text measures 9.25:1 on the selected button fill and 7.92:1 on the pressed
 | `Theme/Panel.png` | Original programmatically drawn project artwork | 128 × 128 reusable 9-slice with capiz diamonds, a dark center and carved edging |
 | `Theme/LanternMarks.png` | Original programmatically drawn project artwork | 256 × 256 atlas of 64 × 64 tiles for controls, parol, capiz, woven trim, map states, flame and the half heart |
 | `Artwork/SceneryGrade.mat` and `SceneryGrade.shader` | Original project code, applied to the existing Smooth illustrations | Warm doorway light and a cool middle distance for the title and map |
+| `Tala/TalaRim.prefab` and `UI/Map/MapLabelBacking.prefab` | Original project prefabs using existing sprites and materials | Reusable Tala edge and map text renderers |
 | Full and empty hearts, eight skills, portraits, title and map paintings | Existing project assets and sources | [Smooth UI provenance](../reference/Smooth/UI/GENERATION.md) |
 
 The trim uses a stylized interlace inspired by banig weaving. The parol, capiz and carved wood echo motifs already present in the game's environments. The new artwork has no external source material. The replacement panel keeps its original GUID and importer. The atlas adds approximately 31 KiB to the source textures after accounting for the smaller panel. Its maximum uncompressed RGBA footprint is 256 KiB. It has no mipmaps.
