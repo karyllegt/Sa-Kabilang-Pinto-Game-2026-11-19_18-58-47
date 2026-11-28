@@ -1,0 +1,4 @@
+4224 checks, 20 screens, 0 findings
+Minimum measured contrast 8.68:1
+Smallest visible button side 48.2 px
+Smallest visible font 12.9 px

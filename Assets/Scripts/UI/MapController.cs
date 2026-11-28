@@ -138,18 +138,8 @@ namespace Skp.UI
                 }
                 // the number sits ABOVE the node so the info panel never hides it (docs/04 issue 3)
                 var num = Place(cat.mapNumber, p + new Vector2(0, lanternTheme != null ? -29 : -27)).label;
-                if (lanternTheme != null)
-                {
-                    num.fontSize = 5.5f;
-                    var plate = new GameObject("Node number ink").AddComponent<SpriteRenderer>();
-                    plate.transform.SetParent(num.transform, false);
-                    plate.sprite = lanternTheme.pixelBox;
-                    plate.drawMode = SpriteDrawMode.Sliced;
-                    plate.size = new Vector2(1.1f, 0.85f);
-                    plate.sortingLayerID = num.renderer.sortingLayerID;
-                    plate.sortingOrder = num.renderer.sortingOrder - 1;
-                }
                 num.text = (i + 1).ToString();
+                if (lanternTheme != null) BackMapLabel(num);
                 _nodeNumbers.Add(num);
             }
             for (int c = 0; c < 4; c++) _corners.Add(Skp.Levels.LevelPiece.Spawn(cat.mapCorner, _world, _world.position).transform);
@@ -162,13 +152,31 @@ namespace Skp.UI
             _lolaMark = mark.gameObject;
             if (lanternTheme != null)
             {
-                mark.label.fontSize = 5.5f;
+                BackMapLabel(mark.label);
                 mark.main.transform.localScale *= 1.2f;
             }
 
             _token = Place(cat.mapToken, MapModel.Nodes[0]).main;
             _token.sprite = Frames()[0];
             if (lanternTheme != null) _token.transform.localScale *= 1.16f;
+        }
+
+        void BackMapLabel(TextMeshPro label)
+        {
+            label.fontSize = 5.5f;
+            label.color = lanternTheme.text;
+            label.ForceMeshUpdate(true);
+            var ink = label.textBounds;
+            var backing = new GameObject("Map label ink").AddComponent<SpriteRenderer>();
+            backing.transform.SetParent(label.transform, false);
+            backing.transform.localPosition = ink.center;
+            backing.sprite = lanternTheme.white;
+            backing.color = lanternTheme.panel;
+            backing.drawMode = SpriteDrawMode.Sliced;
+            backing.size = new Vector2(ink.size.x + 0.24f, ink.size.y + 0.2f);
+            backing.sortingLayerID = label.renderer.sortingLayerID;
+            backing.sortingOrder = 9;
+            label.renderer.sortingOrder = 10;
         }
 
         Sprite[] Frames() => _save != null && _save.@char == "boy" ? boyFrames : girlFrames;

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Scenery Grade
+  m_Name: SceneryGrade
   m_Shader: {fileID: 4800000, guid: efbcad37977443296bd13dfc83bfca4e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
