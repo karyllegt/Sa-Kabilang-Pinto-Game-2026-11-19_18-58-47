@@ -1,6 +1,6 @@
 # Act I smooth art preview
 
-Open **Sa Kabilang Pinto > Smooth Art > Open Act I Preview** and press Play in Unity. The scene is configured to load Level 1 on Standard at the first checkpoint with a temporary save. The preview uses the existing level simulation and a local art catalog.
+Open **Sa Kabilang Pinto > Smooth Art > Open Act I Preview** and choose **Sa Kabilang Pinto → Play Open Scene Once** in Unity. The scene is configured to load Level 1 on Standard at the first checkpoint with a temporary save. The preview uses the existing level simulation and a local art catalog.
 
 The new art covers girl Tala in idle, run, jump rise, apex and fall, plus a wooden ledge, the capiz wall, a checkpoint parol, standard iron spikes, and the full vitality heart. The other Tala actions use the baseline clips. The preview camera keeps the baseline framing and uses regular orthographic rendering. Bilinear filtering is scoped to the new textures.
 

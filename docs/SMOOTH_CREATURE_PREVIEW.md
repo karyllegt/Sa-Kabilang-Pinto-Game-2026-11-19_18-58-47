@@ -5,7 +5,7 @@ The [creature sheet](../reference/Smooth/Creatures/creature-preview-sheet.png) s
 ## Open the in-game previews
 
 - **Combat:** In Unity, choose **Sa Kabilang Pinto > Smooth Art > Open Creature Encounters**. Select **Level** in the Hierarchy and choose Anino, Tikbalang, Manananggal, or Bellkeeper under **Encounter** on the **Smooth Creature Preview** component. Press Play. Anino, Tikbalang, and Manananggal start near an existing checkpoint in Levels 1, 6, and 8. The Bellkeeper starts at the arena checkpoint in Level 9.
-- **Lola:** Choose **Sa Kabilang Pinto > Smooth Art > Open Lola Map Preview**, press Play, and use **Talk** on the map to see her portrait. The map uses her existing dialogue and pose timing.
+- **Lola:** Choose **Sa Kabilang Pinto > Smooth Art > Open Lola Map Preview**, choose **Sa Kabilang Pinto → Play Open Scene Once**, and use **Talk** on the map to see her portrait. The map uses her existing dialogue and pose timing.
 - Each preview uses a temporary save. Anino's Spirit chase uses the existing teal door and shadow rules.
 
 ## Alignment and scope

@@ -1,6 +1,6 @@
 # Sa Kabilang Pinto smooth art guide
 
-The production **Title**, **Map** and **Level** scenes use the Smooth art selection. Play **Boot** to review the normal journey. Existing progress and options are used by the campaign. Earlier Smooth review scenes still use their own temporary save and stage-specific art.
+The production **Title**, **Map** and **Level** scenes use the Smooth art selection. Unity’s **Play** button opens the campaign main menu from any scene. To run an art preview, open its scene and choose **Sa Kabilang Pinto → Play Open Scene Once**. Existing progress and options are used by the campaign. Earlier Smooth review scenes still use their own temporary save and stage-specific art.
 
 ## Restore the previous presentation
 

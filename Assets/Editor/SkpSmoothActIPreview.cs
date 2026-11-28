@@ -24,27 +24,63 @@ public static class SkpSmoothActIPreview
     const string Screens = "tests/Screenshots/smooth/act-i";
     enum Fit { Stretch, Contain }
 
+    const string PlayOpenSceneMenu = "Sa Kabilang Pinto/Play Open Scene Once";
+    static bool _playOpenScene;
+
     [InitializeOnLoadMethod]
-    static void SetUpSaveIsolation()
+    static void ConfigurePlayMode()
     {
-        EditorApplication.playModeStateChanged += change =>
+        // Batch PlayMode tests set up their own scenes and saves.
+        if (Application.isBatchMode) return;
+        EditorApplication.delayCall += () =>
         {
-            if (change == PlayModeStateChange.ExitingEditMode)
-            {
-                var start = EditorSceneManager.playModeStartScene;
-                string path = start != null ? AssetDatabase.GetAssetPath(start) : SceneManager.GetActiveScene().path;
-                bool preview = path == SmoothActIPreview.ScenePath || path == SmoothCreaturePreview.LevelScenePath ||
-                    path == SmoothCreaturePreview.MapScenePath || Array.IndexOf(SmoothEnvironmentPreview.ScenePaths, path) >= 0 ||
-                    Array.IndexOf(SmoothInteractionPreview.ScenePaths, path) >= 0 || path == SmoothUiPreview.ScenePath;
-                SessionState.SetBool(SmoothActIPreview.SessionKey, preview);
-                if (preview) Skp.Core.GameRoot.SaveDirectoryOverride = SmoothActIPreview.NewSaveDirectory();
-            }
-            if (change == PlayModeStateChange.EnteredEditMode && SessionState.GetBool(SmoothActIPreview.SessionKey, false))
-            {
-                SessionState.EraseBool(SmoothActIPreview.SessionKey);
-                Skp.Core.GameRoot.SaveDirectoryOverride = null;
-            }
+            if (!EditorApplication.isPlayingOrWillChangePlaymode) SetCampaignStartScene();
         };
+        EditorApplication.playModeStateChanged += OnPlayModeChanged;
+    }
+
+    static void SetCampaignStartScene()
+    {
+        string path = $"{SkpProjectSetup.ScenesDir}/{Skp.Core.SceneNames.Boot}.unity";
+        var boot = AssetDatabase.LoadAssetAtPath<SceneAsset>(path);
+        if (boot != null) EditorSceneManager.playModeStartScene = boot;
+    }
+
+    static void OnPlayModeChanged(PlayModeStateChange change)
+    {
+        if (change == PlayModeStateChange.ExitingEditMode)
+        {
+            bool playOpenScene = _playOpenScene;
+            _playOpenScene = false;
+            if (!playOpenScene) SetCampaignStartScene();
+
+            string path = SceneManager.GetActiveScene().path;
+            bool preview = playOpenScene && (path == SmoothActIPreview.ScenePath ||
+                path == SmoothCreaturePreview.LevelScenePath || path == SmoothCreaturePreview.MapScenePath ||
+                Array.IndexOf(SmoothEnvironmentPreview.ScenePaths, path) >= 0 ||
+                Array.IndexOf(SmoothInteractionPreview.ScenePaths, path) >= 0 || path == SmoothUiPreview.ScenePath);
+            SessionState.SetBool(SmoothActIPreview.SessionKey, preview);
+            if (preview) Skp.Core.GameRoot.SaveDirectoryOverride = SmoothActIPreview.NewSaveDirectory();
+        }
+        else if (change == PlayModeStateChange.EnteredEditMode)
+        {
+            if (SessionState.GetBool(SmoothActIPreview.SessionKey, false))
+                Skp.Core.GameRoot.SaveDirectoryOverride = null;
+            SessionState.EraseBool(SmoothActIPreview.SessionKey);
+            SetCampaignStartScene();
+        }
+    }
+
+    [MenuItem(PlayOpenSceneMenu, true)]
+    static bool CanPlayOpenScene() => !EditorApplication.isPlayingOrWillChangePlaymode;
+
+    [MenuItem(PlayOpenSceneMenu)]
+    static void PlayOpenScene()
+    {
+        if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+        _playOpenScene = true;
+        EditorSceneManager.playModeStartScene = null;
+        EditorApplication.EnterPlaymode();
     }
 
     [MenuItem("Sa Kabilang Pinto/Smooth Art/Open Act I Preview")]

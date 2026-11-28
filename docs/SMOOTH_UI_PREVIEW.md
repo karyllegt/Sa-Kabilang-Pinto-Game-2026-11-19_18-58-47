@@ -1,6 +1,6 @@
 # Smooth UI preview
 
-Open **Sa Kabilang Pinto → Smooth Art → UI → Open UI Journey** in Unity, then press Play. The preview uses the production title, map and level controllers with a temporary save. **Continue** starts at the first upper checkpoint in *The Blackwater Well*. **Level Map** opens with the first five nodes available. **Talk** opens Lola’s dialogue.
+Open **Sa Kabilang Pinto → Smooth Art → UI → Open UI Journey** in Unity, then choose **Sa Kabilang Pinto → Play Open Scene Once**. The preview uses the production title, map and level controllers with a temporary save. **Continue** starts at the first upper checkpoint in *The Blackwater Well*. **Level Map** opens with the first five nodes available. **Talk** opens Lola’s dialogue.
 
 The preview applies the new panels, type, artwork and portrait sprites to the existing screen objects. The hit targets, focus graph, event system, safe-area fitters and screen navigation come from those same objects. A dark fade under the HUD keeps small labels legible over the world. The existing High Contrast setting strengthens the fade. The smooth skill library supplies display art while sharing the original skill tuning.
 

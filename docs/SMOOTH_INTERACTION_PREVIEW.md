@@ -1,6 +1,6 @@
 # Smooth interaction previews
 
-In Unity, choose **Sa Kabilang Pinto → Smooth Art → Interactions → Open Act I, II, or III**, then press Play. Each scene opens the corresponding campaign room from the environment preview with a temporary save.
+In Unity, choose **Sa Kabilang Pinto → Smooth Art → Interactions → Open Act I, II, or III**, then choose **Sa Kabilang Pinto → Play Open Scene Once**. Each scene opens the corresponding campaign room from the environment preview with a temporary save.
 
 | Scene | What to review |
 | --- | --- |

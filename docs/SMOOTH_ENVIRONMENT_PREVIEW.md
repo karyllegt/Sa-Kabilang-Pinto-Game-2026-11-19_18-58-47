@@ -1,6 +1,6 @@
 # Smooth environment previews
 
-Open **Sa Kabilang Pinto → Smooth Art → Environments → Open Act I, II, or III** in Unity, then press Play. Each scene starts at the first upper checkpoint on Standard with the skills normally available at that point and a temporary preview save.
+Open **Sa Kabilang Pinto → Smooth Art → Environments → Open Act I, II, or III** in Unity, then choose **Sa Kabilang Pinto → Play Open Scene Once**. Each scene starts at the first upper checkpoint on Standard with the skills normally available at that point and a temporary preview save.
 
 | Scene | Campaign area | What to review |
 | --- | --- | --- |
